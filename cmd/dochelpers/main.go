@@ -3,19 +3,44 @@ package main
 import (
 	"fmt"
 	"os"
+
+	"github.com/go-git/go-git/v5"
+	"github.com/opencloud-eu/markdown-docs-generator/pkg/dochelpers"
 )
 
+const devMode = false
+
 func main() {
+
 	if len(os.Args) > 1 {
+		doClone := true
+		if devMode {
+			if _, err := os.Stat("tmp/services"); os.IsNotExist(err) {
+				doClone = false
+			}
+		}
+		if doClone {
+			// Check if the tmp directory exists, if so, remove it
+			os.RemoveAll("tmp/")
+			// Clone the opencloud repository into the tmp directory
+			_, err := git.PlainClone("tmp/", false, &git.CloneOptions{
+				URL:      "https://github.com/opencloud-eu/opencloud.git",
+				Progress: os.Stdout,
+			})
+			if err != nil {
+				fmt.Println("Error cloning repo:", err)
+				return
+			}
+		}
 		switch os.Args[1] {
 		case "templates":
-			RenderTemplates()
+			dochelpers.RenderTemplates()
 		case "rogue":
-			GetRogueEnvs()
+			dochelpers.GetRogueEnvs()
 		case "globals":
-			RenderGlobalVarsTemplate()
+			dochelpers.RenderGlobalVarsTemplate()
 		case "service-index":
-			GenerateServiceIndexMarkdowns()
+			dochelpers.GenerateServiceIndexMarkdowns()
 		case "env-var-delta-table":
 			// This step is not covered by the all or default case, because it needs explicit arguments
 			if len(os.Args) != 4 {
@@ -23,23 +48,24 @@ func main() {
 				fmt.Println("Example: env-var-delta-table v5.0.0 v6.0.0")
 				fmt.Println("Will not generate usable results for versions Prior to v5.0.0")
 			} else {
-				RenderEnvVarDeltaTable(os.Args)
+				dochelpers.RenderEnvVarDeltaTable(os.Args)
 			}
 		case "all":
-			RenderTemplates()
-			GetRogueEnvs()
-			RenderGlobalVarsTemplate()
-			GenerateServiceIndexMarkdowns()
+			dochelpers.RenderTemplates()
+			dochelpers.GetRogueEnvs()
+			dochelpers.RenderGlobalVarsTemplate()
+			dochelpers.GenerateServiceIndexMarkdowns()
 		case "help":
 			fallthrough
 		default:
-			fmt.Printf("Usage: %s [templates|rogue|globals|service-index|env-var-delta-table|all|help]\n", os.Args[0])
+			printHelp()
 		}
 	} else {
-		// Left here, even though present in the switch case, for backwards compatibility
-		RenderTemplates()
-		GetRogueEnvs()
-		RenderGlobalVarsTemplate()
-		GenerateServiceIndexMarkdowns()
+		// No arguments given, print help
+		printHelp()
 	}
+}
+
+func printHelp() {
+	fmt.Printf("Usage: %s [templates|rogue|globals|service-index|env-var-delta-table|all|help]\n", os.Args[0])
 }

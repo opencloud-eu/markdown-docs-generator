@@ -1,4 +1,4 @@
-package main
+package dochelpers
 
 import (
 	"bytes"
@@ -10,7 +10,7 @@ import (
 	"text/template"
 	"time"
 
-	"github.com/owncloud/ocis/v2/ocis-pkg/markdown"
+	"github.com/opencloud-eu/opencloud/pkg/markdown"
 )
 
 var _configMarkdown = `{{< include file="services/_includes/%s-config-example.yaml"  language="yaml" >}}

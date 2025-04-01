@@ -1,4 +1,4 @@
-package main
+package dochelpers
 
 import (
 	"fmt"
@@ -20,21 +20,25 @@ var targets = map[string]string{
 
 // RenderTemplates does something with templates
 func RenderTemplates() {
+	baseDir, err := os.Getwd()
+	if err != nil {
+		log.Fatal(err)
+	}
 	fmt.Println("Getting relevant packages")
-	paths, err := filepath.Glob("../../services/*/pkg/config/defaults/defaultconfig.go")
+	paths, err := filepath.Glob("tmp/services/*/pkg/config/defaults/defaultconfig.go")
 	if err != nil {
 		log.Fatal(err)
 	}
 	replacer := strings.NewReplacer(
-		"../../", "github.com/owncloud/ocis/v2/",
+		"../../", "github.com/opencloud-eu/opencloud/",
 		"/defaultconfig.go", "",
 	)
 	for i := range paths {
 		paths[i] = replacer.Replace(paths[i])
 	}
 
-	for template, output := range targets {
-		generateIntermediateCode(template, output, paths)
+	for tmpl, output := range targets {
+		generateIntermediateCode(baseDir+"/"+tmpl, output, paths)
 		runIntermediateCode(output)
 	}
 	fmt.Println("Cleaning up")
@@ -67,8 +71,8 @@ func generateIntermediateCode(templatePath string, intermediateCodePath string, 
 
 func runIntermediateCode(intermediateCodePath string) {
 	fmt.Println("Running intermediate go code for " + intermediateCodePath)
-	defaultConfigPath := "/etc/ocis"
-	defaultDataPath := "/var/lib/ocis"
+	defaultConfigPath := "/etc/opencloud"
+	defaultDataPath := "/var/lib/opencloud"
 	os.Setenv("OCIS_BASE_DATA_PATH", defaultDataPath)
 	os.Setenv("OCIS_CONFIG_DIR", defaultConfigPath)
 	out, err := exec.Command("go", "run", intermediateCodePath).CombinedOutput()
