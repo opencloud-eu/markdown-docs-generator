@@ -4,34 +4,11 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/go-git/go-git/v5"
 	"github.com/opencloud-eu/markdown-docs-generator/pkg/dochelpers"
 )
 
-const devMode = false
-
 func main() {
-
 	if len(os.Args) > 1 {
-		doClone := true
-		if devMode {
-			if _, err := os.Stat("tmp/services"); os.IsNotExist(err) {
-				doClone = false
-			}
-		}
-		if doClone {
-			// Check if the tmp directory exists, if so, remove it
-			os.RemoveAll("tmp/")
-			// Clone the opencloud repository into the tmp directory
-			_, err := git.PlainClone("tmp/", false, &git.CloneOptions{
-				URL:      "https://github.com/opencloud-eu/opencloud.git",
-				Progress: os.Stdout,
-			})
-			if err != nil {
-				fmt.Println("Error cloning repo:", err)
-				return
-			}
-		}
 		switch os.Args[1] {
 		case "templates":
 			dochelpers.RenderTemplates()
