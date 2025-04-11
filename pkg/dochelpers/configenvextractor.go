@@ -30,7 +30,7 @@ func RenderTemplates() {
 		log.Fatal(err)
 	}
 	replacer := strings.NewReplacer(
-		"../../", "github.com/opencloud-eu/opencloud/",
+		"tmp/", "github.com/opencloud-eu/opencloud/",
 		"/defaultconfig.go", "",
 	)
 	for i := range paths {
