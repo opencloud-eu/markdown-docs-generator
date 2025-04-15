@@ -55,12 +55,13 @@ type templateData struct {
 }
 
 func main() {
-	fmt.Println("Generating adoc documentation for environment variables:")
-	adoc, err := os.ReadFile("../../docs/templates/ADOC.tmpl")
+	fmt.Println(os.Getwd())
+	fmt.Println("Generating documentation for environment variables:")
+	adoc, err := os.ReadFile("templates/markdown/variables.md.tmpl")
 	if err != nil {
 	    log.Fatal(err)
 	}
-	dpr, err := os.ReadFile("../../docs/templates/ADOC_deprecation.tmpl")
+	dpr, err := os.ReadFile("templates/markdown/variables_deprecation.md.tmpl")
 	if err != nil {
 	    log.Fatal(err)
 	}

@@ -12,10 +12,10 @@ import (
 )
 
 var targets = map[string]string{
-	"templates/adoc-generator.go.tmpl":                      "output/adoc/adoc-generator.go",
-	"templates/example-config-generator.go.tmpl":            "output/exampleconfig/example-config-generator.go",
-	"templates/environment-variable-docs-generator.go.tmpl": "output/env/environment-variable-docs-generator.go",
-	"templates/envar-delta-table.go.tmpl":                   "output/env/envvar-delta-table.go",
+	"templates/go/adoc-generator.go.tmpl":                      "output/adoc/adoc-generator.go",
+	"templates/go/example-config-generator.go.tmpl":            "output/exampleconfig/example-config-generator.go",
+	"templates/go/environment-variable-docs-generator.go.tmpl": "output/env/environment-variable-docs-generator.go",
+	"templates/go/envar-delta-table.go.tmpl":                   "output/env/envvar-delta-table.go",
 }
 
 // RenderTemplates does something with templates

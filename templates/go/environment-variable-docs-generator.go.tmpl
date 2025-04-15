@@ -23,7 +23,7 @@ type ConfigField struct {
 
 func main() {
 fmt.Println("Generating documentation for environment variables:")
-content, err := os.ReadFile("../../docs/templates/CONFIGURATION.tmpl")
+content, err := os.ReadFile("templates/markdown/environment.md.tmpl")
 if err != nil {
     log.Fatal(err)
 }

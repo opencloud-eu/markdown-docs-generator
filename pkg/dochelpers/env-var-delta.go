@@ -13,9 +13,9 @@ import (
 const envVarYamlSource = "env_vars.yaml"
 
 var envVarOutPutTemplates = map[string]string{
-	"added":      "templates/env-vars-added.md.tmpl",
-	"removed":    "templates/env-vars-removed.md.tmpl",
-	"deprecated": "templates/env-vars-deprecated.md.tmpl",
+	"added":      "templates/markdown/env-vars-added.md.tmpl",
+	"removed":    "templates/markdown/env-vars-removed.md.tmpl",
+	"deprecated": "templates/markdown/env-vars-deprecated.md.tmpl",
 }
 
 // ConfigField represents the env-var annotation in the code
