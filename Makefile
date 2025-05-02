@@ -1,25 +1,25 @@
 .PHONY: all
-all: gitcheckdirexist
+all: gitcheckdirexist go-mod-tidy
 	go run cmd/dochelpers/main.go all
 
 .PHONY: templates
-templates:
+templates: go-mod-tidy
 	go run cmd/dochelpers/main.go templates
 
 .PHONY: rogue
-rogue:
+rogue: go-mod-tidy
 	go run cmd/dochelpers/main.go rogue
 
 .PHONY: globals
-globals:
+globals: go-mod-tidy
 	go run cmd/dochelpers/main.go globals
 
 .PHONY: service-index
-service-index:
+service-index: go-mod-tidy
 	go run cmd/dochelpers/main.go service-index
 
 .PHONY: env-var-delta-table
-env-var-delta-table:
+env-var-delta-table: go-mod-tidy8
 	go run cmd/dochelpers/main.go env-var-delta-table
 
 .PHONY: gitcheckdirexist
@@ -37,5 +37,10 @@ gitclone:
 	git clone https://github.com/opencloud-eu/opencloud.git tmp
 
 .PHONY: clean
-clean: gitclean
-	rm -Rfv output
+clean: gitclean output-clean
+
+.PHONY: output-clean
+	rm -Rfv logout
+
+.PHONY: go-mod-tidy
+	go mod tidy

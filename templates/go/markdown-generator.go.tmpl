@@ -69,6 +69,9 @@ func main() {
 			//"github.com/opencloud-eu/opencloud/services/", "",
 			"/pkg/config/defaults", "",
 	)
+	pathReplacer := strings.NewReplacer(
+		"github.com/opencloud-eu/opencloud/services/", "",
+	)
 	var (
 	    fields 	 []ConfigField
 	    deprecations []DeprecationField
@@ -84,7 +87,11 @@ func main() {
 	{{- end }}
 	}
 
-	targetFolder := "../../docs/services/_includes/adoc/"
+	targetFolder := "output/docs/"
+	err = os.MkdirAll(targetFolder, 0755)
+	if err != nil {
+	    log.Fatalf("Failed to create target folder: %s", err)
+	}
 	all := make(map[string]EnvVar)
 	for pkg, conf := range m {
 	    service := replacer.Replace(pkg)
@@ -125,7 +132,7 @@ func main() {
 			HasDeprecations: hasDeprecations,
 			Timestamp: timestamp,
 		}
-		adocFile, err = os.Create(filepath.Join(targetFolder, service + "_configvars.adoc"))
+		adocFile, err = os.Create(filepath.Join(targetFolder, pathReplacer.Replace(service) + "_configvars.md"))
 		if err != nil {
 			log.Fatalf("Failed to create target file: %s", err)
 		}
@@ -135,7 +142,7 @@ func main() {
 			log.Fatalf("Failed to execute template: %s", err)
 		}
 
-		dprFile, err = os.Create(filepath.Join(targetFolder, service + "_deprecation.adoc"))
+		dprFile, err = os.Create(filepath.Join(targetFolder, pathReplacer.Replace(service) + "_deprecation.md"))
 		if err != nil {
 			log.Fatalf("Failed to create target file: %s", err)
 		}
@@ -167,7 +174,7 @@ func main() {
 		return tmplValues[i]["Name"].(string) < tmplValues[j]["Name"].(string)
 	})
 
-	glc, err := os.ReadFile("../../docs/templates/ADOC_global.tmpl")
+	glc, err := os.ReadFile("templates/markdown/global.md.tmpl")
 	if err != nil {
 	    log.Fatal(err)
 	}
