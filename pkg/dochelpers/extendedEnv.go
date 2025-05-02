@@ -147,13 +147,16 @@ func RenderGlobalVarsTemplate() {
 	}
 	fullYamlPath := filepath.Join(curdir, yamlSource)
 
-	content, err := os.ReadFile("../../docs/templates/ADOC_extended.tmpl")
+	content, err := os.ReadFile("templates/markdown/extended.md.tmpl")
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	targetFolder := "../../docs/services/_includes/adoc/"
-
+	targetFolder := "output/docs/"
+	err = os.MkdirAll(targetFolder, 0755)
+	if err != nil {
+		log.Fatalf("Failed to create target folder: %s", err)
+	}
 	vars := &ConfigVars{}
 	fmt.Printf("Reading existing variable definitions from %s\n", fullYamlPath)
 	yfile, err := os.ReadFile(fullYamlPath)

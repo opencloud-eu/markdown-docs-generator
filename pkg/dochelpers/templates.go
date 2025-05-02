@@ -41,11 +41,6 @@ func RenderTemplates() {
 		generateIntermediateCode(baseDir+"/"+tmpl, output, paths)
 		runIntermediateCode(output)
 	}
-	fmt.Println("Cleaning up")
-	err = os.RemoveAll("output")
-	if err != nil {
-		fmt.Println(err)
-	}
 }
 
 func generateIntermediateCode(templatePath string, intermediateCodePath string, paths []string) {
