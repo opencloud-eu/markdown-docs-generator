@@ -1,1 +1,5 @@
-<previously ADOC_deprecation.tmpl>
+{{ if .HasDeprecations }}
+:::danger
+{{ .ExtensionName }} has deprecated environment variables. Please refer to the table below for more information.
+:::
+{{- end }}
