@@ -1,3 +1,5 @@
+OC_GIT_BRANCH ?= main
+
 .PHONY: all
 all: gitcheckdirexist go-mod-tidy
 	go run cmd/dochelpers/main.go all
@@ -22,19 +24,19 @@ service-index: go-mod-tidy
 env-var-delta-table: go-mod-tidy8
 	go run cmd/dochelpers/main.go env-var-delta-table
 
-.PHONY: gitcheckdirexist
-gitcheckdirexist:
+.PHONY: git-checkdirexist
+git-checkdirexist:
 	@if [ ! -d "tmp" ]; then echo "Directory tmp does not exist. Please run `make gitclone` first.";exit 1;fi
 	@if [ -z "$$(ls -A tmp)" ]; then echo "Directory tmp is empty. Please run `make gitclone` first.";exit 1;fi
 
-.PHONY: gitclean
-gitclean:
+.PHONY: git-clean
+git-clean:
 	rm -rf tmp
 
-.PHONY: gitclone
-gitclone:
+.PHONY: git-clone
+git-clone: git-clean
 	@if [ -d "tmp" ]; then echo "Directory tmp already exists. Please remove it before cloning.";exit 1;fi
-	git clone https://github.com/opencloud-eu/opencloud.git tmp
+	git clone -b "${OC_GIT_BRANCH}" https://github.com/opencloud-eu/opencloud.git tmp
 
 .PHONY: clean
 clean: gitclean output-clean
