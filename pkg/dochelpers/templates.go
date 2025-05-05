@@ -12,7 +12,7 @@ import (
 )
 
 var targets = map[string]string{
-	"templates/go/markdown-generator.go.tmpl":                  "output/markdown/markdown-generator.go",
+	"templates/go/templates.go.tmpl":                           "output/markdown/markdown-generator.go",
 	"templates/go/example-config-generator.go.tmpl":            "output/exampleconfig/example-config-generator.go",
 	"templates/go/environment-variable-docs-generator.go.tmpl": "output/env/environment-variable-docs-generator.go",
 	"templates/go/envar-delta-table.go.tmpl":                   "output/env/envvar-delta-table.go",

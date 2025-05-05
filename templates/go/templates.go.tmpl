@@ -72,6 +72,7 @@ func main() {
 	pathReplacer := strings.NewReplacer(
 		"github.com/opencloud-eu/opencloud/services/", "",
 	)
+
 	var (
 	    fields 	 []ConfigField
 	    deprecations []DeprecationField
@@ -126,7 +127,7 @@ func main() {
 	    if len(fields) > 0 || len(deprecations) > 0 {
 		fmt.Printf("... %s\n", pkg)
 		td := templateData{
-			ExtensionName: service,
+			ExtensionName: pathReplacer.Replace(service),
 			Fields:        fields,
 			Deprecations: deprecations,
 			HasDeprecations: hasDeprecations,
