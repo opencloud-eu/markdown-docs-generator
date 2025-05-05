@@ -40,7 +40,9 @@ gitclone:
 clean: gitclean output-clean
 
 .PHONY: output-clean
-	rm -Rfv logout
+output-clean:
+	rm -Rfv output/*
 
 .PHONY: go-mod-tidy
+go-mod-tidy:
 	go mod tidy
