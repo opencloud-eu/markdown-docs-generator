@@ -168,7 +168,7 @@ func RenderGlobalVarsTemplate() {
 		log.Fatal(err)
 	}
 
-	targetFile, err := os.Create(filepath.Join(targetFolder, "extended_configvars.adoc"))
+	targetFile, err := os.Create(filepath.Join(targetFolder, "extended_configvars.md"))
 	if err != nil {
 		log.Fatalf("Failed to create target file: %s", err)
 	}

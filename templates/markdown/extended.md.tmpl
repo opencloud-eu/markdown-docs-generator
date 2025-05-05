@@ -1,1 +1,10 @@
-<formerly ADOC_extended.tmpl>
+# Environment variables with extended scope not included in a service
+
+| Name | Type | Description | Default Value |
+|---|---|---|---|
+{{- range .Variables }}
+{{- if .Ignore }}
+    {{ continue }}
+{{- end }}
+`{{ .Name }}` | {{ .Type }} | {{ .Description }} | {{ .DefaultValue }} |
+{{- end }}

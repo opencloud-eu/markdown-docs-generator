@@ -181,7 +181,7 @@ func main() {
 	}
 
 	gltpl := template.Must(template.New("").Parse(string(glc)))
-	glfile, err := os.Create(filepath.Join(targetFolder, "global_configvars.adoc"))
+	glfile, err := os.Create(filepath.Join(targetFolder, "global_configvars.md"))
 	if err != nil {
 		log.Fatalf("Failed to create target file: %s", err)
 	}
