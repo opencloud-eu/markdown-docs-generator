@@ -5,6 +5,7 @@ import (
 	"gopkg.in/yaml.v2"
 	"html"
 	"reflect"
+	"sort"
 	"strings"
 	"log"
 	"os"
@@ -88,12 +89,24 @@ func main() {
 			}
 		}
 	}
-
-	output, err := yaml.Marshal(configFields)
-	if err != nil {
-		log.Fatalf("Could not marshall variables: %v", err)
+	// sort the map by key
+	var keys []string
+	for k := range configFields {
+		keys = append(keys, k)
 	}
-	err = os.WriteFile(fullYamlPath, output, 0666)
+	sort.Strings(keys)
+	output := ""
+	for _, k := range keys {
+		tmpMap := make(map[string]*ConfigFieldDelta)
+		tmpMap[k] = configFields[k]
+		tmpData,err  := yaml.Marshal(tmpMap)
+		if err != nil {
+			log.Fatalf("Could not marshall variables: %v", err)
+		}
+		output += string(tmpData)
+	}
+	// write the file
+	err = os.WriteFile(fullYamlPath, []byte(output), 0666)
 	if err != nil {
 		log.Fatalf("could not write %s", fullYamlPath)
 	}
