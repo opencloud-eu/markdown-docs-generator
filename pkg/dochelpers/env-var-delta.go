@@ -10,7 +10,7 @@ import (
 	"text/template"
 )
 
-const envVarYamlSource = "env_vars.yaml"
+const envVarYamlSource = "databases/env_vars.yaml"
 
 var envVarOutPutTemplates = map[string]string{
 	"added":      "templates/markdown/env-vars-added.md.tmpl",

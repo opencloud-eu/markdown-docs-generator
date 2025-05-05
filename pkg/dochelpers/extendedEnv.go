@@ -14,7 +14,7 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
-const yamlSource = "extended_vars.yaml"
+const yamlSource = "databases/extended_vars.yaml"
 
 // ConfigVars is the main yaml source
 type ConfigVars struct {
