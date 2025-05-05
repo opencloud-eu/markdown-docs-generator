@@ -14,7 +14,7 @@ import (
     pkg{{$key}} "{{$value}}"
     {{- end}})
 
-type ConfigField struct {
+type ConfigEnvField struct {
 	Name         string
 	DefaultValue string
 	Type         string
@@ -31,7 +31,7 @@ replacer := strings.NewReplacer(
 		"github.com/opencloud-eu/opencloud/services/", "",
 		"/pkg/config/defaults", "",
 	)
-var fields []ConfigField
+var fields []ConfigEnvField
 var targetFile *os.File
 tpl := template.Must(template.New("").Parse(string(content)))
 
@@ -43,7 +43,7 @@ m := map[string]interface{}{
 
     targetFolder := "../../docs/services/_includes/"
     for pkg, conf := range m {
-	fields = GetAnnotatedVariables(conf)
+	fields = GetAnnotatedEnvVariables(conf)
 	if len(fields) > 0 {
 	fmt.Printf("... %s\n", pkg)
 		targetFile, err = os.Create(filepath.Join(targetFolder, replacer.Replace(pkg) + "_configvars.md"))
@@ -59,11 +59,11 @@ m := map[string]interface{}{
 	fmt.Println("done")
 }
 
-func GetAnnotatedVariables(s interface{}) []ConfigField {
+func GetAnnotatedEnvVariables(s interface{}) []ConfigEnvField {
 	t := reflect.TypeOf(s)
 	v := reflect.ValueOf(s)
 
-	var fields []ConfigField
+	var fields []ConfigEnvField
 	for i := 0; i < t.NumField(); i++ {
 		field := t.Field(i)
 		value := v.Field(i)
@@ -80,17 +80,17 @@ func GetAnnotatedVariables(s interface{}) []ConfigField {
 			if typeName == "" {
 				typeName = value.Type().String()
 			}
-			fields = append(fields, ConfigField{Name: strings.ReplaceAll(env, ";", "<br/>"), DefaultValue: html.EscapeString(strings.Replace(v, "|", "\\|", -1)), Description: desc, Type: typeName})
+			fields = append(fields, ConfigEnvField{Name: strings.ReplaceAll(env, ";", "<br/>"), DefaultValue: html.EscapeString(strings.Replace(v, "|", "\\|", -1)), Description: desc, Type: typeName})
 		case reflect.Ptr:
 			// PolicySelectors in the Proxy are being skipped atm
 			// they are not configurable via env vars, if that changes
 			// they are probably added to the Sanitize() function
 			// and this should not be an issue then
 			if !value.IsZero() && value.Elem().CanInterface() {
-				fields = append(fields, GetAnnotatedVariables(value.Elem().Interface())...)
+				fields = append(fields, GetAnnotatedEnvVariables(value.Elem().Interface())...)
 			}
 		case reflect.Struct:
-			fields = append(fields, GetAnnotatedVariables(value.Interface())...)
+			fields = append(fields, GetAnnotatedEnvVariables(value.Interface())...)
 		}
 	}
 	return fields

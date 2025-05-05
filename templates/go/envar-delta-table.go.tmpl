@@ -17,7 +17,7 @@ import (
 
 const yamlSource = "env_vars.yaml"
 
-type ConfigField struct {
+type ConfigFieldDelta struct {
 	Name                string `yaml:"name"`
 	DefaultValue        string `yaml:"defaultValue"`
 	Type                string `yaml:"type"`
@@ -35,8 +35,8 @@ func main() {
 		log.Fatal(err)
 	}
 	fullYamlPath := filepath.Join(curdir, yamlSource)
-	var fields []ConfigField
-	configFields := make(map[string]*ConfigField)
+	var fields []ConfigFieldDelta
+	configFields := make(map[string]*ConfigFieldDelta)
 	fmt.Printf("Reading existing variable definitions from %s\n", fullYamlPath)
 	yfile, err := os.ReadFile(fullYamlPath)
 	if err == nil {
@@ -51,7 +51,7 @@ func main() {
 		{{- end }}
 	}
 	for _, conf := range m {
-		fields = GetAnnotatedVariables(conf)
+		fields = GetAnnotatedVariablesDelta(conf)
 		for _, field := range fields {
 			variants := strings.Split(field.Name, ";")
 			for _, variant := range variants {
@@ -102,11 +102,11 @@ func main() {
 	}
 }
 
-func GetAnnotatedVariables(s interface{}) []ConfigField {
+func GetAnnotatedVariablesDelta(s interface{}) []ConfigFieldDelta {
 	t := reflect.TypeOf(s)
 	v := reflect.ValueOf(s)
 
-	var fields []ConfigField
+	var fields []ConfigFieldDelta
 	for i := 0; i < t.NumField(); i++ {
 		field := t.Field(i)
 		value := v.Field(i)
@@ -127,8 +127,8 @@ func GetAnnotatedVariables(s interface{}) []ConfigField {
 			if typeName == "" {
 				typeName = value.Type().String()
 			}
-			//fields = append(fields, ConfigField{Name: strings.ReplaceAll(env, ";", "<br/>"), DefaultValue: html.EscapeString(strings.Replace(v, "|", "\\|", -1)), Description: desc, Type: typeName})
-			fields = append(fields, ConfigField{
+			//fields = append(fields, ConfigFieldDelta{Name: strings.ReplaceAll(env, ";", "<br/>"), DefaultValue: html.EscapeString(strings.Replace(v, "|", "\\|", -1)), Description: desc, Type: typeName})
+			fields = append(fields, ConfigFieldDelta{
 				Name: env,
 				DefaultValue: html.EscapeString(strings.Replace(v, "|", "\\|", -1)),
 				Description: desc,
@@ -144,10 +144,10 @@ func GetAnnotatedVariables(s interface{}) []ConfigField {
 			// they are probably added to the Sanitize() function
 			// and this should not be an issue then
 			if !value.IsZero() && value.Elem().CanInterface() {
-				fields = append(fields, GetAnnotatedVariables(value.Elem().Interface())...)
+				fields = append(fields, GetAnnotatedVariablesDelta(value.Elem().Interface())...)
 			}
 		case reflect.Struct:
-			fields = append(fields, GetAnnotatedVariables(value.Interface())...)
+			fields = append(fields, GetAnnotatedVariablesDelta(value.Interface())...)
 		}
 	}
 	return fields
