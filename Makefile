@@ -1,7 +1,7 @@
 OC_GIT_BRANCH ?= main
 
 .PHONY: all
-all: gitcheckdirexist go-mod-tidy
+all: git-checkdirexist go-mod-tidy
 	go run cmd/dochelpers/main.go all
 
 .PHONY: templates
@@ -21,13 +21,13 @@ service-index: go-mod-tidy
 	go run cmd/dochelpers/main.go service-index
 
 .PHONY: env-var-delta-table
-env-var-delta-table: go-mod-tidy8
+env-var-delta-table: go-mod-tidy
 	go run cmd/dochelpers/main.go env-var-delta-table
 
 .PHONY: git-checkdirexist
 git-checkdirexist:
-	@if [ ! -d "tmp" ]; then echo "Directory tmp does not exist. Please run `make gitclone` first.";exit 1;fi
-	@if [ -z "$$(ls -A tmp)" ]; then echo "Directory tmp is empty. Please run `make gitclone` first.";exit 1;fi
+	@if [ ! -d "tmp" ]; then echo "Directory tmp does not exist. Please run `make git-clone` first.";exit 1;fi
+	@if [ -z "$$(ls -A tmp)" ]; then echo "Directory tmp is empty. Please run `make git-clone` first.";exit 1;fi
 
 .PHONY: git-clean
 git-clean:
