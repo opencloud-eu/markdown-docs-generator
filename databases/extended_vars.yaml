@@ -47,6 +47,78 @@ variables:
   default_value: ""
   description: ""
   do_ignore: false
+- rawname: GITHUB_API_TOKEN
+  path: openCloud/reva/tools/check-changelog/main.go:40
+  foundincode: true
+  name: GITHUB_API_TOKEN
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: GRACEFUL
+  path: openCloud/reva/cmd/revad/internal/grace/grace.go:76
+  foundincode: true
+  name: GRACEFUL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: HOSTNAME
+  path: openCloud/reva/pkg/share/manager/jsoncs3/providercache/providercache.go:176
+  foundincode: true
+  name: HOSTNAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: HOSTNAME
+  path: openCloud/reva/pkg/share/manager/jsoncs3/providercache/providercache.go:259
+  foundincode: true
+  name: HOSTNAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: HOSTNAME
+  path: openCloud/reva/pkg/share/manager/jsoncs3/sharecache/sharecache.go:123
+  foundincode: true
+  name: HOSTNAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: HOSTNAME
+  path: openCloud/reva/pkg/share/manager/jsoncs3/providercache/providercache.go:490
+  foundincode: true
+  name: HOSTNAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: HOSTNAME
+  path: openCloud/reva/pkg/share/manager/jsoncs3/receivedsharecache/receivedsharecache.go:217
+  foundincode: true
+  name: HOSTNAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: HOSTNAME
+  path: openCloud/reva/pkg/share/manager/jsoncs3/sharecache/sharecache.go:198
+  foundincode: true
+  name: HOSTNAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: HOSTNAME
+  path: openCloud/reva/pkg/share/manager/jsoncs3/receivedsharecache/receivedsharecache.go:130
+  foundincode: true
+  name: HOSTNAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
 - rawname: KOPANO_DEBUG_SERVER_REQUEST_LOG
   path: openCloud/lico/server/server.go:53
   foundincode: true
@@ -224,6 +296,14 @@ variables:
   description: ""
   do_ignore: false
 - rawname: MICRO_LOG_LEVEL
+  path: openCloud/opencloud/pkg/log/log.go:30
+  foundincode: true
+  name: MICRO_LOG_LEVEL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MICRO_LOG_LEVEL
   path: openCloud/markdown-docs-generator/tmp/pkg/log/log.go:34
   foundincode: true
   name: MICRO_LOG_LEVEL
@@ -247,10 +327,10 @@ variables:
   default_value: ""
   description: ""
   do_ignore: false
-- rawname: MICRO_LOG_LEVEL
-  path: openCloud/opencloud/pkg/log/log.go:30
+- rawname: MONTH
+  path: openCloud/opencloud/tests/qa-activity-report/generate-qa-activity-report.go:92
   foundincode: true
-  name: MICRO_LOG_LEVEL
+  name: MONTH
   type: ""
   default_value: ""
   description: ""
@@ -263,10 +343,34 @@ variables:
   default_value: ""
   description: ""
   do_ignore: false
-- rawname: MONTH
-  path: openCloud/opencloud/tests/qa-activity-report/generate-qa-activity-report.go:92
+- rawname: NEXTCLOUD
+  path: openCloud/reva/pkg/ocm/share/repository/nextcloud/nextcloud_test.go:43
   foundincode: true
-  name: MONTH
+  name: NEXTCLOUD
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: NEXTCLOUD
+  path: openCloud/reva/pkg/user/manager/nextcloud/nextcloud_test.go:43
+  foundincode: true
+  name: NEXTCLOUD
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: NEXTCLOUD
+  path: openCloud/reva/pkg/auth/manager/nextcloud/nextcloud_test.go:44
+  foundincode: true
+  name: NEXTCLOUD
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: NEXTCLOUD
+  path: openCloud/reva/pkg/storage/fs/nextcloud/nextcloud_test.go:47
+  foundincode: true
+  name: NEXTCLOUD
   type: ""
   default_value: ""
   description: ""
@@ -288,7 +392,7 @@ variables:
   description: ""
   do_ignore: false
 - rawname: OC_CONFIG_DIR
-  path: openCloud/opencloud/pkg/config/defaults/paths.go:54
+  path: openCloud/markdown-docs-generator/tmp/pkg/config/defaults/paths.go:54
   foundincode: true
   name: OC_CONFIG_DIR
   type: ""
@@ -296,9 +400,41 @@ variables:
   description: ""
   do_ignore: false
 - rawname: OC_CONFIG_DIR
-  path: openCloud/markdown-docs-generator/tmp/pkg/config/defaults/paths.go:54
+  path: openCloud/opencloud/pkg/config/defaults/paths.go:54
   foundincode: true
   name: OC_CONFIG_DIR
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: OC_GRPC_MAX_RECEIVED_MESSAGE_SIZE
+  path: openCloud/reva/pkg/rgrpc/todo/pool/connection.go:79
+  foundincode: true
+  name: OC_GRPC_MAX_RECEIVED_MESSAGE_SIZE
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: REDIS_ADDRESS
+  path: openCloud/reva/tests/integration/grpc/gateway_storageprovider_static_test.go:84
+  foundincode: true
+  name: REDIS_ADDRESS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: REVA_APPPROVIDER_IOPSECRET
+  path: openCloud/reva/pkg/app/provider/wopi/wopi.go:101
+  foundincode: true
+  name: REVA_APPPROVIDER_IOPSECRET
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: REVA_SMTP_SENDER_PASSWORD
+  path: openCloud/reva/pkg/smtpclient/smtpclient.go:53
+  foundincode: true
+  name: REVA_SMTP_SENDER_PASSWORD
   type: ""
   default_value: ""
   description: ""
@@ -319,10 +455,50 @@ variables:
   default_value: ""
   description: ""
   do_ignore: false
-- rawname: YEAR
-  path: openCloud/opencloud/tests/qa-activity-report/generate-qa-activity-report.go:93
+- rawname: RUN_LDAP_TESTS
+  path: openCloud/reva/tests/integration/grpc/userprovider_test.go:278
   foundincode: true
-  name: YEAR
+  name: RUN_LDAP_TESTS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: RUN_LDAP_TESTS
+  path: openCloud/reva/tests/integration/grpc/groupprovider_test.go:261
+  foundincode: true
+  name: RUN_LDAP_TESTS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: SQL_ADDRESS
+  path: openCloud/reva/tests/integration/grpc/ocm_init_test.go:126
+  foundincode: true
+  name: SQL_ADDRESS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: SQL_DBNAME
+  path: openCloud/reva/tests/integration/grpc/ocm_init_test.go:130
+  foundincode: true
+  name: SQL_DBNAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: SQL_PASSWORD
+  path: openCloud/reva/tests/integration/grpc/ocm_init_test.go:122
+  foundincode: true
+  name: SQL_PASSWORD
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: SQL_USERNAME
+  path: openCloud/reva/tests/integration/grpc/ocm_init_test.go:118
+  foundincode: true
+  name: SQL_USERNAME
   type: ""
   default_value: ""
   description: ""
@@ -335,16 +511,16 @@ variables:
   default_value: ""
   description: ""
   do_ignore: false
-- rawname: _registryAddressEnv
-  path: openCloud/opencloud/pkg/registry/registry.go:91
+- rawname: YEAR
+  path: openCloud/opencloud/tests/qa-activity-report/generate-qa-activity-report.go:93
   foundincode: true
-  name: _registryAddressEnv
+  name: YEAR
   type: ""
   default_value: ""
   description: ""
   do_ignore: false
 - rawname: _registryAddressEnv
-  path: openCloud/markdown-docs-generator/tmp/pkg/registry/registry.go:91
+  path: openCloud/markdown-docs-generator/tmp/pkg/natsjsregistry/registry.go:192
   foundincode: true
   name: _registryAddressEnv
   type: ""
@@ -360,7 +536,15 @@ variables:
   description: ""
   do_ignore: false
 - rawname: _registryAddressEnv
-  path: openCloud/markdown-docs-generator/tmp/pkg/natsjsregistry/registry.go:192
+  path: openCloud/markdown-docs-generator/tmp/pkg/registry/registry.go:91
+  foundincode: true
+  name: _registryAddressEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryAddressEnv
+  path: openCloud/opencloud/pkg/registry/registry.go:91
   foundincode: true
   name: _registryAddressEnv
   type: ""
@@ -384,7 +568,7 @@ variables:
   description: ""
   do_ignore: false
 - rawname: _registryPasswordEnv
-  path: openCloud/markdown-docs-generator/tmp/pkg/natsjsregistry/registry.go:220
+  path: openCloud/opencloud/pkg/natsjsregistry/registry.go:220
   foundincode: true
   name: _registryPasswordEnv
   type: ""
@@ -392,7 +576,7 @@ variables:
   description: ""
   do_ignore: false
 - rawname: _registryPasswordEnv
-  path: openCloud/opencloud/pkg/natsjsregistry/registry.go:220
+  path: openCloud/markdown-docs-generator/tmp/pkg/natsjsregistry/registry.go:220
   foundincode: true
   name: _registryPasswordEnv
   type: ""
@@ -416,7 +600,7 @@ variables:
   description: ""
   do_ignore: false
 - rawname: _registryRegisterTTLEnv
-  path: openCloud/opencloud/pkg/registry/expiry.go:28
+  path: openCloud/markdown-docs-generator/tmp/pkg/registry/expiry.go:28
   foundincode: true
   name: _registryRegisterTTLEnv
   type: ""
@@ -424,7 +608,7 @@ variables:
   description: ""
   do_ignore: false
 - rawname: _registryRegisterTTLEnv
-  path: openCloud/markdown-docs-generator/tmp/pkg/registry/expiry.go:28
+  path: openCloud/opencloud/pkg/registry/expiry.go:28
   foundincode: true
   name: _registryRegisterTTLEnv
   type: ""
@@ -457,6 +641,14 @@ variables:
   do_ignore: false
 - rawname: _serverMaxConnectionAgeEnv
   path: openCloud/opencloud/pkg/service/grpc/keepalive.go:19
+  foundincode: true
+  name: _serverMaxConnectionAgeEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _serverMaxConnectionAgeEnv
+  path: openCloud/reva/pkg/rgrpc/keepalive.go:19
   foundincode: true
   name: _serverMaxConnectionAgeEnv
   type: ""
