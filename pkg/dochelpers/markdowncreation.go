@@ -20,7 +20,7 @@ var _configMarkdown = `{{< include file="services/_includes/%s-config-example.ya
 
 // GenerateServiceIndexMarkdowns generates the _index.md files for the dev docu
 func GenerateServiceIndexMarkdowns() {
-	paths, err := filepath.Glob("../../services/*/README.md")
+	paths, err := filepath.Glob("tmp/services/*/README.md")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -53,7 +53,7 @@ func generateMarkdown(filepath string, servicename string) error {
 		Content: fmt.Sprintf(_configMarkdown, servicename, servicename),
 	})
 
-	tpl := template.Must(template.ParseFiles("templates/index.tmpl"))
+	tpl := template.Must(template.ParseFiles("templates/markdown/index.md.tmpl"))
 	b := bytes.NewBuffer(nil)
 	if err := tpl.Execute(b, map[string]interface{}{
 		"ServiceName":  head.Header,
@@ -66,11 +66,7 @@ func generateMarkdown(filepath string, servicename string) error {
 		return err
 	}
 
-	path := fmt.Sprintf("../../docs/services/%s", servicename)
+	path := fmt.Sprintf("output/docs/%s_readme.md", servicename)
 
-	if err := os.Mkdir(path, os.ModePerm); err != nil && !os.IsExist(err) {
-		return err
-	}
-
-	return os.WriteFile(path+"/_index.md", b.Bytes(), os.ModePerm)
+	return os.WriteFile(path, b.Bytes(), os.ModePerm)
 }
