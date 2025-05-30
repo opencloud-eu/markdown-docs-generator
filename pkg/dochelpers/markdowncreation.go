@@ -47,11 +47,11 @@ func generateMarkdown(filepath string, servicename string) error {
 	// we don't need the main title, we add in our template
 	head := md.Headings[0]
 	md.Headings = md.Headings[1:]
-	md.Headings = append(md.Headings, markdown.Heading{
+	/*md.Headings = append(md.Headings, markdown.Heading{
 		Level:   2,
 		Header:  "Example Yaml Config",
 		Content: fmt.Sprintf(_configMarkdown, servicename, servicename),
-	})
+	})*/
 
 	tpl := template.Must(template.ParseFiles("templates/markdown/index.md.tmpl"))
 	b := bytes.NewBuffer(nil)
