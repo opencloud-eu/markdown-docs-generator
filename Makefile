@@ -62,4 +62,4 @@ create-docs-pullrequest:
 	git add * && \
 	git commit -m "Update docs with latest env vars" && \
 	git push
-	gh pr create --base "${DOC_GIT_BRANCH}" --head "$$(git rev-parse --abbrev-ref HEAD)" --title "Update docs" --body "This PR updates the documentation with the latest environment variables." --repo opencloud-eu/docs
+	gh pr create --title "Update docs" --body "This PR updates the documentation."
