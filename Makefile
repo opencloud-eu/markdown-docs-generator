@@ -1,4 +1,5 @@
 OC_GIT_BRANCH ?= main
+DOC_GIT_BRANCH ?= main
 
 .PHONY: all
 all: git-checkdirexist go-mod-tidy
@@ -27,16 +28,20 @@ env-var-delta-table: go-mod-tidy
 .PHONY: git-checkdirexist
 git-checkdirexist:
 	@if [ ! -d "tmp" ]; then echo "Directory tmp does not exist. Please run `make git-clone` first.";exit 1;fi
+	@if [ ! -d "tmpdocs" ]; then echo "Directory tmpdocs does not exist. Please run `make git-clone` first.";exit 1;fi
 	@if [ -z "$$(ls -A tmp)" ]; then echo "Directory tmp is empty. Please run `make git-clone` first.";exit 1;fi
 
 .PHONY: git-clean
 git-clean:
 	rm -rf tmp
+	rm -rf tmpdocs
 
 .PHONY: git-clone
 git-clone: git-clean
 	@if [ -d "tmp" ]; then echo "Directory tmp already exists. Please remove it before cloning.";exit 1;fi
 	git clone -b "${OC_GIT_BRANCH}" https://github.com/opencloud-eu/opencloud.git tmp
+	@if [ -d "tmpdocs" ]; then echo "Directory tmpdocs already exists. Please remove it before cloning.";exit 1;fi
+	git clone -b "${DOC_GIT_BRANCH}" git@github.com:opencloud-eu/docs tmpdocs; cd tmpdocs && git checkout -b docs-update-$$(uuidgen -r) && cd ..
 
 .PHONY: clean
 clean: gitclean output-clean
@@ -48,3 +53,13 @@ output-clean:
 .PHONY: go-mod-tidy
 go-mod-tidy:
 	go mod tidy
+
+.PHONY: create-docs-pullrequest
+create-docs-pullrequest:
+	cp -Rfv output/docs/* tmpdocs/static/env-vars/
+	pushd tmpdocs && \
+	git config --add --bool push.autoSetupRemote true && \
+	git add * && \
+	git commit -m "Update docs with latest env vars" && \
+	git push
+	gh pr create --base "${DOC_GIT_BRANCH}" --head "$$(git rev-parse --abbrev-ref HEAD)" --title "Update docs" --body "This PR updates the documentation with the latest environment variables." --repo opencloud-eu/docs
