@@ -13,7 +13,7 @@ import (
 	"github.com/opencloud-eu/opencloud/pkg/markdown"
 )
 
-var _configMarkdown = `{{< include file="services/_includes/%s-config-example.yaml"  language="yaml" >}}
+var _configMarkdown = `{{< include file="services/_includes/%s.yaml"  language="yaml" >}}
 
 {{< include file="services/_includes/%s_configvars.md" >}}
 `
