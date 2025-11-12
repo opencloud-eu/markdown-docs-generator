@@ -42,6 +42,10 @@ m := map[string]interface{}{
 }
 
     targetFolder := "../../docs/services/_includes/"
+    err = os.MkdirAll(targetFolder, 0755)
+    if err != nil {
+        log.Fatalf("Failed to create target folder: %s", err)
+    }
     for pkg, conf := range m {
 	fields = GetAnnotatedEnvVariables(conf)
 	if len(fields) > 0 {
