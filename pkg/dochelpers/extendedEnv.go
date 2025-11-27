@@ -65,11 +65,11 @@ func GetRogueEnvs() {
 		}
 	}
 
-	if err := os.Chdir("../../"); err != nil {
+	if err := os.Chdir("tmp"); err != nil {
 		log.Fatal(err)
 	}
 	fmt.Println("Gathering variable definitions from source")
-	out, err := exec.Command("sh", "-c", "grep -RHn os.Getenv --exclude-dir=vendor | grep -v extendedEnv.go |grep \\.go").Output()
+	out, err := exec.Command("sh", "-c", "grep -RHn os.Getenv --exclude-dir={vendor,tests} | grep -v extendedEnv.go |grep \\.go").Output()
 	if err != nil {
 		log.Fatal(err)
 	}

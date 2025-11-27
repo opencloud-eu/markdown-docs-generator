@@ -1,10 +1,10 @@
 # Environment variables with extended scope not included in a service
 
-| Name | Type | Description | Default Value |
+| Name | Type | Default Value | Description |
 |---|---|---|---|
 {{- range .Variables }}
 {{- if .Ignore }}
-    {{ continue }}
+    {{- continue }}
 {{- end }}
-`{{ .Name }}` | {{ .Type }} | {{ .Description }} | {{ .DefaultValue }} |
+`{{ .Name }}` | {{ .Type }} | {{ .DefaultValue }} | {{ .Description }} |
 {{- end }}
