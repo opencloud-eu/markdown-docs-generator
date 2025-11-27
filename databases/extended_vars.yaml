@@ -126,9 +126,10 @@ variables:
   path: ./pkg/config/defaults/paths.go:54
   foundincode: true
   name: OC_CONFIG_DIR
-  type: "string"
+  type: string
   default_value: ""
-  description: "The default directory location for config files. See the General Info section in the documentation for more details on defaults."
+  description: The default directory location for config files. See the General Info
+    section in the documentation for more details on defaults.
   do_ignore: false
 - rawname: OC_GRPC_MAX_RECEIVED_MESSAGE_SIZE
   path: openCloud/reva/pkg/rgrpc/todo/pool/connection.go:79

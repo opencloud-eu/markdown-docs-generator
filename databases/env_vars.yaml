@@ -4024,20 +4024,6 @@ FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated
-    |  | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated |
-    FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD,
-    the OCS API is deprecated | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the
-    OCS API is deprecated | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS
-    API is deprecated | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API
-    is deprecated | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated
-    | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD,
-    the OCS API is deprecated | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the
-    OCS API is deprecated | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS
-    API is deprecated | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API
-    is deprecated | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated
-    | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD,
-    the OCS API is deprecated | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the
-    OCS API is deprecated
 FRONTEND_OCS_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD:
   name: OC_SHARING_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD;FRONTEND_OCS_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD
   defaultValue: "false"
@@ -4048,23 +4034,7 @@ FRONTEND_OCS_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD, the OCS
-    API is deprecated |  | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
-    the OCS API is deprecated | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
-    the OCS API is deprecated | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
-    the OCS API is deprecated | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
-    the OCS API is deprecated | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
-    the OCS API is deprecated | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
-    the OCS API is deprecated | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
-    the OCS API is deprecated | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
-    the OCS API is deprecated | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
-    the OCS API is deprecated | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
-    the OCS API is deprecated | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
-    the OCS API is deprecated | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
-    the OCS API is deprecated | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
-    the OCS API is deprecated | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
-    the OCS API is deprecated | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
-    the OCS API is deprecated | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
-    the OCS API is deprecated
+    API is deprecated
 FRONTEND_OCS_SHARE_PREFIX:
   name: FRONTEND_OCS_SHARE_PREFIX
   defaultValue: /Shares
@@ -9042,12 +9012,12 @@ OCS_TRACING_TYPE:
   removalVersion: ""
   deprecationInfo: ""
 OC_ADMIN_USER_ID:
-  name: OC_ADMIN_USER_ID;IDM_ADMIN_USER_ID
+  name: OC_ADMIN_USER_ID;STORAGE_USERS_PURGE_TRASH_BIN_USER_ID
   defaultValue: ""
   type: string
-  description: ID of the user that should receive admin privileges. Consider that
-    the UUID can be encoded in some LDAP deployment configurations like in .ldif files.
-    These need to be decoded beforehand.
+  description: ID of the user who collects all necessary information for deletion.
+    Consider that the UUID can be encoded in some LDAP deployment configurations like
+    in .ldif files. These need to be decoded beforehand.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
@@ -9063,7 +9033,7 @@ OC_ASSET_THEMES_PATH:
   removalVersion: ""
   deprecationInfo: ""
 OC_ASYNC_UPLOADS:
-  name: OC_ASYNC_UPLOADS;SEARCH_EVENTS_ASYNC_UPLOADS
+  name: OC_ASYNC_UPLOADS
   defaultValue: "true"
   type: bool
   description: Enable asynchronous file uploads.
@@ -9072,28 +9042,28 @@ OC_ASYNC_UPLOADS:
   removalVersion: ""
   deprecationInfo: ""
 OC_CACHE_AUTH_PASSWORD:
-  name: OC_CACHE_AUTH_PASSWORD;PROXY_PRESIGNEDURL_SIGNING_KEYS_STORE_AUTH_PASSWORD
+  name: OC_CACHE_AUTH_PASSWORD;FRONTEND_OCS_STAT_CACHE_AUTH_PASSWORD
   defaultValue: ""
   type: string
-  description: The password to authenticate with the store. Only applies when store
-    type 'nats-js-kv' is configured.
+  description: The password to use for authentication. Only applies when using the
+    'nats-js-kv' store type.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_CACHE_AUTH_USERNAME:
-  name: OC_CACHE_AUTH_USERNAME;PROXY_PRESIGNEDURL_SIGNING_KEYS_STORE_AUTH_USERNAME
+  name: OC_CACHE_AUTH_USERNAME;FRONTEND_OCS_STAT_CACHE_AUTH_USERNAME
   defaultValue: ""
   type: string
-  description: The username to authenticate with the store. Only applies when store
-    type 'nats-js-kv' is configured.
+  description: The username to use for authentication. Only applies when using the
+    'nats-js-kv' store type.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_CACHE_DATABASE:
   name: OC_CACHE_DATABASE
-  defaultValue: cache-userinfo
+  defaultValue: cache-stat
   type: string
   description: The database name the configured store should use.
   introductionVersion: 1.0.0
@@ -9101,49 +9071,50 @@ OC_CACHE_DATABASE:
   removalVersion: ""
   deprecationInfo: ""
 OC_CACHE_DISABLE_PERSISTENCE:
-  name: OC_CACHE_DISABLE_PERSISTENCE;PROXY_PRESIGNEDURL_SIGNING_KEYS_STORE_DISABLE_PERSISTENCE
-  defaultValue: "true"
+  name: OC_CACHE_DISABLE_PERSISTENCE;FRONTEND_OCS_STAT_CACHE_DISABLE_PERSISTENCE
+  defaultValue: "false"
   type: bool
-  description: Disables persistence of the store. Only applies when store type 'nats-js-kv'
-    is configured. Defaults to true.
+  description: Disable persistence of the cache. Only applies when using the 'nats-js-kv'
+    store type. Defaults to false.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_CACHE_STORE:
-  name: OC_CACHE_STORE;PROXY_PRESIGNEDURL_SIGNING_KEYS_STORE
-  defaultValue: nats-js-kv
+  name: OC_CACHE_STORE;FRONTEND_OCS_STAT_CACHE_STORE
+  defaultValue: memory
   type: string
-  description: 'The type of the signing key store. Supported values are: ''redis-sentinel'',
-    ''nats-js-kv'' and ''opencloudstoreservice'' (deprecated). See the text description
-    for details.'
+  description: 'The type of the cache store. Supported values are: ''memory'', ''redis-sentinel'',
+    ''nats-js-kv'', ''noop''. See the text description for details.'
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_CACHE_STORE_NODES:
-  name: OC_CACHE_STORE_NODES;PROXY_PRESIGNEDURL_SIGNING_KEYS_STORE_NODES
+  name: OC_CACHE_STORE_NODES;FRONTEND_OCS_STAT_CACHE_STORE_NODES
   defaultValue: '[127.0.0.1:9233]'
   type: '[]string'
-  description: A list of nodes to access the configured store. Note that the behaviour
-    how nodes are used is dependent on the library of the configured store. See the
-    Environment Variable Types description for more details.
-  introductionVersion: 1.0.0
-  deprecationVersion: ""
-  removalVersion: ""
-  deprecationInfo: ""
-OC_CACHE_TTL:
-  name: OC_CACHE_TTL;PROXY_PRESIGNEDURL_SIGNING_KEYS_STORE_TTL
-  defaultValue: 12h0m0s
-  type: Duration
-  description: Default time to live for signing keys. See the Environment Variable
+  description: A list of nodes to access the configured store. This has no effect
+    when 'memory' store is configured. Note that the behaviour how nodes are used
+    is dependent on the library of the configured store. See the Environment Variable
     Types description for more details.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+OC_CACHE_TTL:
+  name: OC_CACHE_TTL;FRONTEND_OCS_STAT_CACHE_TTL
+  defaultValue: 5m0s
+  type: Duration
+  description: Default time to live for user info in the cache. Only applied when
+    access tokens has no expiration. See the Environment Variable Types description
+    for more details.
+  introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 OC_CORS_ALLOW_CREDENTIALS:
-  name: OC_CORS_ALLOW_CREDENTIALS;SSE_CORS_ALLOW_CREDENTIALS
+  name: OC_CORS_ALLOW_CREDENTIALS;AUTH_APP_CORS_ALLOW_CREDENTIALS
   defaultValue: "true"
   type: bool
   description: 'Allow credentials for CORS.See following chapter for more details:
@@ -9153,7 +9124,7 @@ OC_CORS_ALLOW_CREDENTIALS:
   removalVersion: ""
   deprecationInfo: ""
 OC_CORS_ALLOW_HEADERS:
-  name: OC_CORS_ALLOW_HEADERS;SSE_CORS_ALLOW_HEADERS
+  name: OC_CORS_ALLOW_HEADERS;AUTH_APP_CORS_ALLOW_HEADERS
   defaultValue: '[Authorization Origin Content-Type Accept X-Requested-With X-Request-Id
     Ocs-Apirequest]'
   type: '[]string'
@@ -9165,8 +9136,8 @@ OC_CORS_ALLOW_HEADERS:
   removalVersion: ""
   deprecationInfo: ""
 OC_CORS_ALLOW_METHODS:
-  name: OC_CORS_ALLOW_METHODS;SSE_CORS_ALLOW_METHODS
-  defaultValue: '[GET]'
+  name: OC_CORS_ALLOW_METHODS;AUTH_APP_CORS_ALLOW_METHODS
+  defaultValue: '[GET POST DELETE]'
   type: '[]string'
   description: 'A list of allowed CORS methods. See following chapter for more details:
     *Access-Control-Request-Method* at https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Request-Method.
@@ -9176,7 +9147,7 @@ OC_CORS_ALLOW_METHODS:
   removalVersion: ""
   deprecationInfo: ""
 OC_CORS_ALLOW_ORIGINS:
-  name: OC_CORS_ALLOW_ORIGINS;SSE_CORS_ALLOW_ORIGINS
+  name: OC_CORS_ALLOW_ORIGINS;AUTH_APP_CORS_ALLOW_ORIGINS
   defaultValue: '[*]'
   type: '[]string'
   description: 'A list of allowed CORS origins. See following chapter for more details:
@@ -9272,7 +9243,7 @@ OC_DISABLE_VERSIONING:
   removalVersion: ""
   deprecationInfo: ""
 OC_EDITION:
-  name: OC_EDITION;OCDAV_EDITION
+  name: OC_EDITION;FRONTEND_EDITION
   defaultValue: ""
   type: string
   description: Edition of OpenCloud. Used for branding purposes.
@@ -9299,7 +9270,7 @@ OC_ENABLE_OCM:
   removalVersion: ""
   deprecationInfo: ""
 OC_EVENTS_AUTH_PASSWORD:
-  name: OC_EVENTS_AUTH_PASSWORD;POSTPROCESSING_EVENTS_AUTH_PASSWORD
+  name: OC_EVENTS_AUTH_PASSWORD;FRONTEND_EVENTS_AUTH_PASSWORD
   defaultValue: ""
   type: string
   description: The password to authenticate with the events broker. The events broker
@@ -9309,7 +9280,7 @@ OC_EVENTS_AUTH_PASSWORD:
   removalVersion: ""
   deprecationInfo: ""
 OC_EVENTS_AUTH_USERNAME:
-  name: OC_EVENTS_AUTH_USERNAME;POSTPROCESSING_EVENTS_AUTH_USERNAME
+  name: OC_EVENTS_AUTH_USERNAME;FRONTEND_EVENTS_AUTH_USERNAME
   defaultValue: ""
   type: string
   description: The username to authenticate with the events broker. The events broker
@@ -9319,7 +9290,7 @@ OC_EVENTS_AUTH_USERNAME:
   removalVersion: ""
   deprecationInfo: ""
 OC_EVENTS_CLUSTER:
-  name: OC_EVENTS_CLUSTER;POSTPROCESSING_EVENTS_CLUSTER
+  name: OC_EVENTS_CLUSTER;FRONTEND_EVENTS_CLUSTER
   defaultValue: opencloud-cluster
   type: string
   description: The clusterID of the event system. The event system is the message
@@ -9330,7 +9301,7 @@ OC_EVENTS_CLUSTER:
   removalVersion: ""
   deprecationInfo: ""
 OC_EVENTS_ENABLE_TLS:
-  name: OC_EVENTS_ENABLE_TLS;POSTPROCESSING_EVENTS_ENABLE_TLS
+  name: OC_EVENTS_ENABLE_TLS;NATS_EVENTS_ENABLE_TLS
   defaultValue: "false"
   type: bool
   description: Enable TLS for the connection to the events broker. The events broker
@@ -9340,7 +9311,7 @@ OC_EVENTS_ENABLE_TLS:
   removalVersion: ""
   deprecationInfo: ""
 OC_EVENTS_ENDPOINT:
-  name: OC_EVENTS_ENDPOINT;POSTPROCESSING_EVENTS_ENDPOINT
+  name: OC_EVENTS_ENDPOINT;FRONTEND_EVENTS_ENDPOINT
   defaultValue: 127.0.0.1:9233
   type: string
   description: The address of the event system. The event system is the message queuing
@@ -9350,20 +9321,20 @@ OC_EVENTS_ENDPOINT:
   removalVersion: ""
   deprecationInfo: ""
 OC_EVENTS_TLS_ROOT_CA_CERTIFICATE:
-  name: OC_EVENTS_TLS_ROOT_CA_CERTIFICATE;POSTPROCESSING_EVENTS_TLS_ROOT_CA_CERTIFICATE
+  name: OC_EVENTS_TLS_ROOT_CA_CERTIFICATE;AUDIT_EVENTS_TLS_ROOT_CA_CERTIFICATE
   defaultValue: ""
   type: string
   description: The root CA certificate used to validate the server's TLS certificate.
-    If provided POSTPROCESSING_EVENTS_TLS_INSECURE will be seen as false.
+    If provided AUDIT_EVENTS_TLS_INSECURE will be seen as false.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_GATEWAY_GRPC_ADDR:
-  name: OC_GATEWAY_GRPC_ADDR;STORAGE_USERS_GATEWAY_GRPC_ADDR
+  name: OC_GATEWAY_GRPC_ADDR;GATEWAY_GRPC_ADDR
   defaultValue: 127.0.0.1:9142
   type: string
-  description: The bind address of the gateway GRPC address.
+  description: The bind address of the GRPC service.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
@@ -9392,7 +9363,7 @@ OC_GRPC_CLIENT_TLS_MODE:
   removalVersion: ""
   deprecationInfo: ""
 OC_GRPC_PROTOCOL:
-  name: OC_GRPC_PROTOCOL;AUTH_SERVICE_GRPC_PROTOCOL
+  name: OC_GRPC_PROTOCOL;AUTH_APP_GRPC_PROTOCOL
   defaultValue: ""
   type: string
   description: The transport protocol of the GRPC service.
@@ -9432,17 +9403,17 @@ OC_HTTP_TLS_KEY:
   removalVersion: ""
   deprecationInfo: ""
 OC_INSECURE:
-  name: OC_INSECURE;POSTPROCESSING_EVENTS_TLS_INSECURE
+  name: OC_INSECURE;NATS_TLS_SKIP_VERIFY_CLIENT_CERT
   defaultValue: "false"
   type: bool
-  description: Whether the OpenCloud server should skip the client certificate verification
+  description: Whether the NATS server should skip the client certificate verification
     during the TLS handshake.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_JWT_SECRET:
-  name: OC_JWT_SECRET;SSE_JWT_SECRET
+  name: OC_JWT_SECRET;AUTH_APP_JWT_SECRET
   defaultValue: ""
   type: string
   description: The secret to mint and validate jwt tokens.
@@ -9506,8 +9477,8 @@ OC_KEYCLOAK_USER_REALM:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_BIND_DN:
-  name: OC_LDAP_BIND_DN;IDP_LDAP_BIND_DN
-  defaultValue: uid=idp,ou=sysusers,o=libregraph-idm
+  name: OC_LDAP_BIND_DN;USERS_LDAP_BIND_DN
+  defaultValue: uid=reva,ou=sysusers,o=libregraph-idm
   type: string
   description: LDAP DN to use for simple bind authentication with the target LDAP
     server.
@@ -9516,7 +9487,7 @@ OC_LDAP_BIND_DN:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_BIND_PASSWORD:
-  name: OC_LDAP_BIND_PASSWORD;IDP_LDAP_BIND_PASSWORD
+  name: OC_LDAP_BIND_PASSWORD;USERS_LDAP_BIND_PASSWORD
   defaultValue: ""
   type: string
   description: Password to use for authenticating the 'bind_dn'.
@@ -9525,18 +9496,18 @@ OC_LDAP_BIND_PASSWORD:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_CACERT:
-  name: OC_LDAP_CACERT;IDP_LDAP_TLS_CACERT
+  name: OC_LDAP_CACERT;USERS_LDAP_CACERT
   defaultValue: /var/lib/opencloud/idm/ldap.crt
   type: string
   description: Path/File name for the root CA certificate (in PEM format) used to
     validate TLS server certificates of the LDAP service. If not defined, the root
-    directory derives from $OC_BASE_DATA_PATH/idp.
+    directory derives from $OC_BASE_DATA_PATH/idm.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_DISABLED_USERS_GROUP_DN:
-  name: OC_LDAP_DISABLED_USERS_GROUP_DN;AUTH_BASIC_DISABLED_USERS_GROUP_DN
+  name: OC_LDAP_DISABLED_USERS_GROUP_DN;USERS_LDAP_DISABLED_USERS_GROUP_DN
   defaultValue: cn=DisabledUsersGroup,ou=groups,o=libregraph-idm
   type: string
   description: The distinguished name of the group to which added users will be classified
@@ -9546,7 +9517,7 @@ OC_LDAP_DISABLED_USERS_GROUP_DN:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_DISABLE_USER_MECHANISM:
-  name: OC_LDAP_DISABLE_USER_MECHANISM;AUTH_BASIC_DISABLE_USER_MECHANISM
+  name: OC_LDAP_DISABLE_USER_MECHANISM;USERS_LDAP_DISABLE_USER_MECHANISM
   defaultValue: attribute
   type: string
   description: An option to control the behavior for disabling users. Valid options
@@ -9559,7 +9530,7 @@ OC_LDAP_DISABLE_USER_MECHANISM:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_BASE_DN:
-  name: OC_LDAP_GROUP_BASE_DN;AUTH_BASIC_LDAP_GROUP_BASE_DN
+  name: OC_LDAP_GROUP_BASE_DN;USERS_LDAP_GROUP_BASE_DN
   defaultValue: ou=groups,o=libregraph-idm
   type: string
   description: Search base DN for looking up LDAP groups.
@@ -9568,7 +9539,7 @@ OC_LDAP_GROUP_BASE_DN:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_FILTER:
-  name: OC_LDAP_GROUP_FILTER;AUTH_BASIC_LDAP_GROUP_FILTER
+  name: OC_LDAP_GROUP_FILTER;USERS_LDAP_GROUP_FILTER
   defaultValue: ""
   type: string
   description: LDAP filter to add to the default filters for group searches.
@@ -9577,17 +9548,17 @@ OC_LDAP_GROUP_FILTER:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_OBJECTCLASS:
-  name: OC_LDAP_GROUP_OBJECTCLASS;AUTH_BASIC_LDAP_GROUP_OBJECTCLASS
+  name: OC_LDAP_GROUP_OBJECTCLASS;USERS_LDAP_GROUP_OBJECTCLASS
   defaultValue: groupOfNames
   type: string
   description: The object class to use for groups in the default group search filter
-    ('groupOfNames').
+    like 'groupOfNames'.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_SCHEMA_DISPLAYNAME:
-  name: OC_LDAP_GROUP_SCHEMA_DISPLAYNAME;AUTH_BASIC_LDAP_GROUP_SCHEMA_DISPLAYNAME
+  name: OC_LDAP_GROUP_SCHEMA_DISPLAYNAME;USERS_LDAP_GROUP_SCHEMA_DISPLAYNAME
   defaultValue: cn
   type: string
   description: LDAP Attribute to use for the displayname of groups (often the same
@@ -9597,7 +9568,7 @@ OC_LDAP_GROUP_SCHEMA_DISPLAYNAME:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_SCHEMA_GROUPNAME:
-  name: OC_LDAP_GROUP_SCHEMA_GROUPNAME;AUTH_BASIC_LDAP_GROUP_SCHEMA_GROUPNAME
+  name: OC_LDAP_GROUP_SCHEMA_GROUPNAME;USERS_LDAP_GROUP_SCHEMA_GROUPNAME
   defaultValue: cn
   type: string
   description: LDAP Attribute to use for the name of groups.
@@ -9606,28 +9577,28 @@ OC_LDAP_GROUP_SCHEMA_GROUPNAME:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_SCHEMA_ID:
-  name: OC_LDAP_GROUP_SCHEMA_ID;AUTH_BASIC_LDAP_GROUP_SCHEMA_ID
-  defaultValue: openCloudUUID
+  name: OC_LDAP_GROUP_SCHEMA_ID;USERS_LDAP_GROUP_SCHEMA_ID
+  defaultValue: openclouduuid
   type: string
-  description: LDAP Attribute to use as the unique id for groups. This should be a
-    stable globally unique id (e.g. a UUID).
+  description: LDAP Attribute to use as the unique ID for groups. This should be a
+    stable globally unique ID like a UUID.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_SCHEMA_ID_IS_OCTETSTRING:
-  name: OC_LDAP_GROUP_SCHEMA_ID_IS_OCTETSTRING;AUTH_BASIC_LDAP_GROUP_SCHEMA_ID_IS_OCTETSTRING
+  name: OC_LDAP_GROUP_SCHEMA_ID_IS_OCTETSTRING;USERS_LDAP_GROUP_SCHEMA_ID_IS_OCTETSTRING
   defaultValue: "false"
   type: bool
   description: Set this to true if the defined 'id' attribute for groups is of the
     'OCTETSTRING' syntax. This is e.g. required when using the 'objectGUID' attribute
-    of Active Directory for the group IDs.
+    of Active Directory for the group ID's.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_SCHEMA_MAIL:
-  name: OC_LDAP_GROUP_SCHEMA_MAIL;AUTH_BASIC_LDAP_GROUP_SCHEMA_MAIL
+  name: OC_LDAP_GROUP_SCHEMA_MAIL;USERS_LDAP_GROUP_SCHEMA_MAIL
   defaultValue: mail
   type: string
   description: LDAP Attribute to use for the email address of groups (can be empty).
@@ -9636,7 +9607,7 @@ OC_LDAP_GROUP_SCHEMA_MAIL:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_SCHEMA_MEMBER:
-  name: OC_LDAP_GROUP_SCHEMA_MEMBER;AUTH_BASIC_LDAP_GROUP_SCHEMA_MEMBER
+  name: OC_LDAP_GROUP_SCHEMA_MEMBER;USERS_LDAP_GROUP_SCHEMA_MEMBER
   defaultValue: member
   type: string
   description: LDAP Attribute that is used for group members.
@@ -9645,7 +9616,7 @@ OC_LDAP_GROUP_SCHEMA_MEMBER:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_SCOPE:
-  name: OC_LDAP_GROUP_SCOPE;AUTH_BASIC_LDAP_GROUP_SCOPE
+  name: OC_LDAP_GROUP_SCOPE;USERS_LDAP_GROUP_SCOPE
   defaultValue: sub
   type: string
   description: LDAP search scope to use when looking up groups. Supported values are
@@ -9655,7 +9626,7 @@ OC_LDAP_GROUP_SCOPE:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_INSECURE:
-  name: OC_LDAP_INSECURE;IDP_INSECURE
+  name: OC_LDAP_INSECURE;USERS_LDAP_INSECURE
   defaultValue: "false"
   type: bool
   description: Disable TLS certificate validation for the LDAP connections. Do not
@@ -9677,16 +9648,17 @@ OC_LDAP_SERVER_WRITE_ENABLED:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_URI:
-  name: OC_LDAP_URI;IDP_LDAP_URI
+  name: OC_LDAP_URI;USERS_LDAP_URI
   defaultValue: ldaps://localhost:9235
   type: string
-  description: Url of the LDAP service to use as IDP.
+  description: URI of the LDAP Server to connect to. Supported URI schemes are 'ldaps://'
+    and 'ldap://'
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_BASE_DN:
-  name: OC_LDAP_USER_BASE_DN;IDP_LDAP_BASE_DN
+  name: OC_LDAP_USER_BASE_DN;USERS_LDAP_USER_BASE_DN
   defaultValue: ou=users,o=libregraph-idm
   type: string
   description: Search base DN for looking up LDAP users.
@@ -9695,16 +9667,16 @@ OC_LDAP_USER_BASE_DN:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_ENABLED_ATTRIBUTE:
-  name: OC_LDAP_USER_ENABLED_ATTRIBUTE;IDP_USER_ENABLED_ATTRIBUTE
-  defaultValue: openCloudUserEnabled
+  name: OC_LDAP_USER_ENABLED_ATTRIBUTE;USERS_LDAP_USER_ENABLED_ATTRIBUTE
+  defaultValue: openclouduserenabled
   type: string
-  description: LDAP Attribute to use as a flag telling if the user is enabled or disabled.
+  description: LDAP attribute to use as a flag telling if the user is enabled or disabled.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_FILTER:
-  name: OC_LDAP_USER_FILTER;IDP_LDAP_FILTER
+  name: OC_LDAP_USER_FILTER;USERS_LDAP_USER_FILTER
   defaultValue: ""
   type: string
   description: LDAP filter to add to the default filters for user search like '(objectclass=openCloudUser)'.
@@ -9713,16 +9685,17 @@ OC_LDAP_USER_FILTER:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_OBJECTCLASS:
-  name: OC_LDAP_USER_OBJECTCLASS;IDP_LDAP_OBJECTCLASS
+  name: OC_LDAP_USER_OBJECTCLASS;USERS_LDAP_USER_OBJECTCLASS
   defaultValue: inetOrgPerson
   type: string
-  description: LDAP User ObjectClass like 'inetOrgPerson'.
+  description: The object class to use for users in the default user search filter
+    like 'inetOrgPerson'.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_SCHEMA_DISPLAYNAME:
-  name: OC_LDAP_USER_SCHEMA_DISPLAYNAME;AUTH_BASIC_LDAP_USER_SCHEMA_DISPLAYNAME
+  name: OC_LDAP_USER_SCHEMA_DISPLAYNAME;USERS_LDAP_USER_SCHEMA_DISPLAYNAME
   defaultValue: displayname
   type: string
   description: LDAP Attribute to use for the displayname of users.
@@ -9731,36 +9704,37 @@ OC_LDAP_USER_SCHEMA_DISPLAYNAME:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_SCHEMA_ID:
-  name: OC_LDAP_USER_SCHEMA_ID;IDP_LDAP_UUID_ATTRIBUTE
-  defaultValue: openCloudUUID
+  name: OC_LDAP_USER_SCHEMA_ID;USERS_LDAP_USER_SCHEMA_ID
+  defaultValue: openclouduuid
   type: string
-  description: LDAP User UUID attribute like 'uid'.
+  description: LDAP Attribute to use as the unique ID for users. This should be a
+    stable globally unique ID like a UUID.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_SCHEMA_ID_IS_OCTETSTRING:
-  name: OC_LDAP_USER_SCHEMA_ID_IS_OCTETSTRING;AUTH_BASIC_LDAP_USER_SCHEMA_ID_IS_OCTETSTRING
+  name: OC_LDAP_USER_SCHEMA_ID_IS_OCTETSTRING;USERS_LDAP_USER_SCHEMA_ID_IS_OCTETSTRING
   defaultValue: "false"
   type: bool
   description: Set this to true if the defined 'ID' attribute for users is of the
     'OCTETSTRING' syntax. This is e.g. required when using the 'objectGUID' attribute
-    of Active Directory for the user IDs.
+    of Active Directory for the user ID's.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_SCHEMA_MAIL:
-  name: OC_LDAP_USER_SCHEMA_MAIL;IDP_LDAP_EMAIL_ATTRIBUTE
+  name: OC_LDAP_USER_SCHEMA_MAIL;USERS_LDAP_USER_SCHEMA_MAIL
   defaultValue: mail
   type: string
-  description: LDAP User email attribute like 'mail'.
+  description: LDAP Attribute to use for the email address of users.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_SCHEMA_TENANT_ID:
-  name: OC_LDAP_USER_SCHEMA_TENANT_ID;AUTH_BASIC_LDAP_USER_SCHEMA_TENANT_ID
+  name: OC_LDAP_USER_SCHEMA_TENANT_ID;USERS_LDAP_USER_SCHEMA_TENANT_ID
   defaultValue: ""
   type: string
   description: LDAP Attribute to use for the tenant ID of users. This is used to identify
@@ -9770,10 +9744,10 @@ OC_LDAP_USER_SCHEMA_TENANT_ID:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_SCHEMA_USERNAME:
-  name: OC_LDAP_USER_SCHEMA_USERNAME;IDP_LDAP_NAME_ATTRIBUTE
-  defaultValue: displayName
+  name: OC_LDAP_USER_SCHEMA_USERNAME;USERS_LDAP_USER_SCHEMA_USERNAME
+  defaultValue: uid
   type: string
-  description: LDAP User name attribute like 'displayName'.
+  description: LDAP Attribute to use for username of users.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
@@ -9789,17 +9763,17 @@ OC_LDAP_USER_SCHEMA_USER_TYPE:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_SCOPE:
-  name: OC_LDAP_USER_SCOPE;IDP_LDAP_SCOPE
+  name: OC_LDAP_USER_SCOPE;USERS_LDAP_USER_SCOPE
   defaultValue: sub
   type: string
-  description: LDAP search scope to use when looking up users. Supported scopes are
+  description: LDAP search scope to use when looking up users. Supported values are
     'base', 'one' and 'sub'.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LOG_COLOR:
-  name: OC_LOG_COLOR;POSTPROCESSING_LOG_COLOR
+  name: OC_LOG_COLOR;AUTH_APP_LOG_COLOR
   defaultValue: "false"
   type: bool
   description: Activates colorized log output.
@@ -9808,7 +9782,7 @@ OC_LOG_COLOR:
   removalVersion: ""
   deprecationInfo: ""
 OC_LOG_FILE:
-  name: OC_LOG_FILE;POSTPROCESSING_LOG_FILE
+  name: OC_LOG_FILE;AUTH_APP_LOG_FILE
   defaultValue: ""
   type: string
   description: The path to the log file. Activates logging to this file if set.
@@ -9817,7 +9791,7 @@ OC_LOG_FILE:
   removalVersion: ""
   deprecationInfo: ""
 OC_LOG_LEVEL:
-  name: OC_LOG_LEVEL;POSTPROCESSING_LOG_LEVEL
+  name: OC_LOG_LEVEL;AUTH_APP_LOG_LEVEL
   defaultValue: ""
   type: string
   description: 'The log level. Valid values are: ''panic'', ''fatal'', ''error'',
@@ -9827,7 +9801,7 @@ OC_LOG_LEVEL:
   removalVersion: ""
   deprecationInfo: ""
 OC_LOG_PRETTY:
-  name: OC_LOG_PRETTY;POSTPROCESSING_LOG_PRETTY
+  name: OC_LOG_PRETTY;AUTH_APP_LOG_PRETTY
   defaultValue: "false"
   type: bool
   description: Activates pretty log output.
@@ -9836,23 +9810,23 @@ OC_LOG_PRETTY:
   removalVersion: ""
   deprecationInfo: ""
 OC_MACHINE_AUTH_API_KEY:
-  name: OC_MACHINE_AUTH_API_KEY;AUTH_MACHINE_API_KEY
+  name: OC_MACHINE_AUTH_API_KEY;AUTH_APP_MACHINE_AUTH_API_KEY
   defaultValue: ""
   type: string
-  description: Machine auth API key used to validate internal requests necessary for
-    the access to resources from other services.
+  description: The machine auth API key used to validate internal requests necessary
+    to access resources from other services.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_MAX_CONCURRENCY:
-  name: OC_MAX_CONCURRENCY;STORAGE_USERS_POSIX_MAX_CONCURRENCY
-  defaultValue: "0"
+  name: OC_MAX_CONCURRENCY;FRONTEND_MAX_CONCURRENCY
+  defaultValue: "1"
   type: int
   description: Maximum number of concurrent go-routines. Higher values can potentially
     get work done faster but will also cause more load on the system. Values of 0
     or below will be ignored and the default value will be used.
-  introductionVersion: 2.0.0
+  introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -9868,10 +9842,11 @@ OC_OIDC_CLIENT_ID:
   removalVersion: ""
   deprecationInfo: ""
 OC_OIDC_ISSUER:
-  name: OC_URL;OC_OIDC_ISSUER;AUTH_BEARER_OIDC_ISSUER
+  name: OC_URL;OC_OIDC_ISSUER;USERS_IDP_URL
   defaultValue: https://localhost:9200
   type: string
-  description: URL of the OIDC issuer. It defaults to URL of the builtin IDP.
+  description: The identity provider value to set in the userids of the CS3 user objects
+    for users returned by this user provider.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
@@ -9944,17 +9919,17 @@ OC_PASSWORD_POLICY_MIN_UPPERCASE_CHARACTERS:
   removalVersion: ""
   deprecationInfo: ""
 OC_PERSISTENT_STORE:
-  name: OC_PERSISTENT_STORE;POSTPROCESSING_STORE
+  name: OC_PERSISTENT_STORE;EVENTHISTORY_STORE
   defaultValue: nats-js-kv
   type: string
-  description: 'The type of the store. Supported values are: ''memory'', ''redis-sentinel'',
-    ''nats-js-kv'', ''noop''. See the text description for details.'
+  description: 'The type of the store. Supported values are: ''memory'', ''nats-js-kv'',
+    ''redis-sentinel'', ''noop''. See the text description for details.'
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_PERSISTENT_STORE_AUTH_PASSWORD:
-  name: OC_PERSISTENT_STORE_AUTH_PASSWORD;POSTPROCESSING_STORE_AUTH_PASSWORD
+  name: OC_PERSISTENT_STORE_AUTH_PASSWORD;EVENTHISTORY_STORE_AUTH_PASSWORD
   defaultValue: ""
   type: string
   description: The password to authenticate with the store. Only applies when store
@@ -9964,7 +9939,7 @@ OC_PERSISTENT_STORE_AUTH_PASSWORD:
   removalVersion: ""
   deprecationInfo: ""
 OC_PERSISTENT_STORE_AUTH_USERNAME:
-  name: OC_PERSISTENT_STORE_AUTH_USERNAME;POSTPROCESSING_STORE_AUTH_USERNAME
+  name: OC_PERSISTENT_STORE_AUTH_USERNAME;EVENTHISTORY_STORE_AUTH_USERNAME
   defaultValue: ""
   type: string
   description: The username to authenticate with the store. Only applies when store
@@ -9974,7 +9949,7 @@ OC_PERSISTENT_STORE_AUTH_USERNAME:
   removalVersion: ""
   deprecationInfo: ""
 OC_PERSISTENT_STORE_NODES:
-  name: OC_PERSISTENT_STORE_NODES;POSTPROCESSING_STORE_NODES
+  name: OC_PERSISTENT_STORE_NODES;EVENTHISTORY_STORE_NODES
   defaultValue: '[127.0.0.1:9233]'
   type: '[]string'
   description: A list of nodes to access the configured store. This has no effect
@@ -9986,11 +9961,11 @@ OC_PERSISTENT_STORE_NODES:
   removalVersion: ""
   deprecationInfo: ""
 OC_PERSISTENT_STORE_TTL:
-  name: OC_PERSISTENT_STORE_TTL;POSTPROCESSING_STORE_TTL
-  defaultValue: 0s
+  name: OC_PERSISTENT_STORE_TTL;EVENTHISTORY_STORE_TTL
+  defaultValue: 336h0m0s
   type: Duration
-  description: Time to live for events in the store. See the Environment Variable
-    Types description for more details.
+  description: Time to live for events in the store. Defaults to '336h' (2 weeks).
+    See the Environment Variable Types description for more details.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
@@ -10008,7 +9983,7 @@ OC_REVA_GATEWAY:
   name: OC_REVA_GATEWAY
   defaultValue: eu.opencloud.api.gateway
   type: string
-  description: CS3 gateway used to look up user metadata
+  description: The CS3 gateway endpoint.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
@@ -10036,7 +10011,7 @@ OC_REVA_GATEWAY_TLS_MODE:
   removalVersion: ""
   deprecationInfo: ""
 OC_SERVICE_ACCOUNT_ID:
-  name: OC_SERVICE_ACCOUNT_ID;CLIENTLOG_SERVICE_ACCOUNT_ID
+  name: OC_SERVICE_ACCOUNT_ID;FRONTEND_SERVICE_ACCOUNT_ID
   defaultValue: ""
   type: string
   description: The ID of the service account the service should use. See the 'auth-service'
@@ -10046,7 +10021,7 @@ OC_SERVICE_ACCOUNT_ID:
   removalVersion: ""
   deprecationInfo: ""
 OC_SERVICE_ACCOUNT_SECRET:
-  name: OC_SERVICE_ACCOUNT_SECRET;CLIENTLOG_SERVICE_ACCOUNT_SECRET
+  name: OC_SERVICE_ACCOUNT_SECRET;FRONTEND_SERVICE_ACCOUNT_SECRET
   defaultValue: ""
   type: string
   description: The service account secret.
@@ -10077,7 +10052,11 @@ OC_SHARING_PUBLIC_SHARE_MUST_HAVE_PASSWORD:
     |  | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated |  |
     FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated |  |  |
     FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated |  | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD,
-    the OCS API is deprecated
+    the OCS API is deprecated |  | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the
+    OCS API is deprecated |  | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS
+    API is deprecated |  | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API
+    is deprecated |  | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is
+    deprecated
 OC_SHARING_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD:
   name: OC_SHARING_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD;FRONTEND_OCS_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD
   defaultValue: "false"
@@ -10104,6 +10083,10 @@ OC_SHARING_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD:
     the OCS API is deprecated |  | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
     the OCS API is deprecated |  |  | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
     the OCS API is deprecated |  | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
+    the OCS API is deprecated |  | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
+    the OCS API is deprecated |  | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
+    the OCS API is deprecated |  | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
+    the OCS API is deprecated |  | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
     the OCS API is deprecated
 OC_SHOW_USER_EMAIL_IN_RESULTS:
   name: OC_SHOW_USER_EMAIL_IN_RESULTS
@@ -10117,13 +10100,12 @@ OC_SHOW_USER_EMAIL_IN_RESULTS:
   removalVersion: ""
   deprecationInfo: ""
 OC_SPACES_MAX_QUOTA:
-  name: OC_SPACES_MAX_QUOTA;STORAGE_USERS_POSIX_MAX_QUOTA
+  name: OC_SPACES_MAX_QUOTA;FRONTEND_MAX_QUOTA
   defaultValue: "0"
   type: uint64
-  description: Set a global max quota for spaces in bytes. A value of 0 equals unlimited.
-    If not using the global OC_SPACES_MAX_QUOTA, you must define the FRONTEND_MAX_QUOTA
-    in the frontend service.
-  introductionVersion: 2.0.0
+  description: Set the global max quota value in bytes. A value of 0 equals unlimited.
+    The value is provided via capabilities.
+  introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -10205,7 +10187,7 @@ OC_TRANSFER_SECRET:
   removalVersion: ""
   deprecationInfo: ""
 OC_TRANSLATION_PATH:
-  name: OC_TRANSLATION_PATH;NOTIFICATIONS_TRANSLATION_PATH
+  name: OC_TRANSLATION_PATH;USERLOG_TRANSLATION_PATH
   defaultValue: ""
   type: string
   description: (optional) Set this to a path with custom translations to overwrite
@@ -10216,20 +10198,20 @@ OC_TRANSLATION_PATH:
   removalVersion: ""
   deprecationInfo: ""
 OC_URL:
-  name: OC_URL;OC_PUBLIC_URL
+  name: OC_URL;OC_OIDC_ISSUER;USERS_IDP_URL
   defaultValue: https://localhost:9200
   type: string
-  description: URL, where OpenCloud is reachable for users.
+  description: The identity provider value to set in the userids of the CS3 user objects
+    for users returned by this user provider.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_WOPI_DISABLE_CHAT:
-  name: COLLABORATION_WOPI_DISABLE_CHAT;OC_WOPI_DISABLE_CHAT
+  name: APP_PROVIDER_WOPI_DISABLE_CHAT;OC_WOPI_DISABLE_CHAT
   defaultValue: "false"
   type: bool
-  description: Disable chat in the office web frontend. This feature applies to OnlyOffice
-    and Microsoft.
+  description: Disable the chat functionality of the office app.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
@@ -11737,7 +11719,7 @@ SEARCH_EVENTS_ENDPOINT:
   deprecationInfo: ""
 SEARCH_EVENTS_MAX_ACK_PENDING:
   name: SEARCH_EVENTS_MAX_ACK_PENDING
-  defaultValue: "10000"
+  defaultValue: "1000"
   type: int
   description: The maximum number of unacknowledged messages. This is used to limit
     the number of messages that can be in flight at the same time.
@@ -13161,20 +13143,20 @@ SSE_TRACING_TYPE:
   removalVersion: ""
   deprecationInfo: ""
 STORAGE_GATEWAY_GRPC_ADDR:
-  name: SETTINGS_STORAGE_GATEWAY_GRPC_ADDR;STORAGE_GATEWAY_GRPC_ADDR
+  name: GRAPH_STORAGE_GATEWAY_GRPC_ADDR;STORAGE_GATEWAY_GRPC_ADDR
   defaultValue: eu.opencloud.api.storage-system
   type: string
   description: GRPC address of the STORAGE-SYSTEM service.
-  introductionVersion: 1.0.0
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 STORAGE_GRPC_ADDR:
-  name: SETTINGS_STORAGE_GRPC_ADDR;STORAGE_GRPC_ADDR
+  name: GRAPH_STORAGE_GRPC_ADDR;STORAGE_GRPC_ADDR
   defaultValue: eu.opencloud.api.storage-system
   type: string
   description: GRPC address of the STORAGE-SYSTEM service.
-  introductionVersion: 1.0.0
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
