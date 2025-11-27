@@ -2,12 +2,13 @@ package dochelpers
 
 import (
 	"fmt"
-	"github.com/rogpeppe/go-internal/semver"
-	"gopkg.in/yaml.v2"
 	"log"
 	"os"
 	"path/filepath"
 	"text/template"
+
+	"github.com/rogpeppe/go-internal/semver"
+	"gopkg.in/yaml.v2"
 )
 
 const envVarYamlSource = "databases/env_vars.yaml"
@@ -47,8 +48,8 @@ func RenderEnvVarDeltaTable(osArgs []string) {
 	if semver.Compare(osArgs[2], osArgs[3]) >= 0 {
 		log.Fatalf("Start version %s is not smaller than target version %s", osArgs[2], osArgs[3])
 	}
-	if semver.Compare(osArgs[2], "v5.0.0") < 0 {
-		log.Fatalf("This tool does not support versions prior v5.0.0, (given %s)", osArgs[2])
+	if semver.Compare(osArgs[2], "v2.0.0") < 0 {
+		log.Fatalf("This tool does not support versions prior v2.0.0, (given %s)", osArgs[2])
 	}
 	startVersion := osArgs[2]
 	endVersion := osArgs[3]

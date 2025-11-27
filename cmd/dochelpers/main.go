@@ -23,7 +23,7 @@ func main() {
 			if len(os.Args) != 4 {
 				fmt.Println("Needs two arguments: env-var-delta-table <first-version> <second-version>")
 				fmt.Println("Example: env-var-delta-table v5.0.0 v6.0.0")
-				fmt.Println("Will not generate usable results for versions Prior to v5.0.0")
+				fmt.Println("Will not generate usable results for versions Prior to v2.0.0")
 			} else {
 				dochelpers.RenderEnvVarDeltaTable(os.Args)
 			}

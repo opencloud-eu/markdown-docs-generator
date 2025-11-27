@@ -1,7 +1,295 @@
 variables:
+- rawname: APPDATA
+  path: ./micbar/rclone/fs/config/config.go:170
+  foundincode: true
+  name: APPDATA
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: AWS_ACCESS_KEY
+  path: ./opencloud/minio-go/pkg/credentials/env_aws.go:45
+  foundincode: true
+  name: AWS_ACCESS_KEY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: AWS_ACCESS_KEY_ID
+  path: ./opencloud/minio-go/pkg/credentials/env_aws.go:43
+  foundincode: true
+  name: AWS_ACCESS_KEY_ID
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: AWS_CONTAINER_AUTHORIZATION_TOKEN
+  path: ./opencloud/minio-go/pkg/credentials/iam_aws.go:104
+  foundincode: true
+  name: AWS_CONTAINER_AUTHORIZATION_TOKEN
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE
+  path: ./opencloud/minio-go/pkg/credentials/iam_aws.go:109
+  foundincode: true
+  name: AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: AWS_CONTAINER_CREDENTIALS_FULL_URI
+  path: ./opencloud/minio-go/pkg/credentials/iam_aws.go:119
+  foundincode: true
+  name: AWS_CONTAINER_CREDENTIALS_FULL_URI
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: AWS_CONTAINER_CREDENTIALS_RELATIVE_URI
+  path: ./opencloud/minio-go/pkg/credentials/iam_aws.go:114
+  foundincode: true
+  name: AWS_CONTAINER_CREDENTIALS_RELATIVE_URI
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: AWS_PROFILE
+  path: ./opencloud/minio-go/pkg/credentials/file_aws_credentials.go:86
+  foundincode: true
+  name: AWS_PROFILE
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: AWS_REGION
+  path: ./opencloud/minio-go/pkg/credentials/iam_aws.go:139
+  foundincode: true
+  name: AWS_REGION
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: AWS_ROLE_ARN
+  path: ./opencloud/minio-go/pkg/credentials/iam_aws.go:129
+  foundincode: true
+  name: AWS_ROLE_ARN
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: AWS_ROLE_SESSION_NAME
+  path: ./opencloud/minio-go/pkg/credentials/iam_aws.go:134
+  foundincode: true
+  name: AWS_ROLE_SESSION_NAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: AWS_SECRET_ACCESS_KEY
+  path: ./opencloud/minio-go/pkg/credentials/env_aws.go:48
+  foundincode: true
+  name: AWS_SECRET_ACCESS_KEY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: AWS_SECRET_KEY
+  path: ./opencloud/minio-go/pkg/credentials/env_aws.go:50
+  foundincode: true
+  name: AWS_SECRET_KEY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: AWS_SESSION_TOKEN
+  path: ./opencloud/minio-go/pkg/credentials/env_aws.go:62
+  foundincode: true
+  name: AWS_SESSION_TOKEN
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: AWS_SHARED_CREDENTIALS_FILE
+  path: ./opencloud/minio-go/pkg/credentials/file_aws_credentials.go:76
+  foundincode: true
+  name: AWS_SHARED_CREDENTIALS_FILE
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: AWS_WEB_IDENTITY_TOKEN_FILE
+  path: ./opencloud/minio-go/pkg/credentials/iam_aws.go:124
+  foundincode: true
+  name: AWS_WEB_IDENTITY_TOKEN_FILE
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CEPH_SUITE_VERSION
+  path: ./rook/rook/tests/framework/installer/ceph_installer.go:93
+  foundincode: true
+  name: CEPH_SUITE_VERSION
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CEPH_VOLUME_ALLOW_LOOP_DEVICES
+  path: ./rook/rook/pkg/clusterd/disk.go:257
+  foundincode: true
+  name: CEPH_VOLUME_ALLOW_LOOP_DEVICES
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CI
+  path: ./opencloud/opencloud-project/opencloud/services/search/pkg/opensearch/internal/test/suite.go:57
+  foundincode: true
+  name: CI
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CI
+  path: ./opencloud-eu/markdown-docs-generator/tmp/services/search/pkg/opensearch/internal/test/suite.go:57
+  foundincode: false
+  name: CI
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CI
+  path: ./opencloud/services/search/pkg/opensearch/internal/test/suite.go:57
+  foundincode: false
+  name: CI
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CI
+  path: ./opencloud/markdown-docs-generator/tmp/services/search/pkg/opensearch/internal/test/suite.go:57
+  foundincode: true
+  name: CI
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CI
+  path: ./opencloud-eu/opencloud/services/search/pkg/opensearch/internal/test/suite.go:57
+  foundincode: false
+  name: CI
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CI
+  path: ./micbar/rclone/fstest/testy/testy.go:11
+  foundincode: true
+  name: CI
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CI_SYSTEM_NAME
+  path: ./opencloud/markdown-docs-generator/tmp/services/search/pkg/opensearch/internal/test/suite.go:58
+  foundincode: true
+  name: CI_SYSTEM_NAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CI_SYSTEM_NAME
+  path: ./opencloud-eu/opencloud/services/search/pkg/opensearch/internal/test/suite.go:58
+  foundincode: false
+  name: CI_SYSTEM_NAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CI_SYSTEM_NAME
+  path: ./opencloud-eu/markdown-docs-generator/tmp/services/search/pkg/opensearch/internal/test/suite.go:58
+  foundincode: false
+  name: CI_SYSTEM_NAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CI_SYSTEM_NAME
+  path: ./opencloud/services/search/pkg/opensearch/internal/test/suite.go:58
+  foundincode: false
+  name: CI_SYSTEM_NAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CI_SYSTEM_NAME
+  path: ./opencloud/opencloud-project/opencloud/services/search/pkg/opensearch/internal/test/suite.go:58
+  foundincode: true
+  name: CI_SYSTEM_NAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CONJUR_CLOUD_ADMIN_PASS
+  path: ./micbar/ansible-test/.venv/lib/python3.13/site-packages/ansible_collections/cyberark/conjur/conjur-cloud-tools/conjurCloudTenant/tenant_authentication/main.go:164
+  foundincode: true
+  name: CONJUR_CLOUD_ADMIN_PASS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CS3_GATEWAY
+  path: ./owncloud/ocis-project/ocis/services/idp/pkg/backends/cs3/bootstrap/cs3.go:77
+  foundincode: true
+  name: CS3_GATEWAY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CS3_GATEWAY
+  path: ./opencloud-eu/opencloud/services/idp/pkg/backends/cs3/bootstrap/cs3.go:77
+  foundincode: false
+  name: CS3_GATEWAY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CS3_GATEWAY
+  path: ./opencloud-eu/markdown-docs-generator/tmp/services/idp/pkg/backends/cs3/bootstrap/cs3.go:77
+  foundincode: false
+  name: CS3_GATEWAY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CS3_GATEWAY
+  path: ./opencloud/markdown-docs-generator/tmp/services/idp/pkg/backends/cs3/bootstrap/cs3.go:77
+  foundincode: true
+  name: CS3_GATEWAY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
 - rawname: CS3_GATEWAY
   path: openCloud/markdown-docs-generator/tmp/services/idp/pkg/backends/cs3/bootstrap/cs3.go:77
+  foundincode: false
+  name: CS3_GATEWAY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: CS3_GATEWAY
+  path: ./opencloud/opencloud-project/opencloud/services/idp/pkg/backends/cs3/bootstrap/cs3.go:77
   foundincode: true
+  name: CS3_GATEWAY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CS3_GATEWAY
+  path: ./opencloud/services/idp/pkg/backends/cs3/bootstrap/cs3.go:77
+  foundincode: false
   name: CS3_GATEWAY
   type: ""
   default_value: ""
@@ -9,31 +297,111 @@ variables:
   do_ignore: false
 - rawname: CS3_GATEWAY
   path: openCloud/opencloud/services/idp/pkg/backends/cs3/bootstrap/cs3.go:77
-  foundincode: true
+  foundincode: false
   name: CS3_GATEWAY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: CS3_MACHINE_AUTH_API_KEY
+  path: ./opencloud/markdown-docs-generator/tmp/services/idp/pkg/backends/cs3/bootstrap/cs3.go:78
+  foundincode: true
+  name: CS3_MACHINE_AUTH_API_KEY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CS3_MACHINE_AUTH_API_KEY
+  path: ./opencloud/opencloud-project/opencloud/services/idp/pkg/backends/cs3/bootstrap/cs3.go:78
+  foundincode: true
+  name: CS3_MACHINE_AUTH_API_KEY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CS3_MACHINE_AUTH_API_KEY
+  path: ./owncloud/ocis-project/ocis/services/idp/pkg/backends/cs3/bootstrap/cs3.go:78
+  foundincode: true
+  name: CS3_MACHINE_AUTH_API_KEY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CS3_MACHINE_AUTH_API_KEY
+  path: ./opencloud-eu/opencloud/services/idp/pkg/backends/cs3/bootstrap/cs3.go:78
+  foundincode: false
+  name: CS3_MACHINE_AUTH_API_KEY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CS3_MACHINE_AUTH_API_KEY
+  path: ./opencloud/services/idp/pkg/backends/cs3/bootstrap/cs3.go:78
+  foundincode: false
+  name: CS3_MACHINE_AUTH_API_KEY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CS3_MACHINE_AUTH_API_KEY
+  path: ./opencloud-eu/markdown-docs-generator/tmp/services/idp/pkg/backends/cs3/bootstrap/cs3.go:78
+  foundincode: false
+  name: CS3_MACHINE_AUTH_API_KEY
   type: ""
   default_value: ""
   description: ""
   do_ignore: false
 - rawname: CS3_MACHINE_AUTH_API_KEY
   path: openCloud/markdown-docs-generator/tmp/services/idp/pkg/backends/cs3/bootstrap/cs3.go:78
-  foundincode: true
+  foundincode: false
   name: CS3_MACHINE_AUTH_API_KEY
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
+  do_ignore: true
 - rawname: CS3_MACHINE_AUTH_API_KEY
   path: openCloud/opencloud/services/idp/pkg/backends/cs3/bootstrap/cs3.go:78
-  foundincode: true
+  foundincode: false
   name: CS3_MACHINE_AUTH_API_KEY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: DAYS
+  path: ./opencloud/markdown-docs-generator/tmp/tests/qa-activity-report/generate-qa-activity-report.go:94
+  foundincode: true
+  name: DAYS
   type: ""
   default_value: ""
   description: ""
   do_ignore: false
 - rawname: DAYS
   path: openCloud/markdown-docs-generator/tmp/tests/qa-activity-report/generate-qa-activity-report.go:94
+  foundincode: false
+  name: DAYS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: DAYS
+  path: ./opencloud/opencloud-project/opencloud/tests/qa-activity-report/generate-qa-activity-report.go:94
   foundincode: true
+  name: DAYS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: DAYS
+  path: ./opencloud/tests/qa-activity-report/generate-qa-activity-report.go:94
+  foundincode: false
+  name: DAYS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: DAYS
+  path: ./opencloud-eu/markdown-docs-generator/tmp/tests/qa-activity-report/generate-qa-activity-report.go:94
+  foundincode: false
   name: DAYS
   type: ""
   default_value: ""
@@ -41,30 +409,222 @@ variables:
   do_ignore: false
 - rawname: DAYS
   path: openCloud/opencloud/tests/qa-activity-report/generate-qa-activity-report.go:94
+  foundincode: false
+  name: DAYS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: DAYS
+  path: ./opencloud-eu/opencloud/tests/qa-activity-report/generate-qa-activity-report.go:94
+  foundincode: false
+  name: DAYS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: DAYS
+  path: ./owncloud/ocis-project/ocis/tests/qa-activity-report/generate-qa-activity-report.go:94
   foundincode: true
   name: DAYS
   type: ""
   default_value: ""
   description: ""
   do_ignore: false
+- rawname: DOCKERCMD
+  path: ./rook/rook/tests/framework/utils/k8s_helper.go:142
+  foundincode: true
+  name: DOCKERCMD
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: DaemonMarkVar
+  path: ./micbar/rclone/fs/daemon_unix.go:19
+  foundincode: true
+  name: DaemonMarkVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: DiscoverDaemonUdev
+  path: ./rook/rook/pkg/daemon/discover/discover.go:203
+  foundincode: true
+  name: DiscoverDaemonUdev
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
 - rawname: GITHUB_API_TOKEN
   path: openCloud/reva/tools/check-changelog/main.go:40
+  foundincode: false
+  name: GITHUB_API_TOKEN
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: GITHUB_API_TOKEN
+  path: ./opencloud/opencloud-project/reva/tools/check-changelog/main.go:40
   foundincode: true
   name: GITHUB_API_TOKEN
   type: ""
   default_value: ""
   description: ""
   do_ignore: false
+- rawname: GITHUB_TOKEN
+  path: ./micbar/rclone/bin/get-github-release.go:180
+  foundincode: true
+  name: GITHUB_TOKEN
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: GITHUB_USER
+  path: ./micbar/rclone/bin/get-github-release.go:180
+  foundincode: true
+  name: GITHUB_USER
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: GOPATH
+  path: ./micbar/rclone/fstest/runs/run.go:299
+  foundincode: true
+  name: GOPATH
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: GOPATH
+  path: ./micbar/rclone/bin/get-github-release.go:141
+  foundincode: true
+  name: GOPATH
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: GO_HELPER_PROCESS_PRINT_COMMAND
+  path: ./rook/rook/pkg/daemon/util/cmdreporter_test.go:272
+  foundincode: true
+  name: GO_HELPER_PROCESS_PRINT_COMMAND
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: GO_HELPER_PROCESS_RETCODE
+  path: ./rook/rook/pkg/daemon/util/cmdreporter_test.go:270
+  foundincode: true
+  name: GO_HELPER_PROCESS_RETCODE
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: GO_HELPER_PROCESS_RETCODE
+  path: ./rook/rook/pkg/util/exec/test/mockexec.go:132
+  foundincode: true
+  name: GO_HELPER_PROCESS_RETCODE
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: GO_HELPER_PROCESS_STDERR
+  path: ./rook/rook/pkg/util/exec/test/mockexec.go:130
+  foundincode: true
+  name: GO_HELPER_PROCESS_STDERR
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: GO_HELPER_PROCESS_STDERR
+  path: ./rook/rook/pkg/daemon/util/cmdreporter_test.go:269
+  foundincode: true
+  name: GO_HELPER_PROCESS_STDERR
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: GO_HELPER_PROCESS_STDOUT
+  path: ./rook/rook/pkg/daemon/util/cmdreporter_test.go:268
+  foundincode: true
+  name: GO_HELPER_PROCESS_STDOUT
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: GO_HELPER_PROCESS_STDOUT
+  path: ./rook/rook/pkg/util/exec/test/mockexec.go:131
+  foundincode: true
+  name: GO_HELPER_PROCESS_STDOUT
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: GO_WANT_HELPER_PROCESS
+  path: ./rook/rook/pkg/daemon/util/cmdreporter_test.go:249
+  foundincode: true
+  name: GO_WANT_HELPER_PROCESS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: GO_WANT_HELPER_PROCESS
+  path: ./rook/rook/pkg/util/exec/test/mockexec.go:125
+  foundincode: true
+  name: GO_WANT_HELPER_PROCESS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
 - rawname: GRACEFUL
-  path: openCloud/reva/cmd/revad/internal/grace/grace.go:76
+  path: ./opencloud/opencloud-project/reva/cmd/revad/internal/grace/grace.go:77
   foundincode: true
   name: GRACEFUL
   type: ""
   default_value: ""
   description: ""
   do_ignore: false
+- rawname: GRACEFUL
+  path: openCloud/reva/cmd/revad/internal/grace/grace.go:76
+  foundincode: false
+  name: GRACEFUL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: GRACEFUL
+  path: ./owncloud/ocis-project/reva/cmd/revad/pkg/grace/grace.go:73
+  foundincode: true
+  name: GRACEFUL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: HOME
+  path: ./micbar/rclone/bin/get-github-release.go:136
+  foundincode: true
+  name: HOME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: HOME
+  path: ./opencloud/k8s2likec4/main.go:52
+  foundincode: true
+  name: HOME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
 - rawname: HOSTNAME
-  path: openCloud/reva/pkg/share/manager/jsoncs3/providercache/providercache.go:176
+  path: openCloud/reva/pkg/share/manager/jsoncs3/receivedsharecache/receivedsharecache.go:130
+  foundincode: false
+  name: HOSTNAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: HOSTNAME
+  path: ./opencloud/opencloud-project/reva/pkg/share/manager/jsoncs3/receivedsharecache/receivedsharecache.go:217
   foundincode: true
   name: HOSTNAME
   type: ""
@@ -72,7 +632,31 @@ variables:
   description: ""
   do_ignore: false
 - rawname: HOSTNAME
+  path: openCloud/reva/pkg/share/manager/jsoncs3/providercache/providercache.go:176
+  foundincode: false
+  name: HOSTNAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: HOSTNAME
   path: openCloud/reva/pkg/share/manager/jsoncs3/providercache/providercache.go:259
+  foundincode: false
+  name: HOSTNAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: HOSTNAME
+  path: ./opencloud/opencloud-project/reva/pkg/share/manager/jsoncs3/providercache/providercache.go:490
+  foundincode: true
+  name: HOSTNAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: HOSTNAME
+  path: ./opencloud/opencloud-project/reva/pkg/share/manager/jsoncs3/providercache/providercache.go:176
   foundincode: true
   name: HOSTNAME
   type: ""
@@ -81,14 +665,22 @@ variables:
   do_ignore: false
 - rawname: HOSTNAME
   path: openCloud/reva/pkg/share/manager/jsoncs3/sharecache/sharecache.go:123
-  foundincode: true
+  foundincode: false
   name: HOSTNAME
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
+  do_ignore: true
 - rawname: HOSTNAME
   path: openCloud/reva/pkg/share/manager/jsoncs3/providercache/providercache.go:490
+  foundincode: false
+  name: HOSTNAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: HOSTNAME
+  path: ./opencloud/opencloud-project/reva/pkg/share/manager/jsoncs3/sharecache/sharecache.go:198
   foundincode: true
   name: HOSTNAME
   type: ""
@@ -97,6 +689,30 @@ variables:
   do_ignore: false
 - rawname: HOSTNAME
   path: openCloud/reva/pkg/share/manager/jsoncs3/receivedsharecache/receivedsharecache.go:217
+  foundincode: false
+  name: HOSTNAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: HOSTNAME
+  path: ./opencloud/opencloud-project/reva/pkg/share/manager/jsoncs3/receivedsharecache/receivedsharecache.go:130
+  foundincode: true
+  name: HOSTNAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: HOSTNAME
+  path: ./opencloud/opencloud-project/reva/pkg/share/manager/jsoncs3/providercache/providercache.go:259
+  foundincode: true
+  name: HOSTNAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: HOSTNAME
+  path: ./opencloud/opencloud-project/reva/pkg/share/manager/jsoncs3/sharecache/sharecache.go:123
   foundincode: true
   name: HOSTNAME
   type: ""
@@ -105,14 +721,14 @@ variables:
   do_ignore: false
 - rawname: HOSTNAME
   path: openCloud/reva/pkg/share/manager/jsoncs3/sharecache/sharecache.go:198
-  foundincode: true
+  foundincode: false
   name: HOSTNAME
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
+  do_ignore: true
 - rawname: HOSTNAME
-  path: openCloud/reva/pkg/share/manager/jsoncs3/receivedsharecache/receivedsharecache.go:130
+  path: ./rook/rook/cmd/rook/ceph/osd.go:135
   foundincode: true
   name: HOSTNAME
   type: ""
@@ -121,198 +737,310 @@ variables:
   do_ignore: false
 - rawname: KOPANO_DEBUG_SERVER_REQUEST_LOG
   path: openCloud/lico/server/server.go:53
-  foundincode: true
+  foundincode: false
   name: KOPANO_DEBUG_SERVER_REQUEST_LOG
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: KRB5CCNAME
+  path: ./micbar/rclone/backend/hdfs/fs.go:57
+  foundincode: true
+  name: KRB5CCNAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: KRB5CCNAME
+  path: ./micbar/rclone/backend/smb/kerberos.go:101
+  foundincode: true
+  name: KRB5CCNAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: KRB5_CONFIG
+  path: ./micbar/rclone/backend/smb/kerberos.go:133
+  foundincode: true
+  name: KRB5_CONFIG
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: KRB5_CONFIG
+  path: ./micbar/rclone/backend/hdfs/fs.go:45
+  foundincode: true
+  name: KRB5_CONFIG
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: KUBECONFIG
+  path: ./rook/rook/cmd/rook/rook/rook.go:224
+  foundincode: true
+  name: KUBECONFIG
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: KUBECONFIG
+  path: ./opencloud/k8s2likec4/main.go:50
+  foundincode: true
+  name: KUBECONFIG
   type: ""
   default_value: ""
   description: ""
   do_ignore: false
 - rawname: LDAP_BASEDN
   path: openCloud/lico/bootstrap/backends/ldap/ldap.go:113
-  foundincode: true
+  foundincode: false
   name: LDAP_BASEDN
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
+  do_ignore: true
 - rawname: LDAP_BINDDN
   path: openCloud/lico/bootstrap/backends/ldap/ldap.go:111
-  foundincode: true
+  foundincode: false
   name: LDAP_BINDDN
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
+  do_ignore: true
 - rawname: LDAP_BINDPW
   path: openCloud/lico/bootstrap/backends/ldap/ldap.go:112
-  foundincode: true
+  foundincode: false
   name: LDAP_BINDPW
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
+  do_ignore: true
 - rawname: LDAP_EMAIL_ATTRIBUTE
   path: openCloud/lico/bootstrap/backends/ldap/ldap.go:75
-  foundincode: true
+  foundincode: false
   name: LDAP_EMAIL_ATTRIBUTE
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
+  do_ignore: true
 - rawname: LDAP_FAMILY_NAME_ATTRIBUTE
   path: openCloud/lico/bootstrap/backends/ldap/ldap.go:77
-  foundincode: true
+  foundincode: false
   name: LDAP_FAMILY_NAME_ATTRIBUTE
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
+  do_ignore: true
 - rawname: LDAP_FILTER
   path: openCloud/lico/bootstrap/backends/ldap/ldap.go:115
-  foundincode: true
+  foundincode: false
   name: LDAP_FILTER
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
+  do_ignore: true
 - rawname: LDAP_GIVEN_NAME_ATTRIBUTE
   path: openCloud/lico/bootstrap/backends/ldap/ldap.go:78
-  foundincode: true
+  foundincode: false
   name: LDAP_GIVEN_NAME_ATTRIBUTE
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
+  do_ignore: true
 - rawname: LDAP_LOGIN_ATTRIBUTE
   path: openCloud/lico/bootstrap/backends/ldap/ldap.go:74
-  foundincode: true
+  foundincode: false
   name: LDAP_LOGIN_ATTRIBUTE
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
+  do_ignore: true
 - rawname: LDAP_NAME_ATTRIBUTE
   path: openCloud/lico/bootstrap/backends/ldap/ldap.go:76
-  foundincode: true
+  foundincode: false
   name: LDAP_NAME_ATTRIBUTE
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
+  do_ignore: true
 - rawname: LDAP_SCOPE
   path: openCloud/lico/bootstrap/backends/ldap/ldap.go:114
-  foundincode: true
+  foundincode: false
   name: LDAP_SCOPE
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
+  do_ignore: true
 - rawname: LDAP_SUB_ATTRIBUTES
   path: openCloud/lico/bootstrap/backends/ldap/ldap.go:88
-  foundincode: true
+  foundincode: false
   name: LDAP_SUB_ATTRIBUTES
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
+  do_ignore: true
 - rawname: LDAP_TLS_CACERT
   path: openCloud/lico/bootstrap/backends/ldap/ldap.go:94
-  foundincode: true
+  foundincode: false
   name: LDAP_TLS_CACERT
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
+  do_ignore: true
 - rawname: LDAP_UIDNUMBER_ATTRIBUTE
   path: openCloud/lico/bootstrap/backends/ldap/ldap.go:83
-  foundincode: true
+  foundincode: false
   name: LDAP_UIDNUMBER_ATTRIBUTE
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
+  do_ignore: true
 - rawname: LDAP_URI
   path: openCloud/lico/bootstrap/backends/ldap/ldap.go:110
-  foundincode: true
+  foundincode: false
   name: LDAP_URI
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
+  do_ignore: true
 - rawname: LDAP_UUID_ATTRIBUTE
   path: openCloud/lico/bootstrap/backends/ldap/ldap.go:79
-  foundincode: true
+  foundincode: false
   name: LDAP_UUID_ATTRIBUTE
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
+  do_ignore: true
 - rawname: LDAP_UUID_ATTRIBUTE_TYPE
   path: openCloud/lico/bootstrap/backends/ldap/ldap.go:80
-  foundincode: true
+  foundincode: false
   name: LDAP_UUID_ATTRIBUTE_TYPE
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
+  do_ignore: true
 - rawname: LIBREGRAPH_SCOPED_URIS
   path: openCloud/lico/bootstrap/backends/libregraph/libregraph.go:76
-  foundincode: true
+  foundincode: false
   name: LIBREGRAPH_SCOPED_URIS
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
+  do_ignore: true
 - rawname: LIBREGRAPH_URI
   path: openCloud/lico/bootstrap/backends/libregraph/libregraph.go:73
-  foundincode: true
+  foundincode: false
   name: LIBREGRAPH_URI
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
+  do_ignore: true
 - rawname: LICOD_ENCRYPTION_SECRET
   path: openCloud/lico/cmd/licod/serve.go:84
-  foundincode: true
+  foundincode: false
   name: LICOD_ENCRYPTION_SECRET
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
+  do_ignore: true
 - rawname: LICOD_SIGNING_KID
   path: openCloud/lico/cmd/licod/serve.go:82
-  foundincode: true
+  foundincode: false
   name: LICOD_SIGNING_KID
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
+  do_ignore: true
 - rawname: LICOD_VALIDATION_KEYS_PATH
   path: openCloud/lico/cmd/licod/serve.go:83
-  foundincode: true
+  foundincode: false
   name: LICOD_VALIDATION_KEYS_PATH
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
-- rawname: MICRO_LOG_LEVEL
-  path: openCloud/opencloud/pkg/log/log.go:30
+  do_ignore: true
+- rawname: LOGNAME
+  path: ./micbar/rclone/lib/env/env.go:45
   foundincode: true
-  name: MICRO_LOG_LEVEL
-  type: ""
-  default_value: ""
-  description: ""
-  do_ignore: false
-- rawname: MICRO_LOG_LEVEL
-  path: openCloud/markdown-docs-generator/tmp/pkg/log/log.go:34
-  foundincode: true
-  name: MICRO_LOG_LEVEL
+  name: LOGNAME
   type: ""
   default_value: ""
   description: ""
   do_ignore: false
 - rawname: MICRO_LOG_LEVEL
   path: openCloud/markdown-docs-generator/tmp/pkg/log/log.go:30
+  foundincode: false
+  name: MICRO_LOG_LEVEL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: MICRO_LOG_LEVEL
+  path: ./opencloud-eu/opencloud/pkg/log/log.go:30
+  foundincode: false
+  name: MICRO_LOG_LEVEL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MICRO_LOG_LEVEL
+  path: ./owncloud/ocis-project/ocis/ocis-pkg/log/log.go:34
+  foundincode: true
+  name: MICRO_LOG_LEVEL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MICRO_LOG_LEVEL
+  path: ./opencloud/opencloud-project/opencloud/pkg/log/log.go:34
+  foundincode: true
+  name: MICRO_LOG_LEVEL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MICRO_LOG_LEVEL
+  path: ./opencloud-eu/markdown-docs-generator/tmp/pkg/log/log.go:34
+  foundincode: false
+  name: MICRO_LOG_LEVEL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MICRO_LOG_LEVEL
+  path: ./opencloud/opencloud-project/opencloud/pkg/log/log.go:30
+  foundincode: true
+  name: MICRO_LOG_LEVEL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MICRO_LOG_LEVEL
+  path: openCloud/opencloud/pkg/log/log.go:30
+  foundincode: false
+  name: MICRO_LOG_LEVEL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: MICRO_LOG_LEVEL
+  path: openCloud/markdown-docs-generator/tmp/pkg/log/log.go:34
+  foundincode: false
+  name: MICRO_LOG_LEVEL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: MICRO_LOG_LEVEL
+  path: ./opencloud-eu/markdown-docs-generator/tmp/pkg/log/log.go:30
+  foundincode: false
+  name: MICRO_LOG_LEVEL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MICRO_LOG_LEVEL
+  path: ./owncloud/ocis-project/ocis/ocis-pkg/log/log.go:30
   foundincode: true
   name: MICRO_LOG_LEVEL
   type: ""
@@ -321,15 +1049,191 @@ variables:
   do_ignore: false
 - rawname: MICRO_LOG_LEVEL
   path: openCloud/opencloud/pkg/log/log.go:34
+  foundincode: false
+  name: MICRO_LOG_LEVEL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: MICRO_LOG_LEVEL
+  path: ./opencloud-eu/opencloud/pkg/log/log.go:34
+  foundincode: false
+  name: MICRO_LOG_LEVEL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MICRO_LOG_LEVEL
+  path: ./opencloud/markdown-docs-generator/tmp/pkg/log/log.go:30
   foundincode: true
   name: MICRO_LOG_LEVEL
   type: ""
   default_value: ""
   description: ""
   do_ignore: false
+- rawname: MICRO_LOG_LEVEL
+  path: ./opencloud/pkg/log/log.go:30
+  foundincode: false
+  name: MICRO_LOG_LEVEL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MICRO_LOG_LEVEL
+  path: ./opencloud/markdown-docs-generator/tmp/pkg/log/log.go:34
+  foundincode: true
+  name: MICRO_LOG_LEVEL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MICRO_LOG_LEVEL
+  path: ./opencloud/pkg/log/log.go:34
+  foundincode: false
+  name: MICRO_LOG_LEVEL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MIDDLEWARE_PROJECT_DIR
+  path: ./ox/middleware/helm/core-mw/tests/terratest/common.go:64
+  foundincode: false
+  name: MIDDLEWARE_PROJECT_DIR
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MINIO_ACCESS_KEY
+  path: ./opencloud/minio-go/pkg/credentials/env_minio.go:49
+  foundincode: true
+  name: MINIO_ACCESS_KEY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MINIO_ALIAS
+  path: ./opencloud/minio-go/pkg/credentials/file_minio_client.go:76
+  foundincode: true
+  name: MINIO_ALIAS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MINIO_GO_TEST_BUCKET_CORS
+  path: ./opencloud/minio-go/functional_tests.go:12968
+  foundincode: true
+  name: MINIO_GO_TEST_BUCKET_CORS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MINIO_ROOT_PASSWORD
+  path: ./opencloud/minio-go/pkg/credentials/env_minio.go:45
+  foundincode: true
+  name: MINIO_ROOT_PASSWORD
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MINIO_ROOT_USER
+  path: ./opencloud/minio-go/pkg/credentials/env_minio.go:44
+  foundincode: true
+  name: MINIO_ROOT_USER
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MINIO_SECRET_KEY
+  path: ./opencloud/minio-go/pkg/credentials/env_minio.go:50
+  foundincode: true
+  name: MINIO_SECRET_KEY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MINT_MODE
+  path: ./opencloud/minio-go/functional_tests.go:385
+  foundincode: true
+  name: MINT_MODE
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MINT_NO_FULL_OBJECT
+  path: ./opencloud/minio-go/functional_tests.go:2014
+  foundincode: true
+  name: MINT_NO_FULL_OBJECT
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MINT_NO_FULL_OBJECT
+  path: ./opencloud/minio-go/functional_tests.go:2194
+  foundincode: true
+  name: MINT_NO_FULL_OBJECT
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MINT_NO_FULL_OBJECT
+  path: ./opencloud/minio-go/functional_tests.go:2409
+  foundincode: true
+  name: MINT_NO_FULL_OBJECT
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MONTH
+  path: ./opencloud-eu/opencloud/tests/qa-activity-report/generate-qa-activity-report.go:92
+  foundincode: false
+  name: MONTH
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MONTH
+  path: ./owncloud/ocis-project/ocis/tests/qa-activity-report/generate-qa-activity-report.go:92
+  foundincode: true
+  name: MONTH
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
 - rawname: MONTH
   path: openCloud/opencloud/tests/qa-activity-report/generate-qa-activity-report.go:92
+  foundincode: false
+  name: MONTH
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: MONTH
+  path: ./opencloud/opencloud-project/opencloud/tests/qa-activity-report/generate-qa-activity-report.go:92
   foundincode: true
+  name: MONTH
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MONTH
+  path: ./opencloud/markdown-docs-generator/tmp/tests/qa-activity-report/generate-qa-activity-report.go:92
+  foundincode: true
+  name: MONTH
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MONTH
+  path: ./opencloud-eu/markdown-docs-generator/tmp/tests/qa-activity-report/generate-qa-activity-report.go:92
+  foundincode: false
+  name: MONTH
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: MONTH
+  path: ./opencloud/tests/qa-activity-report/generate-qa-activity-report.go:92
+  foundincode: false
   name: MONTH
   type: ""
   default_value: ""
@@ -337,14 +1241,54 @@ variables:
   do_ignore: false
 - rawname: MONTH
   path: openCloud/markdown-docs-generator/tmp/tests/qa-activity-report/generate-qa-activity-report.go:92
-  foundincode: true
+  foundincode: false
   name: MONTH
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: NEXTCLOUD
+  path: ./owncloud/ocis-project/reva/pkg/user/manager/nextcloud/nextcloud_test.go:40
+  foundincode: true
+  name: NEXTCLOUD
   type: ""
   default_value: ""
   description: ""
   do_ignore: false
 - rawname: NEXTCLOUD
-  path: openCloud/reva/pkg/ocm/share/repository/nextcloud/nextcloud_test.go:43
+  path: ./opencloud/opencloud-project/reva/pkg/auth/manager/nextcloud/nextcloud_test.go:44
+  foundincode: true
+  name: NEXTCLOUD
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: NEXTCLOUD
+  path: ./opencloud/opencloud-project/reva/pkg/user/manager/nextcloud/nextcloud_test.go:43
+  foundincode: true
+  name: NEXTCLOUD
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: NEXTCLOUD
+  path: ./opencloud/opencloud-project/reva/pkg/storage/fs/nextcloud/nextcloud_test.go:47
+  foundincode: true
+  name: NEXTCLOUD
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: NEXTCLOUD
+  path: ./owncloud/ocis-project/reva/pkg/storage/fs/nextcloud/nextcloud_test.go:46
+  foundincode: true
+  name: NEXTCLOUD
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: NEXTCLOUD
+  path: ./owncloud/ocis-project/reva/pkg/ocm/share/repository/nextcloud/nextcloud_test.go:48
   foundincode: true
   name: NEXTCLOUD
   type: ""
@@ -353,31 +1297,191 @@ variables:
   do_ignore: false
 - rawname: NEXTCLOUD
   path: openCloud/reva/pkg/user/manager/nextcloud/nextcloud_test.go:43
-  foundincode: true
+  foundincode: false
   name: NEXTCLOUD
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
+  do_ignore: true
 - rawname: NEXTCLOUD
-  path: openCloud/reva/pkg/auth/manager/nextcloud/nextcloud_test.go:44
-  foundincode: true
+  path: openCloud/reva/pkg/ocm/share/repository/nextcloud/nextcloud_test.go:43
+  foundincode: false
   name: NEXTCLOUD
   type: ""
   default_value: ""
   description: ""
-  do_ignore: false
+  do_ignore: true
 - rawname: NEXTCLOUD
   path: openCloud/reva/pkg/storage/fs/nextcloud/nextcloud_test.go:47
+  foundincode: false
+  name: NEXTCLOUD
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: NEXTCLOUD
+  path: openCloud/reva/pkg/auth/manager/nextcloud/nextcloud_test.go:44
+  foundincode: false
+  name: NEXTCLOUD
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: NEXTCLOUD
+  path: ./opencloud/opencloud-project/reva/pkg/ocm/share/repository/nextcloud/nextcloud_test.go:43
   foundincode: true
   name: NEXTCLOUD
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: NEXTCLOUD
+  path: ./owncloud/ocis-project/reva/pkg/auth/manager/nextcloud/nextcloud_test.go:42
+  foundincode: true
+  name: NEXTCLOUD
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: NOTIFY_ACCOUNTID
+  path: ./opencloud/minio-go/functional_tests.go:7039
+  foundincode: true
+  name: NOTIFY_ACCOUNTID
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: NOTIFY_ACCOUNTID
+  path: ./opencloud/minio-go/functional_tests.go:7024
+  foundincode: true
+  name: NOTIFY_ACCOUNTID
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: NOTIFY_BUCKET
+  path: ./opencloud/minio-go/functional_tests.go:7021
+  foundincode: true
+  name: NOTIFY_BUCKET
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: NOTIFY_BUCKET
+  path: ./opencloud/minio-go/functional_tests.go:7036
+  foundincode: true
+  name: NOTIFY_BUCKET
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: NOTIFY_REGION
+  path: ./opencloud/minio-go/functional_tests.go:7039
+  foundincode: true
+  name: NOTIFY_REGION
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: NOTIFY_REGION
+  path: ./opencloud/minio-go/functional_tests.go:7023
+  foundincode: true
+  name: NOTIFY_REGION
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: NOTIFY_RESOURCE
+  path: ./opencloud/minio-go/functional_tests.go:7025
+  foundincode: true
+  name: NOTIFY_RESOURCE
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: NOTIFY_RESOURCE
+  path: ./opencloud/minio-go/functional_tests.go:7039
+  foundincode: true
+  name: NOTIFY_RESOURCE
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: NOTIFY_SERVICE
+  path: ./opencloud/minio-go/functional_tests.go:7022
+  foundincode: true
+  name: NOTIFY_SERVICE
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: NOTIFY_SERVICE
+  path: ./opencloud/minio-go/functional_tests.go:7039
+  foundincode: true
+  name: NOTIFY_SERVICE
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: NodeNameEnvVar
+  path: ./rook/rook/pkg/operator/k8sutil/volume.go:78
+  foundincode: true
+  name: NodeNameEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: OCIS_BASE_DATA_PATH
+  path: ./owncloud/ocis-project/ocis/ocis-pkg/config/defaults/paths.go:23
+  foundincode: true
+  name: OCIS_BASE_DATA_PATH
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: OCIS_CONFIG_DIR
+  path: ./owncloud/ocis-project/ocis/ocis-pkg/config/defaults/paths.go:56
+  foundincode: true
+  name: OCIS_CONFIG_DIR
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: OCIS_INSECURE
+  path: ./owncloud/ocis-project/ocis/ocis-pkg/service/grpc/client.go:77
+  foundincode: true
+  name: OCIS_INSECURE
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: OC_BASE_DATA_PATH
+  path: ./opencloud/opencloud-project/opencloud/pkg/config/defaults/paths.go:21
+  foundincode: true
+  name: OC_BASE_DATA_PATH
   type: ""
   default_value: ""
   description: ""
   do_ignore: false
 - rawname: OC_BASE_DATA_PATH
   path: openCloud/markdown-docs-generator/tmp/pkg/config/defaults/paths.go:21
-  foundincode: true
+  foundincode: false
+  name: OC_BASE_DATA_PATH
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: OC_BASE_DATA_PATH
+  path: ./opencloud/pkg/config/defaults/paths.go:21
+  foundincode: false
+  name: OC_BASE_DATA_PATH
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: OC_BASE_DATA_PATH
+  path: ./opencloud-eu/markdown-docs-generator/tmp/pkg/config/defaults/paths.go:21
+  foundincode: false
   name: OC_BASE_DATA_PATH
   type: ""
   default_value: ""
@@ -385,14 +1489,38 @@ variables:
   do_ignore: false
 - rawname: OC_BASE_DATA_PATH
   path: openCloud/opencloud/pkg/config/defaults/paths.go:21
+  foundincode: false
+  name: OC_BASE_DATA_PATH
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: OC_BASE_DATA_PATH
+  path: ./opencloud/markdown-docs-generator/tmp/pkg/config/defaults/paths.go:21
   foundincode: true
   name: OC_BASE_DATA_PATH
   type: ""
   default_value: ""
   description: ""
   do_ignore: false
+- rawname: OC_BASE_DATA_PATH
+  path: ./opencloud-eu/opencloud/pkg/config/defaults/paths.go:21
+  foundincode: false
+  name: OC_BASE_DATA_PATH
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
 - rawname: OC_CONFIG_DIR
-  path: openCloud/markdown-docs-generator/tmp/pkg/config/defaults/paths.go:54
+  path: openCloud/opencloud/pkg/config/defaults/paths.go:54
+  foundincode: false
+  name: OC_CONFIG_DIR
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: OC_CONFIG_DIR
+  path: ./opencloud/opencloud-project/opencloud/pkg/config/defaults/paths.go:54
   foundincode: true
   name: OC_CONFIG_DIR
   type: ""
@@ -400,7 +1528,39 @@ variables:
   description: ""
   do_ignore: false
 - rawname: OC_CONFIG_DIR
-  path: openCloud/opencloud/pkg/config/defaults/paths.go:54
+  path: ./opencloud-eu/markdown-docs-generator/tmp/pkg/config/defaults/paths.go:54
+  foundincode: false
+  name: OC_CONFIG_DIR
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: OC_CONFIG_DIR
+  path: ./opencloud/pkg/config/defaults/paths.go:54
+  foundincode: false
+  name: OC_CONFIG_DIR
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: OC_CONFIG_DIR
+  path: openCloud/markdown-docs-generator/tmp/pkg/config/defaults/paths.go:54
+  foundincode: false
+  name: OC_CONFIG_DIR
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: OC_CONFIG_DIR
+  path: ./opencloud-eu/opencloud/pkg/config/defaults/paths.go:54
+  foundincode: false
+  name: OC_CONFIG_DIR
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: OC_CONFIG_DIR
+  path: ./opencloud/markdown-docs-generator/tmp/pkg/config/defaults/paths.go:54
   foundincode: true
   name: OC_CONFIG_DIR
   type: ""
@@ -409,22 +1569,230 @@ variables:
   do_ignore: false
 - rawname: OC_GRPC_MAX_RECEIVED_MESSAGE_SIZE
   path: openCloud/reva/pkg/rgrpc/todo/pool/connection.go:79
+  foundincode: false
+  name: OC_GRPC_MAX_RECEIVED_MESSAGE_SIZE
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: OC_GRPC_MAX_RECEIVED_MESSAGE_SIZE
+  path: ./opencloud/opencloud-project/reva/pkg/rgrpc/todo/pool/connection.go:79
   foundincode: true
   name: OC_GRPC_MAX_RECEIVED_MESSAGE_SIZE
   type: ""
   default_value: ""
   description: ""
   do_ignore: false
+- rawname: OPERATOR_RESOURCES_SPECIFIED
+  path: ./rook/rook/pkg/operator/ceph/object/objectstore.go:1081
+  foundincode: true
+  name: OPERATOR_RESOURCES_SPECIFIED
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: OX_BLACKLISTED_PACKAGES
+  path: ./ox/middleware/docker/go/open-xchange/core/entrypoint/osgi/config.go:25
+  foundincode: false
+  name: OX_BLACKLISTED_PACKAGES
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: OX_WHITELISTED_PACKAGES
+  path: ./ox/middleware/docker/go/open-xchange/core/entrypoint/osgi/config.go:24
+  foundincode: false
+  name: OX_WHITELISTED_PACKAGES
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: PATH
+  path: ./micbar/rclone/cmd/gitannex/e2e_test.go:164
+  foundincode: true
+  name: PATH
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: PATH
+  path: ./micbar/rclone/bin/get-github-release.go:143
+  foundincode: true
+  name: PATH
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: PATH
+  path: ./micbar/rclone/cmd/mountlib/mount.go:292
+  foundincode: true
+  name: PATH
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: PLUGIN_ACCESS_KEY
+  path: ./codeberg/s3cache/s3cache_test.go:17
+  foundincode: true
+  name: PLUGIN_ACCESS_KEY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: PLUGIN_BUCKET
+  path: ./codeberg/s3cache/s3cache_test.go:19
+  foundincode: true
+  name: PLUGIN_BUCKET
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: PLUGIN_ENDPOINT
+  path: ./codeberg/s3cache/s3cache_test.go:16
+  foundincode: true
+  name: PLUGIN_ENDPOINT
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: PLUGIN_REGION
+  path: ./codeberg/s3cache/s3cache_test.go:20
+  foundincode: true
+  name: PLUGIN_REGION
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: PLUGIN_SECRET_KEY
+  path: ./codeberg/s3cache/s3cache_test.go:18
+  foundincode: true
+  name: PLUGIN_SECRET_KEY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: POD_NAMESPACE
+  path: ./rook/rook/pkg/operator/ceph/test/spec.go:95
+  foundincode: true
+  name: POD_NAMESPACE
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: PodNameEnvVar
+  path: ./rook/rook/pkg/operator/k8sutil/pod.go:163
+  foundincode: true
+  name: PodNameEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: PodNamespaceEnvVar
+  path: ./rook/rook/pkg/operator/k8sutil/labels.go:61
+  foundincode: true
+  name: PodNamespaceEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: PodNamespaceEnvVar
+  path: ./rook/rook/pkg/operator/k8sutil/configmap.go:86
+  foundincode: true
+  name: PodNamespaceEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: PodNamespaceEnvVar
+  path: ./rook/rook/pkg/operator/k8sutil/pod.go:167
+  foundincode: true
+  name: PodNamespaceEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: RCLONE_CONFIG
+  path: ./micbar/rclone/fstest/fstests/fstests.go:383
+  foundincode: true
+  name: RCLONE_CONFIG
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: RCLONE_CONFIG
+  path: ./micbar/rclone/fstest/fstest.go:65
+  foundincode: true
+  name: RCLONE_CONFIG
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: RCLONE_CONFIG_PASS
+  path: ./micbar/rclone/fs/config/crypt.go:103
+  foundincode: true
+  name: RCLONE_CONFIG_PASS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: RCLONE_PASSWORD_CHANGE
+  path: ./micbar/rclone/fs/config/crypt_internal_test.go:80
+  foundincode: true
+  name: RCLONE_PASSWORD_CHANGE
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: RCLONE_PLUGIN_PATH
+  path: ./micbar/rclone/lib/plugin/plugin.go:14
+  foundincode: true
+  name: RCLONE_PLUGIN_PATH
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
 - rawname: REDIS_ADDRESS
   path: openCloud/reva/tests/integration/grpc/gateway_storageprovider_static_test.go:84
+  foundincode: false
+  name: REDIS_ADDRESS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: REDIS_ADDRESS
+  path: ./opencloud/opencloud-project/reva/tests/integration/grpc/gateway_storageprovider_static_test.go:84
   foundincode: true
   name: REDIS_ADDRESS
   type: ""
   default_value: ""
   description: ""
   do_ignore: false
+- rawname: RESTORE_TIMESTAMP
+  path: ./opencloud/s3ctl/main.go:85
+  foundincode: true
+  name: RESTORE_TIMESTAMP
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
 - rawname: REVA_APPPROVIDER_IOPSECRET
   path: openCloud/reva/pkg/app/provider/wopi/wopi.go:101
+  foundincode: false
+  name: REVA_APPPROVIDER_IOPSECRET
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: REVA_APPPROVIDER_IOPSECRET
+  path: ./owncloud/ocis-project/reva/pkg/app/provider/wopi/wopi.go:98
+  foundincode: true
+  name: REVA_APPPROVIDER_IOPSECRET
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: REVA_APPPROVIDER_IOPSECRET
+  path: ./opencloud/opencloud-project/reva/pkg/app/provider/wopi/wopi.go:101
   foundincode: true
   name: REVA_APPPROVIDER_IOPSECRET
   type: ""
@@ -432,15 +1800,143 @@ variables:
   description: ""
   do_ignore: false
 - rawname: REVA_SMTP_SENDER_PASSWORD
-  path: openCloud/reva/pkg/smtpclient/smtpclient.go:53
+  path: ./opencloud/opencloud-project/reva/pkg/smtpclient/smtpclient.go:53
   foundincode: true
   name: REVA_SMTP_SENDER_PASSWORD
   type: ""
   default_value: ""
   description: ""
   do_ignore: false
+- rawname: REVA_SMTP_SENDER_PASSWORD
+  path: openCloud/reva/pkg/smtpclient/smtpclient.go:53
+  foundincode: false
+  name: REVA_SMTP_SENDER_PASSWORD
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: REVA_SMTP_SENDER_PASSWORD
+  path: ./owncloud/ocis-project/reva/pkg/smtpclient/smtpclient.go:54
+  foundincode: true
+  name: REVA_SMTP_SENDER_PASSWORD
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: ROOK_CEPH_MON_HOST
+  path: ./rook/rook/cmd/rook/ceph/config.go:72
+  foundincode: true
+  name: ROOK_CEPH_MON_HOST
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: ROOK_CEPH_MON_RUN_AS_ROOT
+  path: ./rook/rook/pkg/operator/ceph/controller/spec.go:731
+  foundincode: true
+  name: ROOK_CEPH_MON_RUN_AS_ROOT
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: ROOK_CEPH_STATUS_CHECK_INTERVAL
+  path: ./rook/rook/pkg/operator/ceph/cluster/cephstatus.go:68
+  foundincode: true
+  name: ROOK_CEPH_STATUS_CHECK_INTERVAL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: ROOK_CEPH_VERSION
+  path: ./rook/rook/pkg/daemon/ceph/client/config.go:179
+  foundincode: true
+  name: ROOK_CEPH_VERSION
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: ROOK_CLUSTER_NAME
+  path: ./rook/rook/cmd/rook/secret.go:64
+  foundincode: true
+  name: ROOK_CLUSTER_NAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: ROOK_CRUSHMAP_HOSTNAME
+  path: ./rook/rook/cmd/rook/ceph/osd.go:358
+  foundincode: true
+  name: ROOK_CRUSHMAP_HOSTNAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: ROOK_CUSTOM_HOSTNAME_LABEL
+  path: ./rook/rook/pkg/operator/k8sutil/labels.go:66
+  foundincode: true
+  name: ROOK_CUSTOM_HOSTNAME_LABEL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: ROOK_HOSTPATH_REQUIRES_PRIVILEGED
+  path: ./rook/rook/pkg/operator/ceph/controller/spec.go:727
+  foundincode: true
+  name: ROOK_HOSTPATH_REQUIRES_PRIVILEGED
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: ROOK_MON_HEALTHCHECK_INTERVAL
+  path: ./rook/rook/pkg/operator/ceph/cluster/mon/health.go:85
+  foundincode: true
+  name: ROOK_MON_HEALTHCHECK_INTERVAL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: ROOK_MON_OUT_TIMEOUT
+  path: ./rook/rook/pkg/operator/ceph/cluster/mon/health.go:60
+  foundincode: true
+  name: ROOK_MON_OUT_TIMEOUT
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: ROOK_OSD_ID
+  path: ./rook/rook/pkg/util/exec/exec.go:196
+  foundincode: true
+  name: ROOK_OSD_ID
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: ROOK_TMP_FILE
+  path: ./rook/rook/pkg/daemon/ceph/osd/kms/vault_test.go:251
+  foundincode: true
+  name: ROOK_TMP_FILE
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: ROOK_UNIT_JQ_PATH
+  path: ./rook/rook/pkg/operator/ceph/file/mds/livenessprobe_test.go:87
+  foundincode: true
+  name: ROOK_UNIT_JQ_PATH
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: ROOK_UNREACHABLE_NODE_TOLERATION_SECONDS
+  path: ./rook/rook/pkg/operator/k8sutil/pod.go:136
+  foundincode: true
+  name: ROOK_UNREACHABLE_NODE_TOLERATION_SECONDS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
 - rawname: RUN_CMD_TEST
-  path: openCloud/opencloud/internal/testenv/test.go:32
+  path: ./opencloud/opencloud-project/opencloud/internal/testenv/test.go:32
   foundincode: true
   name: RUN_CMD_TEST
   type: ""
@@ -448,8 +1944,56 @@ variables:
   description: ""
   do_ignore: false
 - rawname: RUN_CMD_TEST
-  path: openCloud/markdown-docs-generator/tmp/internal/testenv/test.go:32
+  path: ./owncloud/ocis-project/ocis/internal/testenv/test.go:32
   foundincode: true
+  name: RUN_CMD_TEST
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: RUN_CMD_TEST
+  path: openCloud/opencloud/internal/testenv/test.go:32
+  foundincode: false
+  name: RUN_CMD_TEST
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: RUN_CMD_TEST
+  path: openCloud/markdown-docs-generator/tmp/internal/testenv/test.go:32
+  foundincode: false
+  name: RUN_CMD_TEST
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: RUN_CMD_TEST
+  path: ./opencloud/markdown-docs-generator/tmp/internal/testenv/test.go:32
+  foundincode: true
+  name: RUN_CMD_TEST
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: RUN_CMD_TEST
+  path: ./opencloud/internal/testenv/test.go:32
+  foundincode: false
+  name: RUN_CMD_TEST
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: RUN_CMD_TEST
+  path: ./opencloud-eu/opencloud/internal/testenv/test.go:32
+  foundincode: false
+  name: RUN_CMD_TEST
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: RUN_CMD_TEST
+  path: ./opencloud-eu/markdown-docs-generator/tmp/internal/testenv/test.go:32
+  foundincode: false
   name: RUN_CMD_TEST
   type: ""
   default_value: ""
@@ -457,6 +2001,14 @@ variables:
   do_ignore: false
 - rawname: RUN_LDAP_TESTS
   path: openCloud/reva/tests/integration/grpc/userprovider_test.go:278
+  foundincode: false
+  name: RUN_LDAP_TESTS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: RUN_LDAP_TESTS
+  path: ./opencloud/opencloud-project/reva/tests/integration/grpc/userprovider_test.go:331
   foundincode: true
   name: RUN_LDAP_TESTS
   type: ""
@@ -465,14 +2017,142 @@ variables:
   do_ignore: false
 - rawname: RUN_LDAP_TESTS
   path: openCloud/reva/tests/integration/grpc/groupprovider_test.go:261
+  foundincode: false
+  name: RUN_LDAP_TESTS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: RUN_LDAP_TESTS
+  path: ./opencloud/opencloud-project/reva/tests/integration/grpc/groupprovider_test.go:261
   foundincode: true
   name: RUN_LDAP_TESTS
   type: ""
   default_value: ""
   description: ""
   do_ignore: false
+- rawname: RUN_ON_FAIL
+  path: ./opencloud/minio-go/functional_tests.go:267
+  foundincode: true
+  name: RUN_ON_FAIL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: S3_ACCESS_KEY
+  path: ./opencloud/s3ctl/main.go:57
+  foundincode: true
+  name: S3_ACCESS_KEY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: S3_ACCESS_KEY
+  path: ./opencloud/s3ctl/test/main.go:28
+  foundincode: true
+  name: S3_ACCESS_KEY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: S3_BUCKET
+  path: ./opencloud/s3ctl/main.go:59
+  foundincode: true
+  name: S3_BUCKET
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: S3_BUCKET
+  path: ./opencloud/s3ctl/test/main.go:31
+  foundincode: true
+  name: S3_BUCKET
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: S3_ENDPOINT
+  path: ./opencloud/s3ctl/main.go:56
+  foundincode: true
+  name: S3_ENDPOINT
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: S3_ENDPOINT
+  path: ./opencloud/s3ctl/test/main.go:27
+  foundincode: true
+  name: S3_ENDPOINT
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: S3_SECRET_KEY
+  path: ./opencloud/s3ctl/main.go:58
+  foundincode: true
+  name: S3_SECRET_KEY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: S3_SECRET_KEY
+  path: ./opencloud/s3ctl/test/main.go:29
+  foundincode: true
+  name: S3_SECRET_KEY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: S3_USE_SSL
+  path: ./opencloud/s3ctl/main.go:60
+  foundincode: true
+  name: S3_USE_SSL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: S3_USE_SSL
+  path: ./opencloud/s3ctl/test/main.go:30
+  foundincode: true
+  name: S3_USE_SSL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: SKIP_CLEANUP_POLICY
+  path: ./rook/rook/tests/framework/installer/ceph_settings.go:64
+  foundincode: true
+  name: SKIP_CLEANUP_POLICY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: SKIP_TEST_CLEANUP
+  path: ./rook/rook/tests/framework/installer/ceph_settings.go:60
+  foundincode: true
+  name: SKIP_TEST_CLEANUP
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
 - rawname: SQL_ADDRESS
   path: openCloud/reva/tests/integration/grpc/ocm_init_test.go:126
+  foundincode: false
+  name: SQL_ADDRESS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: SQL_ADDRESS
+  path: ./owncloud/ocis-project/reva/tests/integration/grpc/ocm_init_test.go:126
+  foundincode: true
+  name: SQL_ADDRESS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: SQL_ADDRESS
+  path: ./opencloud/opencloud-project/reva/tests/integration/grpc/ocm_init_test.go:126
   foundincode: true
   name: SQL_ADDRESS
   type: ""
@@ -481,6 +2161,22 @@ variables:
   do_ignore: false
 - rawname: SQL_DBNAME
   path: openCloud/reva/tests/integration/grpc/ocm_init_test.go:130
+  foundincode: false
+  name: SQL_DBNAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: SQL_DBNAME
+  path: ./owncloud/ocis-project/reva/tests/integration/grpc/ocm_init_test.go:130
+  foundincode: true
+  name: SQL_DBNAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: SQL_DBNAME
+  path: ./opencloud/opencloud-project/reva/tests/integration/grpc/ocm_init_test.go:130
   foundincode: true
   name: SQL_DBNAME
   type: ""
@@ -489,6 +2185,22 @@ variables:
   do_ignore: false
 - rawname: SQL_PASSWORD
   path: openCloud/reva/tests/integration/grpc/ocm_init_test.go:122
+  foundincode: false
+  name: SQL_PASSWORD
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: SQL_PASSWORD
+  path: ./opencloud/opencloud-project/reva/tests/integration/grpc/ocm_init_test.go:122
+  foundincode: true
+  name: SQL_PASSWORD
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: SQL_PASSWORD
+  path: ./owncloud/ocis-project/reva/tests/integration/grpc/ocm_init_test.go:122
   foundincode: true
   name: SQL_PASSWORD
   type: ""
@@ -497,14 +2209,158 @@ variables:
   do_ignore: false
 - rawname: SQL_USERNAME
   path: openCloud/reva/tests/integration/grpc/ocm_init_test.go:118
+  foundincode: false
+  name: SQL_USERNAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: SQL_USERNAME
+  path: ./opencloud/opencloud-project/reva/tests/integration/grpc/ocm_init_test.go:118
   foundincode: true
   name: SQL_USERNAME
   type: ""
   default_value: ""
   description: ""
   do_ignore: false
+- rawname: SQL_USERNAME
+  path: ./owncloud/ocis-project/reva/tests/integration/grpc/ocm_init_test.go:118
+  foundincode: true
+  name: SQL_USERNAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: SSL_CERT_FILE
+  path: ./opencloud/minio-go/transport.go:73
+  foundincode: true
+  name: SSL_CERT_FILE
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: TERM
+  path: ./micbar/rclone/lib/terminal/terminal.go:88
+  foundincode: true
+  name: TERM
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: TEST_HELM_PATH
+  path: ./rook/rook/tests/integration/ceph_base_keystone_test.go:89
+  foundincode: true
+  name: TEST_HELM_PATH
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: TEST_PANIC_DOCHAN
+  path: ./opencloud/minio-go/pkg/singleflight/singleflight_test.go:307
+  foundincode: true
+  name: TEST_PANIC_DOCHAN
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: TEST_PANIC_DOCHAN
+  path: ./opencloud/minio-go/pkg/singleflight/singleflight_test.go:345
+  foundincode: true
+  name: TEST_PANIC_DOCHAN
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: USER
+  path: ./micbar/rclone/lib/env/env.go:31
+  foundincode: true
+  name: USER
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: USE_TESTCONTAINERS
+  path: ./opencloud-eu/opencloud/services/search/pkg/opensearch/internal/test/suite.go:59
+  foundincode: false
+  name: USE_TESTCONTAINERS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: USE_TESTCONTAINERS
+  path: ./opencloud/markdown-docs-generator/tmp/services/search/pkg/opensearch/internal/test/suite.go:59
+  foundincode: true
+  name: USE_TESTCONTAINERS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: USE_TESTCONTAINERS
+  path: ./opencloud/opencloud-project/opencloud/services/search/pkg/opensearch/internal/test/suite.go:59
+  foundincode: true
+  name: USE_TESTCONTAINERS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: USE_TESTCONTAINERS
+  path: ./opencloud-eu/markdown-docs-generator/tmp/services/search/pkg/opensearch/internal/test/suite.go:59
+  foundincode: false
+  name: USE_TESTCONTAINERS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: USE_TESTCONTAINERS
+  path: ./opencloud/services/search/pkg/opensearch/internal/test/suite.go:59
+  foundincode: false
+  name: USE_TESTCONTAINERS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: VAULT_TOKEN
+  path: ./rook/rook/pkg/daemon/ceph/osd/kms/kms_test.go:259
+  foundincode: true
+  name: VAULT_TOKEN
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: XDG_CONFIG_HOME
+  path: ./micbar/rclone/fs/config/config.go:183
+  foundincode: true
+  name: XDG_CONFIG_HOME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
 - rawname: YEAR
   path: openCloud/markdown-docs-generator/tmp/tests/qa-activity-report/generate-qa-activity-report.go:93
+  foundincode: false
+  name: YEAR
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: YEAR
+  path: ./opencloud/tests/qa-activity-report/generate-qa-activity-report.go:93
+  foundincode: false
+  name: YEAR
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: YEAR
+  path: ./opencloud-eu/opencloud/tests/qa-activity-report/generate-qa-activity-report.go:93
+  foundincode: false
+  name: YEAR
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: YEAR
+  path: ./opencloud/opencloud-project/opencloud/tests/qa-activity-report/generate-qa-activity-report.go:93
   foundincode: true
   name: YEAR
   type: ""
@@ -513,14 +2369,62 @@ variables:
   do_ignore: false
 - rawname: YEAR
   path: openCloud/opencloud/tests/qa-activity-report/generate-qa-activity-report.go:93
+  foundincode: false
+  name: YEAR
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: YEAR
+  path: ./opencloud-eu/markdown-docs-generator/tmp/tests/qa-activity-report/generate-qa-activity-report.go:93
+  foundincode: false
+  name: YEAR
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: YEAR
+  path: ./owncloud/ocis-project/ocis/tests/qa-activity-report/generate-qa-activity-report.go:93
   foundincode: true
   name: YEAR
   type: ""
   default_value: ""
   description: ""
   do_ignore: false
+- rawname: YEAR
+  path: ./opencloud/markdown-docs-generator/tmp/tests/qa-activity-report/generate-qa-activity-report.go:93
+  foundincode: true
+  name: YEAR
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _RCLONE_CONFIG_KEY_FILE
+  path: ./micbar/rclone/fs/config/crypt.go:131
+  foundincode: true
+  name: _RCLONE_CONFIG_KEY_FILE
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryAddressEnv
+  path: ./opencloud/markdown-docs-generator/tmp/pkg/natsjsregistry/registry.go:206
+  foundincode: true
+  name: _registryAddressEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
 - rawname: _registryAddressEnv
   path: openCloud/markdown-docs-generator/tmp/pkg/natsjsregistry/registry.go:192
+  foundincode: false
+  name: _registryAddressEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: _registryAddressEnv
+  path: ./opencloud/markdown-docs-generator/tmp/pkg/registry/registry.go:92
   foundincode: true
   name: _registryAddressEnv
   type: ""
@@ -528,7 +2432,7 @@ variables:
   description: ""
   do_ignore: false
 - rawname: _registryAddressEnv
-  path: openCloud/opencloud/pkg/natsjsregistry/registry.go:192
+  path: ./owncloud/ocis-project/ocis/ocis-pkg/natsjsregistry/registry.go:206
   foundincode: true
   name: _registryAddressEnv
   type: ""
@@ -536,8 +2440,48 @@ variables:
   description: ""
   do_ignore: false
 - rawname: _registryAddressEnv
-  path: openCloud/markdown-docs-generator/tmp/pkg/registry/registry.go:91
+  path: ./opencloud/opencloud-project/opencloud/pkg/natsjsregistry/registry.go:206
   foundincode: true
+  name: _registryAddressEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryAddressEnv
+  path: ./opencloud/opencloud-project/opencloud/pkg/registry/registry.go:92
+  foundincode: true
+  name: _registryAddressEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryAddressEnv
+  path: ./owncloud/ocis-project/ocis/ocis-pkg/registry/registry.go:92
+  foundincode: true
+  name: _registryAddressEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryAddressEnv
+  path: ./opencloud/pkg/registry/registry.go:92
+  foundincode: false
+  name: _registryAddressEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryAddressEnv
+  path: ./opencloud-eu/opencloud/pkg/registry/registry.go:92
+  foundincode: false
+  name: _registryAddressEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryAddressEnv
+  path: ./opencloud-eu/opencloud/pkg/natsjsregistry/registry.go:206
+  foundincode: false
   name: _registryAddressEnv
   type: ""
   default_value: ""
@@ -545,14 +2489,70 @@ variables:
   do_ignore: false
 - rawname: _registryAddressEnv
   path: openCloud/opencloud/pkg/registry/registry.go:91
-  foundincode: true
+  foundincode: false
+  name: _registryAddressEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: _registryAddressEnv
+  path: ./opencloud-eu/markdown-docs-generator/tmp/pkg/natsjsregistry/registry.go:206
+  foundincode: false
   name: _registryAddressEnv
   type: ""
   default_value: ""
   description: ""
   do_ignore: false
+- rawname: _registryAddressEnv
+  path: ./opencloud-eu/markdown-docs-generator/tmp/pkg/registry/registry.go:92
+  foundincode: false
+  name: _registryAddressEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryAddressEnv
+  path: ./opencloud/pkg/natsjsregistry/registry.go:206
+  foundincode: false
+  name: _registryAddressEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryAddressEnv
+  path: openCloud/markdown-docs-generator/tmp/pkg/registry/registry.go:91
+  foundincode: false
+  name: _registryAddressEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: _registryAddressEnv
+  path: openCloud/opencloud/pkg/natsjsregistry/registry.go:192
+  foundincode: false
+  name: _registryAddressEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
 - rawname: _registryEnv
-  path: openCloud/opencloud/pkg/registry/registry.go:87
+  path: openCloud/markdown-docs-generator/tmp/pkg/registry/registry.go:87
+  foundincode: false
+  name: _registryEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: _registryEnv
+  path: ./opencloud/pkg/registry/registry.go:88
+  foundincode: false
+  name: _registryEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryEnv
+  path: ./owncloud/ocis-project/ocis/ocis-pkg/registry/registry.go:88
   foundincode: true
   name: _registryEnv
   type: ""
@@ -560,7 +2560,39 @@ variables:
   description: ""
   do_ignore: false
 - rawname: _registryEnv
-  path: openCloud/markdown-docs-generator/tmp/pkg/registry/registry.go:87
+  path: ./opencloud-eu/markdown-docs-generator/tmp/pkg/registry/registry.go:88
+  foundincode: false
+  name: _registryEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryEnv
+  path: ./opencloud-eu/opencloud/pkg/registry/registry.go:88
+  foundincode: false
+  name: _registryEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryEnv
+  path: openCloud/opencloud/pkg/registry/registry.go:87
+  foundincode: false
+  name: _registryEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: _registryEnv
+  path: ./opencloud/markdown-docs-generator/tmp/pkg/registry/registry.go:88
+  foundincode: true
+  name: _registryEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryEnv
+  path: ./opencloud/opencloud-project/opencloud/pkg/registry/registry.go:88
   foundincode: true
   name: _registryEnv
   type: ""
@@ -568,7 +2600,47 @@ variables:
   description: ""
   do_ignore: false
 - rawname: _registryPasswordEnv
+  path: ./opencloud-eu/markdown-docs-generator/tmp/pkg/natsjsregistry/registry.go:234
+  foundincode: false
+  name: _registryPasswordEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryPasswordEnv
+  path: ./opencloud/markdown-docs-generator/tmp/pkg/natsjsregistry/registry.go:234
+  foundincode: true
+  name: _registryPasswordEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryPasswordEnv
+  path: ./opencloud/pkg/natsjsregistry/registry.go:234
+  foundincode: false
+  name: _registryPasswordEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryPasswordEnv
   path: openCloud/opencloud/pkg/natsjsregistry/registry.go:220
+  foundincode: false
+  name: _registryPasswordEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: _registryPasswordEnv
+  path: ./opencloud-eu/opencloud/pkg/natsjsregistry/registry.go:234
+  foundincode: false
+  name: _registryPasswordEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryPasswordEnv
+  path: ./opencloud/opencloud-project/opencloud/pkg/natsjsregistry/registry.go:234
   foundincode: true
   name: _registryPasswordEnv
   type: ""
@@ -577,6 +2649,14 @@ variables:
   do_ignore: false
 - rawname: _registryPasswordEnv
   path: openCloud/markdown-docs-generator/tmp/pkg/natsjsregistry/registry.go:220
+  foundincode: false
+  name: _registryPasswordEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: _registryPasswordEnv
+  path: ./owncloud/ocis-project/ocis/ocis-pkg/natsjsregistry/registry.go:234
   foundincode: true
   name: _registryPasswordEnv
   type: ""
@@ -584,7 +2664,7 @@ variables:
   description: ""
   do_ignore: false
 - rawname: _registryRegisterIntervalEnv
-  path: openCloud/markdown-docs-generator/tmp/pkg/registry/expiry.go:19
+  path: ./owncloud/ocis-project/ocis/ocis-pkg/registry/expiry.go:19
   foundincode: true
   name: _registryRegisterIntervalEnv
   type: ""
@@ -592,7 +2672,55 @@ variables:
   description: ""
   do_ignore: false
 - rawname: _registryRegisterIntervalEnv
+  path: ./opencloud-eu/opencloud/pkg/registry/expiry.go:19
+  foundincode: false
+  name: _registryRegisterIntervalEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryRegisterIntervalEnv
+  path: openCloud/markdown-docs-generator/tmp/pkg/registry/expiry.go:19
+  foundincode: false
+  name: _registryRegisterIntervalEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: _registryRegisterIntervalEnv
   path: openCloud/opencloud/pkg/registry/expiry.go:19
+  foundincode: false
+  name: _registryRegisterIntervalEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: _registryRegisterIntervalEnv
+  path: ./opencloud/pkg/registry/expiry.go:19
+  foundincode: false
+  name: _registryRegisterIntervalEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryRegisterIntervalEnv
+  path: ./opencloud/opencloud-project/opencloud/pkg/registry/expiry.go:19
+  foundincode: true
+  name: _registryRegisterIntervalEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryRegisterIntervalEnv
+  path: ./opencloud-eu/markdown-docs-generator/tmp/pkg/registry/expiry.go:19
+  foundincode: false
+  name: _registryRegisterIntervalEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryRegisterIntervalEnv
+  path: ./opencloud/markdown-docs-generator/tmp/pkg/registry/expiry.go:19
   foundincode: true
   name: _registryRegisterIntervalEnv
   type: ""
@@ -600,7 +2728,15 @@ variables:
   description: ""
   do_ignore: false
 - rawname: _registryRegisterTTLEnv
-  path: openCloud/markdown-docs-generator/tmp/pkg/registry/expiry.go:28
+  path: ./opencloud-eu/opencloud/pkg/registry/expiry.go:28
+  foundincode: false
+  name: _registryRegisterTTLEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryRegisterTTLEnv
+  path: ./owncloud/ocis-project/ocis/ocis-pkg/registry/expiry.go:28
   foundincode: true
   name: _registryRegisterTTLEnv
   type: ""
@@ -608,15 +2744,71 @@ variables:
   description: ""
   do_ignore: false
 - rawname: _registryRegisterTTLEnv
+  path: openCloud/markdown-docs-generator/tmp/pkg/registry/expiry.go:28
+  foundincode: false
+  name: _registryRegisterTTLEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: _registryRegisterTTLEnv
   path: openCloud/opencloud/pkg/registry/expiry.go:28
+  foundincode: false
+  name: _registryRegisterTTLEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: _registryRegisterTTLEnv
+  path: ./opencloud/pkg/registry/expiry.go:28
+  foundincode: false
+  name: _registryRegisterTTLEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryRegisterTTLEnv
+  path: ./opencloud/opencloud-project/opencloud/pkg/registry/expiry.go:28
   foundincode: true
   name: _registryRegisterTTLEnv
   type: ""
   default_value: ""
   description: ""
   do_ignore: false
+- rawname: _registryRegisterTTLEnv
+  path: ./opencloud/markdown-docs-generator/tmp/pkg/registry/expiry.go:28
+  foundincode: true
+  name: _registryRegisterTTLEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryRegisterTTLEnv
+  path: ./opencloud-eu/markdown-docs-generator/tmp/pkg/registry/expiry.go:28
+  foundincode: false
+  name: _registryRegisterTTLEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
 - rawname: _registryUsernameEnv
-  path: openCloud/opencloud/pkg/natsjsregistry/registry.go:220
+  path: ./opencloud/pkg/natsjsregistry/registry.go:234
+  foundincode: false
+  name: _registryUsernameEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryUsernameEnv
+  path: ./opencloud-eu/opencloud/pkg/natsjsregistry/registry.go:234
+  foundincode: false
+  name: _registryUsernameEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryUsernameEnv
+  path: ./opencloud/markdown-docs-generator/tmp/pkg/natsjsregistry/registry.go:234
   foundincode: true
   name: _registryUsernameEnv
   type: ""
@@ -624,7 +2816,39 @@ variables:
   description: ""
   do_ignore: false
 - rawname: _registryUsernameEnv
+  path: ./opencloud/opencloud-project/opencloud/pkg/natsjsregistry/registry.go:234
+  foundincode: true
+  name: _registryUsernameEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryUsernameEnv
+  path: openCloud/opencloud/pkg/natsjsregistry/registry.go:220
+  foundincode: false
+  name: _registryUsernameEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: _registryUsernameEnv
+  path: ./opencloud-eu/markdown-docs-generator/tmp/pkg/natsjsregistry/registry.go:234
+  foundincode: false
+  name: _registryUsernameEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryUsernameEnv
   path: openCloud/markdown-docs-generator/tmp/pkg/natsjsregistry/registry.go:220
+  foundincode: false
+  name: _registryUsernameEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: _registryUsernameEnv
+  path: ./owncloud/ocis-project/ocis/ocis-pkg/natsjsregistry/registry.go:234
   foundincode: true
   name: _registryUsernameEnv
   type: ""
@@ -633,6 +2857,14 @@ variables:
   do_ignore: false
 - rawname: _serverMaxConnectionAgeEnv
   path: openCloud/markdown-docs-generator/tmp/pkg/service/grpc/keepalive.go:19
+  foundincode: false
+  name: _serverMaxConnectionAgeEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: _serverMaxConnectionAgeEnv
+  path: ./owncloud/ocis-project/ocis/ocis-pkg/service/grpc/keepalive.go:19
   foundincode: true
   name: _serverMaxConnectionAgeEnv
   type: ""
@@ -640,7 +2872,47 @@ variables:
   description: ""
   do_ignore: false
 - rawname: _serverMaxConnectionAgeEnv
+  path: ./opencloud/pkg/service/grpc/keepalive.go:19
+  foundincode: false
+  name: _serverMaxConnectionAgeEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _serverMaxConnectionAgeEnv
+  path: ./opencloud-eu/opencloud/pkg/service/grpc/keepalive.go:19
+  foundincode: false
+  name: _serverMaxConnectionAgeEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _serverMaxConnectionAgeEnv
   path: openCloud/opencloud/pkg/service/grpc/keepalive.go:19
+  foundincode: false
+  name: _serverMaxConnectionAgeEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: _serverMaxConnectionAgeEnv
+  path: ./opencloud-eu/markdown-docs-generator/tmp/pkg/service/grpc/keepalive.go:19
+  foundincode: false
+  name: _serverMaxConnectionAgeEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _serverMaxConnectionAgeEnv
+  path: ./opencloud/opencloud-project/reva/pkg/rgrpc/keepalive.go:19
+  foundincode: true
+  name: _serverMaxConnectionAgeEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _serverMaxConnectionAgeEnv
+  path: ./opencloud/markdown-docs-generator/tmp/pkg/service/grpc/keepalive.go:19
   foundincode: true
   name: _serverMaxConnectionAgeEnv
   type: ""
@@ -649,31 +2921,775 @@ variables:
   do_ignore: false
 - rawname: _serverMaxConnectionAgeEnv
   path: openCloud/reva/pkg/rgrpc/keepalive.go:19
+  foundincode: false
+  name: _serverMaxConnectionAgeEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: _serverMaxConnectionAgeEnv
+  path: ./opencloud/opencloud-project/opencloud/pkg/service/grpc/keepalive.go:19
   foundincode: true
   name: _serverMaxConnectionAgeEnv
   type: ""
   default_value: ""
   description: ""
   do_ignore: false
-- rawname: name
-  path: openCloud/lico/cmd/licod/env.go:38
+- rawname: accessKey
+  path: ./opencloud/minio-go/core_test.go:252
   foundincode: true
+  name: accessKey
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: accessKey
+  path: ./opencloud/minio-go/core_test.go:55
+  foundincode: true
+  name: accessKey
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: accessKey
+  path: ./opencloud/minio-go/core_test.go:511
+  foundincode: true
+  name: accessKey
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: accessKey
+  path: ./opencloud/minio-go/core_test.go:388
+  foundincode: true
+  name: accessKey
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: accessKey
+  path: ./opencloud/minio-go/core_test.go:664
+  foundincode: true
+  name: accessKey
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: accessKey
+  path: ./opencloud/minio-go/core_test.go:757
+  foundincode: true
+  name: accessKey
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: accessKey
+  path: ./opencloud/minio-go/core_test.go:818
+  foundincode: true
+  name: accessKey
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: accessKey
+  path: ./opencloud/minio-go/functional_tests.go:408
+  foundincode: true
+  name: accessKey
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: accessKey
+  path: ./opencloud/minio-go/core_test.go:325
+  foundincode: true
+  name: accessKey
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: accessKey
+  path: ./opencloud/minio-go/functional_tests.go:410
+  foundincode: true
+  name: accessKey
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: crushDeviceClassVarName
+  path: ./rook/rook/pkg/util/sys/device.go:293
+  foundincode: true
+  name: crushDeviceClassVarName
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: discoverDaemon.DiscoverDaemonUdev
+  path: ./rook/rook/pkg/operator/discover/discover.go:151
+  foundincode: true
+  name: discoverDaemon.DiscoverDaemonUdev
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: enableHTTPS
+  path: ./opencloud/minio-go/functional_tests.go:14213
+  foundincode: true
+  name: enableHTTPS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: enableHTTPS
+  path: ./opencloud/minio-go/functional_tests.go:87
+  foundincode: true
+  name: enableHTTPS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: enableHTTPS
+  path: ./opencloud/minio-go/functional_tests.go:2879
+  foundincode: true
+  name: enableHTTPS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: enableHTTPS
+  path: ./opencloud/minio-go/functional_tests.go:415
+  foundincode: true
+  name: enableHTTPS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: enableHTTPS
+  path: ./opencloud/minio-go/functional_tests.go:81
+  foundincode: true
+  name: enableHTTPS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: enableHTTPS
+  path: ./opencloud/minio-go/functional_tests.go:5395
+  foundincode: true
+  name: enableHTTPS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: enableKMS
+  path: ./opencloud/minio-go/functional_tests.go:14215
+  foundincode: true
+  name: enableKMS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: enableKMS
+  path: ./opencloud/minio-go/functional_tests.go:14214
+  foundincode: true
+  name: enableKMS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: enableSecurity
+  path: ./opencloud/minio-go/core_test.go:389
+  foundincode: true
+  name: enableSecurity
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: enableSecurity
+  path: ./opencloud/minio-go/core_test.go:326
+  foundincode: true
+  name: enableSecurity
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: enableSecurity
+  path: ./opencloud/minio-go/core_test.go:253
+  foundincode: true
+  name: enableSecurity
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: enableSecurity
+  path: ./opencloud/minio-go/core_test.go:758
+  foundincode: true
+  name: enableSecurity
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: enableSecurity
+  path: ./opencloud/minio-go/core_test.go:56
+  foundincode: true
+  name: enableSecurity
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: enableSecurity
+  path: ./opencloud/minio-go/core_test.go:819
+  foundincode: true
+  name: enableSecurity
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: enableSecurity
+  path: ./opencloud/minio-go/core_test.go:512
+  foundincode: true
+  name: enableSecurity
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: enableSecurity
+  path: ./opencloud/minio-go/core_test.go:665
+  foundincode: true
+  name: enableSecurity
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: env
+  path: ./rook/rook/tests/framework/installer/environment.go:67
+  foundincode: true
+  name: env
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: env
+  path: ./rook/rook/tests/framework/utils/env.go:47
+  foundincode: true
+  name: env
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: envKey(name, "type
+  path: ./micbar/rclone/fstest/testserver/testserver.go:178
+  foundincode: true
+  name: envKey(name, "type
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: envVar
+  path: ./rook/rook/pkg/util/flags/flags.go:60
+  foundincode: true
+  name: envVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: fallbackCephSecretEnvVar
+  path: ./rook/rook/cmd/rook/ceph/osd.go:410
+  foundincode: true
+  name: fallbackCephSecretEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: k8sutil.NodeNameEnvVar
+  path: ./rook/rook/cmd/rook/ceph/osd.go:362
+  foundincode: true
+  name: k8sutil.NodeNameEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: k8sutil.NodeNameEnvVar
+  path: ./rook/rook/pkg/daemon/discover/discover.go:83
+  foundincode: true
+  name: k8sutil.NodeNameEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: k8sutil.PodNameEnvVar
+  path: ./rook/rook/pkg/operator/ceph/csi/controller.go:147
+  foundincode: true
+  name: k8sutil.PodNameEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: k8sutil.PodNameEnvVar
+  path: ./rook/rook/pkg/operator/ceph/csi/peermap/config.go:312
+  foundincode: true
+  name: k8sutil.PodNameEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: k8sutil.PodNamespaceEnvVar
+  path: ./rook/rook/pkg/operator/ceph/csi/cluster_config.go:395
+  foundincode: true
+  name: k8sutil.PodNamespaceEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: k8sutil.PodNamespaceEnvVar
+  path: ./rook/rook/pkg/operator/ceph/csi/ceph_connection.go:39
+  foundincode: true
+  name: k8sutil.PodNamespaceEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: k8sutil.PodNamespaceEnvVar
+  path: ./rook/rook/pkg/operator/ceph/operator.go:75
+  foundincode: true
+  name: k8sutil.PodNamespaceEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: k8sutil.PodNamespaceEnvVar
+  path: ./rook/rook/pkg/operator/ceph/csi/config.go:141
+  foundincode: true
+  name: k8sutil.PodNamespaceEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: k8sutil.PodNamespaceEnvVar
+  path: ./rook/rook/pkg/daemon/multus/config.go:63
+  foundincode: true
+  name: k8sutil.PodNamespaceEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: k8sutil.PodNamespaceEnvVar
+  path: ./rook/rook/pkg/daemon/discover/discover.go:84
+  foundincode: true
+  name: k8sutil.PodNamespaceEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: k8sutil.PodNamespaceEnvVar
+  path: ./rook/rook/pkg/operator/discover/discover.go:383
+  foundincode: true
+  name: k8sutil.PodNamespaceEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: k8sutil.PodNamespaceEnvVar
+  path: ./rook/rook/cmd/rook/ceph/cleanup.go:104
+  foundincode: true
+  name: k8sutil.PodNamespaceEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: k8sutil.PodNamespaceEnvVar
+  path: ./rook/rook/cmd/rook/ceph/ceph.go:81
+  foundincode: true
+  name: k8sutil.PodNamespaceEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: k8sutil.PodNamespaceEnvVar
+  path: ./rook/rook/pkg/operator/ceph/csi/config.go:105
+  foundincode: true
+  name: k8sutil.PodNamespaceEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: k8sutil.PodNamespaceEnvVar
+  path: ./rook/rook/cmd/rook/ceph/operator.go:63
+  foundincode: true
+  name: k8sutil.PodNamespaceEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: k8sutil.PodNamespaceEnvVar
+  path: ./rook/rook/pkg/operator/ceph/csi/config.go:43
+  foundincode: true
+  name: k8sutil.PodNamespaceEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: k8sutil.PodNamespaceEnvVar
+  path: ./rook/rook/pkg/operator/ceph/cluster/mgr/spec.go:380
+  foundincode: true
+  name: k8sutil.PodNamespaceEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: k8sutil.PodNamespaceEnvVar
+  path: ./rook/rook/pkg/operator/ceph/csi/peermap/config.go:248
+  foundincode: true
+  name: k8sutil.PodNamespaceEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: k8sutil.PodNamespaceEnvVar
+  path: ./rook/rook/cmd/rook/ceph/cleanup.go:164
+  foundincode: true
+  name: k8sutil.PodNamespaceEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: k8sutil.PodNamespaceEnvVar
+  path: ./rook/rook/cmd/rook/ceph/cleanup.go:191
+  foundincode: true
+  name: k8sutil.PodNamespaceEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: k8sutil.PodNamespaceEnvVar
+  path: ./rook/rook/pkg/operator/ceph/csi/cluster_config.go:318
+  foundincode: true
+  name: k8sutil.PodNamespaceEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: k8sutil.PodNamespaceEnvVar
+  path: ./rook/rook/pkg/operator/ceph/cluster/cluster.go:647
+  foundincode: true
+  name: k8sutil.PodNamespaceEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: k8sutil.PodNamespaceEnvVar
+  path: ./rook/rook/pkg/operator/ceph/object/cosi/controller.go:182
+  foundincode: true
+  name: k8sutil.PodNamespaceEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: k8sutil.PodNamespaceEnvVar
+  path: ./rook/rook/cmd/rook/secret.go:59
+  foundincode: true
+  name: k8sutil.PodNamespaceEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: k8sutil.PodNamespaceEnvVar
+  path: ./rook/rook/cmd/rook/ceph/cleanup.go:130
+  foundincode: true
+  name: k8sutil.PodNamespaceEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: key
+  path: ./rook/rook/pkg/operator/k8sutil/configmap.go:99
+  foundincode: true
+  name: key
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: kms.IbmKeyProtectServiceApiKey
+  path: ./rook/rook/pkg/daemon/ceph/osd/encryption.go:77
+  foundincode: true
+  name: kms.IbmKeyProtectServiceApiKey
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: name
+  path: ./micbar/rclone/fs/mount_helper_test.go:50
+  foundincode: true
+  name: name
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: name
+  path: openCloud/lico/cmd/licod/env.go:27
+  foundincode: false
   name: name
   type: ""
   default_value: ""
   description: ""
   do_ignore: true
 - rawname: name
-  path: openCloud/lico/cmd/licod/env.go:27
-  foundincode: true
+  path: openCloud/lico/cmd/licod/env.go:38
+  foundincode: false
   name: name
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: object.DisableOBCEnvVar
+  path: ./rook/rook/pkg/operator/ceph/object/notification/controller.go:74
+  foundincode: true
+  name: object.DisableOBCEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: object.DisableOBCEnvVar
+  path: ./rook/rook/pkg/operator/ceph/object/bucket/controller.go:57
+  foundincode: true
+  name: object.DisableOBCEnvVar
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: opcontroller.CSICephFSRadosNamesaceEnv
+  path: ./rook/rook/cmd/rook/ceph/cleanup.go:141
+  foundincode: true
+  name: opcontroller.CSICephFSRadosNamesaceEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: opcontroller.CephBlockPoolNameEnv
+  path: ./rook/rook/cmd/rook/ceph/cleanup.go:194
+  foundincode: true
+  name: opcontroller.CephBlockPoolNameEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: opcontroller.CephBlockPoolNameEnv
+  path: ./rook/rook/cmd/rook/ceph/cleanup.go:167
+  foundincode: true
+  name: opcontroller.CephBlockPoolNameEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: opcontroller.CephBlockPoolRadosNamespaceEnv
+  path: ./rook/rook/cmd/rook/ceph/cleanup.go:172
+  foundincode: true
+  name: opcontroller.CephBlockPoolRadosNamespaceEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: opcontroller.CephFSMetaDataPoolNameEnv
+  path: ./rook/rook/cmd/rook/ceph/cleanup.go:145
+  foundincode: true
+  name: opcontroller.CephFSMetaDataPoolNameEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: opcontroller.CephFSNameEnv
+  path: ./rook/rook/cmd/rook/ceph/cleanup.go:133
+  foundincode: true
+  name: opcontroller.CephFSNameEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: opcontroller.CephFSSubVolumeGroupNameEnv
+  path: ./rook/rook/cmd/rook/ceph/cleanup.go:137
+  foundincode: true
+  name: opcontroller.CephFSSubVolumeGroupNameEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: oposd.CephVolumeEncryptedKeyEnvVarName
+  path: ./rook/rook/pkg/daemon/ceph/osd/volume.go:1122
+  foundincode: true
+  name: oposd.CephVolumeEncryptedKeyEnvVarName
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: oposd.CephVolumeEncryptedKeyEnvVarName
+  path: ./rook/rook/pkg/daemon/ceph/osd/volume.go:1267
+  foundincode: true
+  name: oposd.CephVolumeEncryptedKeyEnvVarName
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: oposd.CrushDeviceClassVarName
+  path: ./rook/rook/pkg/daemon/ceph/osd/device.go:85
+  foundincode: true
+  name: oposd.CrushDeviceClassVarName
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: oposd.CrushDeviceClassVarName
+  path: ./rook/rook/pkg/daemon/ceph/osd/volume.go:300
+  foundincode: true
+  name: oposd.CrushDeviceClassVarName
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: oposd.CrushRootVarName
+  path: ./rook/rook/cmd/rook/ceph/osd.go:360
+  foundincode: true
+  name: oposd.CrushRootVarName
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: oposd.EncryptedDeviceEnvVarName
+  path: ./rook/rook/pkg/daemon/ceph/osd/daemon.go:160
+  foundincode: true
+  name: oposd.EncryptedDeviceEnvVarName
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: oposd.EncryptedDeviceEnvVarName
+  path: ./rook/rook/pkg/daemon/ceph/osd/volume.go:62
+  foundincode: true
+  name: oposd.EncryptedDeviceEnvVarName
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: oposd.OSDStoreTypeVarName
+  path: ./rook/rook/pkg/daemon/ceph/osd/volume.go:1023
+  foundincode: true
+  name: oposd.OSDStoreTypeVarName
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: oposd.PVCBackedOSDVarName
+  path: ./rook/rook/pkg/daemon/ceph/osd/volume.go:63
+  foundincode: true
+  name: oposd.PVCBackedOSDVarName
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: oposd.PVCNameEnvVarName
+  path: ./rook/rook/pkg/daemon/ceph/osd/volume.go:1272
+  foundincode: true
+  name: oposd.PVCNameEnvVarName
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: oposd.PVCNameEnvVarName
+  path: ./rook/rook/pkg/daemon/ceph/osd/remove.go:267
+  foundincode: true
+  name: oposd.PVCNameEnvVarName
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: oposd.PVCNameEnvVarName
+  path: ./rook/rook/pkg/daemon/ceph/osd/encryption.go:108
+  foundincode: true
+  name: oposd.PVCNameEnvVarName
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: oposd.PVCNameEnvVarName
+  path: ./rook/rook/pkg/daemon/ceph/osd/encryption.go:129
+  foundincode: true
+  name: oposd.PVCNameEnvVarName
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: oposd.PVCNameEnvVarName
+  path: ./rook/rook/pkg/daemon/ceph/osd/volume.go:1126
+  foundincode: true
+  name: oposd.PVCNameEnvVarName
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: pair[0]
+  path: ./rook/rook/pkg/daemon/ceph/osd/kms/envs.go:154
+  foundincode: true
+  name: pair[0]
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: pair[0]
+  path: ./rook/rook/pkg/daemon/ceph/osd/kms/envs.go:156
+  foundincode: true
+  name: pair[0]
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: parts[0]
+  path: ./opencloud-eu/markdown-docs-generator/tmp/pkg/config/envdecode/envdecode.go:382
+  foundincode: false
+  name: parts[0]
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: parts[0]
+  path: ./owncloud/ocis-project/ocis/ocis-pkg/config/envdecode/envdecode.go:382
+  foundincode: true
+  name: parts[0]
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: parts[0]
+  path: ./opencloud-eu/opencloud/pkg/config/envdecode/envdecode.go:382
+  foundincode: false
+  name: parts[0]
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: parts[0]
+  path: ./opencloud/markdown-docs-generator/tmp/pkg/config/envdecode/envdecode.go:382
+  foundincode: true
+  name: parts[0]
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: parts[0]
+  path: ./opencloud/opencloud-project/opencloud/pkg/config/envdecode/envdecode.go:382
+  foundincode: true
+  name: parts[0]
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: parts[0]
+  path: openCloud/opencloud/pkg/config/envdecode/envdecode.go:382
+  foundincode: false
+  name: parts[0]
   type: ""
   default_value: ""
   description: ""
   do_ignore: true
 - rawname: parts[0]
-  path: openCloud/opencloud/pkg/config/envdecode/envdecode.go:382
-  foundincode: true
+  path: ./opencloud/pkg/config/envdecode/envdecode.go:382
+  foundincode: false
   name: parts[0]
   type: ""
   default_value: ""
@@ -681,9 +3697,265 @@ variables:
   do_ignore: true
 - rawname: parts[0]
   path: openCloud/markdown-docs-generator/tmp/pkg/config/envdecode/envdecode.go:382
-  foundincode: true
+  foundincode: false
   name: parts[0]
   type: ""
   default_value: ""
   description: ""
   do_ignore: true
+- rawname: secretKey
+  path: ./opencloud/minio-go/core_test.go:757
+  foundincode: true
+  name: secretKey
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: secretKey
+  path: ./opencloud/minio-go/core_test.go:55
+  foundincode: true
+  name: secretKey
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: secretKey
+  path: ./opencloud/minio-go/core_test.go:818
+  foundincode: true
+  name: secretKey
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: secretKey
+  path: ./opencloud/minio-go/functional_tests.go:410
+  foundincode: true
+  name: secretKey
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: secretKey
+  path: ./opencloud/minio-go/core_test.go:511
+  foundincode: true
+  name: secretKey
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: secretKey
+  path: ./opencloud/minio-go/core_test.go:388
+  foundincode: true
+  name: secretKey
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: secretKey
+  path: ./opencloud/minio-go/core_test.go:252
+  foundincode: true
+  name: secretKey
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: secretKey
+  path: ./opencloud/minio-go/core_test.go:325
+  foundincode: true
+  name: secretKey
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: secretKey
+  path: ./opencloud/minio-go/core_test.go:664
+  foundincode: true
+  name: secretKey
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: secretKey
+  path: ./opencloud/minio-go/functional_tests.go:408
+  foundincode: true
+  name: secretKey
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: serverEndpoint
+  path: ./opencloud/minio-go/core_test.go:755
+  foundincode: true
+  name: serverEndpoint
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: serverEndpoint
+  path: ./opencloud/minio-go/core_test.go:500
+  foundincode: true
+  name: serverEndpoint
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: serverEndpoint
+  path: ./opencloud/minio-go/functional_tests.go:418
+  foundincode: true
+  name: serverEndpoint
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: serverEndpoint
+  path: ./opencloud/minio-go/functional_tests.go:5402
+  foundincode: true
+  name: serverEndpoint
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: serverEndpoint
+  path: ./opencloud/minio-go/core_test.go:323
+  foundincode: true
+  name: serverEndpoint
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: serverEndpoint
+  path: ./opencloud/minio-go/core_test.go:509
+  foundincode: true
+  name: serverEndpoint
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: serverEndpoint
+  path: ./opencloud/minio-go/core_test.go:653
+  foundincode: true
+  name: serverEndpoint
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: serverEndpoint
+  path: ./opencloud/minio-go/functional_tests.go:5401
+  foundincode: true
+  name: serverEndpoint
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: serverEndpoint
+  path: ./opencloud/minio-go/core_test.go:386
+  foundincode: true
+  name: serverEndpoint
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: serverEndpoint
+  path: ./opencloud/minio-go/core_test.go:314
+  foundincode: true
+  name: serverEndpoint
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: serverEndpoint
+  path: ./opencloud/minio-go/core_test.go:44
+  foundincode: true
+  name: serverEndpoint
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: serverEndpoint
+  path: ./opencloud/minio-go/core_test.go:662
+  foundincode: true
+  name: serverEndpoint
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: serverEndpoint
+  path: ./opencloud/minio-go/core_test.go:53
+  foundincode: true
+  name: serverEndpoint
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: serverEndpoint
+  path: ./opencloud/minio-go/functional_tests.go:273
+  foundincode: true
+  name: serverEndpoint
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: serverEndpoint
+  path: ./opencloud/minio-go/core_test.go:747
+  foundincode: true
+  name: serverEndpoint
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: serverEndpoint
+  path: ./opencloud/minio-go/core_test.go:807
+  foundincode: true
+  name: serverEndpoint
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: serverEndpoint
+  path: ./opencloud/minio-go/core_test.go:241
+  foundincode: true
+  name: serverEndpoint
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: serverEndpoint
+  path: ./opencloud/minio-go/functional_tests.go:12551
+  foundincode: true
+  name: serverEndpoint
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: serverEndpoint
+  path: ./opencloud/minio-go/core_test.go:816
+  foundincode: true
+  name: serverEndpoint
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: serverEndpoint
+  path: ./opencloud/minio-go/core_test.go:377
+  foundincode: true
+  name: serverEndpoint
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: serverEndpoint
+  path: ./opencloud/minio-go/core_test.go:250
+  foundincode: true
+  name: serverEndpoint
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: skipCERTValidation
+  path: ./opencloud/minio-go/functional_tests.go:87
+  foundincode: true
+  name: skipCERTValidation
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
