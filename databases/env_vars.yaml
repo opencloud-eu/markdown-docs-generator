@@ -144,6 +144,17 @@ ACTIVITYLOG_LOG_PRETTY:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+ACTIVITYLOG_MAX_ACTIVITIES:
+  name: ACTIVITYLOG_MAX_ACTIVITIES
+  defaultValue: "6000"
+  type: int
+  description: The maximum number of activities to keep in the store per resource.
+    If the number of activities exceeds this value, the oldest activities will be
+    removed.
+  introductionVersion: 4.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 ACTIVITYLOG_SERVICE_ACCOUNT_ID:
   name: OC_SERVICE_ACCOUNT_ID;ACTIVITYLOG_SERVICE_ACCOUNT_ID
   defaultValue: ""
@@ -288,7 +299,7 @@ ACTIVITYLOG_WRITE_BUFFER_DURATION:
   type: Duration
   description: The duration to wait before flushing the write buffer. This is used
     to reduce the number of writes to the store.
-  introductionVersion: '%%NEXT%%'
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -1367,7 +1378,7 @@ AUTH_APP_JSONCS3_DICEWARE_NUMBER_OF_WORDS:
   defaultValue: "6"
   type: int
   description: The number of words the generated passphrase will have.
-  introductionVersion: '%%NEXT%%'
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -1377,7 +1388,7 @@ AUTH_APP_JSONCS3_PASSWORD_GENERATOR:
   type: string
   description: 'The password generator that should be used for generating app tokens.
     Supported values are: ''diceware'' and ''random''.'
-  introductionVersion: '%%NEXT%%'
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -1386,7 +1397,7 @@ AUTH_APP_JSONCS3_PROVIDER_ADDR:
   defaultValue: eu.opencloud.api.storage-system
   type: string
   description: GRPC address of the STORAGE-SYSTEM service.
-  introductionVersion: '%%NEXT%%'
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -1395,7 +1406,7 @@ AUTH_APP_JSONCS3_RANDOM_PASSWORD_LENGTH:
   defaultValue: "0"
   type: int
   description: The number of charactors the generated passwords will have.
-  introductionVersion: '%%NEXT%%'
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -1404,7 +1415,7 @@ AUTH_APP_JSONCS3_SYSTEM_USER_API_KEY:
   defaultValue: ""
   type: string
   description: API key for the STORAGE-SYSTEM system user.
-  introductionVersion: '%%NEXT%%'
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -1416,7 +1427,7 @@ AUTH_APP_JSONCS3_SYSTEM_USER_ID:
     the ID for the STORAGE-SYSTEM system user in this config option which is then
     used to reference the user. Any reasonable long string is possible, preferably
     this would be an UUIDv4 format.
-  introductionVersion: '%%NEXT%%'
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -1425,7 +1436,7 @@ AUTH_APP_JSONCS3_SYSTEM_USER_IDP:
   defaultValue: internal
   type: string
   description: IDP of the OpenCloud STORAGE-SYSTEM system user.
-  introductionVersion: '%%NEXT%%'
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -1502,7 +1513,7 @@ AUTH_APP_STORAGE_DRIVER:
   type: string
   description: Driver to be used to persist the app tokes . Supported values are 'jsoncs3',
     'json'.
-  introductionVersion: '%%NEXT%%'
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -1673,7 +1684,7 @@ AUTH_BASIC_LDAP_BIND_PASSWORD:
   deprecationInfo: ""
 AUTH_BASIC_LDAP_CACERT:
   name: OC_LDAP_CACERT;AUTH_BASIC_LDAP_CACERT
-  defaultValue: /home/chaser/.opencloud/idm/ldap.crt
+  defaultValue: /var/lib/opencloud/idm/ldap.crt
   type: string
   description: Path/File name for the root CA certificate (in PEM format) used to
     validate TLS server certificates of the LDAP service. If not defined, the root
@@ -1881,6 +1892,16 @@ AUTH_BASIC_LDAP_USER_SCHEMA_MAIL:
   type: string
   description: LDAP Attribute to use for the email address of users.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+AUTH_BASIC_LDAP_USER_SCHEMA_TENANT_ID:
+  name: OC_LDAP_USER_SCHEMA_TENANT_ID;AUTH_BASIC_LDAP_USER_SCHEMA_TENANT_ID
+  defaultValue: ""
+  type: string
+  description: LDAP Attribute to use for the tenant ID of users. This is used to identify
+    the tenant of a user in a multi-tenant environment.
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -2883,6 +2904,15 @@ COLLABORATION_APP_PROOF_DURATION:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+COLLABORATION_CS3API_APP_REGISTRATION_INTERVAL:
+  name: COLLABORATION_CS3API_APP_REGISTRATION_INTERVAL
+  defaultValue: 30s
+  type: Duration
+  description: The interval at which the app provider registers itself.
+  introductionVersion: 4.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 COLLABORATION_CS3API_DATAGATEWAY_INSECURE:
   name: COLLABORATION_CS3API_DATAGATEWAY_INSECURE
   defaultValue: "false"
@@ -3000,6 +3030,16 @@ COLLABORATION_LOG_PRETTY:
   type: bool
   description: Activates pretty log output.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+COLLABORATION_SERVICE_NAME:
+  name: COLLABORATION_SERVICE_NAME
+  defaultValue: collaboration
+  type: string
+  description: The name of the service which is registered. You only need to change
+    this when more than one collaboration service is needed.
+  introductionVersion: 3.6.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -3515,6 +3555,15 @@ FRONTEND_CHECKSUMS_SUPPORTED_TYPES:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+FRONTEND_CHECK_FOR_UPDATES:
+  name: FRONTEND_CHECK_FOR_UPDATES
+  defaultValue: "true"
+  type: bool
+  description: Enable automatic checking for updates. Defaults to true.
+  introductionVersion: 3.6.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 FRONTEND_CONFIGURABLE_NOTIFICATIONS:
   name: FRONTEND_CONFIGURABLE_NOTIFICATIONS
   defaultValue: "false"
@@ -3639,6 +3688,16 @@ FRONTEND_DEFAULT_UPLOAD_PROTOCOL:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+FRONTEND_DISABLE_RADICALE:
+  name: FRONTEND_DISABLE_RADICALE
+  defaultValue: "false"
+  type: bool
+  description: When set to true, clients are informed that the Radicale (CalDAV/CardDAV)
+    is not accessible.
+  introductionVersion: 4.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 FRONTEND_DISABLE_SSE:
   name: OC_DISABLE_SSE;FRONTEND_DISABLE_SSE
   defaultValue: "false"
@@ -3655,6 +3714,15 @@ FRONTEND_EDITION:
   type: string
   description: Edition of OpenCloud. Used for branding purposes.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+FRONTEND_EDIT_LOGIN_ALLOWED_DISABLED:
+  name: FRONTEND_EDIT_LOGIN_ALLOWED_DISABLED
+  defaultValue: "false"
+  type: bool
+  description: Used to set if login is allowed/forbidden for for User.
+  introductionVersion: 3.4.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -3763,6 +3831,15 @@ FRONTEND_FULL_TEXT_SEARCH_ENABLED:
   type: bool
   description: Set to true to signal the web client that full-text search is enabled.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+FRONTEND_GROUPWARE_ENABLED:
+  name: FRONTEND_GROUPWARE_ENABLED
+  defaultValue: "false"
+  type: bool
+  description: Enable groupware features. Defaults to false.
+  introductionVersion: 3.7.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -3958,7 +4035,9 @@ FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD:
     OCS API is deprecated | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS
     API is deprecated | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API
     is deprecated | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated
-    | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated
+    | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD,
+    the OCS API is deprecated | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the
+    OCS API is deprecated
 FRONTEND_OCS_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD:
   name: OC_SHARING_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD;FRONTEND_OCS_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD
   defaultValue: "false"
@@ -3970,6 +4049,8 @@ FRONTEND_OCS_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD:
   removalVersion: ""
   deprecationInfo: FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD, the OCS
     API is deprecated |  | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
+    the OCS API is deprecated | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
+    the OCS API is deprecated | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
     the OCS API is deprecated | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
     the OCS API is deprecated | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
     the OCS API is deprecated | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
@@ -5200,7 +5281,7 @@ GRAPH_LDAP_BIND_PASSWORD:
   deprecationInfo: ""
 GRAPH_LDAP_CACERT:
   name: OC_LDAP_CACERT;GRAPH_LDAP_CACERT
-  defaultValue: /home/chaser/.opencloud/idm/ldap.crt
+  defaultValue: /var/lib/opencloud/idm/ldap.crt
   type: string
   description: Path/File name for the root CA certificate (in PEM format) used to
     validate TLS server certificates of the LDAP service. If not defined, the root
@@ -5672,7 +5753,7 @@ GRAPH_STORAGE_GATEWAY_GRPC_ADDR:
   defaultValue: eu.opencloud.api.storage-system
   type: string
   description: GRPC address of the STORAGE-SYSTEM service.
-  introductionVersion: '%%NEXT%%'
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -5681,7 +5762,48 @@ GRAPH_STORAGE_GRPC_ADDR:
   defaultValue: eu.opencloud.api.storage-system
   type: string
   description: GRPC address of the STORAGE-SYSTEM service.
-  introductionVersion: '%%NEXT%%'
+  introductionVersion: 4.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+GRAPH_STORE_AUTH_PASSWORD:
+  name: OC_PERSISTENT_STORE_AUTH_PASSWORD;GRAPH_STORE_AUTH_PASSWORD
+  defaultValue: ""
+  type: string
+  description: The password to authenticate with the store. Only applies when store
+    type 'nats-js-kv' is configured.
+  introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+GRAPH_STORE_AUTH_USERNAME:
+  name: OC_PERSISTENT_STORE_AUTH_USERNAME;GRAPH_STORE_AUTH_USERNAME
+  defaultValue: ""
+  type: string
+  description: The username to authenticate with the store. Only applies when store
+    type 'nats-js-kv' is configured.
+  introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+GRAPH_STORE_DATABASE:
+  name: GRAPH_STORE_DATABASE
+  defaultValue: graph
+  type: string
+  description: The database name the configured store should use.
+  introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+GRAPH_STORE_NODES:
+  name: OC_PERSISTENT_STORE_NODES;GRAPH_STORE_NODES
+  defaultValue: '[127.0.0.1:9233]'
+  type: '[]string'
+  description: A list of nodes to access the configured store. This has no effect
+    when 'memory' store is configured. Note that the behaviour how nodes are used
+    is dependent on the library of the configured store. See the Environment Variable
+    Types description for more details.
+  introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -5693,7 +5815,7 @@ GRAPH_SYSTEM_USER_ID:
     the ID for the STORAGE-SYSTEM system user in this config option which is then
     used to reference the user. Any reasonable long string is possible, preferably
     this would be an UUIDv4 format.
-  introductionVersion: '%%NEXT%%'
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -5702,7 +5824,7 @@ GRAPH_SYSTEM_USER_IDP:
   defaultValue: internal
   type: string
   description: IDP of the OpenCloud STORAGE-SYSTEM system user.
-  introductionVersion: '%%NEXT%%'
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -5773,6 +5895,18 @@ GRAPH_USER_ENABLED_ATTRIBUTE:
   type: string
   description: LDAP Attribute to use as a flag telling if the user is enabled or disabled.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+GRAPH_USER_SOFT_DELETE_RETENTION_TIME:
+  name: GRAPH_USER_SOFT_DELETE_RETENTION_TIME
+  defaultValue: 0s
+  type: Duration
+  description: The time after which a soft-deleted user is permanently deleted. If
+    set to 0 (default), there is no soft delete retention time and users are deleted
+    immediately after being soft-deleted. If set to a positive value, the user will
+    be kept in the system for that duration before being permanently deleted.
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -5882,7 +6016,7 @@ GROUPS_LDAP_BIND_PASSWORD:
   deprecationInfo: ""
 GROUPS_LDAP_CACERT:
   name: OC_LDAP_CACERT;GROUPS_LDAP_CACERT
-  defaultValue: /home/chaser/.opencloud/idm/ldap.crt
+  defaultValue: /var/lib/opencloud/idm/ldap.crt
   type: string
   description: Path/File name for the root CA certificate (in PEM format) used to
     validate TLS server certificates of the LDAP service. If not defined, the root
@@ -6304,17 +6438,17 @@ IDM_ADMIN_USER_ID:
   removalVersion: ""
   deprecationInfo: ""
 IDM_CREATE_DEMO_USERS:
-  name: SETTINGS_SETUP_DEFAULT_ASSIGNMENTS;IDM_CREATE_DEMO_USERS
+  name: IDM_CREATE_DEMO_USERS
   defaultValue: "false"
   type: bool
-  description: The default role assignments the demo users should be setup.
+  description: Flag to enable or disable the creation of the demo users.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 IDM_DATABASE_PATH:
   name: IDM_DATABASE_PATH
-  defaultValue: /home/chaser/.opencloud/idm/idm.boltdb
+  defaultValue: /var/lib/opencloud/idm/idm.boltdb
   type: string
   description: Full path to the IDM backend database. If not defined, the root directory
     derives from $OC_BASE_DATA_PATH/idm.
@@ -6381,7 +6515,7 @@ IDM_LDAPS_ADDR:
   deprecationInfo: ""
 IDM_LDAPS_CERT:
   name: IDM_LDAPS_CERT
-  defaultValue: /home/chaser/.opencloud/idm/ldap.crt
+  defaultValue: /var/lib/opencloud/idm/ldap.crt
   type: string
   description: File name of the TLS server certificate for the LDAPS listener. If
     not defined, the root directory derives from $OC_BASE_DATA_PATH/idm.
@@ -6391,7 +6525,7 @@ IDM_LDAPS_CERT:
   deprecationInfo: ""
 IDM_LDAPS_KEY:
   name: IDM_LDAPS_KEY
-  defaultValue: /home/chaser/.opencloud/idm/ldap.key
+  defaultValue: /var/lib/opencloud/idm/ldap.key
   type: string
   description: File name for the TLS certificate key for the server certificate. If
     not defined, the root directory derives from $OC_BASE_DATA_PATH/idm.
@@ -6575,7 +6709,7 @@ IDP_DEFAULT_LOGO_TARGET_URI:
   defaultValue: https://opencloud.eu
   type: string
   description: Default logo target URI.
-  introductionVersion: '%%NEXT%%'
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -6599,7 +6733,7 @@ IDP_DYNAMIC_CLIENT_SECRET_DURATION:
   deprecationInfo: ""
 IDP_ENCRYPTION_SECRET_FILE:
   name: IDP_ENCRYPTION_SECRET_FILE
-  defaultValue: /home/chaser/.opencloud/idp/encryption.key
+  defaultValue: /var/lib/opencloud/idp/encryption.key
   type: string
   description: Path to the encryption secret file, if unset, a new certificate will
     be autogenerated upon each restart, thus invalidating all existing sessions. If
@@ -6758,7 +6892,7 @@ IDP_LDAP_SCOPE:
   deprecationInfo: ""
 IDP_LDAP_TLS_CACERT:
   name: OC_LDAP_CACERT;IDP_LDAP_TLS_CACERT
-  defaultValue: /home/chaser/.opencloud/idm/ldap.crt
+  defaultValue: /var/lib/opencloud/idm/ldap.crt
   type: string
   description: Path/File name for the root CA certificate (in PEM format) used to
     validate TLS server certificates of the LDAP service. If not defined, the root
@@ -6891,7 +7025,7 @@ IDP_SIGNING_METHOD:
   deprecationInfo: ""
 IDP_SIGNING_PRIVATE_KEY_FILES:
   name: IDP_SIGNING_PRIVATE_KEY_FILES
-  defaultValue: '[/home/chaser/.opencloud/idp/private-key.pem]'
+  defaultValue: '[/var/lib/opencloud/idp/private-key.pem]'
   type: '[]string'
   description: A list of private key files for signing IDP requests. If not defined,
     the root directory derives from $OC_BASE_DATA_PATH/idp. See the Environment Variable
@@ -6969,7 +7103,7 @@ IDP_TRACING_TYPE:
   deprecationInfo: ""
 IDP_TRANSPORT_TLS_CERT:
   name: IDP_TRANSPORT_TLS_CERT
-  defaultValue: /home/chaser/.opencloud/idp/server.crt
+  defaultValue: /var/lib/opencloud/idp/server.crt
   type: string
   description: Path/File name of the TLS server certificate (in PEM format) for the
     IDP service. If not defined, the root directory derives from $OC_BASE_DATA_PATH/idp.
@@ -6979,7 +7113,7 @@ IDP_TRANSPORT_TLS_CERT:
   deprecationInfo: ""
 IDP_TRANSPORT_TLS_KEY:
   name: IDP_TRANSPORT_TLS_KEY
-  defaultValue: /home/chaser/.opencloud/idp/server.key
+  defaultValue: /var/lib/opencloud/idp/server.key
   type: string
   description: Path/File name for the TLS certificate key (in PEM format) for the
     server certificate to use for the IDP service. If not defined, the root directory
@@ -7400,7 +7534,7 @@ NATS_NATS_PORT:
   deprecationInfo: ""
 NATS_NATS_STORE_DIR:
   name: NATS_NATS_STORE_DIR
-  defaultValue: /home/chaser/.opencloud/nats
+  defaultValue: /var/lib/opencloud/nats
   type: string
   description: The directory where the filesystem storage will store NATS JetStream
     data. If not defined, the root directory derives from $OC_BASE_DATA_PATH/nats.
@@ -7410,7 +7544,7 @@ NATS_NATS_STORE_DIR:
   deprecationInfo: ""
 NATS_TLS_CERT:
   name: NATS_TLS_CERT
-  defaultValue: /home/chaser/.opencloud/nats/tls.crt
+  defaultValue: /var/lib/opencloud/nats/tls.crt
   type: string
   description: Path/File name of the TLS server certificate (in PEM format) for the
     NATS listener. If not defined, the root directory derives from $OC_BASE_DATA_PATH/nats.
@@ -7420,7 +7554,7 @@ NATS_TLS_CERT:
   deprecationInfo: ""
 NATS_TLS_KEY:
   name: NATS_TLS_KEY
-  defaultValue: /home/chaser/.opencloud/nats/tls.key
+  defaultValue: /var/lib/opencloud/nats/tls.key
   type: string
   description: Path/File name for the TLS certificate key (in PEM format) for the
     NATS listener. If not defined, the root directory derives from $OC_BASE_DATA_PATH/nats.
@@ -8241,6 +8375,15 @@ OCM_DEBUG_ZPAGES:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+OCM_DIRECTORY_SERVICE_URLS:
+  name: OCM_DIRECTORY_SERVICE_URLS
+  defaultValue: ""
+  type: string
+  description: Space delimited URLs of the directory services.
+  introductionVersion: 3.5.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 OCM_EVENTS_AUTH_PASSWORD:
   name: OC_EVENTS_AUTH_PASSWORD;OCM_EVENTS_AUTH_PASSWORD
   defaultValue: ""
@@ -8356,6 +8499,16 @@ OCM_HTTP_PROTOCOL:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+OCM_INVITE_ACCEPT_DIALOG:
+  name: OCM_INVITE_ACCEPT_DIALOG
+  defaultValue: /open-cloud-mesh/accept-invite
+  type: string
+  description: /open-cloud-mesh/accept-invite;The frontend URL where to land when
+    receiving an invitation
+  introductionVersion: 3.5.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 OCM_JWT_SECRET:
   name: OC_JWT_SECRET;OCM_JWT_SECRET
   defaultValue: ""
@@ -8441,7 +8594,7 @@ OCM_OCM_CORE_DRIVER:
   deprecationInfo: ""
 OCM_OCM_CORE_JSON_FILE:
   name: OCM_OCM_CORE_JSON_FILE
-  defaultValue: /home/chaser/.opencloud/storage/ocm/ocmshares.json
+  defaultValue: /var/lib/opencloud/storage/ocm/ocmshares.json
   type: string
   description: Path to the JSON file where OCM share data will be stored. If not defined,
     the root directory derives from $OC_BASE_DATA_PATH/storage.
@@ -8470,7 +8623,7 @@ OCM_OCM_INVITE_MANAGER_INSECURE:
   deprecationInfo: ""
 OCM_OCM_INVITE_MANAGER_JSON_FILE:
   name: OCM_OCM_INVITE_MANAGER_JSON_FILE
-  defaultValue: /home/chaser/.opencloud/storage/ocm/ocminvites.json
+  defaultValue: /var/lib/opencloud/storage/ocm/ocminvites.json
   type: string
   description: Path to the JSON file where OCM invite data will be stored. This file
     is maintained by the instance and must not be changed manually. If not defined,
@@ -8499,7 +8652,7 @@ OCM_OCM_INVITE_MANAGER_TOKEN_EXPIRATION:
   deprecationInfo: ""
 OCM_OCM_PROVIDER_AUTHORIZER_PROVIDERS_FILE:
   name: OCM_OCM_PROVIDER_AUTHORIZER_PROVIDERS_FILE
-  defaultValue: /home/chaser/.opencloud/config/ocmproviders.json
+  defaultValue: /etc/opencloud/ocmproviders.json
   type: string
   description: Path to the JSON file where ocm invite data will be stored. Defaults
     to $OC_CONFIG_DIR/ocmproviders.json.
@@ -8509,7 +8662,7 @@ OCM_OCM_PROVIDER_AUTHORIZER_PROVIDERS_FILE:
   deprecationInfo: ""
 OCM_OCM_SHAREPROVIDER_JSON_FILE:
   name: OCM_OCM_SHAREPROVIDER_JSON_FILE
-  defaultValue: /home/chaser/.opencloud/storage/ocm/ocmshares.json
+  defaultValue: /var/lib/opencloud/storage/ocm/ocmshares.json
   type: string
   description: Path to the JSON file where OCM share data will be stored. If not defined,
     the root directory derives from $OC_BASE_DATA_PATH/storage.
@@ -8559,7 +8712,7 @@ OCM_OCM_STORAGE_PROVIDER_INSECURE:
   deprecationInfo: ""
 OCM_OCM_STORAGE_PROVIDER_STORAGE_ROOT:
   name: OCM_OCM_STORAGE_PROVIDER_STORAGE_ROOT
-  defaultValue: /home/chaser/.opencloud/storage/ocm
+  defaultValue: /var/lib/opencloud/storage/ocm
   type: string
   description: Directory where the ocm storage provider persists its data like tus
     upload info files.
@@ -8889,7 +9042,7 @@ OCS_TRACING_TYPE:
   removalVersion: ""
   deprecationInfo: ""
 OC_ADMIN_USER_ID:
-  name: OC_ADMIN_USER_ID;SETTINGS_ADMIN_USER_ID
+  name: OC_ADMIN_USER_ID;IDM_ADMIN_USER_ID
   defaultValue: ""
   type: string
   description: ID of the user that should receive admin privileges. Consider that
@@ -8901,7 +9054,7 @@ OC_ADMIN_USER_ID:
   deprecationInfo: ""
 OC_ASSET_THEMES_PATH:
   name: OC_ASSET_THEMES_PATH;WEB_ASSET_THEMES_PATH
-  defaultValue: /home/chaser/.opencloud/web/assets/themes
+  defaultValue: /var/lib/opencloud/web/assets/themes
   type: string
   description: Serve OpenCloud themes from a path on the filesystem instead of the
     builtin assets. If not defined, the root directory derives from $OC_BASE_DATA_PATH/web/assets/themes
@@ -8919,20 +9072,20 @@ OC_ASYNC_UPLOADS:
   removalVersion: ""
   deprecationInfo: ""
 OC_CACHE_AUTH_PASSWORD:
-  name: OC_CACHE_AUTH_PASSWORD;GRAPH_CACHE_AUTH_PASSWORD
+  name: OC_CACHE_AUTH_PASSWORD;PROXY_PRESIGNEDURL_SIGNING_KEYS_STORE_AUTH_PASSWORD
   defaultValue: ""
   type: string
-  description: The password to authenticate with the cache. Only applies when store
+  description: The password to authenticate with the store. Only applies when store
     type 'nats-js-kv' is configured.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_CACHE_AUTH_USERNAME:
-  name: OC_CACHE_AUTH_USERNAME;GRAPH_CACHE_AUTH_USERNAME
+  name: OC_CACHE_AUTH_USERNAME;PROXY_PRESIGNEDURL_SIGNING_KEYS_STORE_AUTH_USERNAME
   defaultValue: ""
   type: string
-  description: The username to authenticate with the cache. Only applies when store
+  description: The username to authenticate with the store. Only applies when store
     type 'nats-js-kv' is configured.
   introductionVersion: 1.0.0
   deprecationVersion: ""
@@ -8940,7 +9093,7 @@ OC_CACHE_AUTH_USERNAME:
   deprecationInfo: ""
 OC_CACHE_DATABASE:
   name: OC_CACHE_DATABASE
-  defaultValue: settings-cache
+  defaultValue: cache-userinfo
   type: string
   description: The database name the configured store should use.
   introductionVersion: 1.0.0
@@ -8948,50 +9101,50 @@ OC_CACHE_DATABASE:
   removalVersion: ""
   deprecationInfo: ""
 OC_CACHE_DISABLE_PERSISTENCE:
-  name: OC_CACHE_DISABLE_PERSISTENCE;GRAPH_CACHE_DISABLE_PERSISTENCE
-  defaultValue: "false"
+  name: OC_CACHE_DISABLE_PERSISTENCE;PROXY_PRESIGNEDURL_SIGNING_KEYS_STORE_DISABLE_PERSISTENCE
+  defaultValue: "true"
   type: bool
-  description: Disables persistence of the cache. Only applies when store type 'nats-js-kv'
-    is configured. Defaults to false.
+  description: Disables persistence of the store. Only applies when store type 'nats-js-kv'
+    is configured. Defaults to true.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_CACHE_STORE:
-  name: OC_CACHE_STORE;GRAPH_CACHE_STORE
-  defaultValue: memory
+  name: OC_CACHE_STORE;PROXY_PRESIGNEDURL_SIGNING_KEYS_STORE
+  defaultValue: nats-js-kv
   type: string
-  description: 'The type of the cache store. Supported values are: ''memory'', ''redis-sentinel'',
-    ''nats-js-kv'', ''noop''. See the text description for details.'
+  description: 'The type of the signing key store. Supported values are: ''redis-sentinel'',
+    ''nats-js-kv'' and ''opencloudstoreservice'' (deprecated). See the text description
+    for details.'
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_CACHE_STORE_NODES:
-  name: OC_CACHE_STORE_NODES;GRAPH_CACHE_STORE_NODES
+  name: OC_CACHE_STORE_NODES;PROXY_PRESIGNEDURL_SIGNING_KEYS_STORE_NODES
   defaultValue: '[127.0.0.1:9233]'
   type: '[]string'
-  description: A list of nodes to access the configured store. This has no effect
-    when 'memory' store are configured. Note that the behaviour how nodes are used
-    is dependent on the library of the configured store. See the Environment Variable
-    Types description for more details.
+  description: A list of nodes to access the configured store. Note that the behaviour
+    how nodes are used is dependent on the library of the configured store. See the
+    Environment Variable Types description for more details.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_CACHE_TTL:
-  name: OC_CACHE_TTL;GRAPH_CACHE_TTL
-  defaultValue: 336h0m0s
+  name: OC_CACHE_TTL;PROXY_PRESIGNEDURL_SIGNING_KEYS_STORE_TTL
+  defaultValue: 12h0m0s
   type: Duration
-  description: Time to live for cache records in the graph. Defaults to '336h' (2
-    weeks). See the Environment Variable Types description for more details.
+  description: Default time to live for signing keys. See the Environment Variable
+    Types description for more details.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_CORS_ALLOW_CREDENTIALS:
-  name: OC_CORS_ALLOW_CREDENTIALS;INVITATIONS_CORS_ALLOW_CREDENTIALS
-  defaultValue: "false"
+  name: OC_CORS_ALLOW_CREDENTIALS;SSE_CORS_ALLOW_CREDENTIALS
+  defaultValue: "true"
   type: bool
   description: 'Allow credentials for CORS.See following chapter for more details:
     *Access-Control-Allow-Credentials* at https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials.'
@@ -9000,8 +9153,9 @@ OC_CORS_ALLOW_CREDENTIALS:
   removalVersion: ""
   deprecationInfo: ""
 OC_CORS_ALLOW_HEADERS:
-  name: OC_CORS_ALLOW_HEADERS;INVITATIONS_CORS_ALLOW_HEADERS
-  defaultValue: '[]'
+  name: OC_CORS_ALLOW_HEADERS;SSE_CORS_ALLOW_HEADERS
+  defaultValue: '[Authorization Origin Content-Type Accept X-Requested-With X-Request-Id
+    Ocs-Apirequest]'
   type: '[]string'
   description: 'A list of allowed CORS headers. See following chapter for more details:
     *Access-Control-Request-Headers* at https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Request-Headers.
@@ -9011,8 +9165,8 @@ OC_CORS_ALLOW_HEADERS:
   removalVersion: ""
   deprecationInfo: ""
 OC_CORS_ALLOW_METHODS:
-  name: OC_CORS_ALLOW_METHODS;INVITATIONS_CORS_ALLOW_METHODS
-  defaultValue: '[]'
+  name: OC_CORS_ALLOW_METHODS;SSE_CORS_ALLOW_METHODS
+  defaultValue: '[GET]'
   type: '[]string'
   description: 'A list of allowed CORS methods. See following chapter for more details:
     *Access-Control-Request-Method* at https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Request-Method.
@@ -9022,8 +9176,8 @@ OC_CORS_ALLOW_METHODS:
   removalVersion: ""
   deprecationInfo: ""
 OC_CORS_ALLOW_ORIGINS:
-  name: OC_CORS_ALLOW_ORIGINS;INVITATIONS_CORS_ALLOW_ORIGINS
-  defaultValue: '[https://localhost:9200]'
+  name: OC_CORS_ALLOW_ORIGINS;SSE_CORS_ALLOW_ORIGINS
+  defaultValue: '[*]'
   type: '[]string'
   description: 'A list of allowed CORS origins. See following chapter for more details:
     *Access-Control-Allow-Origin* at https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin.
@@ -9136,16 +9290,16 @@ OC_EMAIL_TEMPLATE_PATH:
   removalVersion: ""
   deprecationInfo: ""
 OC_ENABLE_OCM:
-  name: OC_ENABLE_OCM;GRAPH_INCLUDE_OCM_SHAREES
+  name: OC_ENABLE_OCM;FRONTEND_OCS_INCLUDE_OCM_SHAREES
   defaultValue: "false"
   type: bool
-  description: Include OCM sharees when listing users.
+  description: Include OCM sharees when listing sharees.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_EVENTS_AUTH_PASSWORD:
-  name: OC_EVENTS_AUTH_PASSWORD;GRAPH_EVENTS_AUTH_PASSWORD
+  name: OC_EVENTS_AUTH_PASSWORD;POSTPROCESSING_EVENTS_AUTH_PASSWORD
   defaultValue: ""
   type: string
   description: The password to authenticate with the events broker. The events broker
@@ -9155,7 +9309,7 @@ OC_EVENTS_AUTH_PASSWORD:
   removalVersion: ""
   deprecationInfo: ""
 OC_EVENTS_AUTH_USERNAME:
-  name: OC_EVENTS_AUTH_USERNAME;GRAPH_EVENTS_AUTH_USERNAME
+  name: OC_EVENTS_AUTH_USERNAME;POSTPROCESSING_EVENTS_AUTH_USERNAME
   defaultValue: ""
   type: string
   description: The username to authenticate with the events broker. The events broker
@@ -9165,17 +9319,18 @@ OC_EVENTS_AUTH_USERNAME:
   removalVersion: ""
   deprecationInfo: ""
 OC_EVENTS_CLUSTER:
-  name: OC_EVENTS_CLUSTER;GRAPH_EVENTS_CLUSTER
+  name: OC_EVENTS_CLUSTER;POSTPROCESSING_EVENTS_CLUSTER
   defaultValue: opencloud-cluster
   type: string
   description: The clusterID of the event system. The event system is the message
     queuing service. It is used as message broker for the microservice architecture.
+    Mandatory when using NATS as event system.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_EVENTS_ENABLE_TLS:
-  name: OC_EVENTS_ENABLE_TLS;GRAPH_EVENTS_ENABLE_TLS
+  name: OC_EVENTS_ENABLE_TLS;POSTPROCESSING_EVENTS_ENABLE_TLS
   defaultValue: "false"
   type: bool
   description: Enable TLS for the connection to the events broker. The events broker
@@ -9185,31 +9340,30 @@ OC_EVENTS_ENABLE_TLS:
   removalVersion: ""
   deprecationInfo: ""
 OC_EVENTS_ENDPOINT:
-  name: OC_EVENTS_ENDPOINT;GRAPH_EVENTS_ENDPOINT
+  name: OC_EVENTS_ENDPOINT;POSTPROCESSING_EVENTS_ENDPOINT
   defaultValue: 127.0.0.1:9233
   type: string
   description: The address of the event system. The event system is the message queuing
-    service. It is used as message broker for the microservice architecture. Set to
-    a empty string to disable emitting events.
+    service. It is used as message broker for the microservice architecture.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_EVENTS_TLS_ROOT_CA_CERTIFICATE:
-  name: OC_EVENTS_TLS_ROOT_CA_CERTIFICATE;GRAPH_EVENTS_TLS_ROOT_CA_CERTIFICATE
+  name: OC_EVENTS_TLS_ROOT_CA_CERTIFICATE;POSTPROCESSING_EVENTS_TLS_ROOT_CA_CERTIFICATE
   defaultValue: ""
   type: string
   description: The root CA certificate used to validate the server's TLS certificate.
-    If provided GRAPH_EVENTS_TLS_INSECURE will be seen as false.
+    If provided POSTPROCESSING_EVENTS_TLS_INSECURE will be seen as false.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_GATEWAY_GRPC_ADDR:
-  name: OC_GATEWAY_GRPC_ADDR;GATEWAY_GRPC_ADDR
+  name: OC_GATEWAY_GRPC_ADDR;STORAGE_USERS_GATEWAY_GRPC_ADDR
   defaultValue: 127.0.0.1:9142
   type: string
-  description: The bind address of the GRPC service.
+  description: The bind address of the gateway GRPC address.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
@@ -9238,7 +9392,7 @@ OC_GRPC_CLIENT_TLS_MODE:
   removalVersion: ""
   deprecationInfo: ""
 OC_GRPC_PROTOCOL:
-  name: OC_GRPC_PROTOCOL;OCM_GRPC_PROTOCOL
+  name: OC_GRPC_PROTOCOL;AUTH_SERVICE_GRPC_PROTOCOL
   defaultValue: ""
   type: string
   description: The transport protocol of the GRPC service.
@@ -9278,16 +9432,17 @@ OC_HTTP_TLS_KEY:
   removalVersion: ""
   deprecationInfo: ""
 OC_INSECURE:
-  name: OC_INSECURE;GRAPH_EVENTS_TLS_INSECURE
+  name: OC_INSECURE;POSTPROCESSING_EVENTS_TLS_INSECURE
   defaultValue: "false"
   type: bool
-  description: Whether to verify the server TLS certificates.
+  description: Whether the OpenCloud server should skip the client certificate verification
+    during the TLS handshake.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_JWT_SECRET:
-  name: OC_JWT_SECRET;INVITATIONS_JWT_SECRET
+  name: OC_JWT_SECRET;SSE_JWT_SECRET
   defaultValue: ""
   type: string
   description: The secret to mint and validate jwt tokens.
@@ -9351,8 +9506,8 @@ OC_KEYCLOAK_USER_REALM:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_BIND_DN:
-  name: OC_LDAP_BIND_DN;GRAPH_LDAP_BIND_DN
-  defaultValue: uid=libregraph,ou=sysusers,o=libregraph-idm
+  name: OC_LDAP_BIND_DN;IDP_LDAP_BIND_DN
+  defaultValue: uid=idp,ou=sysusers,o=libregraph-idm
   type: string
   description: LDAP DN to use for simple bind authentication with the target LDAP
     server.
@@ -9361,7 +9516,7 @@ OC_LDAP_BIND_DN:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_BIND_PASSWORD:
-  name: OC_LDAP_BIND_PASSWORD;GRAPH_LDAP_BIND_PASSWORD
+  name: OC_LDAP_BIND_PASSWORD;IDP_LDAP_BIND_PASSWORD
   defaultValue: ""
   type: string
   description: Password to use for authenticating the 'bind_dn'.
@@ -9370,18 +9525,18 @@ OC_LDAP_BIND_PASSWORD:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_CACERT:
-  name: OC_LDAP_CACERT;GRAPH_LDAP_CACERT
-  defaultValue: /home/chaser/.opencloud/idm/ldap.crt
+  name: OC_LDAP_CACERT;IDP_LDAP_TLS_CACERT
+  defaultValue: /var/lib/opencloud/idm/ldap.crt
   type: string
   description: Path/File name for the root CA certificate (in PEM format) used to
     validate TLS server certificates of the LDAP service. If not defined, the root
-    directory derives from $OC_BASE_DATA_PATH/idm.
+    directory derives from $OC_BASE_DATA_PATH/idp.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_DISABLED_USERS_GROUP_DN:
-  name: OC_LDAP_DISABLED_USERS_GROUP_DN;GRAPH_DISABLED_USERS_GROUP_DN
+  name: OC_LDAP_DISABLED_USERS_GROUP_DN;AUTH_BASIC_DISABLED_USERS_GROUP_DN
   defaultValue: cn=DisabledUsersGroup,ou=groups,o=libregraph-idm
   type: string
   description: The distinguished name of the group to which added users will be classified
@@ -9391,20 +9546,20 @@ OC_LDAP_DISABLED_USERS_GROUP_DN:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_DISABLE_USER_MECHANISM:
-  name: OC_LDAP_DISABLE_USER_MECHANISM;GRAPH_DISABLE_USER_MECHANISM
+  name: OC_LDAP_DISABLE_USER_MECHANISM;AUTH_BASIC_DISABLE_USER_MECHANISM
   defaultValue: attribute
   type: string
-  description: An option to control the behavior for disabling users. Supported options
+  description: An option to control the behavior for disabling users. Valid options
     are 'none', 'attribute' and 'group'. If set to 'group', disabling a user via API
     will add the user to the configured group for disabled users, if set to 'attribute'
     this will be done in the ldap user entry, if set to 'none' the disable request
-    is not processed. Default is 'attribute'.
+    is not processed.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_BASE_DN:
-  name: OC_LDAP_GROUP_BASE_DN;GRAPH_LDAP_GROUP_BASE_DN
+  name: OC_LDAP_GROUP_BASE_DN;AUTH_BASIC_LDAP_GROUP_BASE_DN
   defaultValue: ou=groups,o=libregraph-idm
   type: string
   description: Search base DN for looking up LDAP groups.
@@ -9413,7 +9568,7 @@ OC_LDAP_GROUP_BASE_DN:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_FILTER:
-  name: OC_LDAP_GROUP_FILTER;GRAPH_LDAP_GROUP_FILTER
+  name: OC_LDAP_GROUP_FILTER;AUTH_BASIC_LDAP_GROUP_FILTER
   defaultValue: ""
   type: string
   description: LDAP filter to add to the default filters for group searches.
@@ -9422,7 +9577,7 @@ OC_LDAP_GROUP_FILTER:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_OBJECTCLASS:
-  name: OC_LDAP_GROUP_OBJECTCLASS;GRAPH_LDAP_GROUP_OBJECTCLASS
+  name: OC_LDAP_GROUP_OBJECTCLASS;AUTH_BASIC_LDAP_GROUP_OBJECTCLASS
   defaultValue: groupOfNames
   type: string
   description: The object class to use for groups in the default group search filter
@@ -9432,7 +9587,7 @@ OC_LDAP_GROUP_OBJECTCLASS:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_SCHEMA_DISPLAYNAME:
-  name: OC_LDAP_GROUP_SCHEMA_DISPLAYNAME;USERS_LDAP_GROUP_SCHEMA_DISPLAYNAME
+  name: OC_LDAP_GROUP_SCHEMA_DISPLAYNAME;AUTH_BASIC_LDAP_GROUP_SCHEMA_DISPLAYNAME
   defaultValue: cn
   type: string
   description: LDAP Attribute to use for the displayname of groups (often the same
@@ -9442,7 +9597,7 @@ OC_LDAP_GROUP_SCHEMA_DISPLAYNAME:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_SCHEMA_GROUPNAME:
-  name: OC_LDAP_GROUP_SCHEMA_GROUPNAME;GRAPH_LDAP_GROUP_NAME_ATTRIBUTE
+  name: OC_LDAP_GROUP_SCHEMA_GROUPNAME;AUTH_BASIC_LDAP_GROUP_SCHEMA_GROUPNAME
   defaultValue: cn
   type: string
   description: LDAP Attribute to use for the name of groups.
@@ -9451,28 +9606,28 @@ OC_LDAP_GROUP_SCHEMA_GROUPNAME:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_SCHEMA_ID:
-  name: OC_LDAP_GROUP_SCHEMA_ID;GRAPH_LDAP_GROUP_ID_ATTRIBUTE
+  name: OC_LDAP_GROUP_SCHEMA_ID;AUTH_BASIC_LDAP_GROUP_SCHEMA_ID
   defaultValue: openCloudUUID
   type: string
   description: LDAP Attribute to use as the unique id for groups. This should be a
-    stable globally unique ID like a UUID.
+    stable globally unique id (e.g. a UUID).
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_SCHEMA_ID_IS_OCTETSTRING:
-  name: OC_LDAP_GROUP_SCHEMA_ID_IS_OCTETSTRING;GRAPH_LDAP_GROUP_SCHEMA_ID_IS_OCTETSTRING
+  name: OC_LDAP_GROUP_SCHEMA_ID_IS_OCTETSTRING;AUTH_BASIC_LDAP_GROUP_SCHEMA_ID_IS_OCTETSTRING
   defaultValue: "false"
   type: bool
-  description: Set this to true if the defined 'ID' attribute for groups is of the
-    'OCTETSTRING' syntax. This is required when using the 'objectGUID' attribute of
-    Active Directory for the group ID's.
+  description: Set this to true if the defined 'id' attribute for groups is of the
+    'OCTETSTRING' syntax. This is e.g. required when using the 'objectGUID' attribute
+    of Active Directory for the group IDs.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_SCHEMA_MAIL:
-  name: OC_LDAP_GROUP_SCHEMA_MAIL;USERS_LDAP_GROUP_SCHEMA_MAIL
+  name: OC_LDAP_GROUP_SCHEMA_MAIL;AUTH_BASIC_LDAP_GROUP_SCHEMA_MAIL
   defaultValue: mail
   type: string
   description: LDAP Attribute to use for the email address of groups (can be empty).
@@ -9481,7 +9636,7 @@ OC_LDAP_GROUP_SCHEMA_MAIL:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_SCHEMA_MEMBER:
-  name: OC_LDAP_GROUP_SCHEMA_MEMBER;GRAPH_LDAP_GROUP_MEMBER_ATTRIBUTE
+  name: OC_LDAP_GROUP_SCHEMA_MEMBER;AUTH_BASIC_LDAP_GROUP_SCHEMA_MEMBER
   defaultValue: member
   type: string
   description: LDAP Attribute that is used for group members.
@@ -9490,17 +9645,17 @@ OC_LDAP_GROUP_SCHEMA_MEMBER:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_SCOPE:
-  name: OC_LDAP_GROUP_SCOPE;GRAPH_LDAP_GROUP_SEARCH_SCOPE
+  name: OC_LDAP_GROUP_SCOPE;AUTH_BASIC_LDAP_GROUP_SCOPE
   defaultValue: sub
   type: string
-  description: LDAP search scope to use when looking up groups. Supported scopes are
+  description: LDAP search scope to use when looking up groups. Supported values are
     'base', 'one' and 'sub'.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_INSECURE:
-  name: OC_LDAP_INSECURE;GRAPH_LDAP_INSECURE
+  name: OC_LDAP_INSECURE;IDP_INSECURE
   defaultValue: "false"
   type: bool
   description: Disable TLS certificate validation for the LDAP connections. Do not
@@ -9510,7 +9665,7 @@ OC_LDAP_INSECURE:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_SERVER_WRITE_ENABLED:
-  name: OC_LDAP_SERVER_WRITE_ENABLED;GRAPH_LDAP_SERVER_WRITE_ENABLED
+  name: OC_LDAP_SERVER_WRITE_ENABLED;FRONTEND_LDAP_SERVER_WRITE_ENABLED
   defaultValue: "true"
   type: bool
   description: Allow creating, modifying and deleting LDAP users via the GRAPH API.
@@ -9522,17 +9677,16 @@ OC_LDAP_SERVER_WRITE_ENABLED:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_URI:
-  name: OC_LDAP_URI;GRAPH_LDAP_URI
+  name: OC_LDAP_URI;IDP_LDAP_URI
   defaultValue: ldaps://localhost:9235
   type: string
-  description: URI of the LDAP Server to connect to. Supported URI schemes are 'ldaps://'
-    and 'ldap://'
+  description: Url of the LDAP service to use as IDP.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_BASE_DN:
-  name: OC_LDAP_USER_BASE_DN;GRAPH_LDAP_USER_BASE_DN
+  name: OC_LDAP_USER_BASE_DN;IDP_LDAP_BASE_DN
   defaultValue: ou=users,o=libregraph-idm
   type: string
   description: Search base DN for looking up LDAP users.
@@ -9541,7 +9695,7 @@ OC_LDAP_USER_BASE_DN:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_ENABLED_ATTRIBUTE:
-  name: OC_LDAP_USER_ENABLED_ATTRIBUTE;GRAPH_USER_ENABLED_ATTRIBUTE
+  name: OC_LDAP_USER_ENABLED_ATTRIBUTE;IDP_USER_ENABLED_ATTRIBUTE
   defaultValue: openCloudUserEnabled
   type: string
   description: LDAP Attribute to use as a flag telling if the user is enabled or disabled.
@@ -9550,7 +9704,7 @@ OC_LDAP_USER_ENABLED_ATTRIBUTE:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_FILTER:
-  name: OC_LDAP_USER_FILTER;GRAPH_LDAP_USER_FILTER
+  name: OC_LDAP_USER_FILTER;IDP_LDAP_FILTER
   defaultValue: ""
   type: string
   description: LDAP filter to add to the default filters for user search like '(objectclass=openCloudUser)'.
@@ -9559,65 +9713,73 @@ OC_LDAP_USER_FILTER:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_OBJECTCLASS:
-  name: OC_LDAP_USER_OBJECTCLASS;GRAPH_LDAP_USER_OBJECTCLASS
+  name: OC_LDAP_USER_OBJECTCLASS;IDP_LDAP_OBJECTCLASS
   defaultValue: inetOrgPerson
   type: string
-  description: The object class to use for users in the default user search filter
-    ('inetOrgPerson').
+  description: LDAP User ObjectClass like 'inetOrgPerson'.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_SCHEMA_DISPLAYNAME:
-  name: OC_LDAP_USER_SCHEMA_DISPLAYNAME;GRAPH_LDAP_USER_DISPLAYNAME_ATTRIBUTE
-  defaultValue: displayName
+  name: OC_LDAP_USER_SCHEMA_DISPLAYNAME;AUTH_BASIC_LDAP_USER_SCHEMA_DISPLAYNAME
+  defaultValue: displayname
   type: string
-  description: LDAP Attribute to use for the display name of users.
+  description: LDAP Attribute to use for the displayname of users.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_SCHEMA_ID:
-  name: OC_LDAP_USER_SCHEMA_ID;GRAPH_LDAP_USER_UID_ATTRIBUTE
+  name: OC_LDAP_USER_SCHEMA_ID;IDP_LDAP_UUID_ATTRIBUTE
   defaultValue: openCloudUUID
   type: string
-  description: LDAP Attribute to use as the unique ID for users. This should be a
-    stable globally unique ID like a UUID.
+  description: LDAP User UUID attribute like 'uid'.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_SCHEMA_ID_IS_OCTETSTRING:
-  name: OC_LDAP_USER_SCHEMA_ID_IS_OCTETSTRING;GRAPH_LDAP_USER_SCHEMA_ID_IS_OCTETSTRING
+  name: OC_LDAP_USER_SCHEMA_ID_IS_OCTETSTRING;AUTH_BASIC_LDAP_USER_SCHEMA_ID_IS_OCTETSTRING
   defaultValue: "false"
   type: bool
   description: Set this to true if the defined 'ID' attribute for users is of the
-    'OCTETSTRING' syntax. This is required when using the 'objectGUID' attribute of
-    Active Directory for the user ID's.
+    'OCTETSTRING' syntax. This is e.g. required when using the 'objectGUID' attribute
+    of Active Directory for the user IDs.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_SCHEMA_MAIL:
-  name: OC_LDAP_USER_SCHEMA_MAIL;GRAPH_LDAP_USER_EMAIL_ATTRIBUTE
+  name: OC_LDAP_USER_SCHEMA_MAIL;IDP_LDAP_EMAIL_ATTRIBUTE
   defaultValue: mail
   type: string
-  description: LDAP Attribute to use for the email address of users.
+  description: LDAP User email attribute like 'mail'.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
-OC_LDAP_USER_SCHEMA_USERNAME:
-  name: OC_LDAP_USER_SCHEMA_USERNAME;GRAPH_LDAP_USER_NAME_ATTRIBUTE
-  defaultValue: uid
+OC_LDAP_USER_SCHEMA_TENANT_ID:
+  name: OC_LDAP_USER_SCHEMA_TENANT_ID;AUTH_BASIC_LDAP_USER_SCHEMA_TENANT_ID
+  defaultValue: ""
   type: string
-  description: LDAP Attribute to use for username of users.
+  description: LDAP Attribute to use for the tenant ID of users. This is used to identify
+    the tenant of a user in a multi-tenant environment.
+  introductionVersion: 4.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+OC_LDAP_USER_SCHEMA_USERNAME:
+  name: OC_LDAP_USER_SCHEMA_USERNAME;IDP_LDAP_NAME_ATTRIBUTE
+  defaultValue: displayName
+  type: string
+  description: LDAP User name attribute like 'displayName'.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_SCHEMA_USER_TYPE:
-  name: OC_LDAP_USER_SCHEMA_USER_TYPE;GRAPH_LDAP_USER_TYPE_ATTRIBUTE
+  name: OC_LDAP_USER_SCHEMA_USER_TYPE;USERS_LDAP_USER_TYPE_ATTRIBUTE
   defaultValue: openCloudUserType
   type: string
   description: LDAP Attribute to distinguish between 'Member' and 'Guest' users. Default
@@ -9627,7 +9789,7 @@ OC_LDAP_USER_SCHEMA_USER_TYPE:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_SCOPE:
-  name: OC_LDAP_USER_SCOPE;GRAPH_LDAP_USER_SCOPE
+  name: OC_LDAP_USER_SCOPE;IDP_LDAP_SCOPE
   defaultValue: sub
   type: string
   description: LDAP search scope to use when looking up users. Supported scopes are
@@ -9637,7 +9799,7 @@ OC_LDAP_USER_SCOPE:
   removalVersion: ""
   deprecationInfo: ""
 OC_LOG_COLOR:
-  name: OC_LOG_COLOR;INVITATIONS_LOG_COLOR
+  name: OC_LOG_COLOR;POSTPROCESSING_LOG_COLOR
   defaultValue: "false"
   type: bool
   description: Activates colorized log output.
@@ -9646,7 +9808,7 @@ OC_LOG_COLOR:
   removalVersion: ""
   deprecationInfo: ""
 OC_LOG_FILE:
-  name: OC_LOG_FILE;INVITATIONS_LOG_FILE
+  name: OC_LOG_FILE;POSTPROCESSING_LOG_FILE
   defaultValue: ""
   type: string
   description: The path to the log file. Activates logging to this file if set.
@@ -9655,7 +9817,7 @@ OC_LOG_FILE:
   removalVersion: ""
   deprecationInfo: ""
 OC_LOG_LEVEL:
-  name: OC_LOG_LEVEL;INVITATIONS_LOG_LEVEL
+  name: OC_LOG_LEVEL;POSTPROCESSING_LOG_LEVEL
   defaultValue: ""
   type: string
   description: 'The log level. Valid values are: ''panic'', ''fatal'', ''error'',
@@ -9665,7 +9827,7 @@ OC_LOG_LEVEL:
   removalVersion: ""
   deprecationInfo: ""
 OC_LOG_PRETTY:
-  name: OC_LOG_PRETTY;INVITATIONS_LOG_PRETTY
+  name: OC_LOG_PRETTY;POSTPROCESSING_LOG_PRETTY
   defaultValue: "false"
   type: bool
   description: Activates pretty log output.
@@ -9674,21 +9836,23 @@ OC_LOG_PRETTY:
   removalVersion: ""
   deprecationInfo: ""
 OC_MACHINE_AUTH_API_KEY:
-  name: OC_MACHINE_AUTH_API_KEY;PROXY_MACHINE_AUTH_API_KEY
+  name: OC_MACHINE_AUTH_API_KEY;AUTH_MACHINE_API_KEY
   defaultValue: ""
   type: string
-  description: Machine auth API key used to validate internal requests necessary to
-    access resources from other services.
+  description: Machine auth API key used to validate internal requests necessary for
+    the access to resources from other services.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_MAX_CONCURRENCY:
-  name: OC_MAX_CONCURRENCY;GRAPH_MAX_CONCURRENCY
-  defaultValue: "20"
+  name: OC_MAX_CONCURRENCY;STORAGE_USERS_POSIX_MAX_CONCURRENCY
+  defaultValue: "0"
   type: int
-  description: The maximum number of concurrent requests the service will handle.
-  introductionVersion: 1.0.0
+  description: Maximum number of concurrent go-routines. Higher values can potentially
+    get work done faster but will also cause more load on the system. Values of 0
+    or below will be ignored and the default value will be used.
+  introductionVersion: 2.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -9704,16 +9868,16 @@ OC_OIDC_CLIENT_ID:
   removalVersion: ""
   deprecationInfo: ""
 OC_OIDC_ISSUER:
-  name: OC_URL;OC_OIDC_ISSUER;WEBFINGER_OIDC_ISSUER
+  name: OC_URL;OC_OIDC_ISSUER;AUTH_BEARER_OIDC_ISSUER
   defaultValue: https://localhost:9200
   type: string
-  description: The identity provider href for the openid-discovery relation.
+  description: URL of the OIDC issuer. It defaults to URL of the builtin IDP.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_PASSWORD_POLICY_BANNED_PASSWORDS_LIST:
-  name: OC_PASSWORD_POLICY_BANNED_PASSWORDS_LIST;SHARING_PASSWORD_POLICY_BANNED_PASSWORDS_LIST
+  name: OC_PASSWORD_POLICY_BANNED_PASSWORDS_LIST;FRONTEND_PASSWORD_POLICY_BANNED_PASSWORDS_LIST
   defaultValue: ""
   type: string
   description: Path to the 'banned passwords list' file. This only impacts public
@@ -9723,7 +9887,7 @@ OC_PASSWORD_POLICY_BANNED_PASSWORDS_LIST:
   removalVersion: ""
   deprecationInfo: ""
 OC_PASSWORD_POLICY_DISABLED:
-  name: OC_PASSWORD_POLICY_DISABLED;SHARING_PASSWORD_POLICY_DISABLED
+  name: OC_PASSWORD_POLICY_DISABLED;FRONTEND_PASSWORD_POLICY_DISABLED
   defaultValue: "false"
   type: bool
   description: Disable the password policy. Defaults to false if not set.
@@ -9732,7 +9896,7 @@ OC_PASSWORD_POLICY_DISABLED:
   removalVersion: ""
   deprecationInfo: ""
 OC_PASSWORD_POLICY_MIN_CHARACTERS:
-  name: OC_PASSWORD_POLICY_MIN_CHARACTERS;SHARING_PASSWORD_POLICY_MIN_CHARACTERS
+  name: OC_PASSWORD_POLICY_MIN_CHARACTERS;FRONTEND_PASSWORD_POLICY_MIN_CHARACTERS
   defaultValue: "8"
   type: int
   description: Define the minimum password length. Defaults to 8 if not set.
@@ -9741,7 +9905,7 @@ OC_PASSWORD_POLICY_MIN_CHARACTERS:
   removalVersion: ""
   deprecationInfo: ""
 OC_PASSWORD_POLICY_MIN_DIGITS:
-  name: OC_PASSWORD_POLICY_MIN_DIGITS;SHARING_PASSWORD_POLICY_MIN_DIGITS
+  name: OC_PASSWORD_POLICY_MIN_DIGITS;FRONTEND_PASSWORD_POLICY_MIN_DIGITS
   defaultValue: "1"
   type: int
   description: Define the minimum number of digits. Defaults to 1 if not set.
@@ -9750,7 +9914,7 @@ OC_PASSWORD_POLICY_MIN_DIGITS:
   removalVersion: ""
   deprecationInfo: ""
 OC_PASSWORD_POLICY_MIN_LOWERCASE_CHARACTERS:
-  name: OC_PASSWORD_POLICY_MIN_LOWERCASE_CHARACTERS;SHARING_PASSWORD_POLICY_MIN_LOWERCASE_CHARACTERS
+  name: OC_PASSWORD_POLICY_MIN_LOWERCASE_CHARACTERS;FRONTEND_PASSWORD_POLICY_MIN_LOWERCASE_CHARACTERS
   defaultValue: "1"
   type: int
   description: Define the minimum number of uppercase letters. Defaults to 1 if not
@@ -9760,7 +9924,7 @@ OC_PASSWORD_POLICY_MIN_LOWERCASE_CHARACTERS:
   removalVersion: ""
   deprecationInfo: ""
 OC_PASSWORD_POLICY_MIN_SPECIAL_CHARACTERS:
-  name: OC_PASSWORD_POLICY_MIN_SPECIAL_CHARACTERS;SHARING_PASSWORD_POLICY_MIN_SPECIAL_CHARACTERS
+  name: OC_PASSWORD_POLICY_MIN_SPECIAL_CHARACTERS;FRONTEND_PASSWORD_POLICY_MIN_SPECIAL_CHARACTERS
   defaultValue: "1"
   type: int
   description: Define the minimum number of characters from the special characters
@@ -9770,7 +9934,7 @@ OC_PASSWORD_POLICY_MIN_SPECIAL_CHARACTERS:
   removalVersion: ""
   deprecationInfo: ""
 OC_PASSWORD_POLICY_MIN_UPPERCASE_CHARACTERS:
-  name: OC_PASSWORD_POLICY_MIN_UPPERCASE_CHARACTERS;SHARING_PASSWORD_POLICY_MIN_UPPERCASE_CHARACTERS
+  name: OC_PASSWORD_POLICY_MIN_UPPERCASE_CHARACTERS;FRONTEND_PASSWORD_POLICY_MIN_UPPERCASE_CHARACTERS
   defaultValue: "1"
   type: int
   description: Define the minimum number of lowercase letters. Defaults to 1 if not
@@ -9780,17 +9944,17 @@ OC_PASSWORD_POLICY_MIN_UPPERCASE_CHARACTERS:
   removalVersion: ""
   deprecationInfo: ""
 OC_PERSISTENT_STORE:
-  name: OC_PERSISTENT_STORE;USERLOG_STORE
-  defaultValue: memory
+  name: OC_PERSISTENT_STORE;POSTPROCESSING_STORE
+  defaultValue: nats-js-kv
   type: string
-  description: 'The type of the store. Supported values are: ''memory'', ''nats-js-kv'',
-    ''redis-sentinel'', ''noop''. See the text description for details.'
+  description: 'The type of the store. Supported values are: ''memory'', ''redis-sentinel'',
+    ''nats-js-kv'', ''noop''. See the text description for details.'
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_PERSISTENT_STORE_AUTH_PASSWORD:
-  name: OC_PERSISTENT_STORE_AUTH_PASSWORD;USERLOG_STORE_AUTH_PASSWORD
+  name: OC_PERSISTENT_STORE_AUTH_PASSWORD;POSTPROCESSING_STORE_AUTH_PASSWORD
   defaultValue: ""
   type: string
   description: The password to authenticate with the store. Only applies when store
@@ -9800,7 +9964,7 @@ OC_PERSISTENT_STORE_AUTH_PASSWORD:
   removalVersion: ""
   deprecationInfo: ""
 OC_PERSISTENT_STORE_AUTH_USERNAME:
-  name: OC_PERSISTENT_STORE_AUTH_USERNAME;USERLOG_STORE_AUTH_USERNAME
+  name: OC_PERSISTENT_STORE_AUTH_USERNAME;POSTPROCESSING_STORE_AUTH_USERNAME
   defaultValue: ""
   type: string
   description: The username to authenticate with the store. Only applies when store
@@ -9810,8 +9974,8 @@ OC_PERSISTENT_STORE_AUTH_USERNAME:
   removalVersion: ""
   deprecationInfo: ""
 OC_PERSISTENT_STORE_NODES:
-  name: OC_PERSISTENT_STORE_NODES;USERLOG_STORE_NODES
-  defaultValue: '[]'
+  name: OC_PERSISTENT_STORE_NODES;POSTPROCESSING_STORE_NODES
+  defaultValue: '[127.0.0.1:9233]'
   type: '[]string'
   description: A list of nodes to access the configured store. This has no effect
     when 'memory' store is configured. Note that the behaviour how nodes are used
@@ -9822,18 +9986,18 @@ OC_PERSISTENT_STORE_NODES:
   removalVersion: ""
   deprecationInfo: ""
 OC_PERSISTENT_STORE_TTL:
-  name: OC_PERSISTENT_STORE_TTL;USERLOG_STORE_TTL
-  defaultValue: 336h0m0s
+  name: OC_PERSISTENT_STORE_TTL;POSTPROCESSING_STORE_TTL
+  defaultValue: 0s
   type: Duration
-  description: Time to live for events in the store. Defaults to '336h' (2 weeks).
-    See the Environment Variable Types description for more details.
+  description: Time to live for events in the store. See the Environment Variable
+    Types description for more details.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_PUBLIC_URL:
   name: OC_URL;OC_PUBLIC_URL
-  defaultValue: https://127.0.0.1:9200
+  defaultValue: https://localhost:9200
   type: string
   description: URL, where OpenCloud is reachable for users.
   introductionVersion: 1.0.0
@@ -9844,7 +10008,7 @@ OC_REVA_GATEWAY:
   name: OC_REVA_GATEWAY
   defaultValue: eu.opencloud.api.gateway
   type: string
-  description: The CS3 gateway endpoint.
+  description: CS3 gateway used to look up user metadata
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
@@ -9872,7 +10036,7 @@ OC_REVA_GATEWAY_TLS_MODE:
   removalVersion: ""
   deprecationInfo: ""
 OC_SERVICE_ACCOUNT_ID:
-  name: OC_SERVICE_ACCOUNT_ID;GRAPH_SERVICE_ACCOUNT_ID
+  name: OC_SERVICE_ACCOUNT_ID;CLIENTLOG_SERVICE_ACCOUNT_ID
   defaultValue: ""
   type: string
   description: The ID of the service account the service should use. See the 'auth-service'
@@ -9882,7 +10046,7 @@ OC_SERVICE_ACCOUNT_ID:
   removalVersion: ""
   deprecationInfo: ""
 OC_SERVICE_ACCOUNT_SECRET:
-  name: OC_SERVICE_ACCOUNT_SECRET;GRAPH_SERVICE_ACCOUNT_SECRET
+  name: OC_SERVICE_ACCOUNT_SECRET;CLIENTLOG_SERVICE_ACCOUNT_SECRET
   defaultValue: ""
   type: string
   description: The service account secret.
@@ -9891,14 +10055,14 @@ OC_SERVICE_ACCOUNT_SECRET:
   removalVersion: ""
   deprecationInfo: ""
 OC_SHARING_PUBLIC_SHARE_MUST_HAVE_PASSWORD:
-  name: OC_SHARING_PUBLIC_SHARE_MUST_HAVE_PASSWORD;SHARING_PUBLIC_SHARE_MUST_HAVE_PASSWORD
+  name: OC_SHARING_PUBLIC_SHARE_MUST_HAVE_PASSWORD;FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD
   defaultValue: "true"
   type: bool
   description: Set this to true if you want to enforce passwords on all public shares.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
-  deprecationInfo: 'FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated
+  deprecationInfo: FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated
     |  |  | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated
     | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated |  |
     FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated |  |  |
@@ -9911,19 +10075,19 @@ OC_SHARING_PUBLIC_SHARE_MUST_HAVE_PASSWORD:
     API is deprecated |  | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API
     is deprecated | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated
     |  | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated |  |
-    FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated | '
+    FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated |  |  |
+    FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated |  | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD,
+    the OCS API is deprecated
 OC_SHARING_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD:
-  name: OC_SHARING_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD;SHARING_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD
+  name: OC_SHARING_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD;FRONTEND_OCS_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD
   defaultValue: "false"
   type: bool
-  description: Set this to true if you want to enforce passwords on Uploader, Editor
-    or Contributor shares. If not using the global OC_SHARING_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD,
-    you must define the FRONTEND_OCS_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD (deprecated)
-    in the frontend service.
+  description: Set this to true if you want to enforce passwords for writable shares.
+    Only effective if the setting for 'passwords on all public shares' is set to false.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
-  deprecationInfo: 'FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD, the OCS
+  deprecationInfo: FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD, the OCS
     API is deprecated |  |  | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
     the OCS API is deprecated | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
     the OCS API is deprecated |  | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
@@ -9938,7 +10102,9 @@ OC_SHARING_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD:
     the OCS API is deprecated | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
     the OCS API is deprecated |  | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
     the OCS API is deprecated |  | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
-    the OCS API is deprecated | '
+    the OCS API is deprecated |  |  | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
+    the OCS API is deprecated |  | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
+    the OCS API is deprecated
 OC_SHOW_USER_EMAIL_IN_RESULTS:
   name: OC_SHOW_USER_EMAIL_IN_RESULTS
   defaultValue: "false"
@@ -9962,37 +10128,37 @@ OC_SPACES_MAX_QUOTA:
   removalVersion: ""
   deprecationInfo: ""
 OC_SYSTEM_USER_API_KEY:
-  name: OC_SYSTEM_USER_API_KEY
+  name: OC_SYSTEM_USER_API_KEY;AUTH_APP_JSONCS3_SYSTEM_USER_API_KEY
   defaultValue: ""
   type: string
   description: API key for the STORAGE-SYSTEM system user.
-  introductionVersion: '%%NEXT%%'
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_SYSTEM_USER_ID:
-  name: OC_SYSTEM_USER_ID;GRAPH_SYSTEM_USER_ID
+  name: OC_SYSTEM_USER_ID;AUTH_APP_JSONCS3_SYSTEM_USER_ID
   defaultValue: ""
   type: string
   description: ID of the OpenCloud STORAGE-SYSTEM system user. Admins need to set
     the ID for the STORAGE-SYSTEM system user in this config option which is then
     used to reference the user. Any reasonable long string is possible, preferably
     this would be an UUIDv4 format.
-  introductionVersion: '%%NEXT%%'
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_SYSTEM_USER_IDP:
-  name: OC_SYSTEM_USER_IDP;GRAPH_SYSTEM_USER_IDP
+  name: OC_SYSTEM_USER_IDP;AUTH_APP_JSONCS3_SYSTEM_USER_IDP
   defaultValue: internal
   type: string
   description: IDP of the OpenCloud STORAGE-SYSTEM system user.
-  introductionVersion: '%%NEXT%%'
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_TRACING_COLLECTOR:
-  name: OC_TRACING_COLLECTOR;INVITATIONS_TRACING_COLLECTOR
+  name: OC_TRACING_COLLECTOR;POSTPROCESSING_TRACING_COLLECTOR
   defaultValue: ""
   type: string
   description: The HTTP endpoint for sending spans directly to a collector, i.e. http://jaeger-collector:14268/api/traces.
@@ -10002,7 +10168,7 @@ OC_TRACING_COLLECTOR:
   removalVersion: ""
   deprecationInfo: ""
 OC_TRACING_ENABLED:
-  name: OC_TRACING_ENABLED;INVITATIONS_TRACING_ENABLED
+  name: OC_TRACING_ENABLED;POSTPROCESSING_TRACING_ENABLED
   defaultValue: "false"
   type: bool
   description: Activates tracing.
@@ -10011,7 +10177,7 @@ OC_TRACING_ENABLED:
   removalVersion: ""
   deprecationInfo: ""
 OC_TRACING_ENDPOINT:
-  name: OC_TRACING_ENDPOINT;INVITATIONS_TRACING_ENDPOINT
+  name: OC_TRACING_ENDPOINT;POSTPROCESSING_TRACING_ENDPOINT
   defaultValue: ""
   type: string
   description: The endpoint of the tracing agent.
@@ -10020,7 +10186,7 @@ OC_TRACING_ENDPOINT:
   removalVersion: ""
   deprecationInfo: ""
 OC_TRACING_TYPE:
-  name: OC_TRACING_TYPE;INVITATIONS_TRACING_TYPE
+  name: OC_TRACING_TYPE;POSTPROCESSING_TRACING_TYPE
   defaultValue: ""
   type: string
   description: The type of tracing. Defaults to '', which is the same as 'jaeger'.
@@ -10033,13 +10199,13 @@ OC_TRANSFER_SECRET:
   name: OC_TRANSFER_SECRET
   defaultValue: ""
   type: string
-  description: The storage transfer secret.
+  description: Transfer secret for signing file up- and download requests.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_TRANSLATION_PATH:
-  name: OC_TRANSLATION_PATH;GRAPH_TRANSLATION_PATH
+  name: OC_TRANSLATION_PATH;NOTIFICATIONS_TRANSLATION_PATH
   defaultValue: ""
   type: string
   description: (optional) Set this to a path with custom translations to overwrite
@@ -10050,19 +10216,20 @@ OC_TRANSLATION_PATH:
   removalVersion: ""
   deprecationInfo: ""
 OC_URL:
-  name: OC_URL;GRAPH_SPACES_WEBDAV_BASE
+  name: OC_URL;OC_PUBLIC_URL
   defaultValue: https://localhost:9200
   type: string
-  description: The public facing URL of WebDAV.
+  description: URL, where OpenCloud is reachable for users.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_WOPI_DISABLE_CHAT:
-  name: APP_PROVIDER_WOPI_DISABLE_CHAT;OC_WOPI_DISABLE_CHAT
+  name: COLLABORATION_WOPI_DISABLE_CHAT;OC_WOPI_DISABLE_CHAT
   defaultValue: "false"
   type: bool
-  description: Disable the chat functionality of the office app.
+  description: Disable chat in the office web frontend. This feature applies to OnlyOffice
+    and Microsoft.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
@@ -10666,6 +10833,15 @@ PROXY_CSP_CONFIG_FILE_LOCATION:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+PROXY_CSP_CONFIG_FILE_OVERRIDE_LOCATION:
+  name: PROXY_CSP_CONFIG_FILE_OVERRIDE_LOCATION
+  defaultValue: ""
+  type: string
+  description: The location of the CSP configuration file override.
+  introductionVersion: 4.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 PROXY_DEBUG_ADDR:
   name: PROXY_DEBUG_ADDR
   defaultValue: 127.0.0.1:9205
@@ -10892,7 +11068,7 @@ PROXY_OIDC_ACCESS_TOKEN_VERIFY_METHOD:
   type: string
   description: Sets how OIDC access tokens should be verified. Possible values are
     'none' and 'jwt'. When using 'none', no special validation apart from using it
-    for accessing the IPD's userinfo endpoint will be done. When using 'jwt', it tries
+    for accessing the IDP's userinfo endpoint will be done. When using 'jwt', it tries
     to parse the access token as a jwt token and verifies the signature using the
     keys published on the IDP's 'jwks_uri'.
   introductionVersion: 1.0.0
@@ -11216,7 +11392,7 @@ PROXY_TRACING_TYPE:
   deprecationInfo: ""
 PROXY_TRANSPORT_TLS_CERT:
   name: PROXY_TRANSPORT_TLS_CERT
-  defaultValue: /home/chaser/.opencloud/proxy/server.crt
+  defaultValue: /var/lib/opencloud/proxy/server.crt
   type: string
   description: Path/File name of the TLS server certificate (in PEM format) for the
     external http services. If not defined, the root directory derives from $OC_BASE_DATA_PATH/proxy.
@@ -11226,7 +11402,7 @@ PROXY_TRANSPORT_TLS_CERT:
   deprecationInfo: ""
 PROXY_TRANSPORT_TLS_KEY:
   name: PROXY_TRANSPORT_TLS_KEY
-  defaultValue: /home/chaser/.opencloud/proxy/server.key
+  defaultValue: /var/lib/opencloud/proxy/server.key
   type: string
   description: Path/File name for the TLS certificate key (in PEM format) for the
     server certificate to use for the external http services. If not defined, the
@@ -11254,6 +11430,15 @@ PROXY_USER_OIDC_CLAIM:
     stable and non re-assignable identifier. The availability of claims depends on
     your Identity Provider. There are common claims available for most Identity providers
     like 'email' or 'preferred_username' but you can also add your own claim.
+  introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+SEARCH_BATCH_SIZE:
+  name: SEARCH_BATCH_SIZE
+  defaultValue: "500"
+  type: int
+  description: The number of documents to process in a single batch. Defaults to 500.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
@@ -11307,11 +11492,156 @@ SEARCH_DEBUG_ZPAGES:
   deprecationInfo: ""
 SEARCH_ENGINE_BLEVE_DATA_PATH:
   name: SEARCH_ENGINE_BLEVE_DATA_PATH
-  defaultValue: /home/chaser/.opencloud/search
+  defaultValue: /var/lib/opencloud/search
   type: string
   description: The directory where the filesystem will store search data. If not defined,
     the root directory derives from $OC_BASE_DATA_PATH/search.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+SEARCH_ENGINE_OPEN_SEARCH_CLIENT_ADDRESSES:
+  name: SEARCH_ENGINE_OPEN_SEARCH_CLIENT_ADDRESSES
+  defaultValue: '[]'
+  type: '[]string'
+  description: The addresses of the OpenSearch nodes..
+  introductionVersion: 4.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+SEARCH_ENGINE_OPEN_SEARCH_CLIENT_CA_CERT:
+  name: SEARCH_ENGINE_OPEN_SEARCH_CLIENT_CA_CERT
+  defaultValue: ""
+  type: string
+  description: Path/File name for the root CA certificate (in PEM format) used to
+    validate TLS server certificates of the opensearch server.
+  introductionVersion: 4.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+SEARCH_ENGINE_OPEN_SEARCH_CLIENT_COMPRESS_REQUEST_BODY:
+  name: SEARCH_ENGINE_OPEN_SEARCH_CLIENT_COMPRESS_REQUEST_BODY
+  defaultValue: "false"
+  type: bool
+  description: Compress request bodies.
+  introductionVersion: 4.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+SEARCH_ENGINE_OPEN_SEARCH_CLIENT_DISABLE_RETRY:
+  name: SEARCH_ENGINE_OPEN_SEARCH_CLIENT_DISABLE_RETRY
+  defaultValue: "false"
+  type: bool
+  description: Disable retries on errors.
+  introductionVersion: 4.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+SEARCH_ENGINE_OPEN_SEARCH_CLIENT_DISCOVER_NODES_INTERVAL:
+  name: SEARCH_ENGINE_OPEN_SEARCH_CLIENT_DISCOVER_NODES_INTERVAL
+  defaultValue: 0s
+  type: Duration
+  description: Interval for discovering nodes.
+  introductionVersion: 4.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+SEARCH_ENGINE_OPEN_SEARCH_CLIENT_DISCOVER_NODES_ON_START:
+  name: SEARCH_ENGINE_OPEN_SEARCH_CLIENT_DISCOVER_NODES_ON_START
+  defaultValue: "false"
+  type: bool
+  description: Discover nodes on service start.
+  introductionVersion: 4.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+SEARCH_ENGINE_OPEN_SEARCH_CLIENT_ENABLE_DEBUG_LOGGER:
+  name: SEARCH_ENGINE_OPEN_SEARCH_CLIENT_ENABLE_DEBUG_LOGGER
+  defaultValue: "false"
+  type: bool
+  description: Enable debug logging.
+  introductionVersion: 4.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+SEARCH_ENGINE_OPEN_SEARCH_CLIENT_ENABLE_METRICS:
+  name: SEARCH_ENGINE_OPEN_SEARCH_CLIENT_ENABLE_METRICS
+  defaultValue: "false"
+  type: bool
+  description: Enable metrics collection.
+  introductionVersion: 4.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+SEARCH_ENGINE_OPEN_SEARCH_CLIENT_ENABLE_RETRY_ON_TIMEOUT:
+  name: SEARCH_ENGINE_OPEN_SEARCH_CLIENT_ENABLE_RETRY_ON_TIMEOUT
+  defaultValue: "false"
+  type: bool
+  description: Enable retries on timeout.
+  introductionVersion: 4.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+SEARCH_ENGINE_OPEN_SEARCH_CLIENT_HEADER:
+  name: SEARCH_ENGINE_OPEN_SEARCH_CLIENT_HEADER
+  defaultValue: map[]
+  type: Header
+  description: HTTP headers to include in requests.
+  introductionVersion: 4.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+SEARCH_ENGINE_OPEN_SEARCH_CLIENT_INSECURE:
+  name: SEARCH_ENGINE_OPEN_SEARCH_CLIENT_INSECURE
+  defaultValue: "false"
+  type: bool
+  description: Skip TLS certificate verification.
+  introductionVersion: 4.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+SEARCH_ENGINE_OPEN_SEARCH_CLIENT_MAX_RETRIES:
+  name: SEARCH_ENGINE_OPEN_SEARCH_CLIENT_MAX_RETRIES
+  defaultValue: "0"
+  type: int
+  description: Maximum number of retries for requests.
+  introductionVersion: 4.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+SEARCH_ENGINE_OPEN_SEARCH_CLIENT_PASSWORD:
+  name: SEARCH_ENGINE_OPEN_SEARCH_CLIENT_PASSWORD
+  defaultValue: ""
+  type: string
+  description: Password for HTTP Basic Authentication.
+  introductionVersion: 4.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+SEARCH_ENGINE_OPEN_SEARCH_CLIENT_RETRY_ON_STATUS:
+  name: SEARCH_ENGINE_OPEN_SEARCH_CLIENT_RETRY_ON_STATUS
+  defaultValue: '[]'
+  type: '[]int'
+  description: HTTP status codes that trigger a retry.
+  introductionVersion: 4.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+SEARCH_ENGINE_OPEN_SEARCH_CLIENT_USERNAME:
+  name: SEARCH_ENGINE_OPEN_SEARCH_CLIENT_USERNAME
+  defaultValue: ""
+  type: string
+  description: Username for HTTP Basic Authentication.
+  introductionVersion: 4.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+SEARCH_ENGINE_OPEN_SEARCH_RESOURCE_INDEX_NAME:
+  name: SEARCH_ENGINE_OPEN_SEARCH_RESOURCE_INDEX_NAME
+  defaultValue: opencloud-resource
+  type: string
+  description: The name of the OpenSearch index for resources.
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -11322,6 +11652,16 @@ SEARCH_ENGINE_TYPE:
   description: 'Defines which search engine to use. Defaults to ''bleve''. Supported
     values are: ''bleve''.'
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+SEARCH_EVENTS_ACK_WAIT:
+  name: SEARCH_EVENTS_ACK_WAIT
+  defaultValue: 1m0s
+  type: Duration
+  description: The time to wait for an ack before the message is redelivered. This
+    is used to ensure that messages are not lost if the consumer crashes.
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -11365,6 +11705,16 @@ SEARCH_EVENTS_CLUSTER:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+SEARCH_EVENTS_DISABLED:
+  name: SEARCH_EVENTS_DISABLED
+  defaultValue: "false"
+  type: bool
+  description: Disables listening for events. Set this to true if the service should
+    only handle GRPC requests.
+  introductionVersion: 4.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 SEARCH_EVENTS_ENABLE_TLS:
   name: OC_EVENTS_ENABLE_TLS;SEARCH_EVENTS_ENABLE_TLS
   defaultValue: "false"
@@ -11385,13 +11735,23 @@ SEARCH_EVENTS_ENDPOINT:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+SEARCH_EVENTS_MAX_ACK_PENDING:
+  name: SEARCH_EVENTS_MAX_ACK_PENDING
+  defaultValue: "10000"
+  type: int
+  description: The maximum number of unacknowledged messages. This is used to limit
+    the number of messages that can be in flight at the same time.
+  introductionVersion: 4.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 SEARCH_EVENTS_NUM_CONSUMERS:
   name: SEARCH_EVENTS_NUM_CONSUMERS
-  defaultValue: "0"
+  defaultValue: "1"
   type: int
   description: The amount of concurrent event consumers to start. Event consumers
     are used for searching files. Multiple consumers increase parallelisation, but
-    will also increase CPU and memory demands. The default value is 0.
+    will also increase CPU and memory demands.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
@@ -11469,6 +11829,16 @@ SEARCH_GRPC_ADDR:
   type: string
   description: The bind address of the GRPC service.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+SEARCH_GRPC_DISABLED:
+  name: SEARCH_GRPC_DISABLED
+  defaultValue: "false"
+  type: bool
+  description: Disables the GRPC service. Set this to true if the service should only
+    handle events.
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -11844,7 +12214,7 @@ SETTINGS_SERVICE_ACCOUNT_IDS:
   removalVersion: ""
   deprecationInfo: ""
 SETTINGS_SETUP_DEFAULT_ASSIGNMENTS:
-  name: SETTINGS_SETUP_DEFAULT_ASSIGNMENTS;IDM_CREATE_DEMO_USERS
+  name: IDM_CREATE_DEMO_USERS;SETTINGS_SETUP_DEFAULT_ASSIGNMENTS
   defaultValue: "false"
   type: bool
   description: The default role assignments the demo users should be setup.
@@ -12276,7 +12646,7 @@ SHARING_PUBLIC_JSONCS3_SYSTEM_USER_IDP:
   deprecationInfo: ""
 SHARING_PUBLIC_JSON_FILE:
   name: SHARING_PUBLIC_JSON_FILE
-  defaultValue: /home/chaser/.opencloud/storage/publicshares.json
+  defaultValue: /var/lib/opencloud/storage/publicshares.json
   type: string
   description: Path to the JSON file where public share meta-data will be stored.
     This JSON file contains the information about public shares that have been created.
@@ -12464,7 +12834,7 @@ SHARING_USER_JSONCS3_SYSTEM_USER_IDP:
   deprecationInfo: ""
 SHARING_USER_JSON_FILE:
   name: SHARING_USER_JSON_FILE
-  defaultValue: /home/chaser/.opencloud/storage/shares.json
+  defaultValue: /var/lib/opencloud/storage/shares.json
   type: string
   description: Path to the JSON file where shares will be persisted. If not defined,
     the root directory derives from $OC_BASE_DATA_PATH/storage.
@@ -12791,20 +13161,20 @@ SSE_TRACING_TYPE:
   removalVersion: ""
   deprecationInfo: ""
 STORAGE_GATEWAY_GRPC_ADDR:
-  name: GRAPH_STORAGE_GATEWAY_GRPC_ADDR;STORAGE_GATEWAY_GRPC_ADDR
+  name: SETTINGS_STORAGE_GATEWAY_GRPC_ADDR;STORAGE_GATEWAY_GRPC_ADDR
   defaultValue: eu.opencloud.api.storage-system
   type: string
   description: GRPC address of the STORAGE-SYSTEM service.
-  introductionVersion: '%%NEXT%%'
+  introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 STORAGE_GRPC_ADDR:
-  name: GRAPH_STORAGE_GRPC_ADDR;STORAGE_GRPC_ADDR
+  name: SETTINGS_STORAGE_GRPC_ADDR;STORAGE_GRPC_ADDR
   defaultValue: eu.opencloud.api.storage-system
   type: string
   description: GRPC address of the STORAGE-SYSTEM service.
-  introductionVersion: '%%NEXT%%'
+  introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -13377,7 +13747,7 @@ STORAGE_SYSTEM_OC_MAX_ACQUIRE_LOCK_CYCLES:
   deprecationInfo: ""
 STORAGE_SYSTEM_OC_ROOT:
   name: STORAGE_SYSTEM_OC_ROOT
-  defaultValue: /home/chaser/.opencloud/storage/metadata
+  defaultValue: /var/lib/opencloud/storage/metadata
   type: string
   description: Path for the directory where the STORAGE-SYSTEM service stores it's
     persistent data. If not defined, the root directory derives from $OC_BASE_DATA_PATH/storage.
@@ -13525,7 +13895,7 @@ STORAGE_USERS_CORS_MAX_AGE:
   deprecationInfo: ""
 STORAGE_USERS_DATA_GATEWAY_URL:
   name: STORAGE_USERS_DATA_GATEWAY_URL
-  defaultValue: https://localhost:9200/data
+  defaultValue: http://localhost:9140/data
   type: string
   description: URL of the data gateway server
   introductionVersion: 1.0.0
@@ -13700,9 +14070,10 @@ STORAGE_USERS_DECOMPOSEDS3_PROPAGATOR:
   deprecationInfo: ""
 STORAGE_USERS_DECOMPOSEDS3_PUT_OBJECT_CONCURRENT_STREAM_PARTS:
   name: STORAGE_USERS_DECOMPOSEDS3_PUT_OBJECT_CONCURRENT_STREAM_PARTS
-  defaultValue: "true"
+  defaultValue: "false"
   type: bool
-  description: Always precreate parts when copying objects to S3.
+  description: Always precreate parts when copying objects to S3. This is not recommended.
+    It uses a memory buffer. If true, PartSize needs to be set.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
@@ -13718,9 +14089,9 @@ STORAGE_USERS_DECOMPOSEDS3_PUT_OBJECT_DISABLE_CONTENT_SHA256:
   deprecationInfo: ""
 STORAGE_USERS_DECOMPOSEDS3_PUT_OBJECT_DISABLE_MULTIPART:
   name: STORAGE_USERS_DECOMPOSEDS3_PUT_OBJECT_DISABLE_MULTIPART
-  defaultValue: "true"
+  defaultValue: "false"
   type: bool
-  description: Disable multipart uploads when copying objects to S3
+  description: Disable multipart uploads when copying objects to S3.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
@@ -13739,7 +14110,8 @@ STORAGE_USERS_DECOMPOSEDS3_PUT_OBJECT_PART_SIZE:
   defaultValue: "0"
   type: uint64
   description: Part size for concurrent uploads to S3. If no value or 0 is set, the
-    library's default value of 16MB is used. The value range is min 5MB and max 5GB.
+    library automatically calculates the part size according to the total size of
+    the file to be uploaded. The value range is min 5MB and max 5GB.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
@@ -13764,7 +14136,7 @@ STORAGE_USERS_DECOMPOSEDS3_REGION:
   deprecationInfo: ""
 STORAGE_USERS_DECOMPOSEDS3_ROOT:
   name: STORAGE_USERS_DECOMPOSEDS3_ROOT
-  defaultValue: /home/chaser/.opencloud/storage/users
+  defaultValue: /var/lib/opencloud/storage/users
   type: string
   description: The directory where the filesystem storage will store metadata for
     blobs. If not defined, the root directory derives from $OC_BASE_DATA_PATH/storage/users.
@@ -13903,7 +14275,7 @@ STORAGE_USERS_DECOMPOSED_PROPAGATOR:
   deprecationInfo: ""
 STORAGE_USERS_DECOMPOSED_ROOT:
   name: STORAGE_USERS_DECOMPOSED_ROOT
-  defaultValue: /home/chaser/.opencloud/storage/users
+  defaultValue: /var/lib/opencloud/storage/users
   type: string
   description: The directory where the filesystem storage will store blobs and metadata.
     If not defined, the root directory derives from $OC_BASE_DATA_PATH/storage/users.
@@ -13934,10 +14306,11 @@ STORAGE_USERS_DRIVER:
   defaultValue: posix
   type: string
   description: 'The storage driver which should be used by the service. Defaults to
-    ''decomposed'', Supported values are: ''decomposed'', ''decomposeds3'' and ''owncloudsql''.
-    For backwards compatibility reasons it''s also possible to use the ''ocis'' and
-    ''s3ng'' driver and configure them using the ''decomposed''/''decomposeds3'' options.
-    The ''decomposed'' driver stores all data (blob and meta data) in an POSIX compliant
+    ''posix''. Supported values are: ''posix'', ''decomposed'', ''decomposeds3'' and
+    ''owncloudsql''. For backwards compatibility reasons it''s also possible to use
+    the ''ocis'' and ''s3ng'' driver and configure them using the ''decomposed''/''decomposeds3''
+    options. The ''posix'' driver stores data directly on a POSIX-compliant filesystem.
+    The ''decomposed'' driver stores all data (blob and meta data) in a POSIX compliant
     volume. The ''decomposeds3'' driver stores metadata in a POSIX compliant volume
     and uploads blobs to the s3 bucket.'
   introductionVersion: 1.0.0
@@ -14287,7 +14660,7 @@ STORAGE_USERS_MOUNT_ID:
   deprecationInfo: ""
 STORAGE_USERS_OWNCLOUDSQL_DATADIR:
   name: STORAGE_USERS_OWNCLOUDSQL_DATADIR
-  defaultValue: /home/chaser/.opencloud/storage/owncloud
+  defaultValue: /var/lib/opencloud/storage/owncloud
   type: string
   description: The directory where the filesystem storage will store SQL migration
     data. If not defined, the root directory derives from $OC_BASE_DATA_PATH/storage/owncloud.
@@ -14361,7 +14734,7 @@ STORAGE_USERS_OWNCLOUDSQL_SHARE_FOLDER:
   deprecationInfo: ""
 STORAGE_USERS_OWNCLOUDSQL_UPLOADINFO_DIR:
   name: STORAGE_USERS_OWNCLOUDSQL_UPLOADINFO_DIR
-  defaultValue: /home/chaser/.opencloud/storage/uploadinfo
+  defaultValue: /var/lib/opencloud/storage/uploadinfo
   type: string
   description: The directory where the filesystem will store uploads temporarily.
     If not defined, the root directory derives from $OC_BASE_DATA_PATH/storage/uploadinfo.
@@ -14423,7 +14796,7 @@ STORAGE_USERS_POSIX_INOTIFY_STATS_FREQUENCY:
   defaultValue: 5m0s
   type: Duration
   description: Frequency to log inotify stats.
-  introductionVersion: '%%NEXT%%'
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -14512,7 +14885,7 @@ STORAGE_USERS_POSIX_PROPAGATOR:
   deprecationInfo: ""
 STORAGE_USERS_POSIX_ROOT:
   name: STORAGE_USERS_POSIX_ROOT
-  defaultValue: /home/chaser/.opencloud/storage/users
+  defaultValue: /var/lib/opencloud/storage/users
   type: string
   description: The directory where the filesystem storage will store its data. If
     not defined, the root directory derives from $OC_BASE_DATA_PATH/storage/users.
@@ -14556,7 +14929,7 @@ STORAGE_USERS_POSIX_WATCH_NOTIFICATION_BROKERS,STORAGE_USERS_POSIX_WATCH_FOLDER_
   description: Comma-separated list of kafka brokers to read the watchfolder events
     from.
   introductionVersion: 1.0.0
-  deprecationVersion: '%%NEXT%%'
+  deprecationVersion: 4.0.0
   removalVersion: ""
   deprecationInfo: ""
 STORAGE_USERS_POSIX_WATCH_PATH:
@@ -14576,7 +14949,7 @@ STORAGE_USERS_POSIX_WATCH_ROOT:
   type: string
   description: Path to the watch root directory. Event paths will be considered relative
     to this path. Only applies to the 'gpswatchfolder' and 'cephfs' watchers.
-  introductionVersion: '%%NEXT%%'
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -14833,7 +15206,7 @@ THUMBNAILS_DEBUG_ZPAGES:
   deprecationInfo: ""
 THUMBNAILS_FILESYSTEMSTORAGE_ROOT:
   name: THUMBNAILS_FILESYSTEMSTORAGE_ROOT
-  defaultValue: /home/chaser/.opencloud/thumbnails
+  defaultValue: /var/lib/opencloud/thumbnails
   type: string
   description: The directory where the filesystem storage will store the thumbnails.
     If not defined, the root directory derives from $OC_BASE_DATA_PATH/thumbnails.
@@ -15503,7 +15876,7 @@ USERS_LDAP_BIND_PASSWORD:
   deprecationInfo: ""
 USERS_LDAP_CACERT:
   name: OC_LDAP_CACERT;USERS_LDAP_CACERT
-  defaultValue: /home/chaser/.opencloud/idm/ldap.crt
+  defaultValue: /var/lib/opencloud/idm/ldap.crt
   type: string
   description: Path/File name for the root CA certificate (in PEM format) used to
     validate TLS server certificates of the LDAP service. If not defined, the root
@@ -15724,6 +16097,16 @@ USERS_LDAP_USER_SCHEMA_MAIL:
   type: string
   description: LDAP Attribute to use for the email address of users.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+USERS_LDAP_USER_SCHEMA_TENANT_ID:
+  name: OC_LDAP_USER_SCHEMA_TENANT_ID;USERS_LDAP_USER_SCHEMA_TENANT_ID
+  defaultValue: ""
+  type: string
+  description: LDAP Attribute to use for the tenant ID of users. This is used to identify
+    the tenant of a user in a multi-tenant environment.
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -16355,7 +16738,7 @@ WEBFINGER_TRACING_TYPE:
   deprecationInfo: ""
 WEB_ASSET_APPS_PATH:
   name: WEB_ASSET_APPS_PATH
-  defaultValue: /home/chaser/.opencloud/web/assets/apps
+  defaultValue: /var/lib/opencloud/web/assets/apps
   type: string
   description: Serve OpenCloud Web apps assets from a path on the filesystem instead
     of the builtin assets. If not defined, the root directory derives from $OC_BASE_DATA_PATH/web/assets/apps
@@ -16365,7 +16748,7 @@ WEB_ASSET_APPS_PATH:
   deprecationInfo: ""
 WEB_ASSET_CORE_PATH:
   name: WEB_ASSET_CORE_PATH
-  defaultValue: /home/chaser/.opencloud/web/assets/core
+  defaultValue: /var/lib/opencloud/web/assets/core
   type: string
   description: Serve OpenCloud Web assets from a path on the filesystem instead of
     the builtin assets. If not defined, the root directory derives from $OC_BASE_DATA_PATH/web/assets/core
@@ -16375,7 +16758,7 @@ WEB_ASSET_CORE_PATH:
   deprecationInfo: ""
 WEB_ASSET_THEMES_PATH:
   name: OC_ASSET_THEMES_PATH;WEB_ASSET_THEMES_PATH
-  defaultValue: /home/chaser/.opencloud/web/assets/themes
+  defaultValue: /var/lib/opencloud/web/assets/themes
   type: string
   description: Serve OpenCloud themes from a path on the filesystem instead of the
     builtin assets. If not defined, the root directory derives from $OC_BASE_DATA_PATH/web/assets/themes
@@ -16657,6 +17040,15 @@ WEB_OPTION_CONTEXTHELPERS_READ_MORE:
   type: bool
   description: Specifies whether the 'Read more' link should be displayed or not.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+WEB_OPTION_DEFAULT_APP_ID:
+  name: WEB_OPTION_DEFAULT_APP_ID
+  defaultValue: ""
+  type: string
+  description: Defines the entrypoint for the web ui.
+  introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
