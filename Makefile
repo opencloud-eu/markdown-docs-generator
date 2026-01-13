@@ -57,7 +57,7 @@ go-mod-tidy:
 .PHONY: create-docs-pullrequest
 create-docs-pullrequest:
 	cp -Rfv output/docs/* tmpdocs/static/env-vars/
-	pushd tmpdocs && \
+	cd tmpdocs && \
 	git config --add --bool push.autoSetupRemote true && \
 	git add * && \
 	git commit -m "Update docs with latest env vars" && \
