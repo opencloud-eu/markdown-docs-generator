@@ -62,4 +62,4 @@ create-docs-pullrequest:
 	git add * && \
 	git commit -m "Update docs with latest env vars" && \
 	git push
-	gh pr create --title "Update docs" --body "This PR updates the documentation." --draft
+	gh pr create --title "Update docs" --body "This PR updates the documentation." --draft --label "Docs Build&Tools"
