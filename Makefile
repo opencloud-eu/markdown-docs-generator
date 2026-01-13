@@ -61,5 +61,5 @@ create-docs-pullrequest:
 	git config --add --bool push.autoSetupRemote true && \
 	git add * && \
 	git commit -m "Update docs with latest env vars" && \
-	git push
+	git push && \
 	gh pr create --title "Update docs" --body "This PR updates the documentation." --draft --label "Docs:Build&Tools"
