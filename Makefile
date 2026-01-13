@@ -41,7 +41,7 @@ git-clone: git-clean
 	@if [ -d "tmp" ]; then echo "Directory tmp already exists. Please remove it before cloning.";exit 1;fi
 	git clone -b "${OC_GIT_BRANCH}" https://github.com/opencloud-eu/opencloud.git tmp
 	@if [ -d "tmpdocs" ]; then echo "Directory tmpdocs already exists. Please remove it before cloning.";exit 1;fi
-	git clone -b "${OC_GIT_BRANCH}" git@github.com:opencloud-eu/docs tmpdocs; cd tmpdocs && git checkout -b docs-update-$$(uuidgen -r) && cd ..
+	git clone -b "${DOC_GIT_BRANCH}" git@github.com:opencloud-eu/docs tmpdocs; cd tmpdocs && git checkout -b docs-update-$$(uuidgen -r) && cd ..
 
 .PHONY: clean
 clean: gitclean output-clean
