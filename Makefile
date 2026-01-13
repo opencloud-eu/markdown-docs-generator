@@ -54,12 +54,18 @@ output-clean:
 go-mod-tidy:
 	go mod tidy
 
-.PHONY: create-docs-pullrequest
-create-docs-pullrequest:
+.PHONY: prepare-docs-pullrequest
+prepare-docs-pullrequest:
 	cp -Rfv output/docs/* tmpdocs/static/env-vars/
 	cd tmpdocs && \
 	git config --add --bool push.autoSetupRemote true && \
 	git add * && \
 	git commit -m "Update docs with latest env vars" && \
 	git push && \
-	gh pr create --title "Update docs" --body "This PR updates the documentation." --draft --label "Docs:Build&Tools"
+	cd -
+
+.PHONY: create-docs-pullrequest
+create-docs-pullrequest:
+	cd tmpdocs && \
+	gh pr create --title "Update docs" --body "This PR updates the documentation." --draft --label "Docs:Build&Tools" && \
+	cd -
