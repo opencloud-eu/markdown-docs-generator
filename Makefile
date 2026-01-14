@@ -1,5 +1,6 @@
 OC_GIT_BRANCH ?= main
 DOC_GIT_BRANCH ?= main
+DOC_GIT_BRANCH_TARGET ?= main
 
 .PHONY: all
 all: git-checkdirexist go-mod-tidy
@@ -62,4 +63,4 @@ create-docs-pullrequest:
 	git add * && \
 	git commit -m "Update docs with latest env vars" && \
 	git push && \
-	gh pr create --title "Update docs" --body "This PR updates the documentation." --draft --label "Docs:Build&Tools" --label "Docs:CiWeeklyCleanup"
+	gh pr create --title "Update docs" --body "This PR updates the documentation." --draft --label "Docs:Build&Tools" --label "Docs:CiWeeklyCleanup" --base "${DOC_GIT_BRANCH_TARGET}"
