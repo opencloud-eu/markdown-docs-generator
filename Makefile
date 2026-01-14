@@ -1,7 +1,7 @@
 OC_GIT_BRANCH ?= main
 DOC_GIT_BRANCH ?= main
 DOC_GIT_BRANCH_TARGET ?= main
-DOC_GIT_TARGET_FOLDER ?= tmpdocs/static/env-vars/
+DOC_GIT_TARGET_FOLDER ?= tmpdocs/docs/dev/_static/env-vars/
 
 .PHONY: all
 all: git-checkdirexist go-mod-tidy
@@ -58,7 +58,8 @@ go-mod-tidy:
 
 .PHONY: create-docs-pullrequest
 create-docs-pullrequest:
-	cp -Rfv output/docs/* "${DOC_GIT_TARGET_FOLDER}"
+	mkdir -p "${DOC_GIT_TARGET_FOLDER}" && \
+	cp -Rfv output/docs/* "${DOC_GIT_TARGET_FOLDER}" && \
 	cd tmpdocs && \
 	git config --add --bool push.autoSetupRemote true && \
 	git add * && \

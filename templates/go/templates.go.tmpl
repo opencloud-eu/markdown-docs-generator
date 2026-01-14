@@ -133,7 +133,7 @@ func main() {
 			HasDeprecations: hasDeprecations,
 			Timestamp: timestamp,
 		}
-		adocFile, err = os.Create(filepath.Join(targetFolder, pathReplacer.Replace(service) + "_configvars.md"))
+		adocFile, err = os.Create(filepath.Join(targetFolder, pathReplacer.Replace(service) + "_configvars.mdx"))
 		if err != nil {
 			log.Fatalf("Failed to create target file: %s", err)
 		}
@@ -143,7 +143,7 @@ func main() {
 			log.Fatalf("Failed to execute template: %s", err)
 		}
 
-		dprFile, err = os.Create(filepath.Join(targetFolder, pathReplacer.Replace(service) + "_deprecation.md"))
+		dprFile, err = os.Create(filepath.Join(targetFolder, pathReplacer.Replace(service) + "_deprecation.mdx"))
 		if err != nil {
 			log.Fatalf("Failed to create target file: %s", err)
 		}
@@ -181,7 +181,7 @@ func main() {
 	}
 
 	gltpl := template.Must(template.New("").Parse(string(glc)))
-	glfile, err := os.Create(filepath.Join(targetFolder, "global_configvars.md"))
+	glfile, err := os.Create(filepath.Join(targetFolder, "global_configvars.mdx"))
 	if err != nil {
 		log.Fatalf("Failed to create target file: %s", err)
 	}
