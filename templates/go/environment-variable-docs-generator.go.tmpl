@@ -50,7 +50,7 @@ m := map[string]interface{}{
 	fields = GetAnnotatedEnvVariables(conf)
 	if len(fields) > 0 {
 	fmt.Printf("... %s\n", pkg)
-		targetFile, err = os.Create(filepath.Join(targetFolder, replacer.Replace(pkg) + "_configvars.md"))
+		targetFile, err = os.Create(filepath.Join(targetFolder, replacer.Replace(pkg) + "_configvars.mdx"))
 		if err != nil {
 			log.Fatalf("Failed to create target file: %s", err)
 		}
