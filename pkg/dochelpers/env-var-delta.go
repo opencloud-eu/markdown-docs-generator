@@ -107,7 +107,7 @@ func RenderEnvVarDeltaTable(osArgs []string) {
 		if err != nil {
 			log.Fatal(err)
 		}
-		targetFile, err := os.Create(filepath.Join("output/env-deltas", fmt.Sprintf("%s-%s-%s.mdx", startVersion, endVersion, templateName)))
+		targetFile, err := os.Create(filepath.Join("output/env-deltas", fmt.Sprintf("%s-%s-%s.md", startVersion, endVersion, templateName)))
 		if err != nil {
 			log.Fatal(err)
 		}
