@@ -61,14 +61,6 @@ variables:
     h.
   do_ignore: true
 - rawname: MICRO_LOG_LEVEL
-  path: ./pkg/log/log.go:30
-  foundincode: true
-  name: MICRO_LOG_LEVEL
-  type: ""
-  default_value: ""
-  description: ""
-  do_ignore: true
-- rawname: MICRO_LOG_LEVEL
   path: ./pkg/log/log.go:34
   foundincode: true
   name: MICRO_LOG_LEVEL
