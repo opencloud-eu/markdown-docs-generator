@@ -15,7 +15,7 @@ import (
 
 var _configMarkdown = `{{< include file="services/_includes/%s.yaml"  language="yaml" >}}
 
-{{< include file="services/_includes/%s_configvars.mdx" >}}
+{{< include file="services/_includes/%s_configvars.md" >}}
 `
 
 // GenerateServiceIndexMarkdowns generates the _index.md files for the dev docu
@@ -66,7 +66,7 @@ func generateMarkdown(filepath string, servicename string) error {
 		return err
 	}
 
-	path := fmt.Sprintf("output/docs/%s_readme.mdx", servicename)
+	path := fmt.Sprintf("output/docs/%s_readme.md", servicename)
 
 	return os.WriteFile(path, b.Bytes(), os.ModePerm)
 }
