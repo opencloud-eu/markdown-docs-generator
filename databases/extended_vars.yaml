@@ -1,7 +1,15 @@
 variables:
 - rawname: CI
-  path: ./services/search/pkg/opensearch/internal/test/suite.go:57
+  path: services/search/pkg/opensearch/internal/test/suite.go:57
   foundincode: true
+  name: CI
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CI
+  path: ./services/search/pkg/opensearch/internal/test/suite.go:57
+  foundincode: false
   name: CI
   type: ""
   default_value: ""
@@ -9,31 +17,55 @@ variables:
   do_ignore: true
 - rawname: CI_SYSTEM_NAME
   path: ./services/search/pkg/opensearch/internal/test/suite.go:58
-  foundincode: true
+  foundincode: false
   name: CI_SYSTEM_NAME
   type: ""
   default_value: ""
   description: ""
   do_ignore: true
+- rawname: CI_SYSTEM_NAME
+  path: services/search/pkg/opensearch/internal/test/suite.go:58
+  foundincode: true
+  name: CI_SYSTEM_NAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
 - rawname: CS3_GATEWAY
   path: ./services/idp/pkg/backends/cs3/bootstrap/cs3.go:77
-  foundincode: true
+  foundincode: false
   name: CS3_GATEWAY
   type: ""
   default_value: ""
   description: ""
   do_ignore: true
+- rawname: CS3_GATEWAY
+  path: services/idp/pkg/backends/cs3/bootstrap/cs3.go:77
+  foundincode: true
+  name: CS3_GATEWAY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
 - rawname: CS3_MACHINE_AUTH_API_KEY
   path: ./services/idp/pkg/backends/cs3/bootstrap/cs3.go:78
-  foundincode: true
+  foundincode: false
   name: CS3_MACHINE_AUTH_API_KEY
   type: ""
   default_value: ""
   description: ""
   do_ignore: true
+- rawname: CS3_MACHINE_AUTH_API_KEY
+  path: services/idp/pkg/backends/cs3/bootstrap/cs3.go:78
+  foundincode: true
+  name: CS3_MACHINE_AUTH_API_KEY
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
 - rawname: _registryRegisterIntervalEnv
   path: ./pkg/registry/expiry.go:19
-  foundincode: true
+  foundincode: false
   name: EXPERIMENTAL_REGISTER_INTERVAL
   type: duration
   default_value: 25s
@@ -42,7 +74,7 @@ variables:
   do_ignore: false
 - rawname: _registryRegisterTTLEnv
   path: ./pkg/registry/expiry.go:28
-  foundincode: true
+  foundincode: false
   name: EXPERIMENTAL_REGISTER_TTL
   type: duration
   default_value: 30s
@@ -52,7 +84,7 @@ variables:
   do_ignore: false
 - rawname: _serverMaxConnectionAgeEnv
   path: ./pkg/service/grpc/keepalive.go:19
-  foundincode: true
+  foundincode: false
   name: GRPC_MAX_CONNECTION_AGE
   type: duration
   default_value: "9223372036854775807"
@@ -61,7 +93,16 @@ variables:
     h.
   do_ignore: true
 - rawname: MICRO_LOG_LEVEL
-  path: ./pkg/log/log.go:30
+  path: ./pkg/log/log.go:34
+  foundincode: false
+  name: MICRO_LOG_LEVEL
+  type: string
+  default_value: Error
+  description: Set the log level for the internal go micro framework. Only change
+    on supervision of openCloud Support.
+  do_ignore: false
+- rawname: MICRO_LOG_LEVEL
+  path: pkg/log/log.go:30
   foundincode: true
   name: MICRO_LOG_LEVEL
   type: ""
@@ -69,17 +110,24 @@ variables:
   description: ""
   do_ignore: true
 - rawname: MICRO_LOG_LEVEL
-  path: ./pkg/log/log.go:34
+  path: pkg/log/log.go:34
   foundincode: true
   name: MICRO_LOG_LEVEL
-  type: string
-  default_value: Error
-  description: Set the log level for the internal go micro framework. Only change
-    on supervision of openCloud Support.
-  do_ignore: false
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: MICRO_LOG_LEVEL
+  path: ./pkg/log/log.go:30
+  foundincode: false
+  name: MICRO_LOG_LEVEL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
 - rawname: _registryEnv
   path: ./pkg/registry/registry.go:88
-  foundincode: true
+  foundincode: false
   name: MICRO_REGISTRY
   type: string
   default_value: nats-js-kv
@@ -88,7 +136,7 @@ variables:
   do_ignore: false
 - rawname: _registryAddressEnv
   path: ./pkg/natsjsregistry/registry.go:206
-  foundincode: true
+  foundincode: false
   name: MICRO_REGISTRY_ADDRESS
   type: string
   default_value: 127.0.0.1:9233
@@ -97,7 +145,7 @@ variables:
   do_ignore: false
 - rawname: _registryPasswordEnv
   path: ./pkg/natsjsregistry/registry.go:234
-  foundincode: true
+  foundincode: false
   name: MICRO_REGISTRY_AUTH_PASSWORD
   type: string
   default_value: ""
@@ -105,15 +153,23 @@ variables:
   do_ignore: false
 - rawname: _registryUsernameEnv
   path: ./pkg/natsjsregistry/registry.go:234
-  foundincode: true
+  foundincode: false
   name: MICRO_REGISTRY_AUTH_USERNAME
   type: string
   default_value: ""
   description: Optional when using nats to authenticate with the nats cluster.
   do_ignore: true
 - rawname: OC_BASE_DATA_PATH
-  path: ./pkg/config/defaults/paths.go:21
+  path: pkg/config/defaults/paths.go:21
   foundincode: true
+  name: OC_BASE_DATA_PATH
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: OC_BASE_DATA_PATH
+  path: ./pkg/config/defaults/paths.go:21
+  foundincode: false
   name: OC_BASE_DATA_PATH
   type: string
   default_value: ""
@@ -123,8 +179,16 @@ variables:
     variable.
   do_ignore: false
 - rawname: OC_CONFIG_DIR
-  path: ./pkg/config/defaults/paths.go:54
+  path: pkg/config/defaults/paths.go:54
   foundincode: true
+  name: OC_CONFIG_DIR
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: OC_CONFIG_DIR
+  path: ./pkg/config/defaults/paths.go:54
+  foundincode: false
   name: OC_CONFIG_DIR
   type: string
   default_value: ""
@@ -141,31 +205,119 @@ variables:
   do_ignore: false
 - rawname: RUN_CMD_TEST
   path: ./internal/testenv/test.go:32
-  foundincode: true
+  foundincode: false
   name: RUN_CMD_TEST
   type: ""
   default_value: ""
   description: ""
   do_ignore: true
+- rawname: RUN_CMD_TEST
+  path: internal/testenv/test.go:32
+  foundincode: true
+  name: RUN_CMD_TEST
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
 - rawname: USE_TESTCONTAINERS
   path: ./services/search/pkg/opensearch/internal/test/suite.go:59
-  foundincode: true
+  foundincode: false
   name: USE_TESTCONTAINERS
   type: ""
   default_value: ""
   description: ""
   do_ignore: true
+- rawname: USE_TESTCONTAINERS
+  path: services/search/pkg/opensearch/internal/test/suite.go:59
+  foundincode: true
+  name: USE_TESTCONTAINERS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
 - rawname: _registryAddressEnv
-  path: ./pkg/registry/registry.go:92
+  path: pkg/natsjsregistry/registry.go:206
   foundincode: true
   name: _registryAddressEnv
   type: ""
   default_value: ""
   description: ""
+  do_ignore: false
+- rawname: _registryAddressEnv
+  path: ./pkg/registry/registry.go:92
+  foundincode: false
+  name: _registryAddressEnv
+  type: ""
+  default_value: ""
+  description: ""
   do_ignore: true
+- rawname: _registryAddressEnv
+  path: pkg/registry/registry.go:92
+  foundincode: true
+  name: _registryAddressEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryEnv
+  path: pkg/registry/registry.go:88
+  foundincode: true
+  name: _registryEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryPasswordEnv
+  path: pkg/natsjsregistry/registry.go:234
+  foundincode: true
+  name: _registryPasswordEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryRegisterIntervalEnv
+  path: pkg/registry/expiry.go:19
+  foundincode: true
+  name: _registryRegisterIntervalEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryRegisterTTLEnv
+  path: pkg/registry/expiry.go:28
+  foundincode: true
+  name: _registryRegisterTTLEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _registryUsernameEnv
+  path: pkg/natsjsregistry/registry.go:234
+  foundincode: true
+  name: _registryUsernameEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: _serverMaxConnectionAgeEnv
+  path: pkg/service/grpc/keepalive.go:19
+  foundincode: true
+  name: _serverMaxConnectionAgeEnv
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: parts[0]
+  path: pkg/config/envdecode/envdecode.go:382
+  foundincode: true
+  name: parts[0]
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
 - rawname: parts[0]
   path: ./pkg/config/envdecode/envdecode.go:382
-  foundincode: true
+  foundincode: false
   name: parts[0]
   type: ""
   default_value: ""
