@@ -45,7 +45,7 @@ variables:
   name: CS3_GATEWAY
   type: ""
   default_value: ""
-  description: "Adress of the CS3 backend"
+  description: Adress of the CS3 backend
   do_ignore: false
 - rawname: CS3_MACHINE_AUTH_API_KEY
   path: ./services/idp/pkg/backends/cs3/bootstrap/cs3.go:78
@@ -61,7 +61,7 @@ variables:
   name: CS3_MACHINE_AUTH_API_KEY
   type: ""
   default_value: ""
-  description: "Authentication API-Key for CS3 backend"
+  description: Authentication API-Key for CS3 backend
   do_ignore: false
 - rawname: _registryRegisterIntervalEnv
   path: ./pkg/registry/expiry.go:19
