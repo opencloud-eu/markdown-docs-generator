@@ -1,16 +1,17 @@
 {{ if .HasDeprecations }}
 {{.Timestamp}}
 
-# Deprecation Notice
+## Deprecation Notice
 
 | Deprecation Info | Deprecation Version | Removal Version | Deprecation Replacement |
 |---|---|---|:---|
 {{- range .Deprecations }}
 | {{ .DeprecationInfo}} | {{ .DeprecationVersion}} | {{ .RemovalVersion}} | {{ .DeprecationReplacement}} |
 {{- end }}
+
 {{ end -}}
 
-Environment variables for the **{{ .ExtensionName }}** service
+## Environment variables for the **{{ .ExtensionName }}** service
 
 | Name | Introduction Version | Type | Description | Default Value |
 |---|---|---|---|:---|
