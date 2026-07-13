@@ -3,5 +3,5 @@
 | Name | Introduction Version | Type | Description | Default Value |
 |---|---|---|---|---|
 {{- range . }}
-| `{{ .Name }}` | {{ .IntroductionVersion }} | {{ .Type }} | {{ .Description }} | {{ .DefaultValue }} |
+| `{{ .Name }}` | {{ .IntroductionVersion }} | {{ .Type }} | {{ .Description }} | {{ printf "%#v" .DefaultValue }} |
 {{- end }}

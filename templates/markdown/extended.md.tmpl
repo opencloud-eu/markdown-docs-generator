@@ -6,5 +6,5 @@
 {{- if .Ignore }}
     {{- continue }}
 {{- end }}
-`{{ .Name }}` | {{ .Type }} | {{ .DefaultValue }} | {{ .Description }} |
+`{{ .Name }}` | {{ .Type }} | {{ printf "%#v" .DefaultValue }} | {{ .Description }} |
 {{- end }}
