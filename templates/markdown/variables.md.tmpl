@@ -16,5 +16,5 @@
 | Name | Introduction Version | Type | Description | Default Value |
 |---|---|---|---|:---|
 {{- range .Fields }}
-|{{- range $i, $value := .EnvVars }}{{- if $i }}<br/>{{end -}}`{{ $value }}`{{- end}}| {{ .IntroductionVersion }} |{{ .Type }}|`{{ .Description }}`|`{{ .DefaultValue }}`|
+|{{- range $i, $value := .EnvVars }}{{- if $i }}<br/>{{end -}}`{{ $value }}`{{- end}}| {{ .IntroductionVersion }} |{{ .Type }}|`{{ .Description }}`|`{{ printf "%#v" .DefaultValue }}`|
 {{- end }}

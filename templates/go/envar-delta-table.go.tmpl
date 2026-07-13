@@ -135,12 +135,11 @@ func GetAnnotatedVariablesDelta(s interface{}) []ConfigFieldDelta {
 			deprecationVersion := field.Tag.Get("deprecationVersion")
 			removalVersion := field.Tag.Get("removalVersion")
 			deprecationInfo := field.Tag.Get("deprecationInfo")
-			v := fmt.Sprintf("%v", value.Interface())
+			v := fmt.Sprintf("%#v", fmt.Sprint(value.Interface()))
 			typeName := value.Type().Name()
 			if typeName == "" {
 				typeName = value.Type().String()
 			}
-			//fields = append(fields, ConfigFieldDelta{Name: strings.ReplaceAll(env, ";", "<br/>"), DefaultValue: html.EscapeString(strings.Replace(v, "|", "\\|", -1)), Description: desc, Type: typeName})
 			fields = append(fields, ConfigFieldDelta{
 				Name: env,
 				DefaultValue: html.EscapeString(strings.Replace(v, "|", "\\|", -1)),
