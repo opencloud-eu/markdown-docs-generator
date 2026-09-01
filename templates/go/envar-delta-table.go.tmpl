@@ -135,7 +135,7 @@ func GetAnnotatedVariablesDelta(s interface{}) []ConfigFieldDelta {
 			deprecationVersion := field.Tag.Get("deprecationVersion")
 			removalVersion := field.Tag.Get("removalVersion")
 			deprecationInfo := field.Tag.Get("deprecationInfo")
-			v := fmt.Sprintf("%#v", fmt.Sprint(value.Interface()))
+			v := fmt.Sprintf("%v", value.Interface())
 			typeName := value.Type().Name()
 			if typeName == "" {
 				typeName = value.Type().String()
