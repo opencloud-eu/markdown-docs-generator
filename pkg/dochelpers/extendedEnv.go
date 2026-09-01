@@ -69,7 +69,7 @@ func GetRogueEnvs() {
 		log.Fatal(err)
 	}
 	fmt.Println("Gathering variable definitions from source")
-	out, err := exec.Command("sh", "-c", "grep -RHn os.Getenv --exclude-dir={vendor,tests} | grep -v extendedEnv.go |grep -v vendor |grep -v tests |grep \\.go").Output()
+	out, err := exec.Command("sh", "-c", "grep -RHn os.Getenv --include='*.go' --exclude='*_test.go' --exclude-dir=vendor --exclude-dir='*test*'").Output()
 	if err != nil {
 		log.Fatal(err)
 	}

@@ -1,52 +1,4 @@
 variables:
-- rawname: CI
-  path: ./services/search/pkg/opensearch/internal/test/suite.go:57
-  foundincode: false
-  name: CI
-  type: ""
-  default_value: ""
-  description: ""
-  do_ignore: true
-- rawname: CI
-  path: services/search/pkg/opensearch/internal/test/suite.go:57
-  foundincode: false
-  name: CI
-  type: ""
-  default_value: ""
-  description: ""
-  do_ignore: true
-- rawname: CI
-  path: services/search/internal/opensearchtest/suite.go:60
-  foundincode: true
-  name: CI
-  type: ""
-  default_value: ""
-  description: ""
-  do_ignore: false
-- rawname: CI_SYSTEM_NAME
-  path: services/search/internal/opensearchtest/suite.go:61
-  foundincode: true
-  name: CI_SYSTEM_NAME
-  type: ""
-  default_value: ""
-  description: ""
-  do_ignore: false
-- rawname: CI_SYSTEM_NAME
-  path: ./services/search/pkg/opensearch/internal/test/suite.go:58
-  foundincode: false
-  name: CI_SYSTEM_NAME
-  type: ""
-  default_value: ""
-  description: ""
-  do_ignore: true
-- rawname: CI_SYSTEM_NAME
-  path: services/search/pkg/opensearch/internal/test/suite.go:58
-  foundincode: false
-  name: CI_SYSTEM_NAME
-  type: ""
-  default_value: ""
-  description: ""
-  do_ignore: true
 - rawname: CS3_GATEWAY
   path: ./services/idp/pkg/backends/cs3/bootstrap/cs3.go:77
   foundincode: false
@@ -107,14 +59,6 @@ variables:
   description: Timeout for GRPC connections. After timeout, a new connection will
     be established automatically. The default value is in ns and is about 2.5 mio
     h.
-  do_ignore: false
-- rawname: KEEP_TEST_CONTAINER
-  path: services/search/internal/opensearchtest/suite.go:68
-  foundincode: true
-  name: KEEP_TEST_CONTAINER
-  type: ""
-  default_value: ""
-  description: ""
   do_ignore: false
 - rawname: MICRO_LOG_LEVEL
   path: pkg/log/log.go:30
@@ -226,70 +170,6 @@ variables:
   type: integer
   default_value: "10240000"
   description: Sets the maximum message size in bytes the GRPC client can receive.
-  do_ignore: false
-- rawname: RUN_CMD_TEST
-  path: internal/testenv/test.go:32
-  foundincode: true
-  name: RUN_CMD_TEST
-  type: ""
-  default_value: ""
-  description: ""
-  do_ignore: true
-- rawname: RUN_CMD_TEST
-  path: ./internal/testenv/test.go:32
-  foundincode: false
-  name: RUN_CMD_TEST
-  type: ""
-  default_value: ""
-  description: ""
-  do_ignore: true
-- rawname: UPDATE_GOLDEN
-  path: services/search/pkg/opensearch/index_test.go:47
-  foundincode: true
-  name: UPDATE_GOLDEN
-  type: ""
-  default_value: ""
-  description: ""
-  do_ignore: false
-- rawname: UPDATE_GOLDEN
-  path: services/search/pkg/bleve/index_test.go:227
-  foundincode: true
-  name: UPDATE_GOLDEN
-  type: ""
-  default_value: ""
-  description: ""
-  do_ignore: false
-- rawname: UPDATE_SEARCH_PARITY_MATRIX
-  path: services/search/pkg/parity/matrix_test.go:229
-  foundincode: true
-  name: UPDATE_SEARCH_PARITY_MATRIX
-  type: ""
-  default_value: ""
-  description: ""
-  do_ignore: false
-- rawname: USE_TESTCONTAINERS
-  path: ./services/search/pkg/opensearch/internal/test/suite.go:59
-  foundincode: false
-  name: USE_TESTCONTAINERS
-  type: ""
-  default_value: ""
-  description: ""
-  do_ignore: true
-- rawname: USE_TESTCONTAINERS
-  path: services/search/pkg/opensearch/internal/test/suite.go:59
-  foundincode: false
-  name: USE_TESTCONTAINERS
-  type: ""
-  default_value: ""
-  description: ""
-  do_ignore: true
-- rawname: USE_TESTCONTAINERS
-  path: services/search/internal/opensearchtest/suite.go:62
-  foundincode: true
-  name: USE_TESTCONTAINERS
-  type: ""
-  default_value: ""
-  description: ""
   do_ignore: false
 - rawname: _registryAddressEnv
   path: pkg/registry/registry.go:92
