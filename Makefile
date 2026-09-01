@@ -29,9 +29,9 @@ env-var-delta-table: go-mod-tidy
 
 .PHONY: git-checkdirexist
 git-checkdirexist:
-	@if [ ! -d "tmp" ]; then echo "Directory tmp does not exist. Please run `make git-clone` first.";exit 1;fi
-	@if [ ! -d "tmpdocs" ]; then echo "Directory tmpdocs does not exist. Please run `make git-clone` first.";exit 1;fi
-	@if [ -z "$$(ls -A tmp)" ]; then echo "Directory tmp is empty. Please run `make git-clone` first.";exit 1;fi
+	@if [ ! -d "tmp" ]; then echo 'Directory tmp does not exist. Please run "make git-clone" first.';exit 1;fi
+	@if [ ! -d "tmpdocs" ]; then echo 'Directory tmpdocs does not exist. Please run "make git-clone" first.';exit 1;fi
+	@if [ -z "$$(ls -A tmp)" ]; then echo 'Directory tmp is empty. Please run "make git-clone" first.';exit 1;fi
 
 .PHONY: git-clean
 git-clean:
@@ -43,7 +43,7 @@ git-clone: git-clean
 	@if [ -d "tmp" ]; then echo "Directory tmp already exists. Please remove it before cloning.";exit 1;fi
 	git clone -b "${OC_GIT_BRANCH}" https://github.com/opencloud-eu/opencloud.git tmp
 	@if [ -d "tmpdocs" ]; then echo "Directory tmpdocs already exists. Please remove it before cloning.";exit 1;fi
-	git clone -b "${DOC_GIT_BRANCH}" git@github.com:opencloud-eu/docs tmpdocs; cd tmpdocs && git checkout -b docs-update-$$(uuidgen -r) && cd ..
+	git clone -b "${DOC_GIT_BRANCH}" git@github.com:opencloud-eu/docs tmpdocs; cd tmpdocs && git checkout -b docs-update-$$(uuidgen | tr '[:upper:]' '[:lower:]') && cd ..
 
 .PHONY: clean
 clean: gitclean output-clean
