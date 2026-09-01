@@ -213,6 +213,16 @@ ACTIVITYLOG_STORE_DATABASE:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+ACTIVITYLOG_STORE_ENABLE_TLS:
+  name: OC_PERSISTENT_STORE_ENABLE_TLS;ACTIVITYLOG_STORE_ENABLE_TLS
+  defaultValue: "false"
+  type: bool
+  description: Enable TLS for the connection to the store. Only applies when store
+    type 'nats-js-kv' is configured.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 ACTIVITYLOG_STORE_NODES:
   name: OC_PERSISTENT_STORE_NODES;ACTIVITYLOG_STORE_NODES
   defaultValue: '[127.0.0.1:9233]'
@@ -231,6 +241,25 @@ ACTIVITYLOG_STORE_TABLE:
   type: string
   description: The database table the store should use.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+ACTIVITYLOG_STORE_TLS_INSECURE:
+  name: OC_INSECURE;OC_PERSISTENT_STORE_TLS_INSECURE;ACTIVITYLOG_STORE_TLS_INSECURE
+  defaultValue: "false"
+  type: bool
+  description: Whether to verify the server TLS certificates.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+ACTIVITYLOG_STORE_TLS_ROOT_CA_CERTIFICATE:
+  name: OC_PERSISTENT_STORE_TLS_ROOT_CA_CERTIFICATE;ACTIVITYLOG_STORE_TLS_ROOT_CA_CERTIFICATE
+  defaultValue: ""
+  type: string
+  description: The root CA certificate used to validate the server's TLS certificate.
+    If provided ACTIVITYLOG_STORE_TLS_INSECURE will be seen as false.
+  introductionVersion: 7.3.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -1684,7 +1713,7 @@ AUTH_BASIC_LDAP_BIND_PASSWORD:
   deprecationInfo: ""
 AUTH_BASIC_LDAP_CACERT:
   name: OC_LDAP_CACERT;AUTH_BASIC_LDAP_CACERT
-  defaultValue: /var/lib/opencloud/idm/ldap.crt
+  defaultValue: ""
   type: string
   description: Path/File name for the root CA certificate (in PEM format) used to
     validate TLS server certificates of the LDAP service. If not defined, the root
@@ -1809,9 +1838,19 @@ AUTH_BASIC_LDAP_LOGIN_ATTRIBUTES:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+AUTH_BASIC_LDAP_LOOKUP_CACHE_TTL:
+  name: OC_LDAP_LOOKUP_CACHE_TTL;USERS_LDAP_LOOKUP_CACHE_TTL
+  defaultValue: 10s
+  type: Duration
+  description: The time to live for the in-memory cache of LDAP lookups. This cache
+    is used to reduce the number of LDAP queries for user and group lookups.
+  introductionVersion: 7.5.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 AUTH_BASIC_LDAP_URI:
   name: OC_LDAP_URI;AUTH_BASIC_LDAP_URI
-  defaultValue: ldaps://localhost:9235
+  defaultValue: ldap://localhost:9236
   type: string
   description: URI of the LDAP Server to connect to. Supported URI schemes are 'ldaps://'
     and 'ldap://'
@@ -2960,6 +2999,25 @@ COLLABORATION_DEBUG_ZPAGES:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+COLLABORATION_FONT_ASSET_PATH:
+  name: COLLABORATION_FONT_ASSET_PATH
+  defaultValue: /var/lib/opencloud/collaboration/fonts
+  type: string
+  description: Serve fonts from a path on the filesystem instead of the builtin assets.
+    If not defined, the root directory derives from $OC_BASE_DATA_PATH/collaboration/fonts
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+COLLABORATION_FONT_PREVIEW_TEXT:
+  name: COLLABORATION_FONT_PREVIEW_TEXT
+  defaultValue: OpenCloud
+  type: string
+  description: The text that will be displayed in the font preview.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 COLLABORATION_GRPC_ADDR:
   name: COLLABORATION_GRPC_ADDR
   defaultValue: 127.0.0.1:9301
@@ -3082,6 +3140,16 @@ COLLABORATION_STORE_DATABASE:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+COLLABORATION_STORE_ENABLE_TLS:
+  name: OC_PERSISTENT_STORE_ENABLE_TLS;COLLABORATION_STORE_ENABLE_TLS
+  defaultValue: "false"
+  type: bool
+  description: Enable TLS for the connection to the store. Only applies when store
+    type 'nats-js-kv' is configured.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 COLLABORATION_STORE_NODES:
   name: OC_PERSISTENT_STORE_NODES;COLLABORATION_STORE_NODES
   defaultValue: '[127.0.0.1:9233]'
@@ -3100,6 +3168,25 @@ COLLABORATION_STORE_TABLE:
   type: string
   description: The database table the store should use.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+COLLABORATION_STORE_TLS_INSECURE:
+  name: OC_INSECURE;OC_PERSISTENT_STORE_TLS_INSECURE;COLLABORATION_STORE_TLS_INSECURE
+  defaultValue: "false"
+  type: bool
+  description: Whether to verify the server TLS certificates.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+COLLABORATION_STORE_TLS_ROOT_CA_CERTIFICATE:
+  name: OC_PERSISTENT_STORE_TLS_ROOT_CA_CERTIFICATE;COLLABORATION_STORE_TLS_ROOT_CA_CERTIFICATE
+  defaultValue: ""
+  type: string
+  description: The root CA certificate used to validate the server's TLS certificate.
+    If provided COLLABORATION_STORE_TLS_INSECURE will be seen as false.
+  introductionVersion: 7.3.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -3284,6 +3371,16 @@ EVENTHISTORY_EVENTS_CLUSTER:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+EVENTHISTORY_EVENTS_DISABLED:
+  name: EVENTHISTORY_EVENTS_DISABLED
+  defaultValue: "false"
+  type: bool
+  description: Disables listening for events. Set this to true if the service should
+    only handle GRPC requests.
+  introductionVersion: 7.5.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 EVENTHISTORY_EVENTS_ENABLE_TLS:
   name: OC_EVENTS_ENABLE_TLS;EVENTHISTORY_EVENTS_ENABLE_TLS
   defaultValue: "false"
@@ -3329,6 +3426,16 @@ EVENTHISTORY_GRPC_ADDR:
   type: string
   description: The bind address of the GRPC service.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+EVENTHISTORY_GRPC_DISABLED:
+  name: EVENTHISTORY_GRPC_DISABLED
+  defaultValue: "false"
+  type: bool
+  description: Disables the GRPC service. Set this to true if the service should only
+    handle events.
+  introductionVersion: 7.5.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -3408,6 +3515,16 @@ EVENTHISTORY_STORE_DATABASE:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+EVENTHISTORY_STORE_ENABLE_TLS:
+  name: OC_PERSISTENT_STORE_ENABLE_TLS;EVENTHISTORY_STORE_ENABLE_TLS
+  defaultValue: "false"
+  type: bool
+  description: Enable TLS for the connection to the store. Only applies when store
+    type 'nats-js-kv' is configured.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 EVENTHISTORY_STORE_NODES:
   name: OC_PERSISTENT_STORE_NODES;EVENTHISTORY_STORE_NODES
   defaultValue: '[127.0.0.1:9233]'
@@ -3429,9 +3546,28 @@ EVENTHISTORY_STORE_TABLE:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+EVENTHISTORY_STORE_TLS_INSECURE:
+  name: OC_INSECURE;OC_PERSISTENT_STORE_TLS_INSECURE;EVENTHISTORY_STORE_TLS_INSECURE
+  defaultValue: "false"
+  type: bool
+  description: Whether to verify the server TLS certificates.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+EVENTHISTORY_STORE_TLS_ROOT_CA_CERTIFICATE:
+  name: OC_PERSISTENT_STORE_TLS_ROOT_CA_CERTIFICATE;EVENTHISTORY_STORE_TLS_ROOT_CA_CERTIFICATE
+  defaultValue: ""
+  type: string
+  description: The root CA certificate used to validate the server's TLS certificate.
+    If provided EVENTHISTORY_STORE_TLS_INSECURE will be seen as false.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 EVENTHISTORY_STORE_TTL:
   name: OC_PERSISTENT_STORE_TTL;EVENTHISTORY_STORE_TTL
-  defaultValue: 336h0m0s
+  defaultValue: 0s
   type: Duration
   description: Time to live for events in the store. Defaults to '336h' (2 weeks).
     See the Environment Variable Types description for more details.
@@ -3524,12 +3660,12 @@ FRONTEND_ARCHIVER_MAX_SIZE:
   removalVersion: ""
   deprecationInfo: ""
 FRONTEND_AUTO_ACCEPT_SHARES:
-  name: FRONTEND_AUTO_ACCEPT_SHARES
+  name: FRONTEND_AUTO_ACCEPT_SHARES;SHARING_AUTO_ACCEPT_SHARES
   defaultValue: "true"
   type: bool
   description: Defines if shares should be auto accepted by default. Users can change
     this setting individually in their profile.
-  introductionVersion: 1.0.0
+  introductionVersion: '%%NEXT%%'
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -3777,7 +3913,7 @@ FRONTEND_EVENTS_AUTH_USERNAME:
   deprecationInfo: ""
 FRONTEND_EVENTS_CLUSTER:
   name: OC_EVENTS_CLUSTER;FRONTEND_EVENTS_CLUSTER
-  defaultValue: opencloud-cluster
+  defaultValue: ""
   type: string
   description: The clusterID of the event system. The event system is the message
     queuing service. It is used as message broker for the microservice architecture.
@@ -3798,7 +3934,7 @@ FRONTEND_EVENTS_ENABLE_TLS:
   deprecationInfo: ""
 FRONTEND_EVENTS_ENDPOINT:
   name: OC_EVENTS_ENDPOINT;FRONTEND_EVENTS_ENDPOINT
-  defaultValue: 127.0.0.1:9233
+  defaultValue: ""
   type: string
   description: The address of the event system. The event system is the message queuing
     service. It is used as message broker for the microservice architecture.
@@ -3939,13 +4075,13 @@ FRONTEND_MACHINE_AUTH_API_KEY:
   removalVersion: ""
   deprecationInfo: ""
 FRONTEND_MAX_CONCURRENCY:
-  name: OC_MAX_CONCURRENCY;FRONTEND_MAX_CONCURRENCY
+  name: OC_MAX_CONCURRENCY;FRONTEND_MAX_CONCURRENCY;SHARING_MAX_CONCURRENCY
   defaultValue: "1"
   type: int
   description: Maximum number of concurrent go-routines. Higher values can potentially
     get work done faster but will also cause more load on the system. Values of 0
     or below will be ignored and the default value will be used.
-  introductionVersion: 1.0.0
+  introductionVersion: '%%NEXT%%'
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -4075,6 +4211,15 @@ FRONTEND_OCS_STAT_CACHE_DISABLE_PERSISTENCE:
   deprecationVersion: 1.0.0
   removalVersion: '%%NEXT_PRODUCTION_VERSION%%'
   deprecationInfo: FRONTEND_OCS_STAT_CACHE_DISABLE_PERSISTENCE, the OCS API is deprecated
+FRONTEND_OCS_STAT_CACHE_ENABLE_TLS:
+  name: OC_CACHE_ENABLE_TLS;STORAGE_USERS_ID_CACHE_ENABLE_TLS
+  defaultValue: "false"
+  type: bool
+  description: Enable TLS for the connection to file metadata cache.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 FRONTEND_OCS_STAT_CACHE_STORE:
   name: OC_CACHE_STORE;FRONTEND_OCS_STAT_CACHE_STORE
   defaultValue: memory
@@ -4106,6 +4251,25 @@ FRONTEND_OCS_STAT_CACHE_TABLE:
   deprecationVersion: 1.0.0
   removalVersion: '%%NEXT_PRODUCTION_VERSION%%'
   deprecationInfo: The OCS API is deprecated
+FRONTEND_OCS_STAT_CACHE_TLS_INSECURE:
+  name: OC_INSECURE;OC_CACHE_TLS_INSECURE;STORAGE_USERS_ID_CACHE_TLS_INSECURE
+  defaultValue: "false"
+  type: bool
+  description: Whether to verify the server TLS certificates.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+FRONTEND_OCS_STAT_CACHE_TLS_ROOT_CA_CERTIFICATE:
+  name: OC_CACHE_TLS_ROOT_CA_CERTIFICATE;STORAGE_USERS_ID_CACHE_TLS_ROOT_CA_CERTIFICATE
+  defaultValue: ""
+  type: string
+  description: The root CA certificate used to validate the server's TLS certificate.
+    If provided STORAGE_USERS_ID_CACHE_TLS_INSECURE will be seen as false.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 FRONTEND_OCS_STAT_CACHE_TTL:
   name: OC_CACHE_TTL;FRONTEND_OCS_STAT_CACHE_TTL
   defaultValue: 5m0s
@@ -4536,6 +4700,15 @@ GATEWAY_CREATE_HOME_CACHE_DISABLE_PERSISTENCE:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+GATEWAY_CREATE_HOME_CACHE_ENABLE_TLS:
+  name: OC_CACHE_ENABLE_TLS;GATEWAY_CREATE_HOME_CACHE_ENABLE_TLS
+  defaultValue: "false"
+  type: bool
+  description: Enable TLS for the connection to file metadata cache.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 GATEWAY_CREATE_HOME_CACHE_STORE:
   name: OC_CACHE_STORE;GATEWAY_CREATE_HOME_CACHE_STORE
   defaultValue: memory
@@ -4555,6 +4728,25 @@ GATEWAY_CREATE_HOME_CACHE_STORE_NODES:
     is dependent on the library of the configured store. See the Environment Variable
     Types description for more details.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+GATEWAY_CREATE_HOME_CACHE_TLS_INSECURE:
+  name: OC_INSECURE;OC_CACHE_TLS_INSECURE;GATEWAY_CREATE_HOME_CACHE_TLS_INSECURE
+  defaultValue: "false"
+  type: bool
+  description: Whether to verify the server TLS certificates.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+GATEWAY_CREATE_HOME_CACHE_TLS_ROOT_CA_CERTIFICATE:
+  name: OC_CACHE_TLS_ROOT_CA_CERTIFICATE;GATEWAY_CREATE_HOME_CACHE_TLS_ROOT_CA_CERTIFICATE
+  defaultValue: ""
+  type: string
+  description: The root CA certificate used to validate the server's TLS certificate.
+    If provided GATEWAY_CREATE_HOME_CACHE_TLS_INSECURE will be seen as false.
+  introductionVersion: 7.3.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -4749,6 +4941,15 @@ GATEWAY_PROVIDER_CACHE_DISABLE_PERSISTENCE:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+GATEWAY_PROVIDER_CACHE_ENABLE_TLS:
+  name: OC_CACHE_ENABLE_TLS;GATEWAY_PROVIDER_CACHE_ENABLE_TLS
+  defaultValue: "false"
+  type: bool
+  description: Enable TLS for the connection to file metadata cache.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 GATEWAY_PROVIDER_CACHE_STORE:
   name: OC_CACHE_STORE;GATEWAY_PROVIDER_CACHE_STORE
   defaultValue: noop
@@ -4768,6 +4969,25 @@ GATEWAY_PROVIDER_CACHE_STORE_NODES:
     is dependent on the library of the configured store. See the Environment Variable
     Types description for more details.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+GATEWAY_PROVIDER_CACHE_TLS_INSECURE:
+  name: OC_INSECURE;OC_CACHE_TLS_INSECURE;GATEWAY_PROVIDER_CACHE_TLS_INSECURE
+  defaultValue: "false"
+  type: bool
+  description: Whether to verify the server TLS certificates.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+GATEWAY_PROVIDER_CACHE_TLS_ROOT_CA_CERTIFICATE:
+  name: OC_CACHE_TLS_ROOT_CA_CERTIFICATE;GATEWAY_PROVIDER_CACHE_TLS_ROOT_CA_CERTIFICATE
+  defaultValue: ""
+  type: string
+  description: The root CA certificate used to validate the server's TLS certificate.
+    If provided GATEWAY_PROVIDER_CACHE_TLS_INSECURE will be seen as false.
+  introductionVersion: 7.3.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -5009,6 +5229,15 @@ GRAPH_CACHE_DISABLE_PERSISTENCE:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+GRAPH_CACHE_ENABLE_TLS:
+  name: OC_CACHE_ENABLE_TLS;GRAPH_CACHE_ENABLE_TLS
+  defaultValue: "false"
+  type: bool
+  description: Enable TLS for the connection to file metadata cache.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 GRAPH_CACHE_STORE:
   name: OC_CACHE_STORE;GRAPH_CACHE_STORE
   defaultValue: memory
@@ -5049,9 +5278,28 @@ GRAPH_CACHE_STORE_TABLE:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+GRAPH_CACHE_TLS_INSECURE:
+  name: OC_INSECURE;OC_CACHE_TLS_INSECURE;GRAPH_CACHE_TLS_INSECURE
+  defaultValue: "false"
+  type: bool
+  description: Whether to verify the server TLS certificates.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+GRAPH_CACHE_TLS_ROOT_CA_CERTIFICATE:
+  name: OC_CACHE_TLS_ROOT_CA_CERTIFICATE;GRAPH_CACHE_TLS_ROOT_CA_CERTIFICATE
+  defaultValue: ""
+  type: string
+  description: The root CA certificate used to validate the server's TLS certificate.
+    If provided GRAPH_CACHE_TLS_INSECURE will be seen as false.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 GRAPH_CACHE_TTL:
   name: OC_CACHE_TTL;GRAPH_CACHE_TTL
-  defaultValue: 336h0m0s
+  defaultValue: 24h0m0s
   type: Duration
   description: Time to live for cache records in the graph. Defaults to '336h' (2
     weeks). See the Environment Variable Types description for more details.
@@ -5385,7 +5633,7 @@ GRAPH_LDAP_BIND_PASSWORD:
   deprecationInfo: ""
 GRAPH_LDAP_CACERT:
   name: OC_LDAP_CACERT;GRAPH_LDAP_CACERT
-  defaultValue: /var/lib/opencloud/idm/ldap.crt
+  defaultValue: ""
   type: string
   description: Path/File name for the root CA certificate (in PEM format) used to
     validate TLS server certificates of the LDAP service. If not defined, the root
@@ -5620,7 +5868,7 @@ GRAPH_LDAP_SERVER_WRITE_ENABLED:
   deprecationInfo: ""
 GRAPH_LDAP_URI:
   name: OC_LDAP_URI;GRAPH_LDAP_URI
-  defaultValue: ldaps://localhost:9235
+  defaultValue: ldap://localhost:9236
   type: string
   description: URI of the LDAP Server to connect to. Supported URI schemes are 'ldaps://'
     and 'ldap://'
@@ -5758,6 +6006,16 @@ GRAPH_LOG_PRETTY:
   type: bool
   description: Activates pretty log output.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+GRAPH_MACHINE_AUTH_API_KEY:
+  name: OC_MACHINE_AUTH_API_KEY;GRAPH_MACHINE_AUTH_API_KEY
+  defaultValue: ""
+  type: string
+  description: Machine auth API key used to validate internal requests necessary for
+    the access to resources from other services.
+  introductionVersion: 7.5.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -5899,6 +6157,16 @@ GRAPH_STORE_DATABASE:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+GRAPH_STORE_ENABLE_TLS:
+  name: OC_PERSISTENT_STORE_ENABLE_TLS;GRAPH_STORE_ENABLE_TLS
+  defaultValue: "false"
+  type: bool
+  description: Enable TLS for the connection to the store. Only applies when store
+    type 'nats-js-kv' is configured.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 GRAPH_STORE_NODES:
   name: OC_PERSISTENT_STORE_NODES;GRAPH_STORE_NODES
   defaultValue: '[127.0.0.1:9233]'
@@ -5908,6 +6176,25 @@ GRAPH_STORE_NODES:
     is dependent on the library of the configured store. See the Environment Variable
     Types description for more details.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+GRAPH_STORE_TLS_INSECURE:
+  name: OC_INSECURE;OC_PERSISTENT_STORE_TLS_INSECURE;GRAPH_STORE_TLS_INSECURE
+  defaultValue: "false"
+  type: bool
+  description: Whether to verify the server TLS certificates.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+GRAPH_STORE_TLS_ROOT_CA_CERTIFICATE:
+  name: OC_PERSISTENT_STORE_TLS_ROOT_CA_CERTIFICATE;GRAPH_STORE_TLS_ROOT_CA_CERTIFICATE
+  defaultValue: ""
+  type: string
+  description: The root CA certificate used to validate the server's TLS certificate.
+    If provided GRAPH_STORE_TLS_INSECURE will be seen as false.
+  introductionVersion: 7.3.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -6120,7 +6407,7 @@ GROUPS_LDAP_BIND_PASSWORD:
   deprecationInfo: ""
 GROUPS_LDAP_CACERT:
   name: OC_LDAP_CACERT;GROUPS_LDAP_CACERT
-  defaultValue: /var/lib/opencloud/idm/ldap.crt
+  defaultValue: ""
   type: string
   description: Path/File name for the root CA certificate (in PEM format) used to
     validate TLS server certificates of the LDAP service. If not defined, the root
@@ -6247,9 +6534,19 @@ GROUPS_LDAP_INSECURE:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+GROUPS_LDAP_LOOKUP_CACHE_TTL:
+  name: OC_LDAP_LOOKUP_CACHE_TTL;GROUPS_LDAP_LOOKUP_CACHE_TTL
+  defaultValue: 10s
+  type: Duration
+  description: The time to live for the in-memory cache of LDAP lookups. This cache
+    is used to reduce the number of LDAP queries for user and group lookups.
+  introductionVersion: 7.5.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 GROUPS_LDAP_URI:
   name: OC_LDAP_URI;GROUPS_LDAP_URI
-  defaultValue: ldaps://localhost:9235
+  defaultValue: ldap://localhost:9236
   type: string
   description: URI of the LDAP Server to connect to. Supported URI schemes are 'ldaps://'
     and 'ldap://'
@@ -6610,7 +6907,7 @@ IDM_IDPSVC_PASSWORD:
   deprecationInfo: ""
 IDM_LDAPS_ADDR:
   name: IDM_LDAPS_ADDR
-  defaultValue: 127.0.0.1:9235
+  defaultValue: ""
   type: string
   description: Listen address for the LDAPS listener (ip-addr:port).
   introductionVersion: 1.0.0
@@ -6619,7 +6916,7 @@ IDM_LDAPS_ADDR:
   deprecationInfo: ""
 IDM_LDAPS_CERT:
   name: IDM_LDAPS_CERT
-  defaultValue: /var/lib/opencloud/idm/ldap.crt
+  defaultValue: ""
   type: string
   description: File name of the TLS server certificate for the LDAPS listener. If
     not defined, the root directory derives from $OC_BASE_DATA_PATH/idm.
@@ -6629,7 +6926,7 @@ IDM_LDAPS_CERT:
   deprecationInfo: ""
 IDM_LDAPS_KEY:
   name: IDM_LDAPS_KEY
-  defaultValue: /var/lib/opencloud/idm/ldap.key
+  defaultValue: ""
   type: string
   description: File name for the TLS certificate key for the server certificate. If
     not defined, the root directory derives from $OC_BASE_DATA_PATH/idm.
@@ -6996,7 +7293,7 @@ IDP_LDAP_SCOPE:
   deprecationInfo: ""
 IDP_LDAP_TLS_CACERT:
   name: OC_LDAP_CACERT;IDP_LDAP_TLS_CACERT
-  defaultValue: /var/lib/opencloud/idm/ldap.crt
+  defaultValue: ""
   type: string
   description: Path/File name for the root CA certificate (in PEM format) used to
     validate TLS server certificates of the LDAP service. If not defined, the root
@@ -7007,7 +7304,7 @@ IDP_LDAP_TLS_CACERT:
   deprecationInfo: ""
 IDP_LDAP_URI:
   name: OC_LDAP_URI;IDP_LDAP_URI
-  defaultValue: ldaps://localhost:9235
+  defaultValue: ldap://localhost:9236
   type: string
   description: Url of the LDAP service to use as IDP.
   introductionVersion: 1.0.0
@@ -7609,6 +7906,44 @@ NATS_LOG_PRETTY:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+NATS_MONITORING_ENABLED:
+  name: NATS_MONITORING_ENABLED
+  defaultValue: "false"
+  type: bool
+  description: Whether to enable the NATS server monitoring HTTP endpoint
+  introductionVersion: 7.5.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+NATS_MONITORING_ENABLE_TLS:
+  name: NATS_MONITORING_ENABLE_TLS
+  defaultValue: "false"
+  type: bool
+  description: Enable TLS for NATS server monitoring HTTP endpoint. Note that it will
+    use the same TLS configuration as the streaming API.
+  introductionVersion: 7.5.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+NATS_MONITORING_HTTP_HOST:
+  name: NATS_MONITORING_HTTP_HOST
+  defaultValue: 127.0.0.1
+  type: string
+  description: The address the NATS server monitoring HTTP endpoint should be bound
+    to
+  introductionVersion: 7.5.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+NATS_MONITORING_HTTP_PORT:
+  name: NATS_MONITORING_HTTP_PORT
+  defaultValue: "8222"
+  type: int
+  description: The port the NATS server monitoring HTTP endpoint should be bound to
+  introductionVersion: 7.5.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 NATS_NATS_CLUSTER_ID:
   name: NATS_NATS_CLUSTER_ID
   defaultValue: opencloud-cluster
@@ -8001,6 +8336,16 @@ NOTIFICATIONS_STORE_DATABASE:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+NOTIFICATIONS_STORE_ENABLE_TLS:
+  name: OC_PERSISTENT_STORE_ENABLE_TLS;NOTIFICATIONS_STORE_ENABLE_TLS
+  defaultValue: "false"
+  type: bool
+  description: Enable TLS for the connection to the store. Only applies when store
+    type 'nats-js-kv' is configured.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 NOTIFICATIONS_STORE_NODES:
   name: OC_PERSISTENT_STORE_NODES;NOTIFICATIONS_STORE_NODES
   defaultValue: '[127.0.0.1:9233]'
@@ -8019,6 +8364,25 @@ NOTIFICATIONS_STORE_TABLE:
   type: string
   description: The database table the store should use.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+NOTIFICATIONS_STORE_TLS_INSECURE:
+  name: OC_INSECURE;OC_PERSISTENT_STORE_TLS_INSECURE;NOTIFICATIONS_STORE_TLS_INSECURE
+  defaultValue: "false"
+  type: bool
+  description: Whether to verify the server TLS certificates.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+NOTIFICATIONS_STORE_TLS_ROOT_CA_CERTIFICATE:
+  name: OC_PERSISTENT_STORE_TLS_ROOT_CA_CERTIFICATE;NOTIFICATIONS_STORE_TLS_ROOT_CA_CERTIFICATE
+  defaultValue: ""
+  type: string
+  description: The root CA certificate used to validate the server's TLS certificate.
+    If provided NOTIFICATIONS_STORE_TLS_INSECURE will be seen as false.
+  introductionVersion: 7.3.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -9134,6 +9498,15 @@ OCS_PRESIGNEDURL_SIGNING_KEYS_STORE_AUTH_USERNAME:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+OCS_PRESIGNEDURL_SIGNING_KEYS_STORE_ENABLE_TLS:
+  name: OC_CACHE_ENABLE_TLS;OCS_PRESIGNEDURL_SIGNING_KEYS_STORE_ENABLE_TLS
+  defaultValue: "false"
+  type: bool
+  description: Enable TLS for the connection to file metadata cache.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 OCS_PRESIGNEDURL_SIGNING_KEYS_STORE_NODES:
   name: OC_CACHE_STORE_NODES;OCS_PRESIGNEDURL_SIGNING_KEYS_STORE_NODES
   defaultValue: '[127.0.0.1:9233]'
@@ -9145,9 +9518,28 @@ OCS_PRESIGNEDURL_SIGNING_KEYS_STORE_NODES:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+OCS_PRESIGNEDURL_SIGNING_KEYS_STORE_TLS_INSECURE:
+  name: OC_INSECURE;OC_CACHE_TLS_INSECURE;OCS_PRESIGNEDURL_SIGNING_KEYS_STORE_TLS_INSECURE
+  defaultValue: "false"
+  type: bool
+  description: Whether to verify the server TLS certificates.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+OCS_PRESIGNEDURL_SIGNING_KEYS_STORE_TLS_ROOT_CA_CERTIFICATE:
+  name: OC_CACHE_TLS_ROOT_CA_CERTIFICATE;OCS_PRESIGNEDURL_SIGNING_KEYS_STORE_TLS_ROOT_CA_CERTIFICATE
+  defaultValue: ""
+  type: string
+  description: The root CA certificate used to validate the server's TLS certificate.
+    If provided OCS_PRESIGNEDURL_SIGNING_KEYS_STORE_TLS_INSECURE will be seen as false.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 OCS_PRESIGNEDURL_SIGNING_KEYS_STORE_TTL:
   name: OC_CACHE_TTL;OCS_PRESIGNEDURL_SIGNING_KEYS_STORE_TTL
-  defaultValue: 12h0m0s
+  defaultValue: 24h0m0s
   type: Duration
   description: Default time to live for signing keys. See the Environment Variable
     Types description for more details.
@@ -9224,21 +9616,21 @@ OC_ASYNC_UPLOADS:
   removalVersion: ""
   deprecationInfo: ""
 OC_CACHE_AUTH_PASSWORD:
-  name: OC_CACHE_AUTH_PASSWORD;OCS_PRESIGNEDURL_SIGNING_KEYS_STORE_AUTH_PASSWORD
+  name: OC_CACHE_AUTH_PASSWORD;STORAGE_USERS_ID_CACHE_AUTH_PASSWORD
   defaultValue: ""
   type: string
-  description: The password to authenticate with the store. Only applies when store
-    type 'nats-js-kv' is configured.
+  description: The password to authenticate with the cache store. Only applies when
+    store type 'nats-js-kv' is configured.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_CACHE_AUTH_USERNAME:
-  name: OC_CACHE_AUTH_USERNAME;OCS_PRESIGNEDURL_SIGNING_KEYS_STORE_AUTH_USERNAME
+  name: OC_CACHE_AUTH_USERNAME;STORAGE_USERS_ID_CACHE_AUTH_USERNAME
   defaultValue: ""
   type: string
-  description: The username to authenticate with the store. Only applies when store
-    type 'nats-js-kv' is configured.
+  description: The username to authenticate with the cache store. Only applies when
+    store type 'nats-js-kv' is configured.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
@@ -9262,39 +9654,70 @@ OC_CACHE_DISABLE_PERSISTENCE:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+OC_CACHE_ENABLE_TLS:
+  name: OC_CACHE_ENABLE_TLS;STORAGE_USERS_ID_CACHE_ENABLE_TLS
+  defaultValue: "false"
+  type: bool
+  description: Enable TLS for the connection to file metadata cache.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 OC_CACHE_STORE:
-  name: OC_CACHE_STORE;OCS_PRESIGNEDURL_SIGNING_KEYS_STORE
+  name: OC_CACHE_STORE;STORAGE_USERS_ID_CACHE_STORE
   defaultValue: nats-js-kv
   type: string
-  description: 'The type of the signing key store. Supported values are: ''redis-sentinel''
-    and ''nats-js-kv''. See the text description for details.'
+  description: 'The type of the cache store. Supported values are: ''memory'', ''redis-sentinel'',
+    ''nats-js-kv'', ''noop''. See the text description for details.'
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_CACHE_STORE_NODES:
-  name: OC_CACHE_STORE_NODES;OCS_PRESIGNEDURL_SIGNING_KEYS_STORE_NODES
+  name: OC_CACHE_STORE_NODES;STORAGE_USERS_ID_CACHE_STORE_NODES
   defaultValue: '[127.0.0.1:9233]'
   type: '[]string'
-  description: A list of nodes to access the configured store. Note that the behaviour
-    how nodes are used is dependent on the library of the configured store. See the
-    Environment Variable Types description for more details.
-  introductionVersion: 1.0.0
-  deprecationVersion: ""
-  removalVersion: ""
-  deprecationInfo: ""
-OC_CACHE_TTL:
-  name: OC_CACHE_TTL;OCS_PRESIGNEDURL_SIGNING_KEYS_STORE_TTL
-  defaultValue: 12h0m0s
-  type: Duration
-  description: Default time to live for signing keys. See the Environment Variable
+  description: A list of nodes to access the configured store. This has no effect
+    when 'memory' store is configured. Note that the behaviour how nodes are used
+    is dependent on the library of the configured store. See the Environment Variable
     Types description for more details.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+OC_CACHE_TLS_INSECURE:
+  name: OC_INSECURE;OC_CACHE_TLS_INSECURE;STORAGE_USERS_ID_CACHE_TLS_INSECURE
+  defaultValue: "false"
+  type: bool
+  description: Whether to verify the server TLS certificates.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+OC_CACHE_TLS_ROOT_CA_CERTIFICATE:
+  name: OC_CACHE_TLS_ROOT_CA_CERTIFICATE;STORAGE_USERS_ID_CACHE_TLS_ROOT_CA_CERTIFICATE
+  defaultValue: ""
+  type: string
+  description: The root CA certificate used to validate the server's TLS certificate.
+    If provided STORAGE_USERS_ID_CACHE_TLS_INSECURE will be seen as false.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+OC_CACHE_TTL:
+  name: OC_CACHE_TTL;STORAGE_USERS_ID_CACHE_TTL
+  defaultValue: 0s
+  type: Duration
+  description: Default time to live for user info in the user info cache. Only applied
+    when access tokens have no expiration. Defaults to 300s which is derived from
+    the underlaying package though not explicitly set as default. See the Environment
+    Variable Types description for more details.
+  introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 OC_CORS_ALLOW_CREDENTIALS:
-  name: OC_CORS_ALLOW_CREDENTIALS;AUTH_APP_CORS_ALLOW_CREDENTIALS
+  name: OC_CORS_ALLOW_CREDENTIALS;USERLOG_CORS_ALLOW_CREDENTIALS
   defaultValue: "true"
   type: bool
   description: 'Allow credentials for CORS.See following chapter for more details:
@@ -9304,7 +9727,7 @@ OC_CORS_ALLOW_CREDENTIALS:
   removalVersion: ""
   deprecationInfo: ""
 OC_CORS_ALLOW_HEADERS:
-  name: OC_CORS_ALLOW_HEADERS;AUTH_APP_CORS_ALLOW_HEADERS
+  name: OC_CORS_ALLOW_HEADERS;USERLOG_CORS_ALLOW_HEADERS
   defaultValue: '[Authorization Origin Content-Type Accept X-Requested-With X-Request-Id
     Ocs-Apirequest]'
   type: '[]string'
@@ -9316,8 +9739,8 @@ OC_CORS_ALLOW_HEADERS:
   removalVersion: ""
   deprecationInfo: ""
 OC_CORS_ALLOW_METHODS:
-  name: OC_CORS_ALLOW_METHODS;AUTH_APP_CORS_ALLOW_METHODS
-  defaultValue: '[GET POST DELETE]'
+  name: OC_CORS_ALLOW_METHODS;USERLOG_CORS_ALLOW_METHODS
+  defaultValue: '[GET]'
   type: '[]string'
   description: 'A list of allowed CORS methods. See following chapter for more details:
     *Access-Control-Request-Method* at https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Request-Method.
@@ -9327,7 +9750,7 @@ OC_CORS_ALLOW_METHODS:
   removalVersion: ""
   deprecationInfo: ""
 OC_CORS_ALLOW_ORIGINS:
-  name: OC_CORS_ALLOW_ORIGINS;AUTH_APP_CORS_ALLOW_ORIGINS
+  name: OC_CORS_ALLOW_ORIGINS;USERLOG_CORS_ALLOW_ORIGINS
   defaultValue: '[*]'
   type: '[]string'
   description: 'A list of allowed CORS origins. See following chapter for more details:
@@ -9340,8 +9763,8 @@ OC_CORS_ALLOW_ORIGINS:
 OC_CORS_EXPOSE_HEADERS:
   name: OC_CORS_EXPOSE_HEADERS;STORAGE_USERS_CORS_EXPOSE_HEADERS
   defaultValue: '[Upload-Offset Location Upload-Length Tus-Version Tus-Resumable Tus-Max-Size
-    Tus-Extension Upload-Metadata Upload-Defer-Length Upload-Concat Upload-Incomplete
-    Upload-Draft-Interop-Version]'
+    Tus-Extension Upload-Metadata Upload-Defer-Length Upload-Concat Upload-Complete
+    Upload-Incomplete Upload-Draft-Interop-Version]'
   type: '[]string'
   description: 'A list of exposed CORS headers. See following chapter for more details:
     *Access-Control-Expose-Headers* at https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers.
@@ -9441,16 +9864,16 @@ OC_EMAIL_TEMPLATE_PATH:
   removalVersion: ""
   deprecationInfo: ""
 OC_ENABLE_OCM:
-  name: OC_ENABLE_OCM;FRONTEND_OCS_INCLUDE_OCM_SHAREES
+  name: OC_ENABLE_OCM;GRAPH_INCLUDE_OCM_SHAREES
   defaultValue: "false"
   type: bool
-  description: Include OCM sharees when listing sharees.
+  description: Include OCM sharees when listing users.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_EVENTS_AUTH_PASSWORD:
-  name: OC_EVENTS_AUTH_PASSWORD;EVENTHISTORY_EVENTS_AUTH_PASSWORD
+  name: OC_EVENTS_AUTH_PASSWORD;CLIENTLOG_EVENTS_AUTH_PASSWORD
   defaultValue: ""
   type: string
   description: The password to authenticate with the events broker. The events broker
@@ -9460,7 +9883,7 @@ OC_EVENTS_AUTH_PASSWORD:
   removalVersion: ""
   deprecationInfo: ""
 OC_EVENTS_AUTH_USERNAME:
-  name: OC_EVENTS_AUTH_USERNAME;EVENTHISTORY_EVENTS_AUTH_USERNAME
+  name: OC_EVENTS_AUTH_USERNAME;CLIENTLOG_EVENTS_AUTH_USERNAME
   defaultValue: ""
   type: string
   description: The username to authenticate with the events broker. The events broker
@@ -9470,8 +9893,8 @@ OC_EVENTS_AUTH_USERNAME:
   removalVersion: ""
   deprecationInfo: ""
 OC_EVENTS_CLUSTER:
-  name: OC_EVENTS_CLUSTER;EVENTHISTORY_EVENTS_CLUSTER
-  defaultValue: opencloud-cluster
+  name: OC_EVENTS_CLUSTER;CLIENTLOG_EVENTS_CLUSTER
+  defaultValue: ""
   type: string
   description: The clusterID of the event system. The event system is the message
     queuing service. It is used as message broker for the microservice architecture.
@@ -9481,7 +9904,7 @@ OC_EVENTS_CLUSTER:
   removalVersion: ""
   deprecationInfo: ""
 OC_EVENTS_ENABLE_TLS:
-  name: OC_EVENTS_ENABLE_TLS;EVENTHISTORY_EVENTS_ENABLE_TLS
+  name: OC_EVENTS_ENABLE_TLS;CLIENTLOG_EVENTS_ENABLE_TLS
   defaultValue: "false"
   type: bool
   description: Enable TLS for the connection to the events broker. The events broker
@@ -9491,8 +9914,8 @@ OC_EVENTS_ENABLE_TLS:
   removalVersion: ""
   deprecationInfo: ""
 OC_EVENTS_ENDPOINT:
-  name: OC_EVENTS_ENDPOINT;EVENTHISTORY_EVENTS_ENDPOINT
-  defaultValue: 127.0.0.1:9233
+  name: OC_EVENTS_ENDPOINT;CLIENTLOG_EVENTS_ENDPOINT
+  defaultValue: ""
   type: string
   description: The address of the event system. The event system is the message queuing
     service. It is used as message broker for the microservice architecture.
@@ -9501,7 +9924,7 @@ OC_EVENTS_ENDPOINT:
   removalVersion: ""
   deprecationInfo: ""
 OC_EVENTS_TLS_INSECURE:
-  name: OC_INSECURE;OC_EVENTS_TLS_INSECURE;EVENTHISTORY_EVENTS_TLS_INSECURE
+  name: OC_INSECURE;OC_EVENTS_TLS_INSECURE;CLIENTLOG_EVENTS_TLS_INSECURE
   defaultValue: "false"
   type: bool
   description: Whether to verify the server TLS certificates.
@@ -9510,11 +9933,11 @@ OC_EVENTS_TLS_INSECURE:
   removalVersion: ""
   deprecationInfo: ""
 OC_EVENTS_TLS_ROOT_CA_CERTIFICATE:
-  name: OC_EVENTS_TLS_ROOT_CA_CERTIFICATE;EVENTHISTORY_EVENTS_TLS_ROOT_CA_CERTIFICATE
+  name: OC_EVENTS_TLS_ROOT_CA_CERTIFICATE;CLIENTLOG_EVENTS_TLS_ROOT_CA_CERTIFICATE
   defaultValue: ""
   type: string
   description: The root CA certificate used to validate the server's TLS certificate.
-    Will be seen as empty if NOTIFICATIONS_EVENTS_TLS_INSECURE is provided.
+    If provided NOTIFICATIONS_EVENTS_TLS_INSECURE will be seen as false.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
@@ -9552,7 +9975,7 @@ OC_GRPC_CLIENT_TLS_MODE:
   removalVersion: ""
   deprecationInfo: ""
 OC_GRPC_PROTOCOL:
-  name: OC_GRPC_PROTOCOL;AUTH_SERVICE_GRPC_PROTOCOL
+  name: OC_GRPC_PROTOCOL;COLLABORATION_GRPC_PROTOCOL
   defaultValue: ""
   type: string
   description: The transport protocol of the GRPC service.
@@ -9592,16 +10015,16 @@ OC_HTTP_TLS_KEY:
   removalVersion: ""
   deprecationInfo: ""
 OC_INSECURE:
-  name: OC_INSECURE;OC_EVENTS_TLS_INSECURE;EVENTHISTORY_EVENTS_TLS_INSECURE
+  name: OC_INSECURE;OC_PERSISTENT_STORE_TLS_INSECURE;COLLABORATION_STORE_TLS_INSECURE
   defaultValue: "false"
   type: bool
   description: Whether to verify the server TLS certificates.
-  introductionVersion: 1.0.0
+  introductionVersion: 7.3.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_JWT_SECRET:
-  name: OC_JWT_SECRET;CLIENTLOG_JWT_SECRET
+  name: OC_JWT_SECRET;COLLABORATION_JWT_SECRET
   defaultValue: ""
   type: string
   description: The secret to mint and validate jwt tokens.
@@ -9610,7 +10033,7 @@ OC_JWT_SECRET:
   removalVersion: ""
   deprecationInfo: ""
 OC_KEYCLOAK_BASE_PATH:
-  name: OC_KEYCLOAK_BASE_PATH;INVITATIONS_KEYCLOAK_BASE_PATH
+  name: OC_KEYCLOAK_BASE_PATH;GRAPH_KEYCLOAK_BASE_PATH
   defaultValue: ""
   type: string
   description: The URL to access keycloak.
@@ -9619,16 +10042,16 @@ OC_KEYCLOAK_BASE_PATH:
   removalVersion: ""
   deprecationInfo: ""
 OC_KEYCLOAK_CLIENT_ID:
-  name: OC_KEYCLOAK_CLIENT_ID;INVITATIONS_KEYCLOAK_CLIENT_ID
+  name: OC_KEYCLOAK_CLIENT_ID;GRAPH_KEYCLOAK_CLIENT_ID
   defaultValue: ""
   type: string
-  description: The client ID to authenticate with keycloak.
+  description: The client id to authenticate with keycloak.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_KEYCLOAK_CLIENT_REALM:
-  name: OC_KEYCLOAK_CLIENT_REALM;INVITATIONS_KEYCLOAK_CLIENT_REALM
+  name: OC_KEYCLOAK_CLIENT_REALM;GRAPH_KEYCLOAK_CLIENT_REALM
   defaultValue: ""
   type: string
   description: The realm the client is defined in.
@@ -9637,7 +10060,7 @@ OC_KEYCLOAK_CLIENT_REALM:
   removalVersion: ""
   deprecationInfo: ""
 OC_KEYCLOAK_CLIENT_SECRET:
-  name: OC_KEYCLOAK_CLIENT_SECRET;INVITATIONS_KEYCLOAK_CLIENT_SECRET
+  name: OC_KEYCLOAK_CLIENT_SECRET;GRAPH_KEYCLOAK_CLIENT_SECRET
   defaultValue: ""
   type: string
   description: The client secret to use in authentication.
@@ -9646,7 +10069,7 @@ OC_KEYCLOAK_CLIENT_SECRET:
   removalVersion: ""
   deprecationInfo: ""
 OC_KEYCLOAK_INSECURE_SKIP_VERIFY:
-  name: OC_KEYCLOAK_INSECURE_SKIP_VERIFY;INVITATIONS_KEYCLOAK_INSECURE_SKIP_VERIFY
+  name: OC_KEYCLOAK_INSECURE_SKIP_VERIFY;GRAPH_KEYCLOAK_INSECURE_SKIP_VERIFY
   defaultValue: "false"
   type: bool
   description: Disable TLS certificate validation for Keycloak connections. Do not
@@ -9656,7 +10079,7 @@ OC_KEYCLOAK_INSECURE_SKIP_VERIFY:
   removalVersion: ""
   deprecationInfo: ""
 OC_KEYCLOAK_USER_REALM:
-  name: OC_KEYCLOAK_USER_REALM;INVITATIONS_KEYCLOAK_USER_REALM
+  name: OC_KEYCLOAK_USER_REALM;GRAPH_KEYCLOAK_USER_REALM
   defaultValue: ""
   type: string
   description: The realm users are defined.
@@ -9665,7 +10088,7 @@ OC_KEYCLOAK_USER_REALM:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_BIND_DN:
-  name: OC_LDAP_BIND_DN;AUTH_BASIC_LDAP_BIND_DN
+  name: OC_LDAP_BIND_DN;USERS_LDAP_BIND_DN
   defaultValue: uid=reva,ou=sysusers,o=libregraph-idm
   type: string
   description: LDAP DN to use for simple bind authentication with the target LDAP
@@ -9675,7 +10098,7 @@ OC_LDAP_BIND_DN:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_BIND_PASSWORD:
-  name: OC_LDAP_BIND_PASSWORD;AUTH_BASIC_LDAP_BIND_PASSWORD
+  name: OC_LDAP_BIND_PASSWORD;USERS_LDAP_BIND_PASSWORD
   defaultValue: ""
   type: string
   description: Password to use for authenticating the 'bind_dn'.
@@ -9684,8 +10107,8 @@ OC_LDAP_BIND_PASSWORD:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_CACERT:
-  name: OC_LDAP_CACERT;AUTH_BASIC_LDAP_CACERT
-  defaultValue: /var/lib/opencloud/idm/ldap.crt
+  name: OC_LDAP_CACERT;USERS_LDAP_CACERT
+  defaultValue: ""
   type: string
   description: Path/File name for the root CA certificate (in PEM format) used to
     validate TLS server certificates of the LDAP service. If not defined, the root
@@ -9695,7 +10118,7 @@ OC_LDAP_CACERT:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_DISABLED_USERS_GROUP_DN:
-  name: OC_LDAP_DISABLED_USERS_GROUP_DN;AUTH_BASIC_DISABLED_USERS_GROUP_DN
+  name: OC_LDAP_DISABLED_USERS_GROUP_DN;USERS_LDAP_DISABLED_USERS_GROUP_DN
   defaultValue: cn=DisabledUsersGroup,ou=groups,o=libregraph-idm
   type: string
   description: The distinguished name of the group to which added users will be classified
@@ -9705,7 +10128,7 @@ OC_LDAP_DISABLED_USERS_GROUP_DN:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_DISABLE_USER_MECHANISM:
-  name: OC_LDAP_DISABLE_USER_MECHANISM;AUTH_BASIC_DISABLE_USER_MECHANISM
+  name: OC_LDAP_DISABLE_USER_MECHANISM;USERS_LDAP_DISABLE_USER_MECHANISM
   defaultValue: attribute
   type: string
   description: An option to control the behavior for disabling users. Valid options
@@ -9718,7 +10141,7 @@ OC_LDAP_DISABLE_USER_MECHANISM:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_BASE_DN:
-  name: OC_LDAP_GROUP_BASE_DN;AUTH_BASIC_LDAP_GROUP_BASE_DN
+  name: OC_LDAP_GROUP_BASE_DN;USERS_LDAP_GROUP_BASE_DN
   defaultValue: ou=groups,o=libregraph-idm
   type: string
   description: Search base DN for looking up LDAP groups.
@@ -9727,7 +10150,7 @@ OC_LDAP_GROUP_BASE_DN:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_FILTER:
-  name: OC_LDAP_GROUP_FILTER;AUTH_BASIC_LDAP_GROUP_FILTER
+  name: OC_LDAP_GROUP_FILTER;USERS_LDAP_GROUP_FILTER
   defaultValue: ""
   type: string
   description: LDAP filter to add to the default filters for group searches.
@@ -9736,17 +10159,17 @@ OC_LDAP_GROUP_FILTER:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_OBJECTCLASS:
-  name: OC_LDAP_GROUP_OBJECTCLASS;AUTH_BASIC_LDAP_GROUP_OBJECTCLASS
+  name: OC_LDAP_GROUP_OBJECTCLASS;USERS_LDAP_GROUP_OBJECTCLASS
   defaultValue: groupOfNames
   type: string
   description: The object class to use for groups in the default group search filter
-    ('groupOfNames').
+    like 'groupOfNames'.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_SCHEMA_DISPLAYNAME:
-  name: OC_LDAP_GROUP_SCHEMA_DISPLAYNAME;AUTH_BASIC_LDAP_GROUP_SCHEMA_DISPLAYNAME
+  name: OC_LDAP_GROUP_SCHEMA_DISPLAYNAME;USERS_LDAP_GROUP_SCHEMA_DISPLAYNAME
   defaultValue: cn
   type: string
   description: LDAP Attribute to use for the displayname of groups (often the same
@@ -9756,7 +10179,7 @@ OC_LDAP_GROUP_SCHEMA_DISPLAYNAME:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_SCHEMA_GROUPNAME:
-  name: OC_LDAP_GROUP_SCHEMA_GROUPNAME;AUTH_BASIC_LDAP_GROUP_SCHEMA_GROUPNAME
+  name: OC_LDAP_GROUP_SCHEMA_GROUPNAME;USERS_LDAP_GROUP_SCHEMA_GROUPNAME
   defaultValue: cn
   type: string
   description: LDAP Attribute to use for the name of groups.
@@ -9765,28 +10188,28 @@ OC_LDAP_GROUP_SCHEMA_GROUPNAME:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_SCHEMA_ID:
-  name: OC_LDAP_GROUP_SCHEMA_ID;AUTH_BASIC_LDAP_GROUP_SCHEMA_ID
-  defaultValue: openCloudUUID
+  name: OC_LDAP_GROUP_SCHEMA_ID;USERS_LDAP_GROUP_SCHEMA_ID
+  defaultValue: openclouduuid
   type: string
-  description: LDAP Attribute to use as the unique id for groups. This should be a
-    stable globally unique id (e.g. a UUID).
+  description: LDAP Attribute to use as the unique ID for groups. This should be a
+    stable globally unique ID like a UUID.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_SCHEMA_ID_IS_OCTETSTRING:
-  name: OC_LDAP_GROUP_SCHEMA_ID_IS_OCTETSTRING;AUTH_BASIC_LDAP_GROUP_SCHEMA_ID_IS_OCTETSTRING
+  name: OC_LDAP_GROUP_SCHEMA_ID_IS_OCTETSTRING;USERS_LDAP_GROUP_SCHEMA_ID_IS_OCTETSTRING
   defaultValue: "false"
   type: bool
   description: Set this to true if the defined 'id' attribute for groups is of the
     'OCTETSTRING' syntax. This is e.g. required when using the 'objectGUID' attribute
-    of Active Directory for the group IDs.
+    of Active Directory for the group ID's.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_SCHEMA_MAIL:
-  name: OC_LDAP_GROUP_SCHEMA_MAIL;AUTH_BASIC_LDAP_GROUP_SCHEMA_MAIL
+  name: OC_LDAP_GROUP_SCHEMA_MAIL;USERS_LDAP_GROUP_SCHEMA_MAIL
   defaultValue: mail
   type: string
   description: LDAP Attribute to use for the email address of groups (can be empty).
@@ -9795,7 +10218,7 @@ OC_LDAP_GROUP_SCHEMA_MAIL:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_SCHEMA_MEMBER:
-  name: OC_LDAP_GROUP_SCHEMA_MEMBER;AUTH_BASIC_LDAP_GROUP_SCHEMA_MEMBER
+  name: OC_LDAP_GROUP_SCHEMA_MEMBER;USERS_LDAP_GROUP_SCHEMA_MEMBER
   defaultValue: member
   type: string
   description: LDAP Attribute that is used for group members.
@@ -9804,7 +10227,7 @@ OC_LDAP_GROUP_SCHEMA_MEMBER:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_GROUP_SCOPE:
-  name: OC_LDAP_GROUP_SCOPE;AUTH_BASIC_LDAP_GROUP_SCOPE
+  name: OC_LDAP_GROUP_SCOPE;USERS_LDAP_GROUP_SCOPE
   defaultValue: sub
   type: string
   description: LDAP search scope to use when looking up groups. Supported values are
@@ -9814,7 +10237,7 @@ OC_LDAP_GROUP_SCOPE:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_INSECURE:
-  name: OC_LDAP_INSECURE;AUTH_BASIC_LDAP_INSECURE
+  name: OC_LDAP_INSECURE;USERS_LDAP_INSECURE
   defaultValue: "false"
   type: bool
   description: Disable TLS certificate validation for the LDAP connections. Do not
@@ -9823,8 +10246,18 @@ OC_LDAP_INSECURE:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+OC_LDAP_LOOKUP_CACHE_TTL:
+  name: OC_LDAP_LOOKUP_CACHE_TTL;USERS_LDAP_LOOKUP_CACHE_TTL
+  defaultValue: 10s
+  type: Duration
+  description: The time to live for the in-memory cache of LDAP lookups. This cache
+    is used to reduce the number of LDAP queries for user and group lookups.
+  introductionVersion: 7.5.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 OC_LDAP_SERVER_WRITE_ENABLED:
-  name: OC_LDAP_SERVER_WRITE_ENABLED;FRONTEND_LDAP_SERVER_WRITE_ENABLED
+  name: OC_LDAP_SERVER_WRITE_ENABLED;GRAPH_LDAP_SERVER_WRITE_ENABLED
   defaultValue: "true"
   type: bool
   description: Allow creating, modifying and deleting LDAP users via the GRAPH API.
@@ -9906,8 +10339,8 @@ OC_LDAP_TENANT_SCOPE:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_URI:
-  name: OC_LDAP_URI;AUTH_BASIC_LDAP_URI
-  defaultValue: ldaps://localhost:9235
+  name: OC_LDAP_URI;USERS_LDAP_URI
+  defaultValue: ldap://localhost:9236
   type: string
   description: URI of the LDAP Server to connect to. Supported URI schemes are 'ldaps://'
     and 'ldap://'
@@ -9916,7 +10349,7 @@ OC_LDAP_URI:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_BASE_DN:
-  name: OC_LDAP_USER_BASE_DN;AUTH_BASIC_LDAP_USER_BASE_DN
+  name: OC_LDAP_USER_BASE_DN;USERS_LDAP_USER_BASE_DN
   defaultValue: ou=users,o=libregraph-idm
   type: string
   description: Search base DN for looking up LDAP users.
@@ -9925,8 +10358,8 @@ OC_LDAP_USER_BASE_DN:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_ENABLED_ATTRIBUTE:
-  name: OC_LDAP_USER_ENABLED_ATTRIBUTE;AUTH_BASIC_LDAP_USER_ENABLED_ATTRIBUTE
-  defaultValue: openCloudUserEnabled
+  name: OC_LDAP_USER_ENABLED_ATTRIBUTE;USERS_LDAP_USER_ENABLED_ATTRIBUTE
+  defaultValue: openclouduserenabled
   type: string
   description: LDAP attribute to use as a flag telling if the user is enabled or disabled.
   introductionVersion: 1.0.0
@@ -9934,7 +10367,7 @@ OC_LDAP_USER_ENABLED_ATTRIBUTE:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_FILTER:
-  name: OC_LDAP_USER_FILTER;AUTH_BASIC_LDAP_USER_FILTER
+  name: OC_LDAP_USER_FILTER;USERS_LDAP_USER_FILTER
   defaultValue: ""
   type: string
   description: LDAP filter to add to the default filters for user search like '(objectclass=openCloudUser)'.
@@ -9943,17 +10376,17 @@ OC_LDAP_USER_FILTER:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_OBJECTCLASS:
-  name: OC_LDAP_USER_OBJECTCLASS;AUTH_BASIC_LDAP_USER_OBJECTCLASS
+  name: OC_LDAP_USER_OBJECTCLASS;USERS_LDAP_USER_OBJECTCLASS
   defaultValue: inetOrgPerson
   type: string
   description: The object class to use for users in the default user search filter
-    ('inetOrgPerson').
+    like 'inetOrgPerson'.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_SCHEMA_DISPLAYNAME:
-  name: OC_LDAP_USER_SCHEMA_DISPLAYNAME;AUTH_BASIC_LDAP_USER_SCHEMA_DISPLAYNAME
+  name: OC_LDAP_USER_SCHEMA_DISPLAYNAME;USERS_LDAP_USER_SCHEMA_DISPLAYNAME
   defaultValue: displayname
   type: string
   description: LDAP Attribute to use for the displayname of users.
@@ -9962,8 +10395,8 @@ OC_LDAP_USER_SCHEMA_DISPLAYNAME:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_SCHEMA_ID:
-  name: OC_LDAP_USER_SCHEMA_ID;AUTH_BASIC_LDAP_USER_SCHEMA_ID
-  defaultValue: openCloudUUID
+  name: OC_LDAP_USER_SCHEMA_ID;USERS_LDAP_USER_SCHEMA_ID
+  defaultValue: openclouduuid
   type: string
   description: LDAP Attribute to use as the unique ID for users. This should be a
     stable globally unique ID like a UUID.
@@ -9972,18 +10405,18 @@ OC_LDAP_USER_SCHEMA_ID:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_SCHEMA_ID_IS_OCTETSTRING:
-  name: OC_LDAP_USER_SCHEMA_ID_IS_OCTETSTRING;AUTH_BASIC_LDAP_USER_SCHEMA_ID_IS_OCTETSTRING
+  name: OC_LDAP_USER_SCHEMA_ID_IS_OCTETSTRING;USERS_LDAP_USER_SCHEMA_ID_IS_OCTETSTRING
   defaultValue: "false"
   type: bool
   description: Set this to true if the defined 'ID' attribute for users is of the
     'OCTETSTRING' syntax. This is e.g. required when using the 'objectGUID' attribute
-    of Active Directory for the user IDs.
+    of Active Directory for the user ID's.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_SCHEMA_MAIL:
-  name: OC_LDAP_USER_SCHEMA_MAIL;AUTH_BASIC_LDAP_USER_SCHEMA_MAIL
+  name: OC_LDAP_USER_SCHEMA_MAIL;USERS_LDAP_USER_SCHEMA_MAIL
   defaultValue: mail
   type: string
   description: LDAP Attribute to use for the email address of users.
@@ -9992,7 +10425,7 @@ OC_LDAP_USER_SCHEMA_MAIL:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_SCHEMA_TENANT_ID:
-  name: OC_LDAP_USER_SCHEMA_TENANT_ID;AUTH_BASIC_LDAP_USER_SCHEMA_TENANT_ID
+  name: OC_LDAP_USER_SCHEMA_TENANT_ID;USERS_LDAP_USER_SCHEMA_TENANT_ID
   defaultValue: ""
   type: string
   description: LDAP Attribute to use for the tenant ID of users. This is used to identify
@@ -10002,7 +10435,7 @@ OC_LDAP_USER_SCHEMA_TENANT_ID:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_SCHEMA_USERNAME:
-  name: OC_LDAP_USER_SCHEMA_USERNAME;AUTH_BASIC_LDAP_USER_SCHEMA_USERNAME
+  name: OC_LDAP_USER_SCHEMA_USERNAME;USERS_LDAP_USER_SCHEMA_USERNAME
   defaultValue: uid
   type: string
   description: LDAP Attribute to use for username of users.
@@ -10021,7 +10454,7 @@ OC_LDAP_USER_SCHEMA_USER_TYPE:
   removalVersion: ""
   deprecationInfo: ""
 OC_LDAP_USER_SCOPE:
-  name: OC_LDAP_USER_SCOPE;AUTH_BASIC_LDAP_USER_SCOPE
+  name: OC_LDAP_USER_SCOPE;USERS_LDAP_USER_SCOPE
   defaultValue: sub
   type: string
   description: LDAP search scope to use when looking up users. Supported values are
@@ -10049,7 +10482,7 @@ OC_LOG_FILE:
   removalVersion: ""
   deprecationInfo: ""
 OC_LOG_LEVEL:
-  name: OC_LOG_LEVEL;EVENTHISTORY_LOG_LEVEL
+  name: OC_LOG_LEVEL;COLLABORATION_LOG_LEVEL
   defaultValue: ""
   type: string
   description: 'The log level. Valid values are: ''panic'', ''fatal'', ''error'',
@@ -10068,7 +10501,7 @@ OC_LOG_PRETTY:
   removalVersion: ""
   deprecationInfo: ""
 OC_MACHINE_AUTH_API_KEY:
-  name: OC_MACHINE_AUTH_API_KEY;AUTH_MACHINE_API_KEY
+  name: OC_MACHINE_AUTH_API_KEY;STORAGE_USERS_MACHINE_AUTH_API_KEY
   defaultValue: ""
   type: string
   description: Machine auth API key used to validate internal requests necessary for
@@ -10105,13 +10538,13 @@ OC_OIDC_CLIENT_SCOPES:
   type: '[]string'
   description: The OIDC client scopes the OpenCloud web client should request. The
     'WEB_OIDC_SCOPE' setting is only here for backwards compatibility and will be
-    remove in a future release.
+    removed in a future release.
   introductionVersion: 6.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_OIDC_ISSUER:
-  name: OC_URL;OC_OIDC_ISSUER;AUTH_BASIC_IDP_URL
+  name: OC_URL;OC_OIDC_ISSUER;USERS_IDP_URL
   defaultValue: https://localhost:9200
   type: string
   description: The identity provider value to set in the userids of the CS3 user objects
@@ -10188,7 +10621,7 @@ OC_PASSWORD_POLICY_MIN_UPPERCASE_CHARACTERS:
   removalVersion: ""
   deprecationInfo: ""
 OC_PERSISTENT_STORE:
-  name: OC_PERSISTENT_STORE;EVENTHISTORY_STORE
+  name: OC_PERSISTENT_STORE;COLLABORATION_STORE
   defaultValue: nats-js-kv
   type: string
   description: 'The type of the store. Supported values are: ''memory'', ''nats-js-kv'',
@@ -10198,7 +10631,7 @@ OC_PERSISTENT_STORE:
   removalVersion: ""
   deprecationInfo: ""
 OC_PERSISTENT_STORE_AUTH_PASSWORD:
-  name: OC_PERSISTENT_STORE_AUTH_PASSWORD;EVENTHISTORY_STORE_AUTH_PASSWORD
+  name: OC_PERSISTENT_STORE_AUTH_PASSWORD;COLLABORATION_STORE_AUTH_PASSWORD
   defaultValue: ""
   type: string
   description: The password to authenticate with the store. Only applies when store
@@ -10208,7 +10641,7 @@ OC_PERSISTENT_STORE_AUTH_PASSWORD:
   removalVersion: ""
   deprecationInfo: ""
 OC_PERSISTENT_STORE_AUTH_USERNAME:
-  name: OC_PERSISTENT_STORE_AUTH_USERNAME;EVENTHISTORY_STORE_AUTH_USERNAME
+  name: OC_PERSISTENT_STORE_AUTH_USERNAME;COLLABORATION_STORE_AUTH_USERNAME
   defaultValue: ""
   type: string
   description: The username to authenticate with the store. Only applies when store
@@ -10217,8 +10650,18 @@ OC_PERSISTENT_STORE_AUTH_USERNAME:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+OC_PERSISTENT_STORE_ENABLE_TLS:
+  name: OC_PERSISTENT_STORE_ENABLE_TLS;COLLABORATION_STORE_ENABLE_TLS
+  defaultValue: "false"
+  type: bool
+  description: Enable TLS for the connection to the store. Only applies when store
+    type 'nats-js-kv' is configured.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 OC_PERSISTENT_STORE_NODES:
-  name: OC_PERSISTENT_STORE_NODES;EVENTHISTORY_STORE_NODES
+  name: OC_PERSISTENT_STORE_NODES;COLLABORATION_STORE_NODES
   defaultValue: '[127.0.0.1:9233]'
   type: '[]string'
   description: A list of nodes to access the configured store. This has no effect
@@ -10229,11 +10672,30 @@ OC_PERSISTENT_STORE_NODES:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+OC_PERSISTENT_STORE_TLS_INSECURE:
+  name: OC_INSECURE;OC_PERSISTENT_STORE_TLS_INSECURE;COLLABORATION_STORE_TLS_INSECURE
+  defaultValue: "false"
+  type: bool
+  description: Whether to verify the server TLS certificates.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+OC_PERSISTENT_STORE_TLS_ROOT_CA_CERTIFICATE:
+  name: OC_PERSISTENT_STORE_TLS_ROOT_CA_CERTIFICATE;COLLABORATION_STORE_TLS_ROOT_CA_CERTIFICATE
+  defaultValue: ""
+  type: string
+  description: The root CA certificate used to validate the server's TLS certificate.
+    If provided COLLABORATION_STORE_TLS_INSECURE will be seen as false.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 OC_PERSISTENT_STORE_TTL:
-  name: OC_PERSISTENT_STORE_TTL;EVENTHISTORY_STORE_TTL
-  defaultValue: 336h0m0s
+  name: OC_PERSISTENT_STORE_TTL;COLLABORATION_STORE_TTL
+  defaultValue: 30m0s
   type: Duration
-  description: Time to live for events in the store. Defaults to '336h' (2 weeks).
+  description: Time to live for events in the store. Defaults to '30m' (30 minutes).
     See the Environment Variable Types description for more details.
   introductionVersion: 1.0.0
   deprecationVersion: ""
@@ -10252,7 +10714,7 @@ OC_REVA_GATEWAY:
   name: OC_REVA_GATEWAY
   defaultValue: eu.opencloud.api.gateway
   type: string
-  description: CS3 gateway used to look up user metadata
+  description: CS3 gateway used to look up user metadata.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
@@ -10326,7 +10788,8 @@ OC_SHARING_PUBLIC_SHARE_MUST_HAVE_PASSWORD:
     API is deprecated |  | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API
     is deprecated |  | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is
     deprecated |  | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated
-    | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated | '
+    | FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated |  |
+    FRONTEND_OCS_PUBLIC_SHARE_MUST_HAVE_PASSWORD, the OCS API is deprecated | '
 OC_SHARING_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD:
   name: OC_SHARING_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD;SHARING_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD
   defaultValue: "false"
@@ -10361,6 +10824,7 @@ OC_SHARING_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD:
     the OCS API is deprecated |  | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
     the OCS API is deprecated |  | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
     the OCS API is deprecated | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
+    the OCS API is deprecated |  | FRONTEND_OCS_PUBLIC_WRITABLE_SHARE_MUST_HAVE_PASSWORD,
     the OCS API is deprecated | '
 OC_SHOW_USER_EMAIL_IN_RESULTS:
   name: OC_SHOW_USER_EMAIL_IN_RESULTS
@@ -10385,32 +10849,32 @@ OC_SPACES_MAX_QUOTA:
   removalVersion: ""
   deprecationInfo: ""
 OC_SYSTEM_USER_API_KEY:
-  name: OC_SYSTEM_USER_API_KEY;AUTH_APP_JSONCS3_SYSTEM_USER_API_KEY
+  name: OC_SYSTEM_USER_API_KEY;SHARING_PUBLIC_CS3_SYSTEM_USER_API_KEY
   defaultValue: ""
   type: string
   description: API key for the STORAGE-SYSTEM system user.
-  introductionVersion: 4.0.0
+  introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_SYSTEM_USER_ID:
-  name: OC_SYSTEM_USER_ID;AUTH_APP_JSONCS3_SYSTEM_USER_ID
+  name: OC_SYSTEM_USER_ID;SHARING_PUBLIC_CS3_SYSTEM_USER_ID
   defaultValue: ""
   type: string
   description: ID of the OpenCloud STORAGE-SYSTEM system user. Admins need to set
     the ID for the STORAGE-SYSTEM system user in this config option which is then
     used to reference the user. Any reasonable long string is possible, preferably
     this would be an UUIDv4 format.
-  introductionVersion: 4.0.0
+  introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
 OC_SYSTEM_USER_IDP:
-  name: OC_SYSTEM_USER_IDP;AUTH_APP_JSONCS3_SYSTEM_USER_IDP
+  name: OC_SYSTEM_USER_IDP;SHARING_PUBLIC_CS3_SYSTEM_USER_IDP
   defaultValue: internal
   type: string
   description: IDP of the OpenCloud STORAGE-SYSTEM system user.
-  introductionVersion: 4.0.0
+  introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -10457,7 +10921,7 @@ OC_TRANSFER_SECRET:
   defaultValue: ""
   type: string
   description: The storage transfer secret.
-  introductionVersion: 1.0.0
+  introductionVersion: 7.5.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -10473,7 +10937,7 @@ OC_TRANSLATION_PATH:
   removalVersion: ""
   deprecationInfo: ""
 OC_URL:
-  name: OC_URL;OC_OIDC_ISSUER;AUTH_BASIC_IDP_URL
+  name: OC_URL;OC_OIDC_ISSUER;USERS_IDP_URL
   defaultValue: https://localhost:9200
   type: string
   description: The identity provider value to set in the userids of the CS3 user objects
@@ -10483,10 +10947,11 @@ OC_URL:
   removalVersion: ""
   deprecationInfo: ""
 OC_WOPI_DISABLE_CHAT:
-  name: APP_PROVIDER_WOPI_DISABLE_CHAT;OC_WOPI_DISABLE_CHAT
+  name: COLLABORATION_WOPI_DISABLE_CHAT;OC_WOPI_DISABLE_CHAT
   defaultValue: "false"
   type: bool
-  description: Disable the chat functionality of the office app.
+  description: Disable chat in the office web frontend. This feature applies to OnlyOffice
+    and Microsoft.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
@@ -10525,6 +10990,16 @@ POLICIES_DEBUG_ZPAGES:
   type: bool
   description: Enables zpages, which can be used for collecting and viewing in-memory
     traces.
+  introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+POLICIES_ENGINE_FILES:
+  name: POLICIES_ENGINE_FILES
+  defaultValue: '[]'
+  type: '[]string'
+  description: A list of filesystem paths to rego files or directories containing
+    rego files.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
@@ -10581,6 +11056,16 @@ POLICIES_EVENTS_CLUSTER:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+POLICIES_EVENTS_DISABLED:
+  name: POLICIES_EVENTS_DISABLED
+  defaultValue: "false"
+  type: bool
+  description: Disables listening for events. Set this to true if the service should
+    only handle GRPC requests.
+  introductionVersion: '%NEXT%'
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 POLICIES_EVENTS_ENABLE_TLS:
   name: OC_EVENTS_ENABLE_TLS;POLICIES_EVENTS_ENABLE_TLS
   defaultValue: "false"
@@ -10627,6 +11112,16 @@ POLICIES_GRPC_ADDR:
   type: string
   description: The bind address of the GRPC service.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+POLICIES_GRPC_DISABLED:
+  name: POLICIES_GRPC_DISABLED
+  defaultValue: "false"
+  type: bool
+  description: Disables listening for GRPC API calls. Set this to true if the service
+    should only handle requests through events.
+  introductionVersion: '%NEXT%'
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -10884,6 +11379,18 @@ POSTPROCESSING_MAX_RETRIES:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+POSTPROCESSING_PUBLISH_MAX_RETRIES:
+  name: POSTPROCESSING_PUBLISH_MAX_RETRIES
+  defaultValue: "5"
+  type: int
+  description: The maximum number of retries when publishing an event to the event
+    system fails. The same exponential backoff as for failed postprocessing steps
+    is used, based on POSTPROCESSING_RETRY_BACKOFF_DURATION. Set to 0 to not retry
+    at all.
+  introductionVersion: 7.5.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 POSTPROCESSING_RETRY_BACKOFF_DURATION:
   name: POSTPROCESSING_RETRY_BACKOFF_DURATION
   defaultValue: 5s
@@ -10945,6 +11452,16 @@ POSTPROCESSING_STORE_DATABASE:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+POSTPROCESSING_STORE_ENABLE_TLS:
+  name: OC_PERSISTENT_STORE_ENABLE_TLS;POSTPROCESSING_STORE_ENABLE_TLS
+  defaultValue: "false"
+  type: bool
+  description: Enable TLS for the connection to the store. Only applies when store
+    type 'nats-js-kv' is configured.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 POSTPROCESSING_STORE_NODES:
   name: OC_PERSISTENT_STORE_NODES;POSTPROCESSING_STORE_NODES
   defaultValue: '[127.0.0.1:9233]'
@@ -10966,9 +11483,28 @@ POSTPROCESSING_STORE_TABLE:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+POSTPROCESSING_STORE_TLS_INSECURE:
+  name: OC_INSECURE;OC_PERSISTENT_STORE_TLS_INSECURE;POSTPROCESSING_STORE_TLS_INSECURE
+  defaultValue: "false"
+  type: bool
+  description: Whether to verify the server TLS certificates.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+POSTPROCESSING_STORE_TLS_ROOT_CA_CERTIFICATE:
+  name: OC_PERSISTENT_STORE_TLS_ROOT_CA_CERTIFICATE;POSTPROCESSING_STORE_TLS_ROOT_CA_CERTIFICATE
+  defaultValue: ""
+  type: string
+  description: The root CA certificate used to validate the server's TLS certificate.
+    If provided POSTPROCESSING_STORE_TLS_INSECURE will be seen as false.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 POSTPROCESSING_STORE_TTL:
   name: OC_PERSISTENT_STORE_TTL;POSTPROCESSING_STORE_TTL
-  defaultValue: 0s
+  defaultValue: 168h0m0s
   type: Duration
   description: Time to live for events in the store. See the Environment Variable
     Types description for more details.
@@ -11442,6 +11978,15 @@ PROXY_OIDC_USERINFO_CACHE_DISABLE_PERSISTENCE:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+PROXY_OIDC_USERINFO_CACHE_ENABLE_TLS:
+  name: OC_CACHE_ENABLE_TLS;PROXY_OIDC_USERINFO_CACHE_ENABLE_TLS
+  defaultValue: "false"
+  type: bool
+  description: Enable TLS for the connection to file metadata cache.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 PROXY_OIDC_USERINFO_CACHE_STORE:
   name: OC_CACHE_STORE;PROXY_OIDC_USERINFO_CACHE_STORE
   defaultValue: memory
@@ -11473,14 +12018,32 @@ PROXY_OIDC_USERINFO_CACHE_TABLE:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+PROXY_OIDC_USERINFO_CACHE_TLS_INSECURE:
+  name: OC_INSECURE;OC_CACHE_TLS_INSECURE;PROXY_OIDC_USERINFO_CACHE_TLS_INSECURE
+  defaultValue: "false"
+  type: bool
+  description: Whether to verify the server TLS certificates.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+PROXY_OIDC_USERINFO_CACHE_TLS_ROOT_CA_CERTIFICATE:
+  name: OC_CACHE_TLS_ROOT_CA_CERTIFICATE;PROXY_OIDC_USERINFO_CACHE_TLS_ROOT_CA_CERTIFICATE
+  defaultValue: ""
+  type: string
+  description: The root CA certificate used to validate the server's TLS certificate.
+    If provided PROXY_OIDC_USERINFO_CACHE_TLS_INSECURE will be seen as false.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 PROXY_OIDC_USERINFO_CACHE_TTL:
   name: OC_CACHE_TTL;PROXY_OIDC_USERINFO_CACHE_TTL
   defaultValue: 10s
   type: Duration
-  description: Default time to live for user info in the user info cache. This value
-    is only applied when the token expiration cannot be extracted from the access
-    tokens (e.g. when non-JWT access tokes are used). See the Environment Variable
-    Types description for more details.
+  description: Default time to live for user info in the user info cache. Only applied
+    when access tokens has no expiration. See the Environment Variable Types description
+    for more details.
   introductionVersion: 1.0.0
   deprecationVersion: ""
   removalVersion: ""
@@ -11537,6 +12100,15 @@ PROXY_PRESIGNEDURL_SIGNING_KEYS_STORE_DISABLE_PERSISTENCE:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+PROXY_PRESIGNEDURL_SIGNING_KEYS_STORE_ENABLE_TLS:
+  name: OC_CACHE_ENABLE_TLS;PROXY_PRESIGNEDURL_SIGNING_KEYS_STORE_ENABLE_TLS
+  defaultValue: "false"
+  type: bool
+  description: Enable TLS for the connection to file metadata cache.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 PROXY_PRESIGNEDURL_SIGNING_KEYS_STORE_NODES:
   name: OC_CACHE_STORE_NODES;PROXY_PRESIGNEDURL_SIGNING_KEYS_STORE_NODES
   defaultValue: '[127.0.0.1:9233]'
@@ -11545,6 +12117,26 @@ PROXY_PRESIGNEDURL_SIGNING_KEYS_STORE_NODES:
     how nodes are used is dependent on the library of the configured store. See the
     Environment Variable Types description for more details.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+PROXY_PRESIGNEDURL_SIGNING_KEYS_STORE_TLS_INSECURE:
+  name: OC_INSECURE;OC_CACHE_TLS_INSECURE;PROXY_PRESIGNEDURL_SIGNING_KEYS_STORE_TLS_INSECURE
+  defaultValue: "false"
+  type: bool
+  description: Whether to verify the server TLS certificates.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+PROXY_PRESIGNEDURL_SIGNING_KEYS_STORE_TLS_ROOT_CA_CERTIFICATE:
+  name: OC_CACHE_TLS_ROOT_CA_CERTIFICATE;PROXY_PRESIGNEDURL_SIGNING_KEYS_STORE_TLS_ROOT_CA_CERTIFICATE
+  defaultValue: ""
+  type: string
+  description: The root CA certificate used to validate the server's TLS certificate.
+    If provided PROXY_PRESIGNEDURL_SIGNING_KEYS_STORE_TLS_INSECURE will be seen as
+    false.
+  introductionVersion: 7.3.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -11670,6 +12262,88 @@ PROXY_TRACING_TYPE:
   description: The type of tracing. Defaults to '', which is the same as 'jaeger'.
     Allowed tracing types are 'jaeger' and '' as of now.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+PROXY_TRANSFER_TIMEOUT:
+  name: PROXY_TRANSFER_TIMEOUT
+  defaultValue: 24h0m0s
+  type: Duration
+  description: The storage transfer timeout.
+  introductionVersion: 7.5.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+PROXY_TRANSPORT_CLIENT_DIAL_KEEP_ALIVE:
+  name: PROXY_TRANSPORT_CLIENT_DIAL_KEEP_ALIVE
+  defaultValue: 30s
+  type: Duration
+  description: Dial keep alive for the HTTP client.
+  introductionVersion: 7.5.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+PROXY_TRANSPORT_CLIENT_DIAL_TIMEOUT:
+  name: PROXY_TRANSPORT_CLIENT_DIAL_TIMEOUT
+  defaultValue: 30s
+  type: Duration
+  description: Dial timeout for the HTTP client.
+  introductionVersion: 7.5.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+PROXY_TRANSPORT_CLIENT_EXPECT_CONTINUE_TIMEOUT:
+  name: PROXY_TRANSPORT_CLIENT_EXPECT_CONTINUE_TIMEOUT
+  defaultValue: 1s
+  type: Duration
+  description: Expect continue timeout for the HTTP client.
+  introductionVersion: 7.5.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+PROXY_TRANSPORT_CLIENT_FORCE_ATTEMPT_HTTP2:
+  name: PROXY_TRANSPORT_CLIENT_FORCE_ATTEMPT_HTTP2
+  defaultValue: "false"
+  type: bool
+  description: Force attempt HTTP/2 for the HTTP client. Set to true if backend communication
+    is encrypted and HTTP/2 is desired.
+  introductionVersion: 7.5.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+PROXY_TRANSPORT_CLIENT_IDLE_CONN_TIMEOUT:
+  name: PROXY_TRANSPORT_CLIENT_IDLE_CONN_TIMEOUT
+  defaultValue: 1m30s
+  type: Duration
+  description: Idle connection timeout for the HTTP client.
+  introductionVersion: 7.5.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+PROXY_TRANSPORT_CLIENT_MAX_IDLE_CONNS:
+  name: PROXY_TRANSPORT_CLIENT_MAX_IDLE_CONNS
+  defaultValue: "100"
+  type: int
+  description: Maximum idle connections for the HTTP client.
+  introductionVersion: 7.5.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+PROXY_TRANSPORT_CLIENT_MAX_IDLE_CONNS_PER_HOST:
+  name: PROXY_TRANSPORT_CLIENT_MAX_IDLE_CONNS_PER_HOST
+  defaultValue: "100"
+  type: int
+  description: Maximum idle connections per host for the HTTP client.
+  introductionVersion: 7.5.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+PROXY_TRANSPORT_CLIENT_TLS_HANDSHAKE_TIMEOUT:
+  name: PROXY_TRANSPORT_CLIENT_TLS_HANDSHAKE_TIMEOUT
+  defaultValue: 10s
+  type: Duration
+  description: TLS handshake timeout for the HTTP client.
+  introductionVersion: 7.5.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -11923,7 +12597,8 @@ SEARCH_ENGINE_OPEN_SEARCH_RESOURCE_INDEX_NAME:
   name: SEARCH_ENGINE_OPEN_SEARCH_RESOURCE_INDEX_NAME
   defaultValue: opencloud-resource
   type: string
-  description: The name of the OpenSearch index for resources.
+  description: The base name of the OpenSearch index for resources. The running index
+    is suffixed with the current schema version.
   introductionVersion: 4.0.0
   deprecationVersion: ""
   removalVersion: ""
@@ -12020,7 +12695,7 @@ SEARCH_EVENTS_ENDPOINT:
   deprecationInfo: ""
 SEARCH_EVENTS_MAX_ACK_PENDING:
   name: SEARCH_EVENTS_MAX_ACK_PENDING
-  defaultValue: "10000"
+  defaultValue: "1000"
   type: int
   description: The maximum number of unacknowledged messages. This is used to limit
     the number of messages that can be in flight at the same time.
@@ -12171,6 +12846,16 @@ SEARCH_LOG_PRETTY:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+SEARCH_REINDEX_MAX_CONCURRENCY:
+  name: SEARCH_REINDEX_MAX_CONCURRENCY
+  defaultValue: "3"
+  type: int
+  description: The maximum number of spaces that are reindexed concurrently when reindexing
+    all spaces.
+  introductionVersion: 7.4.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 SEARCH_SERVICE_ACCOUNT_ID:
   name: OC_SERVICE_ACCOUNT_ID;SEARCH_SERVICE_ACCOUNT_ID
   defaultValue: ""
@@ -12279,6 +12964,15 @@ SETTINGS_CACHE_DISABLE_PERSISTENCE:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+SETTINGS_CACHE_ENABLE_TLS:
+  name: OC_CACHE_ENABLE_TLS;SETTINGS_CACHE_ENABLE_TLS
+  defaultValue: "false"
+  type: bool
+  description: Enable TLS for the connection to file metadata cache.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 SETTINGS_CACHE_STORE:
   name: OC_CACHE_STORE;SETTINGS_CACHE_STORE
   defaultValue: memory
@@ -12298,6 +12992,25 @@ SETTINGS_CACHE_STORE_NODES:
     is dependent on the library of the configured store. See the Environment Variable
     Types description for more details.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+SETTINGS_CACHE_TLS_INSECURE:
+  name: OC_INSECURE;OC_CACHE_TLS_INSECURE;SETTINGS_CACHE_TLS_INSECURE
+  defaultValue: "false"
+  type: bool
+  description: Whether to verify the server TLS certificates.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+SETTINGS_CACHE_TLS_ROOT_CA_CERTIFICATE:
+  name: OC_CACHE_TLS_ROOT_CA_CERTIFICATE;SETTINGS_CACHE_TLS_ROOT_CA_CERTIFICATE
+  defaultValue: ""
+  type: string
+  description: The root CA certificate used to validate the server's TLS certificate.
+    If provided SETTINGS_CACHE_TLS_INSECURE will be seen as false.
+  introductionVersion: 7.3.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -12593,6 +13306,16 @@ SETTINGS_TRANSLATION_PATH:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+SHARING_AUTO_ACCEPT_SHARES:
+  name: FRONTEND_AUTO_ACCEPT_SHARES;SHARING_AUTO_ACCEPT_SHARES
+  defaultValue: "true"
+  type: bool
+  description: Defines if shares should be auto accepted by default. Users can change
+    this setting individually in their profile.
+  introductionVersion: '%%NEXT%%'
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 SHARING_DEBUG_ADDR:
   name: SHARING_DEBUG_ADDR
   defaultValue: 127.0.0.1:9151
@@ -12760,6 +13483,17 @@ SHARING_LOG_PRETTY:
   type: bool
   description: Activates pretty log output.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+SHARING_MAX_CONCURRENCY:
+  name: OC_MAX_CONCURRENCY;FRONTEND_MAX_CONCURRENCY;SHARING_MAX_CONCURRENCY
+  defaultValue: "1"
+  type: int
+  description: Maximum number of concurrent go-routines. Higher values can potentially
+    get work done faster but will also cause more load on the system. Values of 0
+    or below will be ignored and the default value will be used.
+  introductionVersion: '%%NEXT%%'
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -12956,6 +13690,25 @@ SHARING_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD:
     you must define the FRONTEND_OCS_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD (deprecated)
     in the frontend service.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+SHARING_SERVICE_ACCOUNT:
+  name: OC_SERVICE_ACCOUNT_ID;SHARING_SERVICE_ACCOUNT
+  defaultValue: ""
+  type: string
+  description: The ID of the service account the service should use. See the 'auth-service'
+    service description for more details.
+  introductionVersion: 7.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+SHARING_SERVICE_ACCOUNT_SECRET:
+  name: OC_SERVICE_ACCOUNT_SECRET;SHARING_SERVICE_ACCOUNT_SECRET
+  defaultValue: ""
+  type: string
+  description: The service account secret.
+  introductionVersion: 7.0.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -13831,6 +14584,15 @@ STORAGE_SYSTEM_CACHE_DISABLE_PERSISTENCE:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+STORAGE_SYSTEM_CACHE_ENABLE_TLS:
+  name: OC_CACHE_ENABLE_TLS;STORAGE_SYSTEM_CACHE_ENABLE_TLS
+  defaultValue: "false"
+  type: bool
+  description: Enable TLS for the connection to file metadata cache.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 STORAGE_SYSTEM_CACHE_STORE:
   name: OC_CACHE_STORE;STORAGE_SYSTEM_CACHE_STORE
   defaultValue: memory
@@ -13853,9 +14615,28 @@ STORAGE_SYSTEM_CACHE_STORE_NODES:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+STORAGE_SYSTEM_CACHE_TLS_INSECURE:
+  name: OC_INSECURE;OC_CACHE_TLS_INSECURE;STORAGE_SYSTEM_CACHE_TLS_INSECURE
+  defaultValue: "false"
+  type: bool
+  description: Whether to verify the server TLS certificates.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+STORAGE_SYSTEM_CACHE_TLS_ROOT_CA_CERTIFICATE:
+  name: OC_CACHE_TLS_ROOT_CA_CERTIFICATE;STORAGE_SYSTEM_CACHE_TLS_ROOT_CA_CERTIFICATE
+  defaultValue: ""
+  type: string
+  description: The root CA certificate used to validate the server's TLS certificate.
+    If provided STORAGE_SYSTEM_CACHE_TLS_INSECURE will be seen as false.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 STORAGE_SYSTEM_CACHE_TTL:
   name: OC_CACHE_TTL;STORAGE_SYSTEM_CACHE_TTL
-  defaultValue: 24m0s
+  defaultValue: 24h0m0s
   type: Duration
   description: Default time to live for user info in the user info cache. Only applied
     when access tokens has no expiration. See the Environment Variable Types description
@@ -14121,7 +14902,7 @@ STORAGE_USERS_CORS_ALLOW_HEADERS:
   name: OC_CORS_ALLOW_HEADERS;STORAGE_USERS_CORS_ALLOW_HEADERS
   defaultValue: '[Authorization Origin X-Requested-With X-Request-Id X-HTTP-Method-Override
     Content-Type Upload-Length Upload-Offset Tus-Resumable Upload-Metadata Upload-Defer-Length
-    Upload-Concat Upload-Incomplete Upload-Draft-Interop-Version]'
+    Upload-Concat Upload-Complete Upload-Incomplete Upload-Draft-Interop-Version]'
   type: '[]string'
   description: 'A list of allowed CORS headers. See following chapter for more details:
     *Access-Control-Request-Headers* at https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Request-Headers.
@@ -14155,8 +14936,8 @@ STORAGE_USERS_CORS_ALLOW_ORIGINS:
 STORAGE_USERS_CORS_EXPOSE_HEADERS:
   name: OC_CORS_EXPOSE_HEADERS;STORAGE_USERS_CORS_EXPOSE_HEADERS
   defaultValue: '[Upload-Offset Location Upload-Length Tus-Version Tus-Resumable Tus-Max-Size
-    Tus-Extension Upload-Metadata Upload-Defer-Length Upload-Concat Upload-Incomplete
-    Upload-Draft-Interop-Version]'
+    Tus-Extension Upload-Metadata Upload-Defer-Length Upload-Concat Upload-Complete
+    Upload-Incomplete Upload-Draft-Interop-Version]'
   type: '[]string'
   description: 'A list of exposed CORS headers. See following chapter for more details:
     *Access-Control-Expose-Headers* at https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers.
@@ -14712,6 +15493,15 @@ STORAGE_USERS_FILEMETADATA_CACHE_AUTH_USERNAME:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+STORAGE_USERS_FILEMETADATA_CACHE_DATABASE:
+  name: OC_CACHE_DATABASE;STORAGE_USERS_FILEMETADATA_CACHE_DATABASE
+  defaultValue: storage-users
+  type: string
+  description: The database name the configured store should use.
+  introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 STORAGE_USERS_FILEMETADATA_CACHE_DISABLE_PERSISTENCE:
   name: OC_CACHE_DISABLE_PERSISTENCE;STORAGE_USERS_FILEMETADATA_CACHE_DISABLE_PERSISTENCE
   defaultValue: "false"
@@ -14719,6 +15509,15 @@ STORAGE_USERS_FILEMETADATA_CACHE_DISABLE_PERSISTENCE:
   description: Disables persistence of the cache. Only applies when store type 'nats-js-kv'
     is configured. Defaults to false.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+STORAGE_USERS_FILEMETADATA_CACHE_ENABLE_TLS:
+  name: OC_CACHE_ENABLE_TLS;STORAGE_USERS_FILEMETADATA_CACHE_ENABLE_TLS
+  defaultValue: "false"
+  type: bool
+  description: Enable TLS for the connection to file metadata cache.
+  introductionVersion: 7.3.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -14744,9 +15543,28 @@ STORAGE_USERS_FILEMETADATA_CACHE_STORE_NODES:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+STORAGE_USERS_FILEMETADATA_CACHE_TLS_INSECURE:
+  name: OC_INSECURE;OC_CACHE_TLS_INSECURE;STORAGE_USERS_FILEMETADATA_CACHE_TLS_INSECURE
+  defaultValue: "false"
+  type: bool
+  description: Whether to verify the server TLS certificates.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+STORAGE_USERS_FILEMETADATA_CACHE_TLS_ROOT_CA_CERTIFICATE:
+  name: OC_CACHE_TLS_ROOT_CA_CERTIFICATE;STORAGE_USERS_FILEMETADATA_CACHE_TLS_ROOT_CA_CERTIFICATE
+  defaultValue: ""
+  type: string
+  description: The root CA certificate used to validate the server's TLS certificate.
+    If provided STORAGE_USERS_FILEMETADATA_CACHE_TLS_INSECURE will be seen as false.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 STORAGE_USERS_FILEMETADATA_CACHE_TTL:
   name: OC_CACHE_TTL;STORAGE_USERS_FILEMETADATA_CACHE_TTL
-  defaultValue: 24m0s
+  defaultValue: 24h0m0s
   type: Duration
   description: Default time to live for user info in the user info cache. Only applied
     when access tokens has no expiration. See the Environment Variable Types description
@@ -14842,6 +15660,15 @@ STORAGE_USERS_ID_CACHE_DISABLE_PERSISTENCE:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+STORAGE_USERS_ID_CACHE_ENABLE_TLS:
+  name: OC_CACHE_ENABLE_TLS;STORAGE_USERS_ID_CACHE_ENABLE_TLS
+  defaultValue: "false"
+  type: bool
+  description: Enable TLS for the connection to file metadata cache.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 STORAGE_USERS_ID_CACHE_STORE:
   name: OC_CACHE_STORE;STORAGE_USERS_ID_CACHE_STORE
   defaultValue: nats-js-kv
@@ -14864,9 +15691,28 @@ STORAGE_USERS_ID_CACHE_STORE_NODES:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+STORAGE_USERS_ID_CACHE_TLS_INSECURE:
+  name: OC_INSECURE;OC_CACHE_TLS_INSECURE;STORAGE_USERS_ID_CACHE_TLS_INSECURE
+  defaultValue: "false"
+  type: bool
+  description: Whether to verify the server TLS certificates.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+STORAGE_USERS_ID_CACHE_TLS_ROOT_CA_CERTIFICATE:
+  name: OC_CACHE_TLS_ROOT_CA_CERTIFICATE;STORAGE_USERS_ID_CACHE_TLS_ROOT_CA_CERTIFICATE
+  defaultValue: ""
+  type: string
+  description: The root CA certificate used to validate the server's TLS certificate.
+    If provided STORAGE_USERS_ID_CACHE_TLS_INSECURE will be seen as false.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 STORAGE_USERS_ID_CACHE_TTL:
   name: OC_CACHE_TTL;STORAGE_USERS_ID_CACHE_TTL
-  defaultValue: 24m0s
+  defaultValue: 0s
   type: Duration
   description: Default time to live for user info in the user info cache. Only applied
     when access tokens have no expiration. Defaults to 300s which is derived from
@@ -15183,6 +16029,16 @@ STORAGE_USERS_POSIX_SCAN_DEBOUNCE_DELAY:
   description: The time in milliseconds to wait before scanning the filesystem for
     changes after a change has been detected.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+STORAGE_USERS_POSIX_SCAN_FS:
+  name: STORAGE_USERS_POSIX_SCAN_FS
+  defaultValue: "true"
+  type: bool
+  description: Scan the filesystem at startup for changes and update the metadata
+    accordingly.
+  introductionVersion: 6.2.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -15602,8 +16458,8 @@ THUMBNAILS_MAX_INPUT_WIDTH:
   deprecationInfo: ""
 THUMBNAILS_RESOLUTIONS:
   name: THUMBNAILS_RESOLUTIONS
-  defaultValue: '[16x16 32x32 64x64 128x128 1080x1920 1920x1080 2160x3840 3840x2160
-    4320x7680 7680x4320]'
+  defaultValue: '[16x16 32x32 64x64 128x128 500x280 280x500 1000x560 560x1000 512x2048
+    1080x1920 1920x1080 2160x3840 3840x2160 4320x7680 7680x4320]'
   type: '[]string'
   description: The supported list of target resolutions in the format WidthxHeight
     like 32x32. You can define any resolution as required. See the Environment Variable
@@ -15973,6 +16829,16 @@ USERLOG_STORE_DATABASE:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+USERLOG_STORE_ENABLE_TLS:
+  name: OC_PERSISTENT_STORE_ENABLE_TLS;USERLOG_STORE_ENABLE_TLS
+  defaultValue: "false"
+  type: bool
+  description: Enable TLS for the connection to the store. Only applies when store
+    type 'nats-js-kv' is configured.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 USERLOG_STORE_NODES:
   name: OC_PERSISTENT_STORE_NODES;USERLOG_STORE_NODES
   defaultValue: '[]'
@@ -15991,6 +16857,25 @@ USERLOG_STORE_TABLE:
   type: string
   description: The database table the store should use.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+USERLOG_STORE_TLS_INSECURE:
+  name: OC_INSECURE;OC_PERSISTENT_STORE_TLS_INSECURE;USERLOG_STORE_TLS_INSECURE
+  defaultValue: "false"
+  type: bool
+  description: Whether to verify the server TLS certificates.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+USERLOG_STORE_TLS_ROOT_CA_CERTIFICATE:
+  name: OC_PERSISTENT_STORE_TLS_ROOT_CA_CERTIFICATE;USERLOG_STORE_TLS_ROOT_CA_CERTIFICATE
+  defaultValue: ""
+  type: string
+  description: The root CA certificate used to validate the server's TLS certificate.
+    If provided USERLOG_STORE_TLS_INSECURE will be seen as false.
+  introductionVersion: 7.3.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -16159,7 +17044,7 @@ USERS_LDAP_BIND_PASSWORD:
   deprecationInfo: ""
 USERS_LDAP_CACERT:
   name: OC_LDAP_CACERT;USERS_LDAP_CACERT
-  defaultValue: /var/lib/opencloud/idm/ldap.crt
+  defaultValue: ""
   type: string
   description: Path/File name for the root CA certificate (in PEM format) used to
     validate TLS server certificates of the LDAP service. If not defined, the root
@@ -16297,6 +17182,16 @@ USERS_LDAP_INSECURE:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+USERS_LDAP_LOOKUP_CACHE_TTL:
+  name: OC_LDAP_LOOKUP_CACHE_TTL;USERS_LDAP_LOOKUP_CACHE_TTL
+  defaultValue: 10s
+  type: Duration
+  description: The time to live for the in-memory cache of LDAP lookups. This cache
+    is used to reduce the number of LDAP queries for user and group lookups.
+  introductionVersion: 7.5.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 USERS_LDAP_TENANT_BASE_DN:
   name: OC_LDAP_TENANT_BASE_DN;USERS_LDAP_TENANT_BASE_DN
   defaultValue: ""
@@ -16369,7 +17264,7 @@ USERS_LDAP_TENANT_SCOPE:
   deprecationInfo: ""
 USERS_LDAP_URI:
   name: OC_LDAP_URI;USERS_LDAP_URI
-  defaultValue: ldaps://localhost:9235
+  defaultValue: ldap://localhost:9236
   type: string
   description: URI of the LDAP Server to connect to. Supported URI schemes are 'ldaps://'
     and 'ldap://'
@@ -17148,7 +18043,7 @@ WEBFINGER_WEB_OIDC_CLIENT_ID:
   defaultValue: web
   type: string
   description: The OIDC client ID for the OpenCloud web client. The 'WEB_OIDC_CLIENT_ID'
-    setting is only here for backwards compatibility and will be remove in a future
+    setting is only here for backwards compatibility and will be removed in a future
     release.
   introductionVersion: 6.0.0
   deprecationVersion: ""
@@ -17160,7 +18055,7 @@ WEBFINGER_WEB_OIDC_CLIENT_SCOPES:
   type: '[]string'
   description: The OIDC client scopes the OpenCloud web client should request. The
     'WEB_OIDC_SCOPE' setting is only here for backwards compatibility and will be
-    remove in a future release.
+    removed in a future release.
   introductionVersion: 6.0.0
   deprecationVersion: ""
   removalVersion: ""
@@ -17505,6 +18400,18 @@ WEB_OPTION_DISABLE_FEEDBACK_LINK:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+WEB_OPTION_DISABLE_SPONSOR_LINK:
+  name: WEB_OPTION_DISABLE_SPONSOR_LINK
+  defaultValue: "false"
+  type: bool
+  description: Set this option to 'true' to disable the sponsor link in the left sidebar.
+    Keeping it enabled by setting the value to 'false' or by leaving the option unset
+    allows OpenCloud to get support from the community through a dedicated sponsorship
+    program on GitHub.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 WEB_OPTION_EMBED_DELEGATE_AUTHENTICATION:
   name: WEB_OPTION_EMBED_DELEGATE_AUTHENTICATION
   defaultValue: "false"
@@ -17608,6 +18515,24 @@ WEB_OPTION_OPEN_FILES_IN_NEW_TAB:
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
+WEB_OPTION_OX_APP_SUITE_API_URL:
+  name: WEB_OPTION_OX_APP_SUITE_API_URL
+  defaultValue: ""
+  type: string
+  description: The API URL for the OX App Suite. Defaults to an empty string.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+WEB_OPTION_OX_APP_SUITE_ENABLED:
+  name: WEB_OPTION_OX_APP_SUITE_ENABLED
+  defaultValue: "false"
+  type: bool
+  description: Enables the OX App Suite. Defaults to false.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
 WEB_OPTION_RUNNING_ON_EOS:
   name: WEB_OPTION_RUNNING_ON_EOS
   defaultValue: "false"
@@ -17639,6 +18564,82 @@ WEB_OPTION_USER_LIST_REQUIRES_FILTER:
     with a lot of users and listing all users could slow down performance. Defaults
     to 'false'.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+WEB_OPTION_YJS_SERVER_URL:
+  name: WEB_OPTION_YJS_SERVER_URL
+  defaultValue: ""
+  type: string
+  description: The URL of the Yjs server used for collaborative editing. This feature
+    is disabled as long as no URL is given.
+  introductionVersion: 7.5.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+WEB_STORE_AUTH_PASSWORD:
+  name: OC_PERSISTENT_STORE_AUTH_PASSWORD;WEB_STORE_AUTH_PASSWORD
+  defaultValue: ""
+  type: string
+  description: The password to authenticate with the store.
+  introductionVersion: 7.4.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+WEB_STORE_AUTH_USERNAME:
+  name: OC_PERSISTENT_STORE_AUTH_USERNAME;WEB_STORE_AUTH_USERNAME
+  defaultValue: ""
+  type: string
+  description: The username to authenticate with the store.
+  introductionVersion: 7.4.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+WEB_STORE_DATABASE:
+  name: WEB_STORE_DATABASE
+  defaultValue: web
+  type: string
+  description: The bucket name the store should use.
+  introductionVersion: 7.4.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+WEB_STORE_ENABLE_TLS:
+  name: OC_PERSISTENT_STORE_ENABLE_TLS;COLLABORATION_STORE_ENABLE_TLS
+  defaultValue: "false"
+  type: bool
+  description: Enable TLS for the connection to the store. Only applies when store
+    type 'nats-js-kv' is configured.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+WEB_STORE_NODES:
+  name: OC_PERSISTENT_STORE_NODES;WEB_STORE_NODES
+  defaultValue: '[127.0.0.1:9233]'
+  type: '[]string'
+  description: A list of nodes to access the NATS JetStream store. See the Environment
+    Variable Types description for more details.
+  introductionVersion: 7.4.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+WEB_STORE_TLS_INSECURE:
+  name: OC_INSECURE;OC_PERSISTENT_STORE_TLS_INSECURE;COLLABORATION_STORE_TLS_INSECURE
+  defaultValue: "false"
+  type: bool
+  description: Whether to verify the server TLS certificates.
+  introductionVersion: 7.3.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+WEB_STORE_TLS_ROOT_CA_CERTIFICATE:
+  name: OC_PERSISTENT_STORE_TLS_ROOT_CA_CERTIFICATE;COLLABORATION_STORE_TLS_ROOT_CA_CERTIFICATE
+  defaultValue: ""
+  type: string
+  description: The root CA certificate used to validate the server's TLS certificate.
+    If provided COLLABORATION_STORE_TLS_INSECURE will be seen as false.
+  introductionVersion: 7.3.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""
@@ -17697,6 +18698,16 @@ WEB_UI_CONFIG_SERVER:
   type: string
   description: URL, where the OpenCloud APIs are reachable for OpenCloud Web.
   introductionVersion: 1.0.0
+  deprecationVersion: ""
+  removalVersion: ""
+  deprecationInfo: ""
+WEB_UI_CORE_APPS:
+  name: WEB_UI_CORE_APPS
+  defaultValue: '[files search text-editor pdf-viewer external admin-settings epub-reader
+    preview app-store rclone-crypt]'
+  type: '[]string'
+  description: Allows to override the default list of core apps in OpenCloud Web.
+  introductionVersion: 7.3.0
   deprecationVersion: ""
   removalVersion: ""
   deprecationInfo: ""

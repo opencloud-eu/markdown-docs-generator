@@ -1,13 +1,5 @@
 variables:
 - rawname: CI
-  path: services/search/pkg/opensearch/internal/test/suite.go:57
-  foundincode: true
-  name: CI
-  type: ""
-  default_value: ""
-  description: ""
-  do_ignore: true
-- rawname: CI
   path: ./services/search/pkg/opensearch/internal/test/suite.go:57
   foundincode: false
   name: CI
@@ -15,6 +7,30 @@ variables:
   default_value: ""
   description: ""
   do_ignore: true
+- rawname: CI
+  path: services/search/pkg/opensearch/internal/test/suite.go:57
+  foundincode: false
+  name: CI
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: CI
+  path: services/search/internal/opensearchtest/suite.go:60
+  foundincode: true
+  name: CI
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: CI_SYSTEM_NAME
+  path: services/search/internal/opensearchtest/suite.go:61
+  foundincode: true
+  name: CI_SYSTEM_NAME
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
 - rawname: CI_SYSTEM_NAME
   path: ./services/search/pkg/opensearch/internal/test/suite.go:58
   foundincode: false
@@ -25,7 +41,7 @@ variables:
   do_ignore: true
 - rawname: CI_SYSTEM_NAME
   path: services/search/pkg/opensearch/internal/test/suite.go:58
-  foundincode: true
+  foundincode: false
   name: CI_SYSTEM_NAME
   type: ""
   default_value: ""
@@ -92,25 +108,16 @@ variables:
     be established automatically. The default value is in ns and is about 2.5 mio
     h.
   do_ignore: false
-- rawname: MICRO_LOG_LEVEL
-  path: ./pkg/log/log.go:34
-  foundincode: false
-  name: MICRO_LOG_LEVEL
-  type: string
-  default_value: Error
-  description: Set the log level for the internal go micro framework. Only change
-    on supervision of openCloud Support.
-  do_ignore: false
-- rawname: MICRO_LOG_LEVEL
-  path: pkg/log/log.go:30
+- rawname: KEEP_TEST_CONTAINER
+  path: services/search/internal/opensearchtest/suite.go:68
   foundincode: true
-  name: MICRO_LOG_LEVEL
+  name: KEEP_TEST_CONTAINER
   type: ""
   default_value: ""
   description: ""
-  do_ignore: true
+  do_ignore: false
 - rawname: MICRO_LOG_LEVEL
-  path: pkg/log/log.go:34
+  path: pkg/log/log.go:30
   foundincode: true
   name: MICRO_LOG_LEVEL
   type: ""
@@ -125,6 +132,23 @@ variables:
   default_value: ""
   description: ""
   do_ignore: true
+- rawname: MICRO_LOG_LEVEL
+  path: pkg/log/log.go:34
+  foundincode: true
+  name: MICRO_LOG_LEVEL
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: MICRO_LOG_LEVEL
+  path: ./pkg/log/log.go:34
+  foundincode: false
+  name: MICRO_LOG_LEVEL
+  type: string
+  default_value: Error
+  description: Set the log level for the internal go micro framework. Only change
+    on supervision of openCloud Support.
+  do_ignore: false
 - rawname: _registryEnv
   path: ./pkg/registry/registry.go:88
   foundincode: false
@@ -179,14 +203,6 @@ variables:
     variable.
   do_ignore: false
 - rawname: OC_CONFIG_DIR
-  path: pkg/config/defaults/paths.go:54
-  foundincode: true
-  name: OC_CONFIG_DIR
-  type: ""
-  default_value: ""
-  description: ""
-  do_ignore: true
-- rawname: OC_CONFIG_DIR
   path: ./pkg/config/defaults/paths.go:54
   foundincode: false
   name: OC_CONFIG_DIR
@@ -195,6 +211,14 @@ variables:
   description: The default directory location for config files. See the General Info
     section in the documentation for more details on defaults.
   do_ignore: false
+- rawname: OC_CONFIG_DIR
+  path: pkg/config/defaults/paths.go:54
+  foundincode: true
+  name: OC_CONFIG_DIR
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
 - rawname: OC_GRPC_MAX_RECEIVED_MESSAGE_SIZE
   path: openCloud/reva/pkg/rgrpc/todo/pool/connection.go:79
   foundincode: false
@@ -204,14 +228,6 @@ variables:
   description: Sets the maximum message size in bytes the GRPC client can receive.
   do_ignore: false
 - rawname: RUN_CMD_TEST
-  path: ./internal/testenv/test.go:32
-  foundincode: false
-  name: RUN_CMD_TEST
-  type: ""
-  default_value: ""
-  description: ""
-  do_ignore: true
-- rawname: RUN_CMD_TEST
   path: internal/testenv/test.go:32
   foundincode: true
   name: RUN_CMD_TEST
@@ -219,6 +235,38 @@ variables:
   default_value: ""
   description: ""
   do_ignore: true
+- rawname: RUN_CMD_TEST
+  path: ./internal/testenv/test.go:32
+  foundincode: false
+  name: RUN_CMD_TEST
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: true
+- rawname: UPDATE_GOLDEN
+  path: services/search/pkg/opensearch/index_test.go:47
+  foundincode: true
+  name: UPDATE_GOLDEN
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: UPDATE_GOLDEN
+  path: services/search/pkg/bleve/index_test.go:227
+  foundincode: true
+  name: UPDATE_GOLDEN
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
+- rawname: UPDATE_SEARCH_PARITY_MATRIX
+  path: services/search/pkg/parity/matrix_test.go:229
+  foundincode: true
+  name: UPDATE_SEARCH_PARITY_MATRIX
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
 - rawname: USE_TESTCONTAINERS
   path: ./services/search/pkg/opensearch/internal/test/suite.go:59
   foundincode: false
@@ -229,14 +277,22 @@ variables:
   do_ignore: true
 - rawname: USE_TESTCONTAINERS
   path: services/search/pkg/opensearch/internal/test/suite.go:59
-  foundincode: true
+  foundincode: false
   name: USE_TESTCONTAINERS
   type: ""
   default_value: ""
   description: ""
   do_ignore: true
+- rawname: USE_TESTCONTAINERS
+  path: services/search/internal/opensearchtest/suite.go:62
+  foundincode: true
+  name: USE_TESTCONTAINERS
+  type: ""
+  default_value: ""
+  description: ""
+  do_ignore: false
 - rawname: _registryAddressEnv
-  path: pkg/natsjsregistry/registry.go:206
+  path: pkg/registry/registry.go:92
   foundincode: true
   name: _registryAddressEnv
   type: ""
@@ -252,7 +308,7 @@ variables:
   description: ""
   do_ignore: true
 - rawname: _registryAddressEnv
-  path: pkg/registry/registry.go:92
+  path: pkg/natsjsregistry/registry.go:206
   foundincode: true
   name: _registryAddressEnv
   type: ""
