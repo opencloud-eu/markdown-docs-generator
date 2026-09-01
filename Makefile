@@ -1,4 +1,5 @@
 OC_GIT_BRANCH ?= main
+export OC_GIT_BRANCH
 DOC_GIT_BRANCH ?= main
 DOC_GIT_BRANCH_TARGET ?= main
 DOC_GIT_TARGET_FOLDER ?= tmpdocs/docs/dev/_static/env-vars/

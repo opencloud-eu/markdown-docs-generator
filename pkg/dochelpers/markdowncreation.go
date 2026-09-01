@@ -6,17 +6,20 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"path"
 	"path/filepath"
+	"regexp"
+	"strings"
 	"text/template"
 	"time"
 
 	"github.com/opencloud-eu/opencloud/pkg/markdown"
 )
 
-var _configMarkdown = `{{< include file="services/_includes/%s.yaml"  language="yaml" >}}
-
-{{< include file="services/_includes/%s_configvars.md" >}}
-`
+var (
+	_mdLinkTarget   = regexp.MustCompile(`(\]\()([^)\s]+)([^)]*\))`)
+	_absoluteTarget = regexp.MustCompile(`^(#|//|[a-zA-Z][a-zA-Z0-9+.-]*:)`)
+)
 
 // GenerateServiceIndexMarkdowns generates the _index.md files for the dev docu
 func GenerateServiceIndexMarkdowns() {
@@ -33,11 +36,41 @@ func GenerateServiceIndexMarkdowns() {
 	}
 }
 
+func rewriteRelativeLinks(content []byte, servicename string, branch string) []byte {
+	return _mdLinkTarget.ReplaceAllFunc(content, func(m []byte) []byte {
+		parts := _mdLinkTarget.FindSubmatch(m)
+		target := string(parts[2])
+		if _absoluteTarget.MatchString(target) {
+			return m
+		}
+
+		fragment := ""
+		if i := strings.Index(target, "#"); i >= 0 {
+			target, fragment = target[:i], target[i:]
+		}
+
+		repoPath := path.Clean(target)
+		if !strings.HasPrefix(target, "/") {
+			repoPath = path.Join("services", servicename, target)
+		}
+		url := fmt.Sprintf("https://github.com/opencloud-eu/opencloud/blob/%s/%s%s", branch, strings.TrimPrefix(repoPath, "/"), fragment)
+
+		return append(parts[1], append([]byte(url), parts[3]...)...)
+	})
+}
+
 func generateMarkdown(filepath string, servicename string) error {
 	f, err := os.ReadFile(filepath)
 	if err != nil {
 		return err
 	}
+
+	var branch = "main"
+	if b := os.Getenv("OC_GIT_BRANCH"); b != "" {
+		branch = b
+	}
+
+	f = rewriteRelativeLinks(f, servicename, branch)
 
 	md := markdown.NewMD(f)
 	if len(md.Headings) == 0 || md.Headings[0].Level != 1 {
@@ -47,11 +80,6 @@ func generateMarkdown(filepath string, servicename string) error {
 	// we don't need the main title, we add in our template
 	head := md.Headings[0]
 	md.Headings = md.Headings[1:]
-	/*md.Headings = append(md.Headings, markdown.Heading{
-		Level:   2,
-		Header:  "Example Yaml Config",
-		Content: fmt.Sprintf(_configMarkdown, servicename, servicename),
-	})*/
 
 	tpl := template.Must(template.ParseFiles("templates/markdown/index.md.tmpl"))
 	b := bytes.NewBuffer(nil)
