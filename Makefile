@@ -47,7 +47,7 @@ git-clone: git-clean
 	git clone -b "${DOC_GIT_BRANCH}" git@github.com:opencloud-eu/docs tmpdocs; cd tmpdocs && git checkout -b docs-update-$$(uuidgen | tr '[:upper:]' '[:lower:]') && cd ..
 
 .PHONY: clean
-clean: gitclean output-clean
+clean: git-clean output-clean
 
 .PHONY: output-clean
 output-clean:
