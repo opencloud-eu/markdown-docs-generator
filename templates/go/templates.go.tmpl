@@ -10,7 +10,6 @@ import (
 	"strconv"
 	"strings"
 	"text/template"
-	"time"
 	"sort"
 
     {{- range $key, $value := .}}
@@ -26,7 +25,6 @@ type ConfigField struct {
 	Type            	string
 	Description     	string
 	VersionInfo     	string
-	DeprecationLink 	string
 }
 
 // DeprecationField holds information about deprecation
@@ -52,7 +50,6 @@ type templateData struct {
 	Fields          []ConfigField
 	Deprecations    []DeprecationField
 	HasDeprecations bool
-	Timestamp 	string
 }
 
 func main() {
@@ -94,11 +91,20 @@ func main() {
 	if err != nil {
 	    log.Fatalf("Failed to create target folder: %s", err)
 	}
+	// Go randomizes map iteration order. Walk the packages in sorted order so
+	// the output, especially which service fills a shared env var in the
+	// global table, is the same on every run.
+	pkgs := make([]string, 0, len(m))
+	for pkg := range m {
+	    pkgs = append(pkgs, pkg)
+	}
+	sort.Strings(pkgs)
+
 	all := make(map[string]EnvVar)
-	for pkg, conf := range m {
+	for _, pkg := range pkgs {
+	    conf := m[pkg]
 	    service := replacer.Replace(pkg)
-	    timestamp := time.Now().Format("2006-01-02-15-04-05")
-	    fields, deprecations = GetAnnotatedVariables(conf, timestamp)
+	    fields, deprecations = GetAnnotatedVariables(conf)
 	    var hasDeprecations bool
 	    if len(deprecations) > 0 {
 		    hasDeprecations = true
@@ -132,7 +138,6 @@ func main() {
 			Fields:        fields,
 			Deprecations: deprecations,
 			HasDeprecations: hasDeprecations,
-			Timestamp: timestamp,
 		}
 		adocFile, err = os.Create(filepath.Join(targetFolder, pathReplacer.Replace(service) + "_configvars.md"))
 		if err != nil {
@@ -203,7 +208,7 @@ func replaceEnvVarPlaceHolder(s string) string {
 	)
 }
 
-func GetAnnotatedVariables(s interface{}, timestamp string) ([]ConfigField, []DeprecationField) {
+func GetAnnotatedVariables(s interface{}) ([]ConfigField, []DeprecationField) {
 	t := reflect.TypeOf(s)
 	v := reflect.ValueOf(s)
 
@@ -217,7 +222,6 @@ func GetAnnotatedVariables(s interface{}, timestamp string) ([]ConfigField, []De
 		default:
 			desc := field.Tag.Get("desc")
 			env, ok := field.Tag.Lookup("env")
-			deprecationLink := ""
 			if !ok {
 				continue
 			}
@@ -226,12 +230,10 @@ func GetAnnotatedVariables(s interface{}, timestamp string) ([]ConfigField, []De
 			removalVersion, _ := field.Tag.Lookup("removalVersion")
 			deprecationInfo, _ := field.Tag.Lookup("deprecationInfo")
 			deprecationReplacement, _ := field.Tag.Lookup("deprecationReplacement")
-			if deprecationVersion != "" ||
+			isDeprecated := deprecationVersion != "" ||
 				removalVersion != "" ||
 				deprecationInfo != "" ||
-				deprecationReplacement != "" {
-				deprecationLink = fmt.Sprintf("xref:deprecation-note-%s[Deprecation Note]", timestamp)
-			}
+				deprecationReplacement != ""
 			v := strconv.Quote(fmt.Sprint(value.Interface()))
 			td := strings.Split(env, ";")
 			// re := regexp.MustCompile(`^(https?:\/\/)`)
@@ -251,9 +253,8 @@ func GetAnnotatedVariables(s interface{}, timestamp string) ([]ConfigField, []De
 					DefaultValue:    v,
 					Description:     desc,
 					Type:            typeName,
-					DeprecationLink: deprecationLink,
 				})
-			if deprecationLink != "" {
+			if isDeprecated {
 				deprecations = append(deprecations,
 					DeprecationField{
 						DeprecationVersion:     replaceEnvVarPlaceHolder(deprecationVersion),
@@ -268,12 +269,12 @@ func GetAnnotatedVariables(s interface{}, timestamp string) ([]ConfigField, []De
 			// they are probably added to the Sanitize() function
 			// and this should not be an issue then
 			if !value.IsZero() && value.Elem().CanInterface() {
-				f, d := GetAnnotatedVariables(value.Elem().Interface(), timestamp)
+				f, d := GetAnnotatedVariables(value.Elem().Interface())
 				fields = append(fields, f...)
 				deprecations = append(deprecations, d...)
 			}
 		case reflect.Struct:
-			f, d := GetAnnotatedVariables(value.Interface(), timestamp)
+			f, d := GetAnnotatedVariables(value.Interface())
 			fields = append(fields, f...)
 			deprecations = append(deprecations, d...)
 		}
